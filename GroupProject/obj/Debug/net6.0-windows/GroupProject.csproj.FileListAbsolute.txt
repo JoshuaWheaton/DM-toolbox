@@ -1,0 +1,17 @@
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\bin\Debug\net6.0-windows\GroupProject.exe
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\bin\Debug\net6.0-windows\GroupProject.deps.json
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\bin\Debug\net6.0-windows\GroupProject.runtimeconfig.json
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\bin\Debug\net6.0-windows\GroupProject.dll
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\bin\Debug\net6.0-windows\GroupProject.pdb
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.AssemblyReference.cache
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.Form1.resources
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.GenerateResource.cache
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.AssemblyInfoInputs.cache
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.AssemblyInfo.cs
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.CoreCompileInputs.cache
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.dll
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\refint\GroupProject.dll
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.pdb
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\GroupProject.genruntimeconfig.cache
+C:\Users\Joshua W\Downloads\GUI\GroupProject\GroupProject\obj\Debug\net6.0-windows\ref\GroupProject.dll
