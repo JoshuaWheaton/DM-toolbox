@@ -1,6 +1,4 @@
 # DM-toolbox
 Group Project for visual programming
 
-Yet another line
-
-More lines here to do things
+The GUI is currently running, and the classes are on there as well
