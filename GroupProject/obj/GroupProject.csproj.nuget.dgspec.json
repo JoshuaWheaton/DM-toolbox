@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bones\\Source\\Repos\\DM-toolbox\\GroupProject\\GroupProject.csproj": {}
+    "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bones\\Source\\Repos\\DM-toolbox\\GroupProject\\GroupProject.csproj": {
+    "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bones\\Source\\Repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
+        "projectUniqueName": "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
         "projectName": "GroupProject",
-        "projectPath": "C:\\Users\\Bones\\Source\\Repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
+        "projectPath": "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
         "packagesPath": "C:\\Users\\Bones\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bones\\Source\\Repos\\DM-toolbox\\GroupProject\\obj\\",
+        "outputPath": "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bones\\AppData\\Roaming\\NuGet\\NuGet.Config",

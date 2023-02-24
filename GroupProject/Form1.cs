@@ -1,14 +1,186 @@
+using DM_Toolkit;
+using System.Drawing.Imaging;
+using System.Xml;
+using static GroupProject.mainGUI;
+
 namespace GroupProject
 {
     public partial class mainGUI : Form
     {
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         int initCounter = 0;    // Counter to track the active round of initative
+
+        private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
 
         public mainGUI()
         {
             InitializeComponent();
         }
 
+        // Function that will add a creature to the creature list when the "Add Enity" button is clicked
+        private void addCreatureButton_Click(object sender, EventArgs e)
+        {
+            // Create a new creature with the given name, description, and stats
+            string name = nameTextBox.Text;
+            string description = descriptionTextBox.Text;
+            int strength = (int)strengthNumericUpDown.Value;
+            int dexterity = (int)dexterityNumericUpDown.Value;
+            int constitution = (int)constitutionNumericUpDown.Value;
+            int intelligence = (int)intelligenceNumericUpDown.Value;
+            int wisdom = (int)wisdomNumericUpDown.Value;
+            int charisma = (int)charismaNumericUpDown.Value;
+            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+
+            // Add the creature to the list
+            creatureList.Add(creature);
+
+            // Clear the form for the next creature
+            nameTextBox.Clear();
+            descriptionTextBox.Clear();
+            strengthNumericUpDown.Value = 10;
+            dexterityNumericUpDown.Value = 10;
+            constitutionNumericUpDown.Value = 10;
+            intelligenceNumericUpDown.Value = 10;
+            wisdomNumericUpDown.Value = 10;
+            charismaNumericUpDown.Value = 10;
+
+            // Display the newly added creature to the list on the left for clear input feedback
+            creatureListBox.DataSource = null;
+            creatureListBox.DataSource = creatureList;
+        }
+
+        // Function that will display the stats of a creature when the "Load Enity" button is clicked
+        private void loadCreatureButton_Click(object sender, EventArgs e)
+        {
+            // Get the selected creature from the list
+            Creature creature = creatureListBox.SelectedItem as Creature;
+
+            // Display the creature's name, description, and stats in the form
+            if (creature != null)
+            {
+                nameLabel.Text = creature.Name;
+                descriptionLabel.Text = creature.Description;
+                strengthLabel.Text = creature.Strength.ToString();
+                dexterityLabel.Text = creature.Dexterity.ToString();
+                constitutionLabel.Text = creature.Constitution.ToString();
+                intelligenceLabel.Text = creature.Intelligence.ToString();
+                wisdomLabel.Text = creature.Wisdom.ToString();
+                charismaLabel.Text = creature.Charisma.ToString();
+            }
+        }
+
+        // Function that saves the current encounter to a file with the file extension .enc
+        private void saveCreatureButton_Click(object sender, EventArgs e)
+        {
+            // Save the list of creatures to a file
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Encounter files (*.enc)|*.enc";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (System.IO.StreamWriter writer = new System.IO.StreamWriter(saveFileDialog.FileName))
+                {
+                    foreach (Creature creature in creatureList)
+                    {
+                        writer.WriteLine(creature.Serialize());
+                    }
+                }
+            }
+        }
+
+        // Function that loads a file with the file extension .enc and displays the entities in the encounter to be loaded
+        private void loadCreatureListButton_Click(object sender, EventArgs e)
+        {
+            // Load the list of creatures from a file
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Encounter files (*.enc)|*.enc";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                creatureList.Clear();
+                // Open and read file
+                using (System.IO.StreamReader reader = new System.IO.StreamReader(openFileDialog.FileName))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        Creature creature = Creature.Deserialize(line);
+                        if (creature != null)
+                        {
+                            creatureList.Add(creature);
+                        }
+                    }
+                }
+                // Display the entities in the npc list
+                creatureListBox.DataSource = null;
+                creatureListBox.DataSource = creatureList;
+            }
+        }
+
+        // Public class that defines what a "Creature" or otherwise sometimes called an "NPC" or "Entity" is
+        public class Creature
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public int Strength { get; set; }
+            public int Dexterity { get; set; }
+            public int Constitution { get; set; }
+            public int Intelligence { get; set; }
+            public int Wisdom { get; set; }
+            public int Charisma { get; set; }
+            
+            // Constructor, Takes 8 args, Creature Name, Description, and Stats
+            public Creature(string name, string description, int strength, int dexterity, int constitution,int intelligence, int wisdom, int charisma)
+            {
+                Name = name;
+                Description = description;
+                Strength = strength;
+                Dexterity = dexterity;
+                Constitution = constitution;
+                Intelligence = intelligence;
+                Wisdom = wisdom;
+                Charisma = charisma;
+            }
+
+            public string Serialize()
+            {
+                return $"{Name}|{Description}|{Strength}|{Dexterity}|{Constitution}|{Intelligence}|{Wisdom}|{Charisma}";
+            }
+
+            public static Creature Deserialize(string serializedString)
+            {
+                string[] parts = serializedString.Split('|');
+                if (parts.Length == 7)
+                {
+                    string name = parts[0];
+                    string description = parts[1];
+                    int strength = 10;
+                    int dexterity = 10;
+                    int constitution = 10;
+                    int intelligence = 10;
+                    int wisdom = 10;
+                    int charisma = 10;
+                    int.TryParse(parts[2], out strength);
+                    int.TryParse(parts[3], out dexterity);
+                    int.TryParse(parts[4], out constitution);
+                    int.TryParse(parts[5], out wisdom);
+                    int.TryParse(parts[6], out charisma);
+                    return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            public override string ToString()
+            {
+                return Name;
+            }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -137,7 +309,9 @@ namespace GroupProject
         {
 
         }
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void prevRound_Click(object sender, EventArgs e)
         {
             // Decrement the round
@@ -426,6 +600,28 @@ namespace GroupProject
                     round24.BackColor = Color.Firebrick;
                     break;
             }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void mainGUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

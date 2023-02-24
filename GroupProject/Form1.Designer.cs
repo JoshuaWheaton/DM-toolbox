@@ -71,12 +71,58 @@
             this.round14 = new System.Windows.Forms.Button();
             this.round13 = new System.Windows.Forms.Button();
             this.round25 = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.strengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.dexterityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.constitutionNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.charismaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.wisdomNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.intelligenceNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.creatureListBox = new System.Windows.Forms.ListBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.strengthLabel = new System.Windows.Forms.Label();
+            this.dexterityLabel = new System.Windows.Forms.Label();
+            this.constitutionLabel = new System.Windows.Forms.Label();
+            this.intelligenceLabel = new System.Windows.Forms.Label();
+            this.wisdomLabel = new System.Windows.Forms.Label();
+            this.charismaLabel = new System.Windows.Forms.Label();
+            this.addCreatureButton = new System.Windows.Forms.Button();
+            this.saveCreatureButton = new System.Windows.Forms.Button();
+            this.loadCreatureButton = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.loadCreatureListButton = new System.Windows.Forms.Button();
+            this.STR = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.INT = new System.Windows.Forms.Label();
+            this.DEX = new System.Windows.Forms.Label();
+            this.CON = new System.Windows.Forms.Label();
+            this.WIS = new System.Windows.Forms.Label();
+            this.CHA = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(6, 22);
             this.button1.Name = "button1";
@@ -89,6 +135,7 @@
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 15;
@@ -96,13 +143,14 @@
             "Enemies"});
             this.listBox1.Location = new System.Drawing.Point(27, 113);
             this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(240, 484);
             this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
             this.listBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listBox2.ForeColor = System.Drawing.Color.White;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.HorizontalScrollbar = true;
             this.listBox2.ItemHeight = 15;
@@ -110,7 +158,6 @@
             "Players"});
             this.listBox2.Location = new System.Drawing.Point(283, 113);
             this.listBox2.Name = "listBox2";
-            this.listBox2.ScrollAlwaysVisible = true;
             this.listBox2.Size = new System.Drawing.Size(344, 214);
             this.listBox2.Sorted = true;
             this.listBox2.TabIndex = 2;
@@ -147,6 +194,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Firebrick;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Location = new System.Drawing.Point(87, 22);
             this.button4.Name = "button4";
@@ -179,6 +227,7 @@
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.Firebrick;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button14.Location = new System.Drawing.Point(168, 114);
             this.button14.Name = "button14";
@@ -190,6 +239,7 @@
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.Firebrick;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button13.Location = new System.Drawing.Point(87, 161);
             this.button13.Name = "button13";
@@ -201,6 +251,7 @@
             // button12
             // 
             this.button12.BackColor = System.Drawing.Color.Firebrick;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button12.Location = new System.Drawing.Point(168, 161);
             this.button12.Name = "button12";
@@ -212,6 +263,7 @@
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.Firebrick;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button11.Location = new System.Drawing.Point(87, 114);
             this.button11.Name = "button11";
@@ -223,6 +275,7 @@
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.Firebrick;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button10.Location = new System.Drawing.Point(168, 66);
             this.button10.Name = "button10";
@@ -234,6 +287,7 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Firebrick;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button9.Location = new System.Drawing.Point(87, 66);
             this.button9.Name = "button9";
@@ -245,6 +299,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Firebrick;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button8.Location = new System.Drawing.Point(6, 161);
             this.button8.Name = "button8";
@@ -256,6 +311,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Firebrick;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button7.Location = new System.Drawing.Point(6, 114);
             this.button7.Name = "button7";
@@ -267,6 +323,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Firebrick;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button6.Location = new System.Drawing.Point(6, 66);
             this.button6.Name = "button6";
@@ -278,6 +335,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Firebrick;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.Location = new System.Drawing.Point(168, 22);
             this.button5.Name = "button5";
@@ -292,7 +350,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(283, 343);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(619, 254);
+            this.richTextBox1.Size = new System.Drawing.Size(344, 254);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "Entity details";
             // 
@@ -622,13 +680,469 @@
             this.round25.UseVisualStyleBackColor = false;
             this.round25.Click += new System.EventHandler(this.round25_Click);
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.richTextBox2.Location = new System.Drawing.Point(648, 343);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox2.Size = new System.Drawing.Size(411, 254);
+            this.richTextBox2.TabIndex = 35;
+            this.richTextBox2.Text = "";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(666, 359);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.PlaceholderText = "Name";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 23);
+            this.nameTextBox.TabIndex = 36;
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Location = new System.Drawing.Point(666, 400);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.PlaceholderText = "Description";
+            this.descriptionTextBox.Size = new System.Drawing.Size(154, 182);
+            this.descriptionTextBox.TabIndex = 37;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // strengthNumericUpDown
+            // 
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(878, 402);
+            this.strengthNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.strengthNumericUpDown.Name = "strengthNumericUpDown";
+            this.strengthNumericUpDown.Size = new System.Drawing.Size(41, 23);
+            this.strengthNumericUpDown.TabIndex = 38;
+            this.strengthNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // dexterityNumericUpDown
+            // 
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(878, 431);
+            this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.dexterityNumericUpDown.Name = "dexterityNumericUpDown";
+            this.dexterityNumericUpDown.Size = new System.Drawing.Size(41, 23);
+            this.dexterityNumericUpDown.TabIndex = 39;
+            this.dexterityNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // constitutionNumericUpDown
+            // 
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(878, 460);
+            this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.constitutionNumericUpDown.Name = "constitutionNumericUpDown";
+            this.constitutionNumericUpDown.Size = new System.Drawing.Size(41, 23);
+            this.constitutionNumericUpDown.TabIndex = 40;
+            this.constitutionNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // charismaNumericUpDown
+            // 
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(878, 547);
+            this.charismaNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.charismaNumericUpDown.Name = "charismaNumericUpDown";
+            this.charismaNumericUpDown.Size = new System.Drawing.Size(41, 23);
+            this.charismaNumericUpDown.TabIndex = 43;
+            this.charismaNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // wisdomNumericUpDown
+            // 
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(878, 518);
+            this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.wisdomNumericUpDown.Name = "wisdomNumericUpDown";
+            this.wisdomNumericUpDown.Size = new System.Drawing.Size(41, 23);
+            this.wisdomNumericUpDown.TabIndex = 42;
+            this.wisdomNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // intelligenceNumericUpDown
+            // 
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(878, 489);
+            this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.intelligenceNumericUpDown.Name = "intelligenceNumericUpDown";
+            this.intelligenceNumericUpDown.Size = new System.Drawing.Size(41, 23);
+            this.intelligenceNumericUpDown.TabIndex = 41;
+            this.intelligenceNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // creatureListBox
+            // 
+            this.creatureListBox.FormattingEnabled = true;
+            this.creatureListBox.ItemHeight = 15;
+            this.creatureListBox.Location = new System.Drawing.Point(45, 146);
+            this.creatureListBox.Name = "creatureListBox";
+            this.creatureListBox.Size = new System.Drawing.Size(204, 424);
+            this.creatureListBox.TabIndex = 44;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameLabel.Location = new System.Drawing.Point(472, 377);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(0, 25);
+            this.nameLabel.TabIndex = 45;
+            // 
+            // strengthLabel
+            // 
+            this.strengthLabel.AutoSize = true;
+            this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.strengthLabel.Location = new System.Drawing.Point(347, 413);
+            this.strengthLabel.Name = "strengthLabel";
+            this.strengthLabel.Size = new System.Drawing.Size(0, 25);
+            this.strengthLabel.TabIndex = 46;
+            // 
+            // dexterityLabel
+            // 
+            this.dexterityLabel.AutoSize = true;
+            this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dexterityLabel.Location = new System.Drawing.Point(347, 442);
+            this.dexterityLabel.Name = "dexterityLabel";
+            this.dexterityLabel.Size = new System.Drawing.Size(0, 25);
+            this.dexterityLabel.TabIndex = 47;
+            // 
+            // constitutionLabel
+            // 
+            this.constitutionLabel.AutoSize = true;
+            this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.constitutionLabel.Location = new System.Drawing.Point(347, 471);
+            this.constitutionLabel.Name = "constitutionLabel";
+            this.constitutionLabel.Size = new System.Drawing.Size(0, 25);
+            this.constitutionLabel.TabIndex = 48;
+            // 
+            // intelligenceLabel
+            // 
+            this.intelligenceLabel.AutoSize = true;
+            this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.intelligenceLabel.Location = new System.Drawing.Point(347, 500);
+            this.intelligenceLabel.Name = "intelligenceLabel";
+            this.intelligenceLabel.Size = new System.Drawing.Size(0, 25);
+            this.intelligenceLabel.TabIndex = 49;
+            this.intelligenceLabel.Text = "TEST";
+            // 
+            // wisdomLabel
+            // 
+            this.wisdomLabel.AutoSize = true;
+            this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.wisdomLabel.Location = new System.Drawing.Point(347, 529);
+            this.wisdomLabel.Name = "wisdomLabel";
+            this.wisdomLabel.Size = new System.Drawing.Size(0, 25);
+            this.wisdomLabel.TabIndex = 50;
+            // 
+            // charismaLabel
+            // 
+            this.charismaLabel.AutoSize = true;
+            this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.charismaLabel.Location = new System.Drawing.Point(347, 558);
+            this.charismaLabel.Name = "charismaLabel";
+            this.charismaLabel.Size = new System.Drawing.Size(0, 25);
+            this.charismaLabel.TabIndex = 51;
+            // 
+            // addCreatureButton
+            // 
+            this.addCreatureButton.BackColor = System.Drawing.Color.Firebrick;
+            this.addCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addCreatureButton.Location = new System.Drawing.Point(939, 359);
+            this.addCreatureButton.Name = "addCreatureButton";
+            this.addCreatureButton.Size = new System.Drawing.Size(100, 23);
+            this.addCreatureButton.TabIndex = 53;
+            this.addCreatureButton.Text = "Add Entity";
+            this.addCreatureButton.UseVisualStyleBackColor = false;
+            this.addCreatureButton.Click += new System.EventHandler(this.addCreatureButton_Click);
+            // 
+            // saveCreatureButton
+            // 
+            this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
+            this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveCreatureButton.Location = new System.Drawing.Point(939, 529);
+            this.saveCreatureButton.Name = "saveCreatureButton";
+            this.saveCreatureButton.Size = new System.Drawing.Size(100, 23);
+            this.saveCreatureButton.TabIndex = 54;
+            this.saveCreatureButton.Text = "Save Encounter";
+            this.saveCreatureButton.UseVisualStyleBackColor = false;
+            this.saveCreatureButton.Click += new System.EventHandler(this.saveCreatureButton_Click);
+            // 
+            // loadCreatureButton
+            // 
+            this.loadCreatureButton.BackColor = System.Drawing.Color.Firebrick;
+            this.loadCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadCreatureButton.Location = new System.Drawing.Point(939, 388);
+            this.loadCreatureButton.Name = "loadCreatureButton";
+            this.loadCreatureButton.Size = new System.Drawing.Size(100, 23);
+            this.loadCreatureButton.TabIndex = 55;
+            this.loadCreatureButton.Text = "Load Entity";
+            this.loadCreatureButton.UseVisualStyleBackColor = false;
+            this.loadCreatureButton.Click += new System.EventHandler(this.loadCreatureButton_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "creatureTest";
+            this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // loadCreatureListButton
+            // 
+            this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
+            this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadCreatureListButton.Location = new System.Drawing.Point(939, 558);
+            this.loadCreatureListButton.Name = "loadCreatureListButton";
+            this.loadCreatureListButton.Size = new System.Drawing.Size(100, 23);
+            this.loadCreatureListButton.TabIndex = 56;
+            this.loadCreatureListButton.Text = "Load Encounter";
+            this.loadCreatureListButton.UseVisualStyleBackColor = false;
+            this.loadCreatureListButton.Click += new System.EventHandler(this.loadCreatureListButton_Click);
+            // 
+            // STR
+            // 
+            this.STR.AutoSize = true;
+            this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STR.Location = new System.Drawing.Point(826, 400);
+            this.STR.Name = "STR";
+            this.STR.Size = new System.Drawing.Size(46, 25);
+            this.STR.TabIndex = 57;
+            this.STR.Text = "STR";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(826, 400);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 25);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "STR";
+            // 
+            // INT
+            // 
+            this.INT.AutoSize = true;
+            this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.INT.Location = new System.Drawing.Point(826, 487);
+            this.INT.Name = "INT";
+            this.INT.Size = new System.Drawing.Size(44, 25);
+            this.INT.TabIndex = 58;
+            this.INT.Text = "INT";
+            // 
+            // DEX
+            // 
+            this.DEX.AutoSize = true;
+            this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DEX.Location = new System.Drawing.Point(826, 429);
+            this.DEX.Name = "DEX";
+            this.DEX.Size = new System.Drawing.Size(48, 25);
+            this.DEX.TabIndex = 58;
+            this.DEX.Text = "DEX";
+            // 
+            // CON
+            // 
+            this.CON.AutoSize = true;
+            this.CON.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CON.Location = new System.Drawing.Point(826, 458);
+            this.CON.Name = "CON";
+            this.CON.Size = new System.Drawing.Size(53, 25);
+            this.CON.TabIndex = 59;
+            this.CON.Text = "CON";
+            // 
+            // WIS
+            // 
+            this.WIS.AutoSize = true;
+            this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WIS.Location = new System.Drawing.Point(826, 516);
+            this.WIS.Name = "WIS";
+            this.WIS.Size = new System.Drawing.Size(48, 25);
+            this.WIS.TabIndex = 60;
+            this.WIS.Text = "WIS";
+            // 
+            // CHA
+            // 
+            this.CHA.AutoSize = true;
+            this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CHA.Location = new System.Drawing.Point(826, 545);
+            this.CHA.Name = "CHA";
+            this.CHA.Size = new System.Drawing.Size(52, 25);
+            this.CHA.TabIndex = 61;
+            this.CHA.Text = "CHA";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(295, 558);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 25);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "CHA";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(295, 529);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 25);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "WIS";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(295, 471);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 25);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "CON";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(295, 442);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "DEX";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(295, 500);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 25);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "INT";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(295, 413);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 25);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "STR";
+            // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.name.Location = new System.Drawing.Point(416, 377);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(60, 21);
+            this.name.TabIndex = 68;
+            this.name.Text = "Name:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(416, 398);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 21);
+            this.label8.TabIndex = 69;
+            this.label8.Text = "Description:";
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Location = new System.Drawing.Point(418, 422);
+            this.descriptionLabel.Multiline = true;
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descriptionLabel.Size = new System.Drawing.Size(196, 161);
+            this.descriptionLabel.TabIndex = 70;
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
-            this.ClientSize = new System.Drawing.Size(927, 641);
+            this.ClientSize = new System.Drawing.Size(1147, 641);
+            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.name);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.CHA);
+            this.Controls.Add(this.WIS);
+            this.Controls.Add(this.CON);
+            this.Controls.Add(this.DEX);
+            this.Controls.Add(this.INT);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.STR);
+            this.Controls.Add(this.loadCreatureListButton);
+            this.Controls.Add(this.loadCreatureButton);
+            this.Controls.Add(this.saveCreatureButton);
+            this.Controls.Add(this.addCreatureButton);
+            this.Controls.Add(this.charismaLabel);
+            this.Controls.Add(this.wisdomLabel);
+            this.Controls.Add(this.intelligenceLabel);
+            this.Controls.Add(this.constitutionLabel);
+            this.Controls.Add(this.dexterityLabel);
+            this.Controls.Add(this.strengthLabel);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.creatureListBox);
+            this.Controls.Add(this.charismaNumericUpDown);
+            this.Controls.Add(this.wisdomNumericUpDown);
+            this.Controls.Add(this.intelligenceNumericUpDown);
+            this.Controls.Add(this.constitutionNumericUpDown);
+            this.Controls.Add(this.dexterityNumericUpDown);
+            this.Controls.Add(this.strengthNumericUpDown);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.round1);
             this.Controls.Add(this.round25);
             this.Controls.Add(this.round24);
@@ -663,8 +1177,16 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
+            this.Load += new System.EventHandler(this.mainGUI_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -713,5 +1235,44 @@
         private Button round14;
         private Button round13;
         private Button round25;
+        private RichTextBox richTextBox2;
+        private TextBox nameTextBox;
+        private TextBox descriptionTextBox;
+        private NumericUpDown strengthNumericUpDown;
+        private NumericUpDown dexterityNumericUpDown;
+        private NumericUpDown constitutionNumericUpDown;
+        private NumericUpDown charismaNumericUpDown;
+        private NumericUpDown wisdomNumericUpDown;
+        private NumericUpDown intelligenceNumericUpDown;
+        private ListBox creatureListBox;
+        private Label nameLabel;
+        private Label strengthLabel;
+        private Label dexterityLabel;
+        private Label constitutionLabel;
+        private Label intelligenceLabel;
+        private Label wisdomLabel;
+        private Label charismaLabel;
+        private Button addCreatureButton;
+        private Button saveCreatureButton;
+        private Button loadCreatureButton;
+        private SaveFileDialog saveFileDialog;
+        private OpenFileDialog openFileDialog;
+        private Button loadCreatureListButton;
+        private Label STR;
+        private Label label1;
+        private Label INT;
+        private Label DEX;
+        private Label CON;
+        private Label WIS;
+        private Label CHA;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label name;
+        private Label label8;
+        private TextBox descriptionLabel;
     }
 }
