@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joshua W\\Source\\Repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
+      "projectUniqueName": "C:\\Users\\Joshua W\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
       "projectName": "GroupProject",
-      "projectPath": "C:\\Users\\Joshua W\\Source\\Repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
+      "projectPath": "C:\\Users\\Joshua W\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
       "packagesPath": "C:\\Users\\Joshua W\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joshua W\\Source\\Repos\\DM-toolbox\\GroupProject\\obj\\",
+      "outputPath": "C:\\Users\\Joshua W\\source\\repos\\DM-toolbox\\GroupProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Joshua W\\AppData\\Roaming\\NuGet\\NuGet.Config",
