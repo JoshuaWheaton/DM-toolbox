@@ -21,7 +21,6 @@ C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\
 C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.dll
 C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.pdb
 C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.AssemblyReference.cache
-C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.Form1.resources
 C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.GenerateResource.cache
 C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Joshua W\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.AssemblyInfoInputs.cache
@@ -50,3 +49,5 @@ C:\Users\Bones\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\Gro
 C:\Users\Bones\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\ref\GroupProject.dll
 C:\Users\Bones\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.Properties.Resources.resources
 C:\Users\Bones\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.mainGUI.resources
+C:\Users\Joshua W\source\repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.mainGUI.resources
+C:\Users\Joshua W\source\repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.Properties.Resources.resources
