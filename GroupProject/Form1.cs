@@ -150,7 +150,7 @@ namespace GroupProject
             public static Creature Deserialize(string serializedString)
             {
                 string[] parts = serializedString.Split('|');
-                if (parts.Length == 7)
+                if (parts.Length == 8)
                 {
                     string name = parts[0];
                     string description = parts[1];
@@ -163,8 +163,9 @@ namespace GroupProject
                     int.TryParse(parts[2], out strength);
                     int.TryParse(parts[3], out dexterity);
                     int.TryParse(parts[4], out constitution);
-                    int.TryParse(parts[5], out wisdom);
-                    int.TryParse(parts[6], out charisma);
+                    int.TryParse(parts[5], out intelligence);
+                    int.TryParse(parts[6], out wisdom);
+                    int.TryParse(parts[7], out charisma);
                     return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
                 }
                 else
