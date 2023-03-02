@@ -45,7 +45,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.round1 = new System.Windows.Forms.Button();
             this.round2 = new System.Windows.Forms.Button();
             this.round3 = new System.Windows.Forms.Button();
@@ -98,7 +97,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.INT = new System.Windows.Forms.Label();
             this.DEX = new System.Windows.Forms.Label();
-            this.CON = new System.Windows.Forms.Label();
             this.WIS = new System.Windows.Forms.Label();
             this.CHA = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -110,6 +108,8 @@
             this.name = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
@@ -231,6 +231,7 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button14
             // 
@@ -361,17 +362,6 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.richTextBox1.Location = new System.Drawing.Point(323, 457);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(393, 337);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "Entity details";
             // 
             // round1
             // 
@@ -741,7 +731,7 @@
             // 
             // strengthNumericUpDown
             // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(1003, 536);
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(1007, 538);
             this.strengthNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.strengthNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -756,10 +746,11 @@
             0,
             0,
             0});
+            this.strengthNumericUpDown.ValueChanged += new System.EventHandler(this.strengthNumericUpDown_ValueChanged);
             // 
             // dexterityNumericUpDown
             // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(1003, 575);
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(1007, 578);
             this.dexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -774,10 +765,11 @@
             0,
             0,
             0});
+            this.dexterityNumericUpDown.ValueChanged += new System.EventHandler(this.dexterityNumericUpDown_ValueChanged);
             // 
             // constitutionNumericUpDown
             // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(1003, 613);
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(1007, 618);
             this.constitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -795,7 +787,7 @@
             // 
             // charismaNumericUpDown
             // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(1003, 729);
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(1007, 738);
             this.charismaNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.charismaNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -813,7 +805,7 @@
             // 
             // wisdomNumericUpDown
             // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(1003, 691);
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(1007, 698);
             this.wisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -831,7 +823,7 @@
             // 
             // intelligenceNumericUpDown
             // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(1003, 652);
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(1007, 658);
             this.intelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -899,9 +891,8 @@
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.intelligenceLabel.Location = new System.Drawing.Point(397, 667);
             this.intelligenceLabel.Name = "intelligenceLabel";
-            this.intelligenceLabel.Size = new System.Drawing.Size(65, 32);
+            this.intelligenceLabel.Size = new System.Drawing.Size(0, 32);
             this.intelligenceLabel.TabIndex = 49;
-            this.intelligenceLabel.Text = "TEST";
             // 
             // wisdomLabel
             // 
@@ -996,7 +987,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(944, 533);
+            this.label1.Location = new System.Drawing.Point(940, 533);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 32);
             this.label1.TabIndex = 57;
@@ -1006,37 +997,28 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(944, 649);
+            this.INT.Location = new System.Drawing.Point(940, 653);
             this.INT.Name = "INT";
             this.INT.Size = new System.Drawing.Size(55, 32);
             this.INT.TabIndex = 58;
             this.INT.Text = "INT";
+            this.INT.Click += new System.EventHandler(this.INT_Click);
             // 
             // DEX
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(944, 572);
+            this.DEX.Location = new System.Drawing.Point(940, 573);
             this.DEX.Name = "DEX";
             this.DEX.Size = new System.Drawing.Size(61, 32);
             this.DEX.TabIndex = 58;
             this.DEX.Text = "DEX";
             // 
-            // CON
-            // 
-            this.CON.AutoSize = true;
-            this.CON.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CON.Location = new System.Drawing.Point(944, 611);
-            this.CON.Name = "CON";
-            this.CON.Size = new System.Drawing.Size(66, 32);
-            this.CON.TabIndex = 59;
-            this.CON.Text = "CON";
-            // 
             // WIS
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(944, 688);
+            this.WIS.Location = new System.Drawing.Point(940, 693);
             this.WIS.Name = "WIS";
             this.WIS.Size = new System.Drawing.Size(59, 32);
             this.WIS.TabIndex = 60;
@@ -1046,7 +1028,7 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(944, 727);
+            this.CHA.Location = new System.Drawing.Point(940, 733);
             this.CHA.Name = "CHA";
             this.CHA.Size = new System.Drawing.Size(64, 32);
             this.CHA.TabIndex = 61;
@@ -1142,6 +1124,28 @@
             this.descriptionLabel.Size = new System.Drawing.Size(223, 213);
             this.descriptionLabel.TabIndex = 70;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(942, 613);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 32);
+            this.label9.TabIndex = 71;
+            this.label9.Text = "CON";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.richTextBox1.Location = new System.Drawing.Point(323, 457);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(393, 337);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "Entity details";
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1149,6 +1153,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
             this.ClientSize = new System.Drawing.Size(1311, 855);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.name);
@@ -1160,7 +1165,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CHA);
             this.Controls.Add(this.WIS);
-            this.Controls.Add(this.CON);
             this.Controls.Add(this.DEX);
             this.Controls.Add(this.INT);
             this.Controls.Add(this.label1);
@@ -1253,7 +1257,6 @@
         private Button button8;
         private Button button7;
         private Button button6;
-        private RichTextBox richTextBox1;
         private Button round1;
         private Button round2;
         private Button round3;
@@ -1306,7 +1309,6 @@
         private Label label1;
         private Label INT;
         private Label DEX;
-        private Label CON;
         private Label WIS;
         private Label CHA;
         private Label label2;
@@ -1318,5 +1320,7 @@
         private Label name;
         private Label label8;
         private TextBox descriptionLabel;
+        private Label label9;
+        private RichTextBox richTextBox1;
     }
 }
