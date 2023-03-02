@@ -109,7 +109,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
@@ -117,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -158,10 +159,10 @@
             this.listBox2.ItemHeight = 20;
             this.listBox2.Items.AddRange(new object[] {
             "Players"});
-            this.listBox2.Location = new System.Drawing.Point(323, 151);
+            this.listBox2.Location = new System.Drawing.Point(741, 151);
             this.listBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(393, 284);
+            this.listBox2.Size = new System.Drawing.Size(166, 284);
             this.listBox2.Sorted = true;
             this.listBox2.TabIndex = 2;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
@@ -223,7 +224,7 @@
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(741, 151);
+            this.groupBox1.Location = new System.Drawing.Point(920, 151);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -853,7 +854,7 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameLabel.Location = new System.Drawing.Point(539, 503);
+            this.nameLabel.Location = new System.Drawing.Point(261, 50);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(0, 32);
             this.nameLabel.TabIndex = 45;
@@ -862,7 +863,7 @@
             // 
             this.strengthLabel.AutoSize = true;
             this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.strengthLabel.Location = new System.Drawing.Point(397, 551);
+            this.strengthLabel.Location = new System.Drawing.Point(87, 50);
             this.strengthLabel.Name = "strengthLabel";
             this.strengthLabel.Size = new System.Drawing.Size(0, 32);
             this.strengthLabel.TabIndex = 46;
@@ -871,7 +872,7 @@
             // 
             this.dexterityLabel.AutoSize = true;
             this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dexterityLabel.Location = new System.Drawing.Point(397, 589);
+            this.dexterityLabel.Location = new System.Drawing.Point(97, 87);
             this.dexterityLabel.Name = "dexterityLabel";
             this.dexterityLabel.Size = new System.Drawing.Size(0, 32);
             this.dexterityLabel.TabIndex = 47;
@@ -880,7 +881,7 @@
             // 
             this.constitutionLabel.AutoSize = true;
             this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.constitutionLabel.Location = new System.Drawing.Point(397, 628);
+            this.constitutionLabel.Location = new System.Drawing.Point(91, 125);
             this.constitutionLabel.Name = "constitutionLabel";
             this.constitutionLabel.Size = new System.Drawing.Size(0, 32);
             this.constitutionLabel.TabIndex = 48;
@@ -889,7 +890,7 @@
             // 
             this.intelligenceLabel.AutoSize = true;
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.intelligenceLabel.Location = new System.Drawing.Point(397, 667);
+            this.intelligenceLabel.Location = new System.Drawing.Point(87, 161);
             this.intelligenceLabel.Name = "intelligenceLabel";
             this.intelligenceLabel.Size = new System.Drawing.Size(0, 32);
             this.intelligenceLabel.TabIndex = 49;
@@ -898,7 +899,7 @@
             // 
             this.wisdomLabel.AutoSize = true;
             this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.wisdomLabel.Location = new System.Drawing.Point(397, 705);
+            this.wisdomLabel.Location = new System.Drawing.Point(91, 194);
             this.wisdomLabel.Name = "wisdomLabel";
             this.wisdomLabel.Size = new System.Drawing.Size(0, 32);
             this.wisdomLabel.TabIndex = 50;
@@ -907,7 +908,7 @@
             // 
             this.charismaLabel.AutoSize = true;
             this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.charismaLabel.Location = new System.Drawing.Point(397, 744);
+            this.charismaLabel.Location = new System.Drawing.Point(91, 241);
             this.charismaLabel.Name = "charismaLabel";
             this.charismaLabel.Size = new System.Drawing.Size(0, 32);
             this.charismaLabel.TabIndex = 51;
@@ -1038,7 +1039,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(337, 744);
+            this.label2.Location = new System.Drawing.Point(23, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 67;
@@ -1048,7 +1049,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(337, 705);
+            this.label3.Location = new System.Drawing.Point(25, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 32);
             this.label3.TabIndex = 66;
@@ -1058,7 +1059,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(337, 628);
+            this.label4.Location = new System.Drawing.Point(25, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 32);
             this.label4.TabIndex = 65;
@@ -1068,7 +1069,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(337, 589);
+            this.label5.Location = new System.Drawing.Point(23, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 32);
             this.label5.TabIndex = 63;
@@ -1078,17 +1079,18 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(337, 667);
+            this.label6.Location = new System.Drawing.Point(23, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 64;
             this.label6.Text = "INT";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(337, 551);
+            this.label7.Location = new System.Drawing.Point(23, 43);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 32);
             this.label7.TabIndex = 62;
@@ -1098,7 +1100,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.name.Location = new System.Drawing.Point(475, 503);
+            this.name.Location = new System.Drawing.Point(182, 47);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(73, 28);
             this.name.TabIndex = 68;
@@ -1108,7 +1110,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(475, 531);
+            this.label8.Location = new System.Drawing.Point(182, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 28);
             this.label8.TabIndex = 69;
@@ -1116,7 +1118,7 @@
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.Location = new System.Drawing.Point(478, 563);
+            this.descriptionLabel.Location = new System.Drawing.Point(153, 114);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionLabel.Multiline = true;
             this.descriptionLabel.Name = "descriptionLabel";
@@ -1135,16 +1137,31 @@
             this.label9.Text = "CON";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // richTextBox1
+            // groupBox2
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.richTextBox1.Location = new System.Drawing.Point(323, 457);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(393, 337);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "Entity details";
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.descriptionLabel);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.name);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.nameLabel);
+            this.groupBox2.Controls.Add(this.strengthLabel);
+            this.groupBox2.Controls.Add(this.dexterityLabel);
+            this.groupBox2.Controls.Add(this.charismaLabel);
+            this.groupBox2.Controls.Add(this.constitutionLabel);
+            this.groupBox2.Controls.Add(this.wisdomLabel);
+            this.groupBox2.Controls.Add(this.intelligenceLabel);
+            this.groupBox2.Location = new System.Drawing.Point(327, 152);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(393, 642);
+            this.groupBox2.TabIndex = 72;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Entity Description";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // mainGUI
             // 
@@ -1153,16 +1170,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
             this.ClientSize = new System.Drawing.Size(1311, 855);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.descriptionLabel);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.name);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.CHA);
             this.Controls.Add(this.WIS);
             this.Controls.Add(this.DEX);
@@ -1173,13 +1182,6 @@
             this.Controls.Add(this.loadCreatureButton);
             this.Controls.Add(this.saveCreatureButton);
             this.Controls.Add(this.addCreatureButton);
-            this.Controls.Add(this.charismaLabel);
-            this.Controls.Add(this.wisdomLabel);
-            this.Controls.Add(this.intelligenceLabel);
-            this.Controls.Add(this.constitutionLabel);
-            this.Controls.Add(this.dexterityLabel);
-            this.Controls.Add(this.strengthLabel);
-            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.creatureListBox);
             this.Controls.Add(this.charismaNumericUpDown);
             this.Controls.Add(this.wisdomNumericUpDown);
@@ -1213,7 +1215,6 @@
             this.Controls.Add(this.round6);
             this.Controls.Add(this.round5);
             this.Controls.Add(this.round4);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.nextRound);
             this.Controls.Add(this.prevRound);
@@ -1233,6 +1234,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1321,6 +1324,6 @@
         private Label label8;
         private TextBox descriptionLabel;
         private Label label9;
-        private RichTextBox richTextBox1;
+        private GroupBox groupBox2;
     }
 }
