@@ -175,7 +175,7 @@
             this.prevRound.Location = new System.Drawing.Point(31, 48);
             this.prevRound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.prevRound.Name = "prevRound";
-            this.prevRound.Size = new System.Drawing.Size(59, 63);
+            this.prevRound.Size = new System.Drawing.Size(63, 63);
             this.prevRound.TabIndex = 3;
             this.prevRound.Text = "Previous Round";
             this.prevRound.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.nextRound.Location = new System.Drawing.Point(971, 48);
             this.nextRound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nextRound.Name = "nextRound";
-            this.nextRound.Size = new System.Drawing.Size(59, 63);
+            this.nextRound.Size = new System.Drawing.Size(63, 63);
             this.nextRound.TabIndex = 4;
             this.nextRound.Text = "Next Round";
             this.nextRound.UseVisualStyleBackColor = false;
