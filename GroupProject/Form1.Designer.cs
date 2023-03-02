@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.prevRound = new System.Windows.Forms.Button();
             this.nextRound = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.settingsGroupBox = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -70,7 +68,6 @@
             this.round14 = new System.Windows.Forms.Button();
             this.round13 = new System.Windows.Forms.Button();
             this.round25 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.strengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -110,7 +107,11 @@
             this.descriptionLabel = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.entityListGroupBox = new System.Windows.Forms.GroupBox();
+            this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
+            this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
+            this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
+            this.settingsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).BeginInit();
@@ -118,6 +119,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.entityListGroupBox.SuspendLayout();
+            this.addEntityGroupBox.SuspendLayout();
+            this.diceRollerGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -133,39 +137,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Items.AddRange(new object[] {
-            "Enemies"});
-            this.listBox1.Location = new System.Drawing.Point(31, 151);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(274, 644);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // listBox2
-            // 
-            this.listBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.listBox2.ForeColor = System.Drawing.Color.White;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.HorizontalScrollbar = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Items.AddRange(new object[] {
-            "Players"});
-            this.listBox2.Location = new System.Drawing.Point(741, 151);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(166, 284);
-            this.listBox2.Sorted = true;
-            this.listBox2.TabIndex = 2;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // prevRound
             // 
@@ -210,29 +181,29 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // settingsGroupBox
             // 
-            this.groupBox1.Controls.Add(this.button14);
-            this.groupBox1.Controls.Add(this.button13);
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.button11);
-            this.groupBox1.Controls.Add(this.button10);
-            this.groupBox1.Controls.Add(this.button9);
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(920, 151);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(290, 285);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.settingsGroupBox.Controls.Add(this.button14);
+            this.settingsGroupBox.Controls.Add(this.button13);
+            this.settingsGroupBox.Controls.Add(this.button12);
+            this.settingsGroupBox.Controls.Add(this.button11);
+            this.settingsGroupBox.Controls.Add(this.button10);
+            this.settingsGroupBox.Controls.Add(this.button9);
+            this.settingsGroupBox.Controls.Add(this.button8);
+            this.settingsGroupBox.Controls.Add(this.button7);
+            this.settingsGroupBox.Controls.Add(this.button6);
+            this.settingsGroupBox.Controls.Add(this.button5);
+            this.settingsGroupBox.Controls.Add(this.button1);
+            this.settingsGroupBox.Controls.Add(this.button4);
+            this.settingsGroupBox.Location = new System.Drawing.Point(920, 151);
+            this.settingsGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.settingsGroupBox.Name = "settingsGroupBox";
+            this.settingsGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.settingsGroupBox.Size = new System.Drawing.Size(290, 285);
+            this.settingsGroupBox.TabIndex = 6;
+            this.settingsGroupBox.TabStop = false;
+            this.settingsGroupBox.Text = "Settings";
+            this.settingsGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button14
             // 
@@ -699,20 +670,9 @@
             this.round25.UseVisualStyleBackColor = false;
             this.round25.Click += new System.EventHandler(this.round25_Click);
             // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.richTextBox2.Location = new System.Drawing.Point(741, 457);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox2.Size = new System.Drawing.Size(469, 337);
-            this.richTextBox2.TabIndex = 35;
-            this.richTextBox2.Text = "";
-            // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(761, 479);
+            this.nameTextBox.Location = new System.Drawing.Point(21, 22);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.PlaceholderText = "Name";
@@ -721,18 +681,19 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(761, 533);
+            this.descriptionTextBox.Location = new System.Drawing.Point(21, 76);
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.PlaceholderText = "Description";
+            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTextBox.Size = new System.Drawing.Size(175, 241);
             this.descriptionTextBox.TabIndex = 37;
             this.descriptionTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // strengthNumericUpDown
             // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(1007, 538);
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(267, 81);
             this.strengthNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.strengthNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -751,7 +712,7 @@
             // 
             // dexterityNumericUpDown
             // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(1007, 578);
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(267, 121);
             this.dexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -770,7 +731,7 @@
             // 
             // constitutionNumericUpDown
             // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(1007, 618);
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(267, 161);
             this.constitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -788,7 +749,7 @@
             // 
             // charismaNumericUpDown
             // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(1007, 738);
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(267, 281);
             this.charismaNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.charismaNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -806,7 +767,7 @@
             // 
             // wisdomNumericUpDown
             // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(1007, 698);
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(267, 241);
             this.wisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -824,7 +785,7 @@
             // 
             // intelligenceNumericUpDown
             // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(1007, 658);
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(267, 201);
             this.intelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -844,10 +805,10 @@
             // 
             this.creatureListBox.FormattingEnabled = true;
             this.creatureListBox.ItemHeight = 20;
-            this.creatureListBox.Location = new System.Drawing.Point(51, 195);
+            this.creatureListBox.Location = new System.Drawing.Point(20, 80);
             this.creatureListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.creatureListBox.Name = "creatureListBox";
-            this.creatureListBox.Size = new System.Drawing.Size(233, 564);
+            this.creatureListBox.Size = new System.Drawing.Size(233, 544);
             this.creatureListBox.TabIndex = 44;
             // 
             // nameLabel
@@ -863,7 +824,7 @@
             // 
             this.strengthLabel.AutoSize = true;
             this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.strengthLabel.Location = new System.Drawing.Point(87, 50);
+            this.strengthLabel.Location = new System.Drawing.Point(90, 40);
             this.strengthLabel.Name = "strengthLabel";
             this.strengthLabel.Size = new System.Drawing.Size(0, 32);
             this.strengthLabel.TabIndex = 46;
@@ -872,7 +833,7 @@
             // 
             this.dexterityLabel.AutoSize = true;
             this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dexterityLabel.Location = new System.Drawing.Point(97, 87);
+            this.dexterityLabel.Location = new System.Drawing.Point(90, 80);
             this.dexterityLabel.Name = "dexterityLabel";
             this.dexterityLabel.Size = new System.Drawing.Size(0, 32);
             this.dexterityLabel.TabIndex = 47;
@@ -881,7 +842,7 @@
             // 
             this.constitutionLabel.AutoSize = true;
             this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.constitutionLabel.Location = new System.Drawing.Point(91, 125);
+            this.constitutionLabel.Location = new System.Drawing.Point(90, 120);
             this.constitutionLabel.Name = "constitutionLabel";
             this.constitutionLabel.Size = new System.Drawing.Size(0, 32);
             this.constitutionLabel.TabIndex = 48;
@@ -890,7 +851,7 @@
             // 
             this.intelligenceLabel.AutoSize = true;
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.intelligenceLabel.Location = new System.Drawing.Point(87, 161);
+            this.intelligenceLabel.Location = new System.Drawing.Point(90, 160);
             this.intelligenceLabel.Name = "intelligenceLabel";
             this.intelligenceLabel.Size = new System.Drawing.Size(0, 32);
             this.intelligenceLabel.TabIndex = 49;
@@ -899,7 +860,7 @@
             // 
             this.wisdomLabel.AutoSize = true;
             this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.wisdomLabel.Location = new System.Drawing.Point(91, 194);
+            this.wisdomLabel.Location = new System.Drawing.Point(90, 200);
             this.wisdomLabel.Name = "wisdomLabel";
             this.wisdomLabel.Size = new System.Drawing.Size(0, 32);
             this.wisdomLabel.TabIndex = 50;
@@ -908,7 +869,7 @@
             // 
             this.charismaLabel.AutoSize = true;
             this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.charismaLabel.Location = new System.Drawing.Point(91, 241);
+            this.charismaLabel.Location = new System.Drawing.Point(90, 240);
             this.charismaLabel.Name = "charismaLabel";
             this.charismaLabel.Size = new System.Drawing.Size(0, 32);
             this.charismaLabel.TabIndex = 51;
@@ -917,7 +878,7 @@
             // 
             this.addCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.addCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCreatureButton.Location = new System.Drawing.Point(1073, 479);
+            this.addCreatureButton.Location = new System.Drawing.Point(333, 22);
             this.addCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addCreatureButton.Name = "addCreatureButton";
             this.addCreatureButton.Size = new System.Drawing.Size(114, 31);
@@ -930,7 +891,7 @@
             // 
             this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveCreatureButton.Location = new System.Drawing.Point(1073, 705);
+            this.saveCreatureButton.Location = new System.Drawing.Point(333, 248);
             this.saveCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveCreatureButton.Name = "saveCreatureButton";
             this.saveCreatureButton.Size = new System.Drawing.Size(114, 31);
@@ -943,7 +904,7 @@
             // 
             this.loadCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadCreatureButton.Location = new System.Drawing.Point(1073, 517);
+            this.loadCreatureButton.Location = new System.Drawing.Point(139, 28);
             this.loadCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loadCreatureButton.Name = "loadCreatureButton";
             this.loadCreatureButton.Size = new System.Drawing.Size(114, 31);
@@ -965,7 +926,7 @@
             // 
             this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadCreatureListButton.Location = new System.Drawing.Point(1073, 744);
+            this.loadCreatureListButton.Location = new System.Drawing.Point(333, 287);
             this.loadCreatureListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loadCreatureListButton.Name = "loadCreatureListButton";
             this.loadCreatureListButton.Size = new System.Drawing.Size(114, 31);
@@ -978,7 +939,7 @@
             // 
             this.STR.AutoSize = true;
             this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STR.Location = new System.Drawing.Point(944, 533);
+            this.STR.Location = new System.Drawing.Point(204, 76);
             this.STR.Name = "STR";
             this.STR.Size = new System.Drawing.Size(57, 32);
             this.STR.TabIndex = 57;
@@ -988,7 +949,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(940, 533);
+            this.label1.Location = new System.Drawing.Point(200, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 32);
             this.label1.TabIndex = 57;
@@ -998,7 +959,7 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(940, 653);
+            this.INT.Location = new System.Drawing.Point(200, 196);
             this.INT.Name = "INT";
             this.INT.Size = new System.Drawing.Size(55, 32);
             this.INT.TabIndex = 58;
@@ -1009,7 +970,7 @@
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(940, 573);
+            this.DEX.Location = new System.Drawing.Point(200, 116);
             this.DEX.Name = "DEX";
             this.DEX.Size = new System.Drawing.Size(61, 32);
             this.DEX.TabIndex = 58;
@@ -1019,7 +980,7 @@
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(940, 693);
+            this.WIS.Location = new System.Drawing.Point(200, 236);
             this.WIS.Name = "WIS";
             this.WIS.Size = new System.Drawing.Size(59, 32);
             this.WIS.TabIndex = 60;
@@ -1029,7 +990,7 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(940, 733);
+            this.CHA.Location = new System.Drawing.Point(200, 276);
             this.CHA.Name = "CHA";
             this.CHA.Size = new System.Drawing.Size(64, 32);
             this.CHA.TabIndex = 61;
@@ -1039,7 +1000,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(23, 228);
+            this.label2.Location = new System.Drawing.Point(23, 240);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 67;
@@ -1049,7 +1010,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(25, 183);
+            this.label3.Location = new System.Drawing.Point(23, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 32);
             this.label3.TabIndex = 66;
@@ -1059,7 +1020,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(25, 114);
+            this.label4.Location = new System.Drawing.Point(23, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 32);
             this.label4.TabIndex = 65;
@@ -1069,7 +1030,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(23, 82);
+            this.label5.Location = new System.Drawing.Point(23, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 32);
             this.label5.TabIndex = 63;
@@ -1079,7 +1040,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(23, 151);
+            this.label6.Location = new System.Drawing.Point(23, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 64;
@@ -1090,7 +1051,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(23, 43);
+            this.label7.Location = new System.Drawing.Point(23, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 32);
             this.label7.TabIndex = 62;
@@ -1130,7 +1091,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(942, 613);
+            this.label9.Location = new System.Drawing.Point(202, 156);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 32);
             this.label9.TabIndex = 71;
@@ -1163,6 +1124,62 @@
             this.groupBox2.Text = "Entity Description";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // entityListGroupBox
+            // 
+            this.entityListGroupBox.Controls.Add(this.creatureListBox);
+            this.entityListGroupBox.Controls.Add(this.loadCreatureButton);
+            this.entityListGroupBox.Location = new System.Drawing.Point(31, 152);
+            this.entityListGroupBox.Name = "entityListGroupBox";
+            this.entityListGroupBox.Size = new System.Drawing.Size(274, 644);
+            this.entityListGroupBox.TabIndex = 73;
+            this.entityListGroupBox.TabStop = false;
+            this.entityListGroupBox.Text = "Entity List";
+            // 
+            // addEntityGroupBox
+            // 
+            this.addEntityGroupBox.Controls.Add(this.descriptionTextBox);
+            this.addEntityGroupBox.Controls.Add(this.nameTextBox);
+            this.addEntityGroupBox.Controls.Add(this.strengthNumericUpDown);
+            this.addEntityGroupBox.Controls.Add(this.label9);
+            this.addEntityGroupBox.Controls.Add(this.dexterityNumericUpDown);
+            this.addEntityGroupBox.Controls.Add(this.CHA);
+            this.addEntityGroupBox.Controls.Add(this.constitutionNumericUpDown);
+            this.addEntityGroupBox.Controls.Add(this.WIS);
+            this.addEntityGroupBox.Controls.Add(this.intelligenceNumericUpDown);
+            this.addEntityGroupBox.Controls.Add(this.DEX);
+            this.addEntityGroupBox.Controls.Add(this.wisdomNumericUpDown);
+            this.addEntityGroupBox.Controls.Add(this.INT);
+            this.addEntityGroupBox.Controls.Add(this.charismaNumericUpDown);
+            this.addEntityGroupBox.Controls.Add(this.label1);
+            this.addEntityGroupBox.Controls.Add(this.addCreatureButton);
+            this.addEntityGroupBox.Controls.Add(this.STR);
+            this.addEntityGroupBox.Controls.Add(this.saveCreatureButton);
+            this.addEntityGroupBox.Controls.Add(this.loadCreatureListButton);
+            this.addEntityGroupBox.Location = new System.Drawing.Point(741, 459);
+            this.addEntityGroupBox.Name = "addEntityGroupBox";
+            this.addEntityGroupBox.Size = new System.Drawing.Size(469, 337);
+            this.addEntityGroupBox.TabIndex = 74;
+            this.addEntityGroupBox.TabStop = false;
+            this.addEntityGroupBox.Text = "Add Entity";
+            // 
+            // diceRollerGroupBox
+            // 
+            this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
+            this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
+            this.diceRollerGroupBox.Name = "diceRollerGroupBox";
+            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 284);
+            this.diceRollerGroupBox.TabIndex = 75;
+            this.diceRollerGroupBox.TabStop = false;
+            this.diceRollerGroupBox.Text = "Dice Roller";
+            // 
+            // diceRollerTextBox
+            // 
+            this.diceRollerTextBox.Location = new System.Drawing.Point(21, 30);
+            this.diceRollerTextBox.Name = "diceRollerTextBox";
+            this.diceRollerTextBox.Size = new System.Drawing.Size(125, 230);
+            this.diceRollerTextBox.TabIndex = 0;
+            this.diceRollerTextBox.Text = "";
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1170,28 +1187,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
             this.ClientSize = new System.Drawing.Size(1311, 855);
+            this.Controls.Add(this.diceRollerGroupBox);
+            this.Controls.Add(this.addEntityGroupBox);
+            this.Controls.Add(this.entityListGroupBox);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.CHA);
-            this.Controls.Add(this.WIS);
-            this.Controls.Add(this.DEX);
-            this.Controls.Add(this.INT);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.STR);
-            this.Controls.Add(this.loadCreatureListButton);
-            this.Controls.Add(this.loadCreatureButton);
-            this.Controls.Add(this.saveCreatureButton);
-            this.Controls.Add(this.addCreatureButton);
-            this.Controls.Add(this.creatureListBox);
-            this.Controls.Add(this.charismaNumericUpDown);
-            this.Controls.Add(this.wisdomNumericUpDown);
-            this.Controls.Add(this.intelligenceNumericUpDown);
-            this.Controls.Add(this.constitutionNumericUpDown);
-            this.Controls.Add(this.dexterityNumericUpDown);
-            this.Controls.Add(this.strengthNumericUpDown);
-            this.Controls.Add(this.descriptionTextBox);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.round1);
             this.Controls.Add(this.round25);
             this.Controls.Add(this.round24);
@@ -1215,11 +1214,9 @@
             this.Controls.Add(this.round6);
             this.Controls.Add(this.round5);
             this.Controls.Add(this.round4);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.settingsGroupBox);
             this.Controls.Add(this.nextRound);
             this.Controls.Add(this.prevRound);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.round3);
             this.Controls.Add(this.round2);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -1227,7 +1224,7 @@
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
             this.Load += new System.EventHandler(this.mainGUI_Load);
-            this.groupBox1.ResumeLayout(false);
+            this.settingsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).EndInit();
@@ -1236,20 +1233,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.entityListGroupBox.ResumeLayout(false);
+            this.addEntityGroupBox.ResumeLayout(false);
+            this.addEntityGroupBox.PerformLayout();
+            this.diceRollerGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Button button1;
-        private ListBox listBox1;
-        private ListBox listBox2;
         private Button prevRound;
         private Button nextRound;
         private Button button4;
-        private GroupBox groupBox1;
+        private GroupBox settingsGroupBox;
         private Button button5;
         private Button button14;
         private Button button13;
@@ -1285,7 +1283,6 @@
         private Button round14;
         private Button round13;
         private Button round25;
-        private RichTextBox richTextBox2;
         private TextBox nameTextBox;
         private TextBox descriptionTextBox;
         private NumericUpDown strengthNumericUpDown;
@@ -1325,5 +1322,9 @@
         private TextBox descriptionLabel;
         private Label label9;
         private GroupBox groupBox2;
+        private GroupBox entityListGroupBox;
+        private GroupBox addEntityGroupBox;
+        private GroupBox diceRollerGroupBox;
+        private RichTextBox diceRollerTextBox;
     }
 }
