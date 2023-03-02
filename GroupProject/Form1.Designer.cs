@@ -32,7 +32,7 @@
             this.prevRound = new System.Windows.Forms.Button();
             this.nextRound = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.settingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.menuGroupBox = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -111,7 +111,7 @@
             this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
-            this.settingsGroupBox.SuspendLayout();
+            this.menuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).BeginInit();
@@ -134,7 +134,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 31);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = " Copy M";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -178,32 +178,32 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(86, 31);
             this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
+            this.button4.Text = "Del M";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // settingsGroupBox
+            // menuGroupBox
             // 
-            this.settingsGroupBox.Controls.Add(this.button14);
-            this.settingsGroupBox.Controls.Add(this.button13);
-            this.settingsGroupBox.Controls.Add(this.button12);
-            this.settingsGroupBox.Controls.Add(this.button11);
-            this.settingsGroupBox.Controls.Add(this.button10);
-            this.settingsGroupBox.Controls.Add(this.button9);
-            this.settingsGroupBox.Controls.Add(this.button8);
-            this.settingsGroupBox.Controls.Add(this.button7);
-            this.settingsGroupBox.Controls.Add(this.button6);
-            this.settingsGroupBox.Controls.Add(this.button5);
-            this.settingsGroupBox.Controls.Add(this.button1);
-            this.settingsGroupBox.Controls.Add(this.button4);
-            this.settingsGroupBox.Location = new System.Drawing.Point(920, 151);
-            this.settingsGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.settingsGroupBox.Name = "settingsGroupBox";
-            this.settingsGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.settingsGroupBox.Size = new System.Drawing.Size(290, 285);
-            this.settingsGroupBox.TabIndex = 6;
-            this.settingsGroupBox.TabStop = false;
-            this.settingsGroupBox.Text = "Settings";
-            this.settingsGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.menuGroupBox.Controls.Add(this.button14);
+            this.menuGroupBox.Controls.Add(this.button13);
+            this.menuGroupBox.Controls.Add(this.button12);
+            this.menuGroupBox.Controls.Add(this.button11);
+            this.menuGroupBox.Controls.Add(this.button10);
+            this.menuGroupBox.Controls.Add(this.button9);
+            this.menuGroupBox.Controls.Add(this.button8);
+            this.menuGroupBox.Controls.Add(this.button7);
+            this.menuGroupBox.Controls.Add(this.button6);
+            this.menuGroupBox.Controls.Add(this.button5);
+            this.menuGroupBox.Controls.Add(this.button1);
+            this.menuGroupBox.Controls.Add(this.button4);
+            this.menuGroupBox.Location = new System.Drawing.Point(920, 151);
+            this.menuGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.menuGroupBox.Name = "menuGroupBox";
+            this.menuGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.menuGroupBox.Size = new System.Drawing.Size(290, 285);
+            this.menuGroupBox.TabIndex = 6;
+            this.menuGroupBox.TabStop = false;
+            this.menuGroupBox.Text = "Menu";
+            this.menuGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button14
             // 
@@ -241,7 +241,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(86, 31);
             this.button12.TabIndex = 13;
-            this.button12.Text = "button12";
+            this.button12.Text = "Settings";
             this.button12.UseVisualStyleBackColor = false;
             // 
             // button11
@@ -808,7 +808,7 @@
             this.creatureListBox.Location = new System.Drawing.Point(20, 80);
             this.creatureListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.creatureListBox.Name = "creatureListBox";
-            this.creatureListBox.Size = new System.Drawing.Size(233, 544);
+            this.creatureListBox.Size = new System.Drawing.Size(233, 504);
             this.creatureListBox.TabIndex = 44;
             // 
             // nameLabel
@@ -1214,7 +1214,7 @@
             this.Controls.Add(this.round6);
             this.Controls.Add(this.round5);
             this.Controls.Add(this.round4);
-            this.Controls.Add(this.settingsGroupBox);
+            this.Controls.Add(this.menuGroupBox);
             this.Controls.Add(this.nextRound);
             this.Controls.Add(this.prevRound);
             this.Controls.Add(this.round3);
@@ -1224,7 +1224,7 @@
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
             this.Load += new System.EventHandler(this.mainGUI_Load);
-            this.settingsGroupBox.ResumeLayout(false);
+            this.menuGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).EndInit();
@@ -1247,7 +1247,7 @@
         private Button prevRound;
         private Button nextRound;
         private Button button4;
-        private GroupBox settingsGroupBox;
+        private GroupBox menuGroupBox;
         private Button button5;
         private Button button14;
         private Button button13;
