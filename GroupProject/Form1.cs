@@ -71,6 +71,19 @@ namespace GroupProject
             }
         }
 
+        // Function that will remove a creature from the creature list when the "removeCreatureButton" button is clicked
+        private void removeCreatureButton_Click(object sender, EventArgs e)
+        {
+            Creature creature = creatureListBox.SelectedItem as Creature;
+
+            if (creature != null)
+            {
+                creatureList.Remove(creature);
+                creatureListBox.DataSource = null;
+                creatureListBox.DataSource = creatureList;
+            }
+        }
+
         // Function that saves the current encounter to a file with the file extension .enc
         private void saveCreatureButton_Click(object sender, EventArgs e)
         {
