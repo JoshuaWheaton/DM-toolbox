@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Joshua W\\.nuget\\packages\\": {}
+    "C:\\Users\\Bones\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joshua W\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
+      "projectUniqueName": "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
       "projectName": "GroupProject",
-      "projectPath": "C:\\Users\\Joshua W\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
-      "packagesPath": "C:\\Users\\Joshua W\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joshua W\\source\\repos\\DM-toolbox\\GroupProject\\obj\\",
+      "projectPath": "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\GroupProject.csproj",
+      "packagesPath": "C:\\Users\\Bones\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bones\\source\\repos\\DM-toolbox\\GroupProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Joshua W\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bones\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
