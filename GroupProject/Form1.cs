@@ -50,11 +50,71 @@ namespace GroupProject
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
         }
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            //removeCreatureButton_Click(sender, e);
+            //addCreatureButton_Click(sender, e);
+            // Get the selected creature
+            Creature selectedCreature = creatureListBox.SelectedItem as Creature;
+            if (selectedCreature == null)
+            {
+                return; // No creature selected
+            }
+
+            // Update the selected creature with the new data
+            selectedCreature.Name = nameTextBox.Text;
+            selectedCreature.Description = descriptionTextBox.Text;
+            selectedCreature.Strength = (int)strengthNumericUpDown.Value;
+            selectedCreature.Dexterity = (int)dexterityNumericUpDown.Value;
+            selectedCreature.Constitution = (int)constitutionNumericUpDown.Value;
+            selectedCreature.Intelligence = (int)intelligenceNumericUpDown.Value;
+            selectedCreature.Wisdom = (int)wisdomNumericUpDown.Value;
+            selectedCreature.Charisma = (int)charismaNumericUpDown.Value;
+
+            // Clear the form for the next creature
+            nameTextBox.Clear();
+            descriptionTextBox.Clear();
+            strengthNumericUpDown.Value = 10;
+            dexterityNumericUpDown.Value = 10;
+            constitutionNumericUpDown.Value = 10;
+            intelligenceNumericUpDown.Value = 10;
+            wisdomNumericUpDown.Value = 10;
+            charismaNumericUpDown.Value = 10;
+
+            // Refresh the ListBox with the updated data
+            creatureListBox.DataSource = null;
+            creatureListBox.DataSource = creatureList;
+        }
+
+        private void creatureListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected creature
+            Creature selectedCreature = creatureListBox.SelectedItem as Creature;
+            if (selectedCreature == null)
+            {
+                return; // No creature selected
+            }
+
+            // Load the selected creature's data into the form
+            loadEntity(selectedCreature);
+        }
+
+        private void loadEntity(Creature creature)
+        {
+            nameLabel.Text = creature.Name;
+            descriptionLabel.Text = creature.Description;
+            strengthLabel.Text = creature.Strength.ToString();
+            dexterityLabel.Text = creature.Dexterity.ToString();
+            constitutionLabel.Text = creature.Constitution.ToString();
+            intelligenceLabel.Text = creature.Intelligence.ToString();
+            wisdomLabel.Text = creature.Wisdom.ToString();
+            charismaLabel.Text = creature.Charisma.ToString();
+        }
 
         // Function that will display the stats of a creature when the "Load Enity" button is clicked
         private void loadCreatureButton_Click(object sender, EventArgs e)
         {
-            // Get the selected creature from the list
+            /*// Get the selected creature from the list
             Creature creature = creatureListBox.SelectedItem as Creature;
 
             // Display the creature's name, description, and stats in the form
@@ -68,7 +128,7 @@ namespace GroupProject
                 intelligenceLabel.Text = creature.Intelligence.ToString();
                 wisdomLabel.Text = creature.Wisdom.ToString();
                 charismaLabel.Text = creature.Charisma.ToString();
-            }
+            }*/
         }
 
         // Function that will remove a creature from the creature list when the "removeCreatureButton" button is clicked

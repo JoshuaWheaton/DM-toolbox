@@ -51,3 +51,21 @@ C:\Users\Bones\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\Gro
 C:\Users\Bones\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.mainGUI.resources
 C:\Users\Joshua W\source\repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.mainGUI.resources
 C:\Users\Joshua W\source\repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.Properties.Resources.resources
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.exe
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.deps.json
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.runtimeconfig.json
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.dll
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\bin\Debug\net6.0-windows\GroupProject.pdb
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.AssemblyReference.cache
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.mainGUI.resources
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.Properties.Resources.resources
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.GenerateResource.cache
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.AssemblyInfoInputs.cache
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.AssemblyInfo.cs
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.dll
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\refint\GroupProject.dll
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.pdb
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\GroupProject.genruntimeconfig.cache
+C:\Users\aaron\Source\Repos\DM-toolbox\GroupProject\obj\Debug\net6.0-windows\ref\GroupProject.dll
