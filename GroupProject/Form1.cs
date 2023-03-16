@@ -31,7 +31,8 @@ namespace GroupProject
             int intelligence = (int)intelligenceNumericUpDown.Value;
             int wisdom = (int)wisdomNumericUpDown.Value;
             int charisma = (int)charismaNumericUpDown.Value;
-            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            int initiative = (int)initiativeUpDown.Value;
+            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative);
 
             // Add the creature to the list
             creatureList.Add(creature);
@@ -45,31 +46,21 @@ namespace GroupProject
             intelligenceNumericUpDown.Value = 10;
             wisdomNumericUpDown.Value = 10;
             charismaNumericUpDown.Value = 10;
+            initiativeUpDown.Value = 0;
 
             // Display the newly added creature to the list on the left for clear input feedback
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
         }
 
-        // Function that will display the stats of a creature when the "Load Enity" button is clicked
+        // Function that will sort the creature list by initiative
         private void loadCreatureButton_Click(object sender, EventArgs e)
         {
-            // Get the selected creature from the list
-            Creature creature = creatureListBox.SelectedItem as Creature;
 
-            // Display the creature's name, description, and stats in the form
-            if (creature != null)
-            {
-                nameLabel.Text = creature.Name;
-                descriptionLabel.Text = creature.Description;
-                strengthLabel.Text = creature.Strength.ToString();
-                dexterityLabel.Text = creature.Dexterity.ToString();
-                constitutionLabel.Text = creature.Constitution.ToString();
-                intelligenceLabel.Text = creature.Intelligence.ToString();
-                wisdomLabel.Text = creature.Wisdom.ToString();
-                charismaLabel.Text = creature.Charisma.ToString();
-            }
+            creatureList = creatureList.OrderByDescending(o => o.Initiative).ToList();
+            creatureListBox.DataSource = creatureList;
         }
+
 
         // Function that will remove a creature from the creature list when the "removeCreatureButton" button is clicked
         private void removeCreatureButton_Click(object sender, EventArgs e)
@@ -141,9 +132,10 @@ namespace GroupProject
             public int Intelligence { get; set; }
             public int Wisdom { get; set; }
             public int Charisma { get; set; }
-            
+            public int Initiative { get; set; }
+
             // Constructor, Takes 8 args, Creature Name, Description, and Stats
-            public Creature(string name, string description, int strength, int dexterity, int constitution,int intelligence, int wisdom, int charisma)
+            public Creature(string name, string description, int strength, int dexterity, int constitution,int intelligence, int wisdom, int charisma, int initiative)
             {
                 Name = name;
                 Description = description;
@@ -153,11 +145,12 @@ namespace GroupProject
                 Intelligence = intelligence;
                 Wisdom = wisdom;
                 Charisma = charisma;
+                Initiative = initiative;
             }
 
             public string Serialize()
             {
-                return $"{Name}|{Description}|{Strength}|{Dexterity}|{Constitution}|{Intelligence}|{Wisdom}|{Charisma}";
+                return $"{Name}|{Description}|{Strength}|{Dexterity}|{Constitution}|{Intelligence}|{Wisdom}|{Charisma}|{Initiative}";
             }
 
             public static Creature Deserialize(string serializedString)
@@ -173,13 +166,15 @@ namespace GroupProject
                     int intelligence = 10;
                     int wisdom = 10;
                     int charisma = 10;
+                    int initiative = 10;
                     int.TryParse(parts[2], out strength);
                     int.TryParse(parts[3], out dexterity);
                     int.TryParse(parts[4], out constitution);
                     int.TryParse(parts[5], out intelligence);
                     int.TryParse(parts[6], out wisdom);
                     int.TryParse(parts[7], out charisma);
-                    return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+                    int.TryParse(parts[8], out initiative);
+                    return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative);
                 }
                 else
                 {
@@ -690,6 +685,7 @@ namespace GroupProject
                 intelligenceLabel.Text = creature.Intelligence.ToString();
                 wisdomLabel.Text = creature.Wisdom.ToString();
                 charismaLabel.Text = creature.Charisma.ToString();
+                initiativeLabel.Text = creature.Initiative.ToString();
             }
         }
     }

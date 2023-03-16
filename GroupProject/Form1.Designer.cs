@@ -111,12 +111,14 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.initiativeLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.entityListGroupBox = new System.Windows.Forms.GroupBox();
             this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
+            this.INIT = new System.Windows.Forms.Label();
+            this.initiativeUpDown = new System.Windows.Forms.NumericUpDown();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
             this.menuGroupBox.SuspendLayout();
@@ -129,6 +131,7 @@
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
             this.addEntityGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.initiativeUpDown)).BeginInit();
             this.diceRollerGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -702,7 +705,7 @@
             // 
             // strengthNumericUpDown
             // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(267, 81);
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(269, 34);
             this.strengthNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.strengthNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -721,7 +724,7 @@
             // 
             // dexterityNumericUpDown
             // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(267, 121);
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(269, 74);
             this.dexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -740,7 +743,7 @@
             // 
             // constitutionNumericUpDown
             // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(267, 161);
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(269, 114);
             this.constitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -758,7 +761,7 @@
             // 
             // charismaNumericUpDown
             // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(267, 281);
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(269, 234);
             this.charismaNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.charismaNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -776,7 +779,7 @@
             // 
             // wisdomNumericUpDown
             // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(267, 241);
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(269, 194);
             this.wisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -794,7 +797,7 @@
             // 
             // intelligenceNumericUpDown
             // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(267, 201);
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(269, 154);
             this.intelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -919,7 +922,7 @@
             this.loadCreatureButton.Name = "loadCreatureButton";
             this.loadCreatureButton.Size = new System.Drawing.Size(114, 31);
             this.loadCreatureButton.TabIndex = 55;
-            this.loadCreatureButton.Text = "Load Entity";
+            this.loadCreatureButton.Text = "Sort List";
             this.loadCreatureButton.UseVisualStyleBackColor = false;
             this.loadCreatureButton.Click += new System.EventHandler(this.loadCreatureButton_Click);
             // 
@@ -949,7 +952,7 @@
             // 
             this.STR.AutoSize = true;
             this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STR.Location = new System.Drawing.Point(203, 76);
+            this.STR.Location = new System.Drawing.Point(205, 29);
             this.STR.Name = "STR";
             this.STR.Size = new System.Drawing.Size(57, 32);
             this.STR.TabIndex = 57;
@@ -959,7 +962,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(200, 76);
+            this.label1.Location = new System.Drawing.Point(202, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 32);
             this.label1.TabIndex = 57;
@@ -969,7 +972,7 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(200, 196);
+            this.INT.Location = new System.Drawing.Point(202, 149);
             this.INT.Name = "INT";
             this.INT.Size = new System.Drawing.Size(55, 32);
             this.INT.TabIndex = 58;
@@ -980,7 +983,7 @@
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(200, 116);
+            this.DEX.Location = new System.Drawing.Point(202, 69);
             this.DEX.Name = "DEX";
             this.DEX.Size = new System.Drawing.Size(61, 32);
             this.DEX.TabIndex = 58;
@@ -990,7 +993,7 @@
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(200, 236);
+            this.WIS.Location = new System.Drawing.Point(202, 189);
             this.WIS.Name = "WIS";
             this.WIS.Size = new System.Drawing.Size(59, 32);
             this.WIS.TabIndex = 60;
@@ -1000,7 +1003,7 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(200, 276);
+            this.CHA.Location = new System.Drawing.Point(202, 229);
             this.CHA.Name = "CHA";
             this.CHA.Size = new System.Drawing.Size(64, 32);
             this.CHA.TabIndex = 61;
@@ -1101,7 +1104,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(202, 156);
+            this.label9.Location = new System.Drawing.Point(204, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 32);
             this.label9.TabIndex = 71;
@@ -1114,7 +1117,7 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.initiativeLabel);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
@@ -1182,15 +1185,15 @@
             this.label15.TabIndex = 75;
             this.label15.Text = "T.HP";
             // 
-            // label12
+            // initiativeLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(90, 320);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 32);
-            this.label12.TabIndex = 74;
-            this.label12.Text = "INIT#";
+            this.initiativeLabel.AutoSize = true;
+            this.initiativeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.initiativeLabel.Location = new System.Drawing.Point(90, 320);
+            this.initiativeLabel.Name = "initiativeLabel";
+            this.initiativeLabel.Size = new System.Drawing.Size(71, 32);
+            this.initiativeLabel.TabIndex = 74;
+            this.initiativeLabel.Text = "INIT#";
             // 
             // label13
             // 
@@ -1235,6 +1238,8 @@
             // 
             // addEntityGroupBox
             // 
+            this.addEntityGroupBox.Controls.Add(this.INIT);
+            this.addEntityGroupBox.Controls.Add(this.initiativeUpDown);
             this.addEntityGroupBox.Controls.Add(this.descriptionTextBox);
             this.addEntityGroupBox.Controls.Add(this.nameTextBox);
             this.addEntityGroupBox.Controls.Add(this.strengthNumericUpDown);
@@ -1259,6 +1264,34 @@
             this.addEntityGroupBox.TabIndex = 74;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
+            // 
+            // INIT
+            // 
+            this.INIT.AutoSize = true;
+            this.INIT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.INIT.Location = new System.Drawing.Point(202, 265);
+            this.INIT.Name = "INIT";
+            this.INIT.Size = new System.Drawing.Size(63, 32);
+            this.INIT.TabIndex = 73;
+            this.INIT.Text = "INIT";
+            // 
+            // initiativeUpDown
+            // 
+            this.initiativeUpDown.Location = new System.Drawing.Point(269, 270);
+            this.initiativeUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.initiativeUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.initiativeUpDown.Name = "initiativeUpDown";
+            this.initiativeUpDown.Size = new System.Drawing.Size(47, 27);
+            this.initiativeUpDown.TabIndex = 72;
+            this.initiativeUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // diceRollerGroupBox
             // 
@@ -1334,6 +1367,7 @@
             this.entityListGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.initiativeUpDown)).EndInit();
             this.diceRollerGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1428,9 +1462,11 @@
         private Label label17;
         private Label label14;
         private Label label15;
-        private Label label12;
+        private Label initiativeLabel;
         private Label label13;
         private Label label11;
         private Label label10;
+        private Label INIT;
+        private NumericUpDown initiativeUpDown;
     }
 }
