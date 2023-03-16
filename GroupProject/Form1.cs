@@ -672,5 +672,25 @@ namespace GroupProject
         {
 
         }
+
+        //Creature info box will update automatically when creature is selected
+        private void creatureListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected creature from the list
+            Creature creature = creatureListBox.SelectedItem as Creature;
+
+            // Display the creature's name, description, and stats in the form
+            if (creature != null)
+            {
+                nameLabel.Text = creature.Name;
+                descriptionLabel.Text = creature.Description;
+                strengthLabel.Text = creature.Strength.ToString();
+                dexterityLabel.Text = creature.Dexterity.ToString();
+                constitutionLabel.Text = creature.Constitution.ToString();
+                intelligenceLabel.Text = creature.Intelligence.ToString();
+                wisdomLabel.Text = creature.Wisdom.ToString();
+                charismaLabel.Text = creature.Charisma.ToString();
+            }
+        }
     }
 }
