@@ -247,6 +247,11 @@ namespace GroupProject
                 }
             }
 
+            public Creature make_copy()
+            {
+                return new Creature(this.Name, this.Description, this.Strength, this.Dexterity, this.Constitution, this.Intelligence, this.Wisdom, this.Charisma);
+            }
+
             public override string ToString()
             {
                 return Name;
@@ -257,7 +262,15 @@ namespace GroupProject
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if(creatureListBox.SelectedItem != null)
+            {
+                Creature creature = creatureListBox.SelectedItem as Creature;
+                Creature copy_creature = creature.make_copy();
+                copy_creature.Name= creature.Name + " copy";
+                creatureList.Add(copy_creature);
+                creatureListBox.DataSource = null;
+                creatureListBox.DataSource= creatureList;
+            }
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -731,6 +744,99 @@ namespace GroupProject
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Settings_button_Click(object sender, EventArgs e)
+        {
+            if (Settings_group_box.Visible == true)
+            {
+                Settings_group_box.Visible = false;
+                Color_choices.Visible = false;
+            }
+            else
+                Settings_group_box.Visible = true;
+        }
+
+        private void Change_Bcolor_Click(object sender, EventArgs e)
+        {
+            if(Color_choices.Visible == true)
+            {
+                Color_choices.Visible = false;
+            }
+            else
+                Color_choices.Visible = true;
+        }
+
+        private void Blue_color_Click(object sender, EventArgs e)
+        {
+            prevRound.BackColor = Blue_color.BackColor;
+            nextRound.BackColor = Blue_color.BackColor;
+            loadCreatureButton.BackColor = Blue_color.BackColor;
+            Copy_monster.BackColor = Blue_color.BackColor;
+            removeCreatureButton.BackColor = Blue_color.BackColor;
+            button5.BackColor = Blue_color.BackColor;
+            button6.BackColor = Blue_color.BackColor;
+            button7.BackColor = Blue_color.BackColor;
+            button8.BackColor = Blue_color.BackColor;
+            button9.BackColor = Blue_color.BackColor;
+            button10.BackColor = Blue_color.BackColor;
+            button11.BackColor = Blue_color.BackColor;
+            button13.BackColor = Blue_color.BackColor;
+            button14.BackColor = Blue_color.BackColor;
+            addCreatureButton.BackColor = Blue_color.BackColor;
+            editButton.BackColor = Blue_color.BackColor;
+            saveCreatureButton.BackColor = Blue_color.BackColor;
+            loadCreatureListButton.BackColor = Blue_color.BackColor;
+            Settings_button.BackColor = Blue_color.BackColor;
+            Change_Bcolor.BackColor = Blue_color.BackColor;
+        }
+
+        private void Green_color_Click(object sender, EventArgs e)
+        {
+            prevRound.BackColor = Green_color.BackColor;
+            nextRound.BackColor = Green_color.BackColor;
+            loadCreatureButton.BackColor = Green_color.BackColor;
+            Copy_monster.BackColor = Green_color.BackColor;
+            removeCreatureButton.BackColor = Green_color.BackColor;
+            button5.BackColor = Green_color.BackColor;
+            button6.BackColor = Green_color.BackColor;
+            button7.BackColor = Green_color.BackColor;
+            button8.BackColor = Green_color.BackColor;
+            button9.BackColor = Green_color.BackColor;
+            button10.BackColor = Green_color.BackColor;
+            button11.BackColor = Green_color.BackColor;
+            button13.BackColor = Green_color.BackColor;
+            button14.BackColor = Green_color.BackColor;
+            addCreatureButton.BackColor = Green_color.BackColor;
+            editButton.BackColor = Green_color.BackColor;
+            saveCreatureButton.BackColor = Green_color.BackColor;
+            loadCreatureListButton.BackColor = Green_color.BackColor;
+            Settings_button.BackColor = Green_color.BackColor;
+            Change_Bcolor.BackColor = Green_color.BackColor;
+        }
+
+        private void Red_color_Click(object sender, EventArgs e)
+        {
+            prevRound.BackColor = Red_color.BackColor;
+            nextRound.BackColor = Red_color.BackColor;
+            loadCreatureButton.BackColor = Red_color.BackColor;
+            Copy_monster.BackColor = Red_color.BackColor;
+            removeCreatureButton.BackColor = Red_color.BackColor;
+            button5.BackColor = Red_color.BackColor;
+            button6.BackColor = Red_color.BackColor;
+            button7.BackColor = Red_color.BackColor;
+            button8.BackColor = Red_color.BackColor;
+            button9.BackColor = Red_color.BackColor;
+            button10.BackColor = Red_color.BackColor;
+            button11.BackColor = Red_color.BackColor;
+            button13.BackColor = Red_color.BackColor;
+            button14.BackColor = Red_color.BackColor;
+            addCreatureButton.BackColor = Red_color.BackColor;
+            editButton.BackColor = Red_color.BackColor;
+            saveCreatureButton.BackColor = Red_color.BackColor;
+            loadCreatureListButton.BackColor = Red_color.BackColor;
+            Settings_button.BackColor = Red_color.BackColor;
+            Change_Bcolor.BackColor = Red_color.BackColor;
         }
     }
 }
