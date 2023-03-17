@@ -31,7 +31,8 @@ namespace GroupProject
             int intelligence = (int)intelligenceNumericUpDown.Value;
             int wisdom = (int)wisdomNumericUpDown.Value;
             int charisma = (int)charismaNumericUpDown.Value;
-            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            int initiative = (int)initiativeUpDown.Value;
+            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative);
 
             // Add the creature to the list
             creatureList.Add(creature);
@@ -45,91 +46,21 @@ namespace GroupProject
             intelligenceNumericUpDown.Value = 10;
             wisdomNumericUpDown.Value = 10;
             charismaNumericUpDown.Value = 10;
+            initiativeUpDown.Value = 0;
 
             // Display the newly added creature to the list on the left for clear input feedback
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
         }
-        private void editButton_Click(object sender, EventArgs e)
+
+        // Function that will sort the creature list by initiative
+        private void loadCreatureButton_Click(object sender, EventArgs e)
         {
-            //removeCreatureButton_Click(sender, e);
-            //addCreatureButton_Click(sender, e);
-            // Get the selected creature
-            Creature selectedCreature = creatureListBox.SelectedItem as Creature;
-            if (selectedCreature == null)
-            {
-                return; // No creature selected
-            }
 
-            // Update the selected creature with the new data
-            selectedCreature.Name = nameTextBox.Text;
-            selectedCreature.Description = descriptionTextBox.Text;
-            selectedCreature.Strength = (int)strengthNumericUpDown.Value;
-            selectedCreature.Dexterity = (int)dexterityNumericUpDown.Value;
-            selectedCreature.Constitution = (int)constitutionNumericUpDown.Value;
-            selectedCreature.Intelligence = (int)intelligenceNumericUpDown.Value;
-            selectedCreature.Wisdom = (int)wisdomNumericUpDown.Value;
-            selectedCreature.Charisma = (int)charismaNumericUpDown.Value;
-
-            // Clear the form for the next creature
-            nameTextBox.Clear();
-            descriptionTextBox.Clear();
-            strengthNumericUpDown.Value = 10;
-            dexterityNumericUpDown.Value = 10;
-            constitutionNumericUpDown.Value = 10;
-            intelligenceNumericUpDown.Value = 10;
-            wisdomNumericUpDown.Value = 10;
-            charismaNumericUpDown.Value = 10;
-
-            // Refresh the ListBox with the updated data
-            creatureListBox.DataSource = null;
+            creatureList = creatureList.OrderByDescending(o => o.Initiative).ToList();
             creatureListBox.DataSource = creatureList;
         }
 
-        private void creatureListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Get the selected creature
-            Creature selectedCreature = creatureListBox.SelectedItem as Creature;
-            if (selectedCreature == null)
-            {
-                return; // No creature selected
-            }
-
-            // Load the selected creature's data into the form
-            loadEntity(selectedCreature);
-        }
-
-        private void loadEntity(Creature creature)
-        {
-            nameLabel.Text = creature.Name;
-            descriptionLabel.Text = creature.Description;
-            strengthLabel.Text = creature.Strength.ToString();
-            dexterityLabel.Text = creature.Dexterity.ToString();
-            constitutionLabel.Text = creature.Constitution.ToString();
-            intelligenceLabel.Text = creature.Intelligence.ToString();
-            wisdomLabel.Text = creature.Wisdom.ToString();
-            charismaLabel.Text = creature.Charisma.ToString();
-        }
-
-        // Function that will display the stats of a creature when the "Load Enity" button is clicked
-        private void loadCreatureButton_Click(object sender, EventArgs e)
-        {
-            /*// Get the selected creature from the list
-            Creature creature = creatureListBox.SelectedItem as Creature;
-
-            // Display the creature's name, description, and stats in the form
-            if (creature != null)
-            {
-                nameLabel.Text = creature.Name;
-                descriptionLabel.Text = creature.Description;
-                strengthLabel.Text = creature.Strength.ToString();
-                dexterityLabel.Text = creature.Dexterity.ToString();
-                constitutionLabel.Text = creature.Constitution.ToString();
-                intelligenceLabel.Text = creature.Intelligence.ToString();
-                wisdomLabel.Text = creature.Wisdom.ToString();
-                charismaLabel.Text = creature.Charisma.ToString();
-            }*/
-        }
 
         // Function that will remove a creature from the creature list when the "removeCreatureButton" button is clicked
         private void removeCreatureButton_Click(object sender, EventArgs e)
@@ -201,9 +132,10 @@ namespace GroupProject
             public int Intelligence { get; set; }
             public int Wisdom { get; set; }
             public int Charisma { get; set; }
-            
+            public int Initiative { get; set; }
+
             // Constructor, Takes 8 args, Creature Name, Description, and Stats
-            public Creature(string name, string description, int strength, int dexterity, int constitution,int intelligence, int wisdom, int charisma)
+            public Creature(string name, string description, int strength, int dexterity, int constitution,int intelligence, int wisdom, int charisma, int initiative)
             {
                 Name = name;
                 Description = description;
@@ -213,11 +145,12 @@ namespace GroupProject
                 Intelligence = intelligence;
                 Wisdom = wisdom;
                 Charisma = charisma;
+                Initiative = initiative;
             }
 
             public string Serialize()
             {
-                return $"{Name}|{Description}|{Strength}|{Dexterity}|{Constitution}|{Intelligence}|{Wisdom}|{Charisma}";
+                return $"{Name}|{Description}|{Strength}|{Dexterity}|{Constitution}|{Intelligence}|{Wisdom}|{Charisma}|{Initiative}";
             }
 
             public static Creature Deserialize(string serializedString)
@@ -233,23 +166,20 @@ namespace GroupProject
                     int intelligence = 10;
                     int wisdom = 10;
                     int charisma = 10;
+                    int initiative = 10;
                     int.TryParse(parts[2], out strength);
                     int.TryParse(parts[3], out dexterity);
                     int.TryParse(parts[4], out constitution);
                     int.TryParse(parts[5], out intelligence);
                     int.TryParse(parts[6], out wisdom);
                     int.TryParse(parts[7], out charisma);
-                    return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+                    int.TryParse(parts[8], out initiative);
+                    return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative);
                 }
                 else
                 {
                     return null;
                 }
-            }
-
-            public Creature make_copy()
-            {
-                return new Creature(this.Name, this.Description, this.Strength, this.Dexterity, this.Constitution, this.Intelligence, this.Wisdom, this.Charisma);
             }
 
             public override string ToString()
@@ -262,15 +192,7 @@ namespace GroupProject
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void button1_Click(object sender, EventArgs e)
         {
-            if(creatureListBox.SelectedItem != null)
-            {
-                Creature creature = creatureListBox.SelectedItem as Creature;
-                Creature copy_creature = creature.make_copy();
-                copy_creature.Name= creature.Name + " copy";
-                creatureList.Add(copy_creature);
-                creatureListBox.DataSource = null;
-                creatureListBox.DataSource= creatureList;
-            }
+
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -746,97 +668,25 @@ namespace GroupProject
 
         }
 
-        private void Settings_button_Click(object sender, EventArgs e)
+        //Creature info box will update automatically when creature is selected
+        private void creatureListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Settings_group_box.Visible == true)
+            // Get the selected creature from the list
+            Creature creature = creatureListBox.SelectedItem as Creature;
+
+            // Display the creature's name, description, and stats in the form
+            if (creature != null)
             {
-                Settings_group_box.Visible = false;
-                Color_choices.Visible = false;
+                nameLabel.Text = creature.Name;
+                descriptionLabel.Text = creature.Description;
+                strengthLabel.Text = creature.Strength.ToString();
+                dexterityLabel.Text = creature.Dexterity.ToString();
+                constitutionLabel.Text = creature.Constitution.ToString();
+                intelligenceLabel.Text = creature.Intelligence.ToString();
+                wisdomLabel.Text = creature.Wisdom.ToString();
+                charismaLabel.Text = creature.Charisma.ToString();
+                initiativeLabel.Text = creature.Initiative.ToString();
             }
-            else
-                Settings_group_box.Visible = true;
-        }
-
-        private void Change_Bcolor_Click(object sender, EventArgs e)
-        {
-            if(Color_choices.Visible == true)
-            {
-                Color_choices.Visible = false;
-            }
-            else
-                Color_choices.Visible = true;
-        }
-
-        private void Blue_color_Click(object sender, EventArgs e)
-        {
-            prevRound.BackColor = Blue_color.BackColor;
-            nextRound.BackColor = Blue_color.BackColor;
-            loadCreatureButton.BackColor = Blue_color.BackColor;
-            Copy_monster.BackColor = Blue_color.BackColor;
-            removeCreatureButton.BackColor = Blue_color.BackColor;
-            button5.BackColor = Blue_color.BackColor;
-            button6.BackColor = Blue_color.BackColor;
-            button7.BackColor = Blue_color.BackColor;
-            button8.BackColor = Blue_color.BackColor;
-            button9.BackColor = Blue_color.BackColor;
-            button10.BackColor = Blue_color.BackColor;
-            button11.BackColor = Blue_color.BackColor;
-            button13.BackColor = Blue_color.BackColor;
-            button14.BackColor = Blue_color.BackColor;
-            addCreatureButton.BackColor = Blue_color.BackColor;
-            editButton.BackColor = Blue_color.BackColor;
-            saveCreatureButton.BackColor = Blue_color.BackColor;
-            loadCreatureListButton.BackColor = Blue_color.BackColor;
-            Settings_button.BackColor = Blue_color.BackColor;
-            Change_Bcolor.BackColor = Blue_color.BackColor;
-        }
-
-        private void Green_color_Click(object sender, EventArgs e)
-        {
-            prevRound.BackColor = Green_color.BackColor;
-            nextRound.BackColor = Green_color.BackColor;
-            loadCreatureButton.BackColor = Green_color.BackColor;
-            Copy_monster.BackColor = Green_color.BackColor;
-            removeCreatureButton.BackColor = Green_color.BackColor;
-            button5.BackColor = Green_color.BackColor;
-            button6.BackColor = Green_color.BackColor;
-            button7.BackColor = Green_color.BackColor;
-            button8.BackColor = Green_color.BackColor;
-            button9.BackColor = Green_color.BackColor;
-            button10.BackColor = Green_color.BackColor;
-            button11.BackColor = Green_color.BackColor;
-            button13.BackColor = Green_color.BackColor;
-            button14.BackColor = Green_color.BackColor;
-            addCreatureButton.BackColor = Green_color.BackColor;
-            editButton.BackColor = Green_color.BackColor;
-            saveCreatureButton.BackColor = Green_color.BackColor;
-            loadCreatureListButton.BackColor = Green_color.BackColor;
-            Settings_button.BackColor = Green_color.BackColor;
-            Change_Bcolor.BackColor = Green_color.BackColor;
-        }
-
-        private void Red_color_Click(object sender, EventArgs e)
-        {
-            prevRound.BackColor = Red_color.BackColor;
-            nextRound.BackColor = Red_color.BackColor;
-            loadCreatureButton.BackColor = Red_color.BackColor;
-            Copy_monster.BackColor = Red_color.BackColor;
-            removeCreatureButton.BackColor = Red_color.BackColor;
-            button5.BackColor = Red_color.BackColor;
-            button6.BackColor = Red_color.BackColor;
-            button7.BackColor = Red_color.BackColor;
-            button8.BackColor = Red_color.BackColor;
-            button9.BackColor = Red_color.BackColor;
-            button10.BackColor = Red_color.BackColor;
-            button11.BackColor = Red_color.BackColor;
-            button13.BackColor = Red_color.BackColor;
-            button14.BackColor = Red_color.BackColor;
-            addCreatureButton.BackColor = Red_color.BackColor;
-            editButton.BackColor = Red_color.BackColor;
-            saveCreatureButton.BackColor = Red_color.BackColor;
-            loadCreatureListButton.BackColor = Red_color.BackColor;
-            Settings_button.BackColor = Red_color.BackColor;
-            Change_Bcolor.BackColor = Red_color.BackColor;
         }
     }
 }
