@@ -1,4 +1,3 @@
-using DM_Toolkit;
 using System.Drawing.Imaging;
 using System.Xml;
 using static GroupProject.mainGUI;
@@ -25,12 +24,12 @@ namespace GroupProject
             // Create a new creature with the given name, description, and stats
             string name = nameTextBox.Text;
             string description = descriptionTextBox.Text;
-            int strength = (int)strengthNumericUpDown.Value;
-            int dexterity = (int)dexterityNumericUpDown.Value;
-            int constitution = (int)constitutionNumericUpDown.Value;
-            int intelligence = (int)intelligenceNumericUpDown.Value;
-            int wisdom = (int)wisdomNumericUpDown.Value;
-            int charisma = (int)charismaNumericUpDown.Value;
+            byte strength = (byte)strengthNumericUpDown.Value;
+            byte dexterity = (byte)dexterityNumericUpDown.Value;
+            byte constitution = (byte)constitutionNumericUpDown.Value;
+            byte intelligence = (byte)intelligenceNumericUpDown.Value;
+            byte wisdom = (byte)wisdomNumericUpDown.Value;
+            byte charisma = (byte)charismaNumericUpDown.Value;
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
 
             // Add the creature to the list
@@ -62,14 +61,15 @@ namespace GroupProject
             }
 
             // Update the selected creature with the new data
-            selectedCreature.Name = nameTextBox.Text;
-            selectedCreature.Description = descriptionTextBox.Text;
-            selectedCreature.Strength = (int)strengthNumericUpDown.Value;
-            selectedCreature.Dexterity = (int)dexterityNumericUpDown.Value;
-            selectedCreature.Constitution = (int)constitutionNumericUpDown.Value;
-            selectedCreature.Intelligence = (int)intelligenceNumericUpDown.Value;
-            selectedCreature.Wisdom = (int)wisdomNumericUpDown.Value;
-            selectedCreature.Charisma = (int)charismaNumericUpDown.Value;
+            selectedCreature.SetName(nameTextBox.Text);
+            selectedCreature.SetDescription(descriptionTextBox.Text);
+            selectedCreature.SetStr((byte)strengthNumericUpDown.Value);
+            selectedCreature.SetDex((byte)dexterityNumericUpDown.Value);
+            selectedCreature.SetCon((byte)constitutionNumericUpDown.Value);
+            selectedCreature.SetInt((byte)intelligenceNumericUpDown.Value);
+            selectedCreature.SetWis((byte)wisdomNumericUpDown.Value);
+            selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
+            selectedCreature.updateVals();
 
             // Clear the form for the next creature
             nameTextBox.Clear();
@@ -101,34 +101,29 @@ namespace GroupProject
 
         private void loadEntity(Creature creature)
         {
-            nameLabel.Text = creature.Name;
-            descriptionLabel.Text = creature.Description;
-            strengthLabel.Text = creature.Strength.ToString();
-            dexterityLabel.Text = creature.Dexterity.ToString();
-            constitutionLabel.Text = creature.Constitution.ToString();
-            intelligenceLabel.Text = creature.Intelligence.ToString();
-            wisdomLabel.Text = creature.Wisdom.ToString();
-            charismaLabel.Text = creature.Charisma.ToString();
+
+            // Display the creature's name, description, and stats in the form
+            if (creature != null)
+            {
+                nameLabel.Text = creature.GetName();
+                descriptionLabel.Text = creature.GetDescription();
+                strengthLabel.Text = creature.GetStr().ToString();
+                dexterityLabel.Text = creature.GetDex().ToString();
+                constitutionLabel.Text = creature.GetCon().ToString();
+                intelligenceLabel.Text = creature.GetInt().ToString();
+                wisdomLabel.Text = creature.GetWis().ToString();
+                charismaLabel.Text = creature.GetCha().ToString();
+                ACLabel.Text = creature.GetAC().ToString();
+                initLabel.Text = creature.GetInitiative().ToString();
+                tempHPLabel.Text = creature.GetTempHP().ToString();
+                HPLabel.Text = creature.GetCurrentHP().ToString();
+            }
         }
 
         // Function that will display the stats of a creature when the "Load Enity" button is clicked
         private void loadCreatureButton_Click(object sender, EventArgs e)
         {
-            /*// Get the selected creature from the list
-            Creature creature = creatureListBox.SelectedItem as Creature;
 
-            // Display the creature's name, description, and stats in the form
-            if (creature != null)
-            {
-                nameLabel.Text = creature.Name;
-                descriptionLabel.Text = creature.Description;
-                strengthLabel.Text = creature.Strength.ToString();
-                dexterityLabel.Text = creature.Dexterity.ToString();
-                constitutionLabel.Text = creature.Constitution.ToString();
-                intelligenceLabel.Text = creature.Intelligence.ToString();
-                wisdomLabel.Text = creature.Wisdom.ToString();
-                charismaLabel.Text = creature.Charisma.ToString();
-            }*/
         }
 
         // Function that will remove a creature from the creature list when the "removeCreatureButton" button is clicked
@@ -190,73 +185,6 @@ namespace GroupProject
             }
         }
 
-        // Public class that defines what a "Creature" or otherwise sometimes called an "NPC" or "Entity" is
-        public class Creature
-        {
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public int Strength { get; set; }
-            public int Dexterity { get; set; }
-            public int Constitution { get; set; }
-            public int Intelligence { get; set; }
-            public int Wisdom { get; set; }
-            public int Charisma { get; set; }
-            
-            // Constructor, Takes 8 args, Creature Name, Description, and Stats
-            public Creature(string name, string description, int strength, int dexterity, int constitution,int intelligence, int wisdom, int charisma)
-            {
-                Name = name;
-                Description = description;
-                Strength = strength;
-                Dexterity = dexterity;
-                Constitution = constitution;
-                Intelligence = intelligence;
-                Wisdom = wisdom;
-                Charisma = charisma;
-            }
-
-            public string Serialize()
-            {
-                return $"{Name}|{Description}|{Strength}|{Dexterity}|{Constitution}|{Intelligence}|{Wisdom}|{Charisma}";
-            }
-
-            public static Creature Deserialize(string serializedString)
-            {
-                string[] parts = serializedString.Split('|');
-                if (parts.Length == 8)
-                {
-                    string name = parts[0];
-                    string description = parts[1];
-                    int strength = 10;
-                    int dexterity = 10;
-                    int constitution = 10;
-                    int intelligence = 10;
-                    int wisdom = 10;
-                    int charisma = 10;
-                    int.TryParse(parts[2], out strength);
-                    int.TryParse(parts[3], out dexterity);
-                    int.TryParse(parts[4], out constitution);
-                    int.TryParse(parts[5], out intelligence);
-                    int.TryParse(parts[6], out wisdom);
-                    int.TryParse(parts[7], out charisma);
-                    return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-
-            public Creature make_copy()
-            {
-                return new Creature(this.Name, this.Description, this.Strength, this.Dexterity, this.Constitution, this.Intelligence, this.Wisdom, this.Charisma);
-            }
-
-            public override string ToString()
-            {
-                return Name;
-            }
-        }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -266,7 +194,7 @@ namespace GroupProject
             {
                 Creature creature = creatureListBox.SelectedItem as Creature;
                 Creature copy_creature = creature.make_copy();
-                copy_creature.Name= creature.Name + " copy";
+                copy_creature.SetName(creature.GetName() + " copy");
                 creatureList.Add(copy_creature);
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource= creatureList;
@@ -837,6 +765,11 @@ namespace GroupProject
             loadCreatureListButton.BackColor = Red_color.BackColor;
             Settings_button.BackColor = Red_color.BackColor;
             Change_Bcolor.BackColor = Red_color.BackColor;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
