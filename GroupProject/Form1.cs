@@ -194,7 +194,7 @@ namespace GroupProject
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void copyMonsterButton_Click(object sender, EventArgs e)
         {
             if (creatureListBox.SelectedItem != null)
             {

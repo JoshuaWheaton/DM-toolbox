@@ -156,7 +156,7 @@
             this.Copy_monster.TabIndex = 0;
             this.Copy_monster.Text = " Copy M";
             this.Copy_monster.UseVisualStyleBackColor = false;
-            this.Copy_monster.Click += new System.EventHandler(this.button1_Click);
+            this.Copy_monster.Click += new System.EventHandler(this.copyMonsterButton_Click);
             // 
             // prevRound
             // 
