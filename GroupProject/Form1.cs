@@ -1,16 +1,9 @@
-using System.Drawing.Imaging;
-using System.Xml;
-using static GroupProject.mainGUI;
-
+using System;
 namespace GroupProject
 {
     public partial class mainGUI : Form
     {
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        int initCounter = 0;    // Counter to track the active round of initative
-
+        private int initCounter = 0;    // Counter to track the active round of initative
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
 
         public mainGUI()
@@ -23,6 +16,27 @@ namespace GroupProject
         {
             creatureList = creatureList.OrderByDescending(o => o.GetInitiative()).ToList();
             creatureListBox.DataSource = creatureList;
+        }
+
+        // Function which loads given creatures data into several labels
+        private void loadEntity(Creature creature)
+        {
+            // Display the creature's name, description, and stats in the form
+            if (creature != null)
+            {
+                nameLabel.Text = creature.GetName();
+                descriptionLabel.Text = creature.GetDescription();
+                strengthLabel.Text = creature.GetStr().ToString();
+                dexterityLabel.Text = creature.GetDex().ToString();
+                constitutionLabel.Text = creature.GetCon().ToString();
+                intelligenceLabel.Text = creature.GetInt().ToString();
+                wisdomLabel.Text = creature.GetWis().ToString();
+                charismaLabel.Text = creature.GetCha().ToString();
+                ACLabel.Text = creature.GetAC().ToString();
+                initLabel.Text = creature.GetInitiative().ToString();
+                tempHPLabel.Text = creature.GetTempHP().ToString();
+                HPLabel.Text = creature.GetCurrentHP().ToString();
+            }
         }
 
         // Function that will add a creature to the creature list when the "Add Enity" button is clicked
@@ -60,6 +74,7 @@ namespace GroupProject
             creatureListBox.DataSource = creatureList;
             sortCreatureList();
         }
+
         private void editButton_Click(object sender, EventArgs e)
         {
             //removeCreatureButton_Click(sender, e);
@@ -111,27 +126,6 @@ namespace GroupProject
 
             // Load the selected creature's data into the form
             loadEntity(selectedCreature);
-        }
-
-        private void loadEntity(Creature creature)
-        {
-
-            // Display the creature's name, description, and stats in the form
-            if (creature != null)
-            {
-                nameLabel.Text = creature.GetName();
-                descriptionLabel.Text = creature.GetDescription();
-                strengthLabel.Text = creature.GetStr().ToString();
-                dexterityLabel.Text = creature.GetDex().ToString();
-                constitutionLabel.Text = creature.GetCon().ToString();
-                intelligenceLabel.Text = creature.GetInt().ToString();
-                wisdomLabel.Text = creature.GetWis().ToString();
-                charismaLabel.Text = creature.GetCha().ToString();
-                ACLabel.Text = creature.GetAC().ToString();
-                initLabel.Text = creature.GetInitiative().ToString();
-                tempHPLabel.Text = creature.GetTempHP().ToString();
-                HPLabel.Text = creature.GetCurrentHP().ToString();
-            }
         }
 
         // Sort list of entities by initative descending
@@ -200,148 +194,123 @@ namespace GroupProject
             }
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void button1_Click(object sender, EventArgs e)
         {
-            if(creatureListBox.SelectedItem != null)
+            if (creatureListBox.SelectedItem != null)
             {
                 Creature creature = creatureListBox.SelectedItem as Creature;
                 Creature copy_creature = creature.make_copy();
                 copy_creature.SetName(creature.GetName() + " copy");
                 creatureList.Add(copy_creature);
                 creatureListBox.DataSource = null;
-                creatureListBox.DataSource= creatureList;
+                creatureListBox.DataSource = creatureList;
             }
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void round1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round5_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round6_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round7_Click(object sender, EventArgs e)
         {
-
         }
+
         private void round8_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round10_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round11_Click(object sender, EventArgs e)
         {
-
         }
+
         private void round12_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round13_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round14_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round15_Click(object sender, EventArgs e)
         {
-
         }
+
         private void round16_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round17_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round18_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round19_Click(object sender, EventArgs e)
         {
-
         }
+
         private void round20_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round21_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round22_Click(object sender, EventArgs e)
         {
-
         }
 
         private void round23_Click(object sender, EventArgs e)
         {
-
         }
+
         private void round24_Click(object sender, EventArgs e)
         {
-
         }
+
         private void round25_Click(object sender, EventArgs e)
         {
-
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         private void prevRound_Click(object sender, EventArgs e)
         {
             // Decrement the round
@@ -364,121 +333,145 @@ namespace GroupProject
                     round2.BackColor = Color.Firebrick;
                     round25.BackColor = Color.Firebrick;
                     break;
+
                 case 2:
                     round2.BackColor = Color.Green;
                     round3.BackColor = Color.Firebrick;
                     round1.BackColor = Color.Firebrick;
                     break;
+
                 case 3:
                     round3.BackColor = Color.Green;
                     round4.BackColor = Color.Firebrick;
                     round2.BackColor = Color.Firebrick;
                     break;
+
                 case 4:
                     round4.BackColor = Color.Green;
                     round5.BackColor = Color.Firebrick;
                     round3.BackColor = Color.Firebrick;
                     break;
+
                 case 5:
                     round5.BackColor = Color.Green;
                     round6.BackColor = Color.Firebrick;
                     round4.BackColor = Color.Firebrick;
                     break;
+
                 case 6:
                     round6.BackColor = Color.Green;
                     round7.BackColor = Color.Firebrick;
                     round5.BackColor = Color.Firebrick;
                     break;
+
                 case 7:
                     round7.BackColor = Color.Green;
                     round8.BackColor = Color.Firebrick;
                     round6.BackColor = Color.Firebrick;
                     break;
+
                 case 8:
                     round8.BackColor = Color.Green;
                     round9.BackColor = Color.Firebrick;
                     round7.BackColor = Color.Firebrick;
                     break;
+
                 case 9:
                     round9.BackColor = Color.Green;
                     round10.BackColor = Color.Firebrick;
                     round8.BackColor = Color.Firebrick;
                     break;
+
                 case 10:
                     round10.BackColor = Color.Green;
                     round11.BackColor = Color.Firebrick;
                     round9.BackColor = Color.Firebrick;
                     break;
+
                 case 11:
                     round11.BackColor = Color.Green;
                     round12.BackColor = Color.Firebrick;
                     round10.BackColor = Color.Firebrick;
                     break;
+
                 case 12:
                     round12.BackColor = Color.Green;
                     round13.BackColor = Color.Firebrick;
                     round11.BackColor = Color.Firebrick;
                     break;
+
                 case 13:
                     round13.BackColor = Color.Green;
                     round14.BackColor = Color.Firebrick;
                     round12.BackColor = Color.Firebrick;
                     break;
+
                 case 14:
                     round14.BackColor = Color.Green;
                     round15.BackColor = Color.Firebrick;
                     round13.BackColor = Color.Firebrick;
                     break;
+
                 case 15:
                     round15.BackColor = Color.Green;
                     round16.BackColor = Color.Firebrick;
                     round14.BackColor = Color.Firebrick;
                     break;
+
                 case 16:
                     round16.BackColor = Color.Green;
                     round17.BackColor = Color.Firebrick;
                     round15.BackColor = Color.Firebrick;
                     break;
+
                 case 17:
                     round17.BackColor = Color.Green;
                     round18.BackColor = Color.Firebrick;
                     round16.BackColor = Color.Firebrick;
                     break;
+
                 case 18:
                     round18.BackColor = Color.Green;
                     round19.BackColor = Color.Firebrick;
                     round17.BackColor = Color.Firebrick;
                     break;
+
                 case 19:
                     round19.BackColor = Color.Green;
                     round20.BackColor = Color.Firebrick;
                     round18.BackColor = Color.Firebrick;
                     break;
+
                 case 20:
                     round20.BackColor = Color.Green;
                     round21.BackColor = Color.Firebrick;
                     round19.BackColor = Color.Firebrick;
                     break;
+
                 case 21:
                     round21.BackColor = Color.Green;
                     round22.BackColor = Color.Firebrick;
                     round20.BackColor = Color.Firebrick;
                     break;
+
                 case 22:
                     round22.BackColor = Color.Green;
                     round23.BackColor = Color.Firebrick;
                     round21.BackColor = Color.Firebrick;
                     break;
+
                 case 23:
                     round23.BackColor = Color.Green;
                     round24.BackColor = Color.Firebrick;
                     round22.BackColor = Color.Firebrick;
                     break;
+
                 case 24:
                     round24.BackColor = Color.Green;
                     round25.BackColor = Color.Firebrick;
                     round23.BackColor = Color.Firebrick;
                     break;
+
                 case 25:
                     round25.BackColor = Color.Green;
                     round1.BackColor = Color.Firebrick;
@@ -509,121 +502,145 @@ namespace GroupProject
                     round2.BackColor = Color.Firebrick;
                     round25.BackColor = Color.Firebrick;
                     break;
+
                 case 2:
                     round2.BackColor = Color.Green;
                     round3.BackColor = Color.Firebrick;
                     round1.BackColor = Color.Firebrick;
                     break;
+
                 case 3:
                     round3.BackColor = Color.Green;
                     round4.BackColor = Color.Firebrick;
                     round2.BackColor = Color.Firebrick;
                     break;
+
                 case 4:
                     round4.BackColor = Color.Green;
                     round5.BackColor = Color.Firebrick;
                     round3.BackColor = Color.Firebrick;
                     break;
+
                 case 5:
                     round5.BackColor = Color.Green;
                     round6.BackColor = Color.Firebrick;
                     round4.BackColor = Color.Firebrick;
                     break;
+
                 case 6:
                     round6.BackColor = Color.Green;
                     round7.BackColor = Color.Firebrick;
                     round5.BackColor = Color.Firebrick;
                     break;
+
                 case 7:
                     round7.BackColor = Color.Green;
                     round8.BackColor = Color.Firebrick;
                     round6.BackColor = Color.Firebrick;
                     break;
+
                 case 8:
                     round8.BackColor = Color.Green;
                     round9.BackColor = Color.Firebrick;
                     round7.BackColor = Color.Firebrick;
                     break;
+
                 case 9:
                     round9.BackColor = Color.Green;
                     round10.BackColor = Color.Firebrick;
                     round8.BackColor = Color.Firebrick;
                     break;
+
                 case 10:
                     round10.BackColor = Color.Green;
                     round11.BackColor = Color.Firebrick;
                     round9.BackColor = Color.Firebrick;
                     break;
+
                 case 11:
                     round11.BackColor = Color.Green;
                     round12.BackColor = Color.Firebrick;
                     round10.BackColor = Color.Firebrick;
                     break;
+
                 case 12:
                     round12.BackColor = Color.Green;
                     round13.BackColor = Color.Firebrick;
                     round11.BackColor = Color.Firebrick;
                     break;
+
                 case 13:
                     round13.BackColor = Color.Green;
                     round14.BackColor = Color.Firebrick;
                     round12.BackColor = Color.Firebrick;
                     break;
+
                 case 14:
                     round14.BackColor = Color.Green;
                     round15.BackColor = Color.Firebrick;
                     round13.BackColor = Color.Firebrick;
                     break;
+
                 case 15:
                     round15.BackColor = Color.Green;
                     round16.BackColor = Color.Firebrick;
                     round14.BackColor = Color.Firebrick;
                     break;
+
                 case 16:
                     round16.BackColor = Color.Green;
                     round17.BackColor = Color.Firebrick;
                     round15.BackColor = Color.Firebrick;
                     break;
+
                 case 17:
                     round17.BackColor = Color.Green;
                     round18.BackColor = Color.Firebrick;
                     round16.BackColor = Color.Firebrick;
                     break;
+
                 case 18:
                     round18.BackColor = Color.Green;
                     round19.BackColor = Color.Firebrick;
                     round17.BackColor = Color.Firebrick;
                     break;
+
                 case 19:
                     round19.BackColor = Color.Green;
                     round20.BackColor = Color.Firebrick;
                     round18.BackColor = Color.Firebrick;
                     break;
+
                 case 20:
                     round20.BackColor = Color.Green;
                     round21.BackColor = Color.Firebrick;
                     round19.BackColor = Color.Firebrick;
                     break;
+
                 case 21:
                     round21.BackColor = Color.Green;
                     round22.BackColor = Color.Firebrick;
                     round20.BackColor = Color.Firebrick;
                     break;
+
                 case 22:
                     round22.BackColor = Color.Green;
                     round23.BackColor = Color.Firebrick;
                     round21.BackColor = Color.Firebrick;
                     break;
+
                 case 23:
                     round23.BackColor = Color.Green;
                     round24.BackColor = Color.Firebrick;
                     round22.BackColor = Color.Firebrick;
                     break;
+
                 case 24:
                     round24.BackColor = Color.Green;
                     round25.BackColor = Color.Firebrick;
                     round23.BackColor = Color.Firebrick;
                     break;
+
                 case 25:
                     round25.BackColor = Color.Green;
                     round1.BackColor = Color.Firebrick;
@@ -631,62 +648,49 @@ namespace GroupProject
                     break;
             }
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         private void mainGUI_Load(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void INT_Click(object sender, EventArgs e)
         {
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void dexterityNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void strengthNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void Settings_button_Click(object sender, EventArgs e)
@@ -702,7 +706,7 @@ namespace GroupProject
 
         private void Change_Bcolor_Click(object sender, EventArgs e)
         {
-            if(Color_choices.Visible == true)
+            if (Color_choices.Visible == true)
             {
                 Color_choices.Visible = false;
             }
@@ -784,7 +788,6 @@ namespace GroupProject
 
         private void label11_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
