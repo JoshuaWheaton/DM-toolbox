@@ -86,7 +86,7 @@
             this.charismaLabel = new System.Windows.Forms.Label();
             this.addCreatureButton = new System.Windows.Forms.Button();
             this.saveCreatureButton = new System.Windows.Forms.Button();
-            this.loadCreatureButton = new System.Windows.Forms.Button();
+            this.sortEntitiesButton = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.loadCreatureListButton = new System.Windows.Forms.Button();
@@ -117,6 +117,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.entityListGroupBox = new System.Windows.Forms.GroupBox();
             this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.initiativeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.editButton = new System.Windows.Forms.Button();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
@@ -136,6 +138,7 @@
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
             this.addEntityGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).BeginInit();
             this.diceRollerGroupBox.SuspendLayout();
             this.Settings_group_box.SuspendLayout();
             this.Color_choices.SuspendLayout();
@@ -712,7 +715,7 @@
             // 
             // strengthNumericUpDown
             // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(267, 81);
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(271, 28);
             this.strengthNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.strengthNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -731,7 +734,7 @@
             // 
             // dexterityNumericUpDown
             // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(267, 121);
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(271, 68);
             this.dexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -750,7 +753,7 @@
             // 
             // constitutionNumericUpDown
             // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(267, 161);
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(271, 108);
             this.constitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -768,7 +771,7 @@
             // 
             // charismaNumericUpDown
             // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(267, 281);
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(271, 228);
             this.charismaNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.charismaNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -786,7 +789,7 @@
             // 
             // wisdomNumericUpDown
             // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(267, 241);
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(271, 188);
             this.wisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -804,7 +807,7 @@
             // 
             // intelligenceNumericUpDown
             // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(267, 201);
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(271, 148);
             this.intelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -920,18 +923,18 @@
             this.saveCreatureButton.UseVisualStyleBackColor = false;
             this.saveCreatureButton.Click += new System.EventHandler(this.saveCreatureButton_Click);
             // 
-            // loadCreatureButton
+            // sortEntitiesButton
             // 
-            this.loadCreatureButton.BackColor = System.Drawing.Color.Firebrick;
-            this.loadCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadCreatureButton.Location = new System.Drawing.Point(139, 28);
-            this.loadCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.loadCreatureButton.Name = "loadCreatureButton";
-            this.loadCreatureButton.Size = new System.Drawing.Size(114, 31);
-            this.loadCreatureButton.TabIndex = 55;
-            this.loadCreatureButton.Text = "Load Entity";
-            this.loadCreatureButton.UseVisualStyleBackColor = false;
-            this.loadCreatureButton.Click += new System.EventHandler(this.loadCreatureButton_Click);
+            this.sortEntitiesButton.BackColor = System.Drawing.Color.Firebrick;
+            this.sortEntitiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sortEntitiesButton.Location = new System.Drawing.Point(139, 28);
+            this.sortEntitiesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sortEntitiesButton.Name = "sortEntitiesButton";
+            this.sortEntitiesButton.Size = new System.Drawing.Size(114, 31);
+            this.sortEntitiesButton.TabIndex = 55;
+            this.sortEntitiesButton.Text = "Sort";
+            this.sortEntitiesButton.UseVisualStyleBackColor = false;
+            this.sortEntitiesButton.Click += new System.EventHandler(this.loadCreatureButton_Click);
             // 
             // saveFileDialog
             // 
@@ -959,7 +962,7 @@
             // 
             this.STR.AutoSize = true;
             this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STR.Location = new System.Drawing.Point(203, 76);
+            this.STR.Location = new System.Drawing.Point(207, 23);
             this.STR.Name = "STR";
             this.STR.Size = new System.Drawing.Size(57, 32);
             this.STR.TabIndex = 57;
@@ -969,7 +972,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(200, 76);
+            this.label1.Location = new System.Drawing.Point(204, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 32);
             this.label1.TabIndex = 57;
@@ -979,7 +982,7 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(200, 196);
+            this.INT.Location = new System.Drawing.Point(204, 143);
             this.INT.Name = "INT";
             this.INT.Size = new System.Drawing.Size(55, 32);
             this.INT.TabIndex = 58;
@@ -990,7 +993,7 @@
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(200, 116);
+            this.DEX.Location = new System.Drawing.Point(204, 63);
             this.DEX.Name = "DEX";
             this.DEX.Size = new System.Drawing.Size(61, 32);
             this.DEX.TabIndex = 58;
@@ -1000,7 +1003,7 @@
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(200, 236);
+            this.WIS.Location = new System.Drawing.Point(204, 183);
             this.WIS.Name = "WIS";
             this.WIS.Size = new System.Drawing.Size(59, 32);
             this.WIS.TabIndex = 60;
@@ -1010,7 +1013,7 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(200, 276);
+            this.CHA.Location = new System.Drawing.Point(204, 223);
             this.CHA.Name = "CHA";
             this.CHA.Size = new System.Drawing.Size(64, 32);
             this.CHA.TabIndex = 61;
@@ -1111,7 +1114,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(202, 156);
+            this.label9.Location = new System.Drawing.Point(206, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 32);
             this.label9.TabIndex = 71;
@@ -1158,9 +1161,8 @@
             this.HPLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HPLabel.Location = new System.Drawing.Point(90, 400);
             this.HPLabel.Name = "HPLabel";
-            this.HPLabel.Size = new System.Drawing.Size(58, 32);
+            this.HPLabel.Size = new System.Drawing.Size(0, 32);
             this.HPLabel.TabIndex = 78;
-            this.HPLabel.Text = "HP#";
             // 
             // label17
             // 
@@ -1178,9 +1180,8 @@
             this.tempHPLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tempHPLabel.Location = new System.Drawing.Point(90, 360);
             this.tempHPLabel.Name = "tempHPLabel";
-            this.tempHPLabel.Size = new System.Drawing.Size(76, 32);
+            this.tempHPLabel.Size = new System.Drawing.Size(0, 32);
             this.tempHPLabel.TabIndex = 76;
-            this.tempHPLabel.Text = "T.HP#";
             // 
             // label15
             // 
@@ -1198,9 +1199,8 @@
             this.initLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.initLabel.Location = new System.Drawing.Point(90, 320);
             this.initLabel.Name = "initLabel";
-            this.initLabel.Size = new System.Drawing.Size(71, 32);
+            this.initLabel.Size = new System.Drawing.Size(0, 32);
             this.initLabel.TabIndex = 74;
-            this.initLabel.Text = "INIT#";
             // 
             // label13
             // 
@@ -1218,9 +1218,8 @@
             this.ACLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ACLabel.Location = new System.Drawing.Point(90, 280);
             this.ACLabel.Name = "ACLabel";
-            this.ACLabel.Size = new System.Drawing.Size(58, 32);
+            this.ACLabel.Size = new System.Drawing.Size(0, 32);
             this.ACLabel.TabIndex = 72;
-            this.ACLabel.Text = "AC#";
             this.ACLabel.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
@@ -1236,7 +1235,7 @@
             // entityListGroupBox
             // 
             this.entityListGroupBox.Controls.Add(this.creatureListBox);
-            this.entityListGroupBox.Controls.Add(this.loadCreatureButton);
+            this.entityListGroupBox.Controls.Add(this.sortEntitiesButton);
             this.entityListGroupBox.Location = new System.Drawing.Point(31, 152);
             this.entityListGroupBox.Name = "entityListGroupBox";
             this.entityListGroupBox.Size = new System.Drawing.Size(274, 644);
@@ -1246,6 +1245,8 @@
             // 
             // addEntityGroupBox
             // 
+            this.addEntityGroupBox.Controls.Add(this.label11);
+            this.addEntityGroupBox.Controls.Add(this.initiativeNumericUpDown);
             this.addEntityGroupBox.Controls.Add(this.editButton);
             this.addEntityGroupBox.Controls.Add(this.descriptionTextBox);
             this.addEntityGroupBox.Controls.Add(this.nameTextBox);
@@ -1271,6 +1272,29 @@
             this.addEntityGroupBox.TabIndex = 74;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(204, 259);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 32);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "INIT";
+            // 
+            // initiativeNumericUpDown
+            // 
+            this.initiativeNumericUpDown.Location = new System.Drawing.Point(271, 264);
+            this.initiativeNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.initiativeNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.initiativeNumericUpDown.Name = "initiativeNumericUpDown";
+            this.initiativeNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.initiativeNumericUpDown.TabIndex = 72;
             // 
             // editButton
             // 
@@ -1435,6 +1459,7 @@
             this.entityListGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).EndInit();
             this.diceRollerGroupBox.ResumeLayout(false);
             this.Settings_group_box.ResumeLayout(false);
             this.Color_choices.ResumeLayout(false);
@@ -1502,7 +1527,7 @@
         private Label charismaLabel;
         private Button addCreatureButton;
         private Button saveCreatureButton;
-        private Button loadCreatureButton;
+        private Button sortEntitiesButton;
         private SaveFileDialog saveFileDialog;
         private OpenFileDialog openFileDialog;
         private Button loadCreatureListButton;
@@ -1542,5 +1567,7 @@
         private Button Red_color;
         private Button Green_color;
         private Button Blue_color;
+        private Label label11;
+        private NumericUpDown initiativeNumericUpDown;
     }
 }

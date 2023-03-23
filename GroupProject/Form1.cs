@@ -18,6 +18,13 @@ namespace GroupProject
             InitializeComponent();
         }
 
+        //Function that sorts creature list by initiative
+        public void sortCreatureList()
+        {
+            creatureList = creatureList.OrderByDescending(o => o.GetInitiative()).ToList();
+            creatureListBox.DataSource = creatureList;
+        }
+
         // Function that will add a creature to the creature list when the "Add Enity" button is clicked
         private void addCreatureButton_Click(object sender, EventArgs e)
         {
@@ -30,7 +37,9 @@ namespace GroupProject
             byte intelligence = (byte)intelligenceNumericUpDown.Value;
             byte wisdom = (byte)wisdomNumericUpDown.Value;
             byte charisma = (byte)charismaNumericUpDown.Value;
+            byte initiative = (byte)initiativeNumericUpDown.Value;
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            creature.SetInitiative(initiative);
 
             // Add the creature to the list
             creatureList.Add(creature);
@@ -44,10 +53,12 @@ namespace GroupProject
             intelligenceNumericUpDown.Value = 10;
             wisdomNumericUpDown.Value = 10;
             charismaNumericUpDown.Value = 10;
+            initiativeNumericUpDown.Value = 0;
 
             // Display the newly added creature to the list on the left for clear input feedback
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
+            sortCreatureList();
         }
         private void editButton_Click(object sender, EventArgs e)
         {
@@ -69,6 +80,7 @@ namespace GroupProject
             selectedCreature.SetInt((byte)intelligenceNumericUpDown.Value);
             selectedCreature.SetWis((byte)wisdomNumericUpDown.Value);
             selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
+            selectedCreature.SetInitiative((byte)initiativeNumericUpDown.Value);
             selectedCreature.updateVals();
 
             // Clear the form for the next creature
@@ -80,10 +92,12 @@ namespace GroupProject
             intelligenceNumericUpDown.Value = 10;
             wisdomNumericUpDown.Value = 10;
             charismaNumericUpDown.Value = 10;
+            initiativeNumericUpDown.Value = 0;
 
             // Refresh the ListBox with the updated data
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
+            sortCreatureList();
         }
 
         private void creatureListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,10 +134,10 @@ namespace GroupProject
             }
         }
 
-        // Function that will display the stats of a creature when the "Load Enity" button is clicked
+        // Sort list of entities by initative descending
         private void loadCreatureButton_Click(object sender, EventArgs e)
         {
-
+            sortCreatureList();
         }
 
         // Function that will remove a creature from the creature list when the "removeCreatureButton" button is clicked
@@ -182,6 +196,7 @@ namespace GroupProject
                 // Display the entities in the npc list
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
+                sortCreatureList();
             }
         }
 
@@ -699,7 +714,7 @@ namespace GroupProject
         {
             prevRound.BackColor = Blue_color.BackColor;
             nextRound.BackColor = Blue_color.BackColor;
-            loadCreatureButton.BackColor = Blue_color.BackColor;
+            sortEntitiesButton.BackColor = Blue_color.BackColor;
             Copy_monster.BackColor = Blue_color.BackColor;
             removeCreatureButton.BackColor = Blue_color.BackColor;
             button5.BackColor = Blue_color.BackColor;
@@ -723,7 +738,7 @@ namespace GroupProject
         {
             prevRound.BackColor = Green_color.BackColor;
             nextRound.BackColor = Green_color.BackColor;
-            loadCreatureButton.BackColor = Green_color.BackColor;
+            sortEntitiesButton.BackColor = Green_color.BackColor;
             Copy_monster.BackColor = Green_color.BackColor;
             removeCreatureButton.BackColor = Green_color.BackColor;
             button5.BackColor = Green_color.BackColor;
@@ -747,7 +762,7 @@ namespace GroupProject
         {
             prevRound.BackColor = Red_color.BackColor;
             nextRound.BackColor = Red_color.BackColor;
-            loadCreatureButton.BackColor = Red_color.BackColor;
+            sortEntitiesButton.BackColor = Red_color.BackColor;
             Copy_monster.BackColor = Red_color.BackColor;
             removeCreatureButton.BackColor = Red_color.BackColor;
             button5.BackColor = Red_color.BackColor;
