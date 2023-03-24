@@ -1,14 +1,29 @@
 using System;
+using System.Windows.Forms;
+
 namespace GroupProject
 {
     public partial class mainGUI : Form
     {
         private int initCounter = 0;    // Counter to track the active round of initative
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
+        private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
 
+        // Constructor
         public mainGUI()
         {
             InitializeComponent();
+            nameLabel.Text = "";
+            ACLabel.Text = "";
+            HPLabel.Text = "";
+            tempHPLabel.Text = "";
+            initLabel.Text = "";
+            strengthLabel.Text = ""; ;
+            dexterityLabel.Text = ""; ;
+            constitutionLabel.Text = "";
+            intelligenceLabel.Text = "";
+            wisdomLabel.Text = "";
+            charismaLabel.Text = "";
         }
 
         //Function that sorts creature list by initiative
@@ -36,6 +51,21 @@ namespace GroupProject
                 initLabel.Text = creature.GetInitiative().ToString();
                 tempHPLabel.Text = creature.GetTempHP().ToString();
                 HPLabel.Text = creature.GetCurrentHP().ToString();
+                
+                // If the edit popup form is open, update it with the values of the
+                // selected creature, so it can be edited
+                if (editForm != null)
+                {
+                    editForm.nameTextBox.Text = creature.GetName();
+                    editForm.descriptionTextBox.Text = creature.GetDescription();
+                    editForm.strengthNumericUpDown.Value = creature.GetStr();
+                    editForm.dexterityNumericUpDown.Value = creature.GetDex();
+                    editForm.constitutionNumericUpDown.Value = creature.GetCon();
+                    editForm.intelligenceNumericUpDown.Value = creature.GetInt();
+                    editForm.wisdomNumericUpDown.Value = creature.GetWis();
+                    editForm.charismaNumericUpDown.Value = creature.GetCha();
+                    editForm.initiativeNumericUpDown.Value = creature.GetInitiative();
+                }
             }
         }
 
@@ -75,46 +105,16 @@ namespace GroupProject
             sortCreatureList();
         }
 
-        private void editButton_Click(object sender, EventArgs e)
+        // A function called by the Edit Form popup form that sorts the creatures, and updates the listbox
+        public void editButton_Click(object sender, EventArgs e)
         {
-            //removeCreatureButton_Click(sender, e);
-            //addCreatureButton_Click(sender, e);
-            // Get the selected creature
-            Creature selectedCreature = creatureListBox.SelectedItem as Creature;
-            if (selectedCreature == null)
-            {
-                return; // No creature selected
-            }
-
-            // Update the selected creature with the new data
-            selectedCreature.SetName(nameTextBox.Text);
-            selectedCreature.SetDescription(descriptionTextBox.Text);
-            selectedCreature.SetStr((byte)strengthNumericUpDown.Value);
-            selectedCreature.SetDex((byte)dexterityNumericUpDown.Value);
-            selectedCreature.SetCon((byte)constitutionNumericUpDown.Value);
-            selectedCreature.SetInt((byte)intelligenceNumericUpDown.Value);
-            selectedCreature.SetWis((byte)wisdomNumericUpDown.Value);
-            selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
-            selectedCreature.SetInitiative((byte)initiativeNumericUpDown.Value);
-            selectedCreature.updateVals();
-
-            // Clear the form for the next creature
-            nameTextBox.Clear();
-            descriptionTextBox.Clear();
-            strengthNumericUpDown.Value = 10;
-            dexterityNumericUpDown.Value = 10;
-            constitutionNumericUpDown.Value = 10;
-            intelligenceNumericUpDown.Value = 10;
-            wisdomNumericUpDown.Value = 10;
-            charismaNumericUpDown.Value = 10;
-            initiativeNumericUpDown.Value = 0;
-
             // Refresh the ListBox with the updated data
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
             sortCreatureList();
         }
 
+        // Function that loads information into the display section whenver a creature is selected from the listbox
         private void creatureListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the selected creature
@@ -205,6 +205,33 @@ namespace GroupProject
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
             }
+        }
+
+        // Function that creates a popup of the EditForm.cs form, and sets this form as it's parent
+        private void editMenu_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the EditForm
+            editForm = new EditForm();
+            
+            // Make the popup a child of the main form
+            editForm.Owner = this;
+
+            // Load the inital data from the listbox into the forms in the pop-up
+            creatureListBox_SelectedIndexChanged(sender,e);
+
+            // Display the EditForm as a modal dialog box
+            // Create a screen object to determine which monitor the mainGUI is on
+            Screen screen = Screen.FromControl(this);
+
+            // Calculate the position of the pop-up form on the same screen
+            int x = screen.WorkingArea.Right - editForm.Width * 2;
+            int y = screen.WorkingArea.Bottom - editForm.Height * 2;
+
+            // Set the start position and location of the pop-up form
+            editForm.StartPosition = FormStartPosition.Manual;
+            editForm.Location = new Point(x, y);
+
+            editForm.Show();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -731,11 +758,12 @@ namespace GroupProject
             button13.BackColor = Blue_color.BackColor;
             button14.BackColor = Blue_color.BackColor;
             addCreatureButton.BackColor = Blue_color.BackColor;
-            editButton.BackColor = Blue_color.BackColor;
+            editMenuButton.BackColor = Blue_color.BackColor;
             saveCreatureButton.BackColor = Blue_color.BackColor;
             loadCreatureListButton.BackColor = Blue_color.BackColor;
             Settings_button.BackColor = Blue_color.BackColor;
             Change_Bcolor.BackColor = Blue_color.BackColor;
+            editForm.editButton.BackColor = Blue_color.BackColor;
         }
 
         private void Green_color_Click(object sender, EventArgs e)
@@ -755,11 +783,12 @@ namespace GroupProject
             button13.BackColor = Green_color.BackColor;
             button14.BackColor = Green_color.BackColor;
             addCreatureButton.BackColor = Green_color.BackColor;
-            editButton.BackColor = Green_color.BackColor;
+            editMenuButton.BackColor = Green_color.BackColor;
             saveCreatureButton.BackColor = Green_color.BackColor;
             loadCreatureListButton.BackColor = Green_color.BackColor;
             Settings_button.BackColor = Green_color.BackColor;
             Change_Bcolor.BackColor = Green_color.BackColor;
+            editForm.editButton.BackColor = Green_color.BackColor;
         }
 
         private void Red_color_Click(object sender, EventArgs e)
@@ -779,11 +808,12 @@ namespace GroupProject
             button13.BackColor = Red_color.BackColor;
             button14.BackColor = Red_color.BackColor;
             addCreatureButton.BackColor = Red_color.BackColor;
-            editButton.BackColor = Red_color.BackColor;
+            editMenuButton.BackColor = Red_color.BackColor;
             saveCreatureButton.BackColor = Red_color.BackColor;
             loadCreatureListButton.BackColor = Red_color.BackColor;
             Settings_button.BackColor = Red_color.BackColor;
             Change_Bcolor.BackColor = Red_color.BackColor;
+            editForm.editButton.BackColor = Red_color.BackColor;
         }
 
         private void label11_Click(object sender, EventArgs e)
