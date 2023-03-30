@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GroupProject
 {
@@ -8,6 +9,7 @@ namespace GroupProject
         private int initCounter = 0;    // Counter to track the active round of initative
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
         private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
+        private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
 
         // Constructor
         public mainGUI()
@@ -103,6 +105,13 @@ namespace GroupProject
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
             sortCreatureList();
+        }
+
+        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative)
+        {
+            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            creature.SetInitiative(initiative);
+            creatureList.Add(creature);
         }
 
         // A function called by the Edit Form popup form that sorts the creatures, and updates the listbox
@@ -749,21 +758,17 @@ namespace GroupProject
             Copy_monster.BackColor = Blue_color.BackColor;
             removeCreatureButton.BackColor = Blue_color.BackColor;
             button5.BackColor = Blue_color.BackColor;
-            button6.BackColor = Blue_color.BackColor;
-            button7.BackColor = Blue_color.BackColor;
+            AddEntityButton.BackColor = Blue_color.BackColor;
             button8.BackColor = Blue_color.BackColor;
-            button9.BackColor = Blue_color.BackColor;
             button10.BackColor = Blue_color.BackColor;
-            button11.BackColor = Blue_color.BackColor;
             button13.BackColor = Blue_color.BackColor;
-            button14.BackColor = Blue_color.BackColor;
             addCreatureButton.BackColor = Blue_color.BackColor;
             editMenuButton.BackColor = Blue_color.BackColor;
             saveCreatureButton.BackColor = Blue_color.BackColor;
             loadCreatureListButton.BackColor = Blue_color.BackColor;
             Settings_button.BackColor = Blue_color.BackColor;
             Change_Bcolor.BackColor = Blue_color.BackColor;
-            editForm.editButton.BackColor = Blue_color.BackColor;
+            //editForm.editButton.BackColor = Blue_color.BackColor;
         }
 
         private void Green_color_Click(object sender, EventArgs e)
@@ -774,21 +779,17 @@ namespace GroupProject
             Copy_monster.BackColor = Green_color.BackColor;
             removeCreatureButton.BackColor = Green_color.BackColor;
             button5.BackColor = Green_color.BackColor;
-            button6.BackColor = Green_color.BackColor;
-            button7.BackColor = Green_color.BackColor;
+            AddEntityButton.BackColor = Green_color.BackColor;
             button8.BackColor = Green_color.BackColor;
-            button9.BackColor = Green_color.BackColor;
             button10.BackColor = Green_color.BackColor;
-            button11.BackColor = Green_color.BackColor;
             button13.BackColor = Green_color.BackColor;
-            button14.BackColor = Green_color.BackColor;
             addCreatureButton.BackColor = Green_color.BackColor;
             editMenuButton.BackColor = Green_color.BackColor;
             saveCreatureButton.BackColor = Green_color.BackColor;
             loadCreatureListButton.BackColor = Green_color.BackColor;
             Settings_button.BackColor = Green_color.BackColor;
             Change_Bcolor.BackColor = Green_color.BackColor;
-            editForm.editButton.BackColor = Green_color.BackColor;
+            //editForm.editButton.BackColor = Green_color.BackColor;
         }
 
         private void Red_color_Click(object sender, EventArgs e)
@@ -799,25 +800,44 @@ namespace GroupProject
             Copy_monster.BackColor = Red_color.BackColor;
             removeCreatureButton.BackColor = Red_color.BackColor;
             button5.BackColor = Red_color.BackColor;
-            button6.BackColor = Red_color.BackColor;
-            button7.BackColor = Red_color.BackColor;
+            AddEntityButton.BackColor = Red_color.BackColor;
             button8.BackColor = Red_color.BackColor;
-            button9.BackColor = Red_color.BackColor;
             button10.BackColor = Red_color.BackColor;
-            button11.BackColor = Red_color.BackColor;
             button13.BackColor = Red_color.BackColor;
-            button14.BackColor = Red_color.BackColor;
             addCreatureButton.BackColor = Red_color.BackColor;
             editMenuButton.BackColor = Red_color.BackColor;
             saveCreatureButton.BackColor = Red_color.BackColor;
             loadCreatureListButton.BackColor = Red_color.BackColor;
             Settings_button.BackColor = Red_color.BackColor;
             Change_Bcolor.BackColor = Red_color.BackColor;
-            editForm.editButton.BackColor = Red_color.BackColor;
+            //editForm.editButton.BackColor = Red_color.BackColor;
         }
 
         private void label11_Click(object sender, EventArgs e)
         {
+        }
+
+        private void AddEntityButton_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the EditForm
+            AddForm = new AddEntity();
+
+            // Make the popup a child of the main form
+            AddForm.Owner = this;
+
+            // Display the EditForm as a modal dialog box
+            // Create a screen object to determine which monitor the mainGUI is on
+            Screen screen = Screen.FromControl(this);
+
+            // Calculate the position of the pop-up form on the same screen
+            int x = screen.WorkingArea.Right - AddForm.Width * 2;
+            int y = screen.WorkingArea.Bottom - AddForm.Height * 2;
+
+            // Set the start position and location of the pop-up form
+            AddForm.StartPosition = FormStartPosition.Manual;
+            AddForm.Location = new Point(x, y);
+
+            AddForm.Show();
         }
     }
 }
