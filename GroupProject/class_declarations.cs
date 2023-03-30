@@ -27,6 +27,25 @@ namespace GroupProject
         private string? Name;        // Creature name
         private byte Initiative;     // Place in initiative
 
+        public int abilityScoreModifier(byte statScore)
+        {
+            int statInt = (int)statScore;
+            int modifier = 0;
+            if (statInt < 10)
+            {
+                modifier = (statInt - 11) / 2;
+            }
+            else if (statInt > 11)
+            {
+                modifier = (statInt - 10) / 2;
+            }
+            else
+            {
+                modifier = 0;
+            }
+            return modifier;
+        }
+
         //Set and get for strength score
         public void SetStr(byte strVal)
         { Str = strVal; }
@@ -151,10 +170,8 @@ namespace GroupProject
             Wis = wisdom;
             Cha = charisma;
 
-            int tempDex = Dex;
-            int tempCon = Con;
-            AC = (byte)(10 + ((tempDex - 10) / 2));
-            MaxHP = (tempCon - 10) / 2;
+            AC = (byte)(10 + abilityScoreModifier(Dex));
+            MaxHP = (byte)(abilityScoreModifier(Con));
             CurrentHP = MaxHP;
             TempHP = 0;
 
@@ -179,6 +196,43 @@ namespace GroupProject
         {
             return new Creature(this.Name, this.Description, this.Str, this.Dex, this.Con, this.Int, this.Wis, this.Cha);
         }
+    }
+
+    class StatusEffect
+    {
+        private string Name = "";
+        private string Description = "";
+        private byte Duration = 0;      //Duration in rounds
+        private bool SaveAtStart = false;
+        private bool SaveAtEnd = true;
+        private bool Blinded
+        { get; set; }
+        private bool Charmed
+        { get; set; }
+        private bool Deafened
+        { get; set; }
+        private bool Frightened
+        { get; set; }
+        private bool Grappled
+        { get; set; }
+        private bool Incapacitated
+        { get; set; }
+        private bool Invisible
+        { get; set; }
+        private bool Paralyzed
+        { get; set; }
+        private bool Petrified
+        { get; set; }
+        private bool Poisoned
+        { get; set; }
+        private bool Prone
+        { get; set; }
+        private bool Restrained
+        { get; set; }
+        private bool Stunned
+        { get; set; }
+        private bool Unconscious
+        { get; set; }
     }
 
 }
