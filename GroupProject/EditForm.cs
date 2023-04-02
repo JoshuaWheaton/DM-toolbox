@@ -15,6 +15,7 @@ namespace GroupProject
 {
     public partial class EditForm : Form
     {
+        
         // Constructor
         public EditForm()
         {
@@ -27,6 +28,7 @@ namespace GroupProject
             // Get a reference to the main form
             mainGUI parentForm = (mainGUI)this.Owner;
             Creature selectedCreature = parentForm.creatureListBox.SelectedItem as Creature;
+
 
             if (selectedCreature == null)
             {
