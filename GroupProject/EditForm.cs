@@ -43,6 +43,7 @@ namespace GroupProject
             selectedCreature.SetWis((byte)wisdomNumericUpDown.Value);
             selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
             selectedCreature.SetInitiative((byte)initiativeNumericUpDown.Value);
+            selectedCreature.SetMaxHP((byte)hitPointsNumericUpDown.Value);
             selectedCreature.updateVals();
 
             parentForm.editButton_Click(sender, e);

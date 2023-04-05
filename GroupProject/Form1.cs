@@ -52,7 +52,7 @@ namespace GroupProject
                 ACLabel.Text = creature.GetAC().ToString();
                 initLabel.Text = creature.GetInitiative().ToString();
                 tempHPLabel.Text = creature.GetTempHP().ToString();
-                HPLabel.Text = creature.GetCurrentHP().ToString();
+                HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
                 
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
@@ -107,10 +107,12 @@ namespace GroupProject
             sortCreatureList();
         }
 
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative)
+        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, byte hp)
         {
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
             creature.SetInitiative(initiative);
+            creature.SetMaxHP(hp);
+            creature.SetHP(hp);
             creatureList.Add(creature);
         }
 
