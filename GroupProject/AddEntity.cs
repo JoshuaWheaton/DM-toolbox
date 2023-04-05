@@ -31,10 +31,11 @@ namespace GroupProject
             byte charisma = (byte)charismaNumericUpDown.Value;
             byte initiative = (byte)initiativeNumericUpDown.Value;
             byte hp = (byte)hitPointsNumericUpDown.Value;
+            byte ac = (byte)acNumericUpDown.Value;
             
 
             // Add the creature to the list
-            parentForm.AddtoList(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative, hp);
+            parentForm.AddtoList(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative, hp, ac);
 
             // Clear the form for the next creature
             nameTextBox.Clear();
@@ -47,6 +48,7 @@ namespace GroupProject
             charismaNumericUpDown.Value = 10;
             initiativeNumericUpDown.Value = 0;
             hitPointsNumericUpDown.Value = 0;
+            acNumericUpDown.Value = 10;
 
             parentForm.editButton_Click(sender, e);
         }

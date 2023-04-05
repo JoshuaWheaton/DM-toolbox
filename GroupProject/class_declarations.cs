@@ -179,10 +179,10 @@ namespace GroupProject
 
         public void updateVals()
         {
+            //Removed because the add creature box now has section for HP and AC
             int tempDex = Dex;
             int tempCon = Con;
-            AC = (byte)(10 + ((tempDex - 10) / 2));
-            //Removed because the add creature box now has section for HP
+            //AC = (byte)(10 + ((tempDex - 10) / 2));
             //MaxHP = (tempCon - 10) / 2;
             //CurrentHP = MaxHP;
         }

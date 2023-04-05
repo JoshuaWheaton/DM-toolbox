@@ -67,6 +67,8 @@ namespace GroupProject
                     editForm.wisdomNumericUpDown.Value = creature.GetWis();
                     editForm.charismaNumericUpDown.Value = creature.GetCha();
                     editForm.initiativeNumericUpDown.Value = creature.GetInitiative();
+                    editForm.hitPointsNumericUpDown.Value = creature.GetMaxHP();
+                    editForm.acNumericUpDown.Value = creature.GetAC();
                 }
             }
         }
@@ -107,13 +109,18 @@ namespace GroupProject
             sortCreatureList();
         }
 
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, byte hp)
+        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, byte hp, byte ac)
         {
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
             creature.SetInitiative(initiative);
             creature.SetMaxHP(hp);
             creature.SetHP(hp);
+            creature.SetAC(ac);
             creatureList.Add(creature);
+            // Display the newly added creature to the list on the left for clear input feedback
+            creatureListBox.DataSource = null;
+            creatureListBox.DataSource = creatureList;
+            sortCreatureList();
         }
 
         // A function called by the Edit Form popup form that sorts the creatures, and updates the listbox

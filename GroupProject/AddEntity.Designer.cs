@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.acNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.hitPointsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.AddButton = new System.Windows.Forms.Button();
@@ -50,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.STR = new System.Windows.Forms.Label();
             this.addEntityGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hitPointsNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
@@ -62,6 +65,8 @@
             // 
             // addEntityGroupBox
             // 
+            this.addEntityGroupBox.Controls.Add(this.label3);
+            this.addEntityGroupBox.Controls.Add(this.acNumericUpDown);
             this.addEntityGroupBox.Controls.Add(this.label2);
             this.addEntityGroupBox.Controls.Add(this.hitPointsNumericUpDown);
             this.addEntityGroupBox.Controls.Add(this.AddButton);
@@ -84,10 +89,28 @@
             this.addEntityGroupBox.Controls.Add(this.STR);
             this.addEntityGroupBox.Location = new System.Drawing.Point(24, 32);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
-            this.addEntityGroupBox.Size = new System.Drawing.Size(469, 364);
+            this.addEntityGroupBox.Size = new System.Drawing.Size(469, 388);
             this.addEntityGroupBox.TabIndex = 76;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(203, 342);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 32);
+            this.label3.TabIndex = 78;
+            this.label3.Text = "AC";
+            // 
+            // acNumericUpDown
+            // 
+            this.acNumericUpDown.Location = new System.Drawing.Point(271, 348);
+            this.acNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.acNumericUpDown.Name = "acNumericUpDown";
+            this.acNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.acNumericUpDown.TabIndex = 77;
             // 
             // label2
             // 
@@ -133,7 +156,7 @@
             // 
             // initiativeNumericUpDown
             // 
-            this.initiativeNumericUpDown.Location = new System.Drawing.Point(271, 264);
+            this.initiativeNumericUpDown.Location = new System.Drawing.Point(271, 268);
             this.initiativeNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.initiativeNumericUpDown.Maximum = new decimal(new int[] {
             30,
@@ -347,13 +370,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(517, 408);
+            this.ClientSize = new System.Drawing.Size(517, 432);
             this.Controls.Add(this.addEntityGroupBox);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddEntity";
             this.Text = "AddEntity";
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hitPointsNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
@@ -389,5 +413,7 @@
         private Label STR;
         public Label label2;
         public NumericUpDown hitPointsNumericUpDown;
+        public Label label3;
+        public NumericUpDown acNumericUpDown;
     }
 }
