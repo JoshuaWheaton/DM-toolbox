@@ -15,6 +15,7 @@ namespace GroupProject
 {
     public partial class EditForm : Form
     {
+        
         // Constructor
         public EditForm()
         {
@@ -27,6 +28,7 @@ namespace GroupProject
             // Get a reference to the main form
             mainGUI parentForm = (mainGUI)this.Owner;
             Creature selectedCreature = parentForm.creatureListBox.SelectedItem as Creature;
+
 
             if (selectedCreature == null)
             {
@@ -43,6 +45,9 @@ namespace GroupProject
             selectedCreature.SetWis((byte)wisdomNumericUpDown.Value);
             selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
             selectedCreature.SetInitiative((byte)initiativeNumericUpDown.Value);
+            selectedCreature.SetMaxHP((byte)hitPointsNumericUpDown.Value);
+            if(selectedCreature.GetCurrentHP() > selectedCreature.GetMaxHP()) { selectedCreature.SetHP((byte)hitPointsNumericUpDown.Value); }
+            selectedCreature.SetAC((byte)acNumericUpDown.Value);
             selectedCreature.updateVals();
 
             parentForm.editButton_Click(sender, e);
