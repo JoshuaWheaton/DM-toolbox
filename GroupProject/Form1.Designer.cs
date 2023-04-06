@@ -126,9 +126,12 @@
             this.Settings_group_box = new System.Windows.Forms.GroupBox();
             this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Color_choices = new System.Windows.Forms.GroupBox();
-            this.Red_color = new System.Windows.Forms.Button();
-            this.Green_color = new System.Windows.Forms.Button();
-            this.Blue_color = new System.Windows.Forms.Button();
+            this.ScrollBlue = new System.Windows.Forms.HScrollBar();
+            this.ScrollGreen = new System.Windows.Forms.HScrollBar();
+            this.ScrollRed = new System.Windows.Forms.HScrollBar();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
@@ -205,6 +208,9 @@
             // 
             // menuGroupBox
             // 
+            this.menuGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.menuGroupBox.AutoSize = true;
             this.menuGroupBox.Controls.Add(this.button13);
             this.menuGroupBox.Controls.Add(this.Settings_button);
             this.menuGroupBox.Controls.Add(this.button10);
@@ -1079,6 +1085,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.subtractHpButton);
             this.groupBox2.Controls.Add(this.addHpButton);
             this.groupBox2.Controls.Add(this.div3Label);
@@ -1111,6 +1120,7 @@
             this.groupBox2.Controls.Add(this.intelligenceLabel);
             this.groupBox2.Location = new System.Drawing.Point(327, 152);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Size = new System.Drawing.Size(393, 643);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
@@ -1271,6 +1281,9 @@
             // 
             // entityListGroupBox
             // 
+            this.entityListGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.entityListGroupBox.AutoSize = true;
             this.entityListGroupBox.Controls.Add(this.creatureListBox);
             this.entityListGroupBox.Controls.Add(this.sortEntitiesButton);
             this.entityListGroupBox.Location = new System.Drawing.Point(31, 152);
@@ -1282,6 +1295,7 @@
             // 
             // addEntityGroupBox
             // 
+            this.addEntityGroupBox.AutoSize = true;
             this.addEntityGroupBox.Controls.Add(this.label11);
             this.addEntityGroupBox.Controls.Add(this.initiativeNumericUpDown);
             this.addEntityGroupBox.Controls.Add(this.descriptionTextBox);
@@ -1302,6 +1316,7 @@
             this.addEntityGroupBox.Controls.Add(this.STR);
             this.addEntityGroupBox.Location = new System.Drawing.Point(741, 459);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
+            this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addEntityGroupBox.Size = new System.Drawing.Size(469, 337);
             this.addEntityGroupBox.TabIndex = 74;
             this.addEntityGroupBox.TabStop = false;
@@ -1333,6 +1348,9 @@
             // 
             // diceRollerGroupBox
             // 
+            this.diceRollerGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
             this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
@@ -1351,7 +1369,8 @@
             // 
             // Settings_group_box
             // 
-            this.Settings_group_box.BackColor = System.Drawing.Color.White;
+            this.Settings_group_box.AutoSize = true;
+            this.Settings_group_box.BackColor = System.Drawing.Color.Gray;
             this.Settings_group_box.Controls.Add(this.Change_Bcolor);
             this.Settings_group_box.Location = new System.Drawing.Point(1112, 399);
             this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1365,8 +1384,7 @@
             // Change_Bcolor
             // 
             this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.Location = new System.Drawing.Point(7, 5);
-            this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Change_Bcolor.Location = new System.Drawing.Point(6, 10);
             this.Change_Bcolor.Name = "Change_Bcolor";
             this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
             this.Change_Bcolor.TabIndex = 0;
@@ -1376,56 +1394,81 @@
             // 
             // Color_choices
             // 
-            this.Color_choices.BackColor = System.Drawing.Color.White;
-            this.Color_choices.Controls.Add(this.Red_color);
-            this.Color_choices.Controls.Add(this.Green_color);
-            this.Color_choices.Controls.Add(this.Blue_color);
-            this.Color_choices.Location = new System.Drawing.Point(1126, 460);
-            this.Color_choices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Color_choices.AutoSize = true;
+            this.Color_choices.BackColor = System.Drawing.Color.DimGray;
+            this.Color_choices.Controls.Add(this.ScrollBlue);
+            this.Color_choices.Controls.Add(this.ScrollGreen);
+            this.Color_choices.Controls.Add(this.ScrollRed);
+            this.Color_choices.Controls.Add(this.label16);
+            this.Color_choices.Controls.Add(this.label14);
+            this.Color_choices.Controls.Add(this.label12);
+            this.Color_choices.Location = new System.Drawing.Point(916, 345);
             this.Color_choices.Name = "Color_choices";
-            this.Color_choices.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Color_choices.Size = new System.Drawing.Size(137, 51);
+            this.Color_choices.Size = new System.Drawing.Size(219, 134);
             this.Color_choices.TabIndex = 77;
             this.Color_choices.TabStop = false;
             this.Color_choices.Visible = false;
             // 
-            // Red_color
+            // ScrollBlue
             // 
-            this.Red_color.BackColor = System.Drawing.Color.Firebrick;
-            this.Red_color.Location = new System.Drawing.Point(96, 11);
-            this.Red_color.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Red_color.Name = "Red_color";
-            this.Red_color.Size = new System.Drawing.Size(24, 31);
-            this.Red_color.TabIndex = 2;
-            this.Red_color.UseVisualStyleBackColor = false;
-            this.Red_color.Click += new System.EventHandler(this.Red_color_Click);
+            this.ScrollBlue.Location = new System.Drawing.Point(63, 97);
+            this.ScrollBlue.Maximum = 255;
+            this.ScrollBlue.Name = "ScrollBlue";
+            this.ScrollBlue.Size = new System.Drawing.Size(142, 17);
+            this.ScrollBlue.TabIndex = 8;
+            this.ScrollBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBlue_Scroll);
             // 
-            // Green_color
+            // ScrollGreen
             // 
-            this.Green_color.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Green_color.Location = new System.Drawing.Point(57, 11);
-            this.Green_color.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Green_color.Name = "Green_color";
-            this.Green_color.Size = new System.Drawing.Size(24, 31);
-            this.Green_color.TabIndex = 1;
-            this.Green_color.UseVisualStyleBackColor = false;
-            this.Green_color.Click += new System.EventHandler(this.Green_color_Click);
+            this.ScrollGreen.Location = new System.Drawing.Point(63, 67);
+            this.ScrollGreen.Maximum = 255;
+            this.ScrollGreen.Name = "ScrollGreen";
+            this.ScrollGreen.Size = new System.Drawing.Size(142, 17);
+            this.ScrollGreen.TabIndex = 7;
+            this.ScrollGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollGreen_Scroll);
             // 
-            // Blue_color
+            // ScrollRed
             // 
-            this.Blue_color.BackColor = System.Drawing.Color.Blue;
-            this.Blue_color.Location = new System.Drawing.Point(18, 12);
-            this.Blue_color.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Blue_color.Name = "Blue_color";
-            this.Blue_color.Size = new System.Drawing.Size(24, 31);
-            this.Blue_color.TabIndex = 0;
-            this.Blue_color.UseVisualStyleBackColor = false;
-            this.Blue_color.Click += new System.EventHandler(this.Blue_color_Click);
+            this.ScrollRed.Location = new System.Drawing.Point(63, 37);
+            this.ScrollRed.Maximum = 255;
+            this.ScrollRed.Name = "ScrollRed";
+            this.ScrollRed.Size = new System.Drawing.Size(142, 17);
+            this.ScrollRed.TabIndex = 6;
+            this.ScrollRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollRed_Scroll);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 97);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(34, 15);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "BLUE";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(10, 67);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 15);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "GREEN";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(10, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 15);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "RED";
             // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
             this.ClientSize = new System.Drawing.Size(1311, 855);
@@ -1468,6 +1511,7 @@
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
             this.Load += new System.EventHandler(this.mainGUI_Load);
+            this.Resize += new System.EventHandler(this.mainGUI_Resize);
             this.menuGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).EndInit();
@@ -1484,7 +1528,9 @@
             this.diceRollerGroupBox.ResumeLayout(false);
             this.Settings_group_box.ResumeLayout(false);
             this.Color_choices.ResumeLayout(false);
+            this.Color_choices.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1579,9 +1625,6 @@
         private GroupBox Settings_group_box;
         private Button Change_Bcolor;
         private GroupBox Color_choices;
-        private Button Red_color;
-        private Button Green_color;
-        private Button Blue_color;
         private Label label11;
         private NumericUpDown initiativeNumericUpDown;
         private Button editMenuButton;
@@ -1589,6 +1632,12 @@
         private Label div3Label;
         private Label div2Label;
         private Label div1Label;
+        private HScrollBar ScrollBlue;
+        private HScrollBar ScrollGreen;
+        private HScrollBar ScrollRed;
+        private Label label16;
+        private Label label14;
+        private Label label12;
         private Button addHpButton;
         private Button subtractHpButton;
     }

@@ -11,6 +11,9 @@ namespace GroupProject
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
         private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
         private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
+        private int r=0, g=0, b=0;
+        private Rectangle OriginalRectangleEntity;
+        private Rectangle OriginalFormSize;
         private HPForm addHealth;
 
         // Constructor
@@ -244,7 +247,7 @@ namespace GroupProject
             
             // Make the popup a child of the main form
             editForm.Owner = this;
-
+            editForm.editButton.BackColor = Settings_button.BackColor;
             // Load the inital data from the listbox into the forms in the pop-up
             creatureListBox_SelectedIndexChanged(sender,e);
 
@@ -709,6 +712,10 @@ namespace GroupProject
         {
         }
 
+        private void mainGUI_Resize(object sender, EventArgs e)
+        {
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
@@ -770,69 +777,6 @@ namespace GroupProject
                 Color_choices.Visible = true;
         }
 
-        private void Blue_color_Click(object sender, EventArgs e)
-        {
-            prevRound.BackColor = Blue_color.BackColor;
-            nextRound.BackColor = Blue_color.BackColor;
-            sortEntitiesButton.BackColor = Blue_color.BackColor;
-            Copy_monster.BackColor = Blue_color.BackColor;
-            removeCreatureButton.BackColor = Blue_color.BackColor;
-            button5.BackColor = Blue_color.BackColor;
-            AddEntityButton.BackColor = Blue_color.BackColor;
-            button8.BackColor = Blue_color.BackColor;
-            button10.BackColor = Blue_color.BackColor;
-            button13.BackColor = Blue_color.BackColor;
-            addCreatureButton.BackColor = Blue_color.BackColor;
-            editMenuButton.BackColor = Blue_color.BackColor;
-            saveCreatureButton.BackColor = Blue_color.BackColor;
-            loadCreatureListButton.BackColor = Blue_color.BackColor;
-            Settings_button.BackColor = Blue_color.BackColor;
-            Change_Bcolor.BackColor = Blue_color.BackColor;
-            //editForm.editButton.BackColor = Blue_color.BackColor;
-        }
-
-        private void Green_color_Click(object sender, EventArgs e)
-        {
-            prevRound.BackColor = Green_color.BackColor;
-            nextRound.BackColor = Green_color.BackColor;
-            sortEntitiesButton.BackColor = Green_color.BackColor;
-            Copy_monster.BackColor = Green_color.BackColor;
-            removeCreatureButton.BackColor = Green_color.BackColor;
-            button5.BackColor = Green_color.BackColor;
-            AddEntityButton.BackColor = Green_color.BackColor;
-            button8.BackColor = Green_color.BackColor;
-            button10.BackColor = Green_color.BackColor;
-            button13.BackColor = Green_color.BackColor;
-            addCreatureButton.BackColor = Green_color.BackColor;
-            editMenuButton.BackColor = Green_color.BackColor;
-            saveCreatureButton.BackColor = Green_color.BackColor;
-            loadCreatureListButton.BackColor = Green_color.BackColor;
-            Settings_button.BackColor = Green_color.BackColor;
-            Change_Bcolor.BackColor = Green_color.BackColor;
-            //editForm.editButton.BackColor = Green_color.BackColor;
-        }
-
-        private void Red_color_Click(object sender, EventArgs e)
-        {
-            prevRound.BackColor = Red_color.BackColor;
-            nextRound.BackColor = Red_color.BackColor;
-            sortEntitiesButton.BackColor = Red_color.BackColor;
-            Copy_monster.BackColor = Red_color.BackColor;
-            removeCreatureButton.BackColor = Red_color.BackColor;
-            button5.BackColor = Red_color.BackColor;
-            AddEntityButton.BackColor = Red_color.BackColor;
-            button8.BackColor = Red_color.BackColor;
-            button10.BackColor = Red_color.BackColor;
-            button13.BackColor = Red_color.BackColor;
-            addCreatureButton.BackColor = Red_color.BackColor;
-            editMenuButton.BackColor = Red_color.BackColor;
-            saveCreatureButton.BackColor = Red_color.BackColor;
-            loadCreatureListButton.BackColor = Red_color.BackColor;
-            Settings_button.BackColor = Red_color.BackColor;
-            Change_Bcolor.BackColor = Red_color.BackColor;
-            //editForm.editButton.BackColor = Red_color.BackColor;
-        }
-
         private void label11_Click(object sender, EventArgs e)
         {
         }
@@ -844,7 +788,7 @@ namespace GroupProject
 
             // Make the popup a child of the main form
             AddForm.Owner = this;
-
+            AddForm.AddButton.BackColor = Settings_button.BackColor;
             // Display the EditForm as a modal dialog box
             // Create a screen object to determine which monitor the mainGUI is on
             Screen screen = Screen.FromControl(this);
@@ -859,6 +803,41 @@ namespace GroupProject
 
             AddForm.Show();
         }
+        private void setColor()
+        {
+            prevRound.BackColor = Color.FromArgb(r,g,b);
+            nextRound.BackColor = Color.FromArgb(r, g, b);
+            sortEntitiesButton.BackColor = Color.FromArgb(r, g, b);
+            Copy_monster.BackColor = Color.FromArgb(r, g, b);
+            removeCreatureButton.BackColor = Color.FromArgb(r, g, b);
+            button5.BackColor = Color.FromArgb(r, g, b);
+            AddEntityButton.BackColor = Color.FromArgb(r, g, b);
+            button8.BackColor = Color.FromArgb(r, g, b);
+            button10.BackColor = Color.FromArgb(r, g, b);
+            button13.BackColor = Color.FromArgb(r, g, b);
+            addCreatureButton.BackColor = Color.FromArgb(r, g, b);
+            editMenuButton.BackColor = Color.FromArgb(r, g, b);
+            saveCreatureButton.BackColor = Color.FromArgb(r, g, b);
+            loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
+            Settings_button.BackColor = Color.FromArgb(r, g, b);
+            Change_Bcolor.BackColor = Color.FromArgb(r, g, b);
+        }
+
+        private void ScrollRed_Scroll(object sender, ScrollEventArgs e)
+        {
+            r = ScrollRed.Value;
+            setColor();
+        }
+
+        private void ScrollGreen_Scroll(object sender, ScrollEventArgs e)
+        {
+            g = ScrollGreen.Value;
+            setColor();
+        }
+        private void ScrollBlue_Scroll(object sender, ScrollEventArgs e)
+        {
+            b= ScrollBlue.Value;
+            setColor();
 
         private void addHpButton_Click(object sender, EventArgs e)
         {
