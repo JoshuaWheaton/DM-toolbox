@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GroupProject
@@ -13,6 +14,8 @@ namespace GroupProject
         private int r=0, g=0, b=0;
         private Rectangle OriginalRectangleEntity;
         private Rectangle OriginalFormSize;
+        private HPForm addHealth;
+
         // Constructor
         public mainGUI()
         {
@@ -37,6 +40,13 @@ namespace GroupProject
             creatureListBox.DataSource = creatureList;
         }
 
+        //Function to update the loaded creature health label after the health is changed
+        public void updateHpLabel()
+        {
+            Creature creature = creatureListBox.SelectedItem as Creature;
+            HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
+        }
+
         // Function which loads given creatures data into several labels
         private void loadEntity(Creature creature)
         {
@@ -54,7 +64,9 @@ namespace GroupProject
                 ACLabel.Text = creature.GetAC().ToString();
                 initLabel.Text = creature.GetInitiative().ToString();
                 tempHPLabel.Text = creature.GetTempHP().ToString();
-                HPLabel.Text = creature.GetCurrentHP().ToString();
+                HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
+                addHpButton.Show();
+                subtractHpButton.Show();
                 
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
@@ -69,6 +81,8 @@ namespace GroupProject
                     editForm.wisdomNumericUpDown.Value = creature.GetWis();
                     editForm.charismaNumericUpDown.Value = creature.GetCha();
                     editForm.initiativeNumericUpDown.Value = creature.GetInitiative();
+                    editForm.hitPointsNumericUpDown.Value = creature.GetMaxHP();
+                    editForm.acNumericUpDown.Value = creature.GetAC();
                 }
             }
         }
@@ -109,11 +123,18 @@ namespace GroupProject
             sortCreatureList();
         }
 
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative)
+        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, byte hp, byte ac)
         {
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
             creature.SetInitiative(initiative);
+            creature.SetMaxHP(hp);
+            creature.SetHP(hp);
+            creature.SetAC(ac);
             creatureList.Add(creature);
+            // Display the newly added creature to the list on the left for clear input feedback
+            creatureListBox.DataSource = null;
+            creatureListBox.DataSource = creatureList;
+            sortCreatureList();
         }
 
         // A function called by the Edit Form popup form that sorts the creatures, and updates the listbox
@@ -817,6 +838,59 @@ namespace GroupProject
         {
             b= ScrollBlue.Value;
             setColor();
+
+        private void addHpButton_Click(object sender, EventArgs e)
+        {
+            if (creatureListBox.SelectedItem != null)
+            {
+                // Create a new instance of the HpForm
+                addHealth = new HPForm("How much would like to increase the health by?", "ADD");
+
+                // Make the popup a child of the main form
+                addHealth.Owner = this;
+
+                // Display the EditForm as a modal dialog box
+                // Create a screen object to determine which monitor the mainGUI is on
+                Screen screen = Screen.FromControl(this);
+
+                // Calculate the position of the pop-up form on the same screen
+                int x = screen.WorkingArea.Right - addHealth.Width * 2;
+                int y = screen.WorkingArea.Bottom - addHealth.Height * 2;
+
+                // Set the start position and location of the pop-up form
+                addHealth.StartPosition = FormStartPosition.Manual;
+                addHealth.Location = new Point(x, y);
+
+                addHealth.Show();
+
+            }
+
+        }
+
+        private void subtractHpButton_Click(object sender, EventArgs e)
+        {
+            if (creatureListBox.SelectedItem != null)
+            {
+                // Create a new instance of the HpForm
+                addHealth = new HPForm("How much would like to decrease the health by?", "SUB");
+
+                // Make the popup a child of the main form
+                addHealth.Owner = this;
+
+                // Display the EditForm as a modal dialog box
+                // Create a screen object to determine which monitor the mainGUI is on
+                Screen screen = Screen.FromControl(this);
+
+                // Calculate the position of the pop-up form on the same screen
+                int x = screen.WorkingArea.Right - addHealth.Width * 2;
+                int y = screen.WorkingArea.Bottom - addHealth.Height * 2;
+
+                // Set the start position and location of the pop-up form
+                addHealth.StartPosition = FormStartPosition.Manual;
+                addHealth.Location = new Point(x, y);
+
+                addHealth.Show();
+            }
         }
     }
 }
