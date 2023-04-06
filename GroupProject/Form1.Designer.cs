@@ -231,18 +231,19 @@
             this.menuGroupBox.Text = "Menu";
             this.menuGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button13
+            // AddStatusEffect
             // 
-            this.button13.BackColor = System.Drawing.Color.Firebrick;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button13.Location = new System.Drawing.Point(99, 215);
-            this.button13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(86, 31);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = false;
+            AddStatusEffect.BackColor = Color.Firebrick;
+            AddStatusEffect.FlatStyle = FlatStyle.Flat;
+            AddStatusEffect.ForeColor = SystemColors.ControlLightLight;
+            AddStatusEffect.Location = new Point(99, 215);
+            AddStatusEffect.Margin = new Padding(3, 4, 3, 4);
+            AddStatusEffect.Name = "AddStatusEffect";
+            AddStatusEffect.Size = new Size(86, 31);
+            AddStatusEffect.TabIndex = 14;
+            AddStatusEffect.Text = "Status";
+            AddStatusEffect.UseVisualStyleBackColor = false;
+            AddStatusEffect.Click += AddStatusEffect_Click;
             // 
             // Settings_button
             // 
@@ -912,12 +913,12 @@
             // 
             // saveFileDialog
             // 
-            this.saveFileDialog.FileName = "creatureTest";
-            this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            saveFileDialog.FileName = "creatureTest";
+            saveFileDialog.FileOk += saveFileDialog1_FileOk;
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
+            openFileDialog.FileName = "openFileDialog1";
             // 
             // STR
             // 
@@ -1542,7 +1543,7 @@
         private Button removeCreatureButton;
         private GroupBox menuGroupBox;
         private Button button5;
-        private Button button13;
+        private Button AddStatusEffect;
         private Button Settings_button;
         private Button button10;
         private Button button8;

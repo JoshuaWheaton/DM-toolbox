@@ -11,6 +11,7 @@ namespace GroupProject
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
         private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
         private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
+        private AddStatusEffect AddStatus; //An AddStatusEffect variable that allows functions to create the Add Status Effect form
         private int r=0, g=0, b=0;
         private Rectangle OriginalRectangleEntity;
         private Rectangle OriginalFormSize;
@@ -244,12 +245,12 @@ namespace GroupProject
         {
             // Create a new instance of the EditForm
             editForm = new EditForm();
-            
+
             // Make the popup a child of the main form
             editForm.Owner = this;
             editForm.editButton.BackColor = Settings_button.BackColor;
             // Load the inital data from the listbox into the forms in the pop-up
-            creatureListBox_SelectedIndexChanged(sender,e);
+            creatureListBox_SelectedIndexChanged(sender, e);
 
             // Display the EditForm as a modal dialog box
             // Create a screen object to determine which monitor the mainGUI is on
@@ -803,6 +804,29 @@ namespace GroupProject
 
             AddForm.Show();
         }
+
+        private void AddStatusEffect_Click(object sender, EventArgs e)
+        {
+            //Create a new instance of AddStatusEffect
+            AddStatus = new AddStatusEffect();
+
+            //Make the popup a child of the main form
+            AddStatus.Owner = this;
+
+            //Display the AddStatusEffect form as a modal dialogue box
+            //Create a screen object to find the monitor the GUI is on
+            Screen screen = Screen.FromControl(this);
+
+            //Set the pop-up's position on the same screen
+            int x = screen.WorkingArea.Right - AddStatus.Width * 2;
+            int y = screen.WorkingArea.Bottom - AddStatus.Height * 2;
+
+            //Set the start position of the pop-up
+            AddStatus.StartPosition = FormStartPosition.Manual;
+            AddStatus.Location = new Point(x, y);
+
+            AddStatus.Show();
+         }
         private void setColor()
         {
             prevRound.BackColor = Color.FromArgb(r,g,b);
