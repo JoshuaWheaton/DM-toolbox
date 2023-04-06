@@ -1128,6 +1128,7 @@
             this.subtractHpButton.Text = "-";
             this.subtractHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.subtractHpButton.UseVisualStyleBackColor = false;
+            this.subtractHpButton.Visible = false;
             this.subtractHpButton.Click += new System.EventHandler(this.subtractHpButton_Click);
             // 
             // addHpButton
@@ -1141,6 +1142,7 @@
             this.addHpButton.Text = "+";
             this.addHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.addHpButton.UseVisualStyleBackColor = false;
+            this.addHpButton.Visible = false;
             this.addHpButton.Click += new System.EventHandler(this.addHpButton_Click);
             // 
             // div3Label

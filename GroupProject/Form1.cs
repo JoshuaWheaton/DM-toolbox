@@ -62,6 +62,8 @@ namespace GroupProject
                 initLabel.Text = creature.GetInitiative().ToString();
                 tempHPLabel.Text = creature.GetTempHP().ToString();
                 HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
+                addHpButton.Show();
+                subtractHpButton.Show();
                 
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
@@ -905,8 +907,8 @@ namespace GroupProject
                 int y = screen.WorkingArea.Bottom - addHealth.Height * 2;
 
                 // Set the start position and location of the pop-up form
-                addHealth.StartPosition = FormStartPosition.CenterParent;
-                //addHealth.Location = new Point(x, y);
+                addHealth.StartPosition = FormStartPosition.Manual;
+                addHealth.Location = new Point(x, y);
 
                 addHealth.Show();
             }

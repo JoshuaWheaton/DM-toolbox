@@ -48,5 +48,10 @@ namespace GroupProject
             parentForm.updateHpLabel();
             this.Close();
         }
+
+        private void userPrompt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
