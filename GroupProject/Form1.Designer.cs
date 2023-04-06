@@ -1121,7 +1121,7 @@
             this.groupBox2.Location = new System.Drawing.Point(327, 152);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(393, 643);
+            this.groupBox2.Size = new System.Drawing.Size(412, 650);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Description";
@@ -1317,7 +1317,7 @@
             this.addEntityGroupBox.Location = new System.Drawing.Point(741, 459);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
             this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addEntityGroupBox.Size = new System.Drawing.Size(469, 337);
+            this.addEntityGroupBox.Size = new System.Drawing.Size(1141, 510);
             this.addEntityGroupBox.TabIndex = 74;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
@@ -1354,7 +1354,7 @@
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
             this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
-            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 284);
+            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 286);
             this.diceRollerGroupBox.TabIndex = 75;
             this.diceRollerGroupBox.TabStop = false;
             this.diceRollerGroupBox.Text = "Dice Roller";
@@ -1376,7 +1376,7 @@
             this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Settings_group_box.Name = "Settings_group_box";
             this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Settings_group_box.Size = new System.Drawing.Size(134, 67);
+            this.Settings_group_box.Size = new System.Drawing.Size(134, 85);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
@@ -1402,9 +1402,9 @@
             this.Color_choices.Controls.Add(this.label16);
             this.Color_choices.Controls.Add(this.label14);
             this.Color_choices.Controls.Add(this.label12);
-            this.Color_choices.Location = new System.Drawing.Point(916, 345);
+            this.Color_choices.Location = new System.Drawing.Point(1100, 465);
             this.Color_choices.Name = "Color_choices";
-            this.Color_choices.Size = new System.Drawing.Size(219, 134);
+            this.Color_choices.Size = new System.Drawing.Size(219, 140);
             this.Color_choices.TabIndex = 77;
             this.Color_choices.TabStop = false;
             this.Color_choices.Visible = false;
@@ -1441,7 +1441,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(10, 97);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 15);
+            this.label16.Size = new System.Drawing.Size(43, 20);
             this.label16.TabIndex = 5;
             this.label16.Text = "BLUE";
             // 
@@ -1450,7 +1450,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(10, 67);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 15);
+            this.label14.Size = new System.Drawing.Size(55, 20);
             this.label14.TabIndex = 4;
             this.label14.Text = "GREEN";
             // 
@@ -1460,7 +1460,7 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label12.Location = new System.Drawing.Point(10, 37);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 15);
+            this.label12.Size = new System.Drawing.Size(37, 20);
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
             // 

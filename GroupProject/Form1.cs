@@ -836,8 +836,9 @@ namespace GroupProject
         }
         private void ScrollBlue_Scroll(object sender, ScrollEventArgs e)
         {
-            b= ScrollBlue.Value;
+            b = ScrollBlue.Value;
             setColor();
+        }
 
         private void addHpButton_Click(object sender, EventArgs e)
         {
