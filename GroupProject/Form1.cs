@@ -10,6 +10,7 @@ namespace GroupProject
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
         private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
         private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
+        private AddStatusEffect AddStatus; //An AddStatusEffect variable that allows functions to create the Add Status Effect form
 
         // Constructor
         public mainGUI()
@@ -53,7 +54,7 @@ namespace GroupProject
                 initLabel.Text = creature.GetInitiative().ToString();
                 tempHPLabel.Text = creature.GetTempHP().ToString();
                 HPLabel.Text = creature.GetCurrentHP().ToString();
-                
+
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
                 if (editForm != null)
@@ -107,7 +108,7 @@ namespace GroupProject
             sortCreatureList();
         }
 
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative)
+        public void AddtoList(string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative)
         {
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
             creature.SetInitiative(initiative);
@@ -221,12 +222,12 @@ namespace GroupProject
         {
             // Create a new instance of the EditForm
             editForm = new EditForm();
-            
+
             // Make the popup a child of the main form
             editForm.Owner = this;
 
             // Load the inital data from the listbox into the forms in the pop-up
-            creatureListBox_SelectedIndexChanged(sender,e);
+            creatureListBox_SelectedIndexChanged(sender, e);
 
             // Display the EditForm as a modal dialog box
             // Create a screen object to determine which monitor the mainGUI is on
@@ -761,7 +762,7 @@ namespace GroupProject
             AddEntityButton.BackColor = Blue_color.BackColor;
             button8.BackColor = Blue_color.BackColor;
             button10.BackColor = Blue_color.BackColor;
-            button13.BackColor = Blue_color.BackColor;
+            AddStatusEffect.BackColor = Blue_color.BackColor;
             addCreatureButton.BackColor = Blue_color.BackColor;
             editMenuButton.BackColor = Blue_color.BackColor;
             saveCreatureButton.BackColor = Blue_color.BackColor;
@@ -782,7 +783,7 @@ namespace GroupProject
             AddEntityButton.BackColor = Green_color.BackColor;
             button8.BackColor = Green_color.BackColor;
             button10.BackColor = Green_color.BackColor;
-            button13.BackColor = Green_color.BackColor;
+            AddStatusEffect.BackColor = Green_color.BackColor;
             addCreatureButton.BackColor = Green_color.BackColor;
             editMenuButton.BackColor = Green_color.BackColor;
             saveCreatureButton.BackColor = Green_color.BackColor;
@@ -803,7 +804,7 @@ namespace GroupProject
             AddEntityButton.BackColor = Red_color.BackColor;
             button8.BackColor = Red_color.BackColor;
             button10.BackColor = Red_color.BackColor;
-            button13.BackColor = Red_color.BackColor;
+            AddStatusEffect.BackColor = Red_color.BackColor;
             addCreatureButton.BackColor = Red_color.BackColor;
             editMenuButton.BackColor = Red_color.BackColor;
             saveCreatureButton.BackColor = Red_color.BackColor;
@@ -838,6 +839,29 @@ namespace GroupProject
             AddForm.Location = new Point(x, y);
 
             AddForm.Show();
+        }
+
+        private void AddStatusEffect_Click(object sender, EventArgs e)
+        {
+            //Create a new instance of AddStatusEffect
+            AddStatus = new AddStatusEffect();
+
+            //Make the popup a child of the main form
+            AddStatus.Owner = this;
+
+            //Display the AddStatusEffect form as a modal dialogue box
+            //Create a screen object to find the monitor the GUI is on
+            Screen screen = Screen.FromControl(this);
+
+            //Set the pop-up's position on the same screen
+            int x = screen.WorkingArea.Right - AddStatus.Width * 2;
+            int y = screen.WorkingArea.Bottom - AddStatus.Height * 2;
+
+            //Set the start position of the pop-up
+            AddStatus.StartPosition = FormStartPosition.Manual;
+            AddStatus.Location = new Point(x, y);
+
+            AddStatus.Show();
         }
     }
 }

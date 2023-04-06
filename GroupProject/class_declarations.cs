@@ -170,8 +170,6 @@ namespace GroupProject
             Wis = wisdom;
             Cha = charisma;
 
-            AC = (byte)(10 + abilityScoreModifier(Dex));
-            MaxHP = (byte)(abilityScoreModifier(Con));
             CurrentHP = MaxHP;
             TempHP = 0;
 
@@ -198,13 +196,12 @@ namespace GroupProject
         }
     }
 
+    //Status Effect class declaration
     class StatusEffect
     {
         private string Name = "";
         private string Description = "";
         private byte Duration = 0;      //Duration in rounds
-        private bool SaveAtStart = false;
-        private bool SaveAtEnd = true;
         private bool Blinded
         { get; set; }
         private bool Charmed
@@ -233,6 +230,30 @@ namespace GroupProject
         { get; set; }
         private bool Unconscious
         { get; set; }
+
+        public StatusEffect(string name, string description, byte duration, bool blinded, bool charmed,
+                            bool deafened, bool frightened, bool grappled, bool incapacitated, bool invisible,
+                            bool paralyzed, bool petrified, bool poisoned, bool prone, bool restrained,
+                            bool stunned, bool unconscious)
+        {
+            Name = name;
+            Description = description;
+            Duration = duration;
+            Blinded = blinded;
+            Charmed = charmed;
+            Deafened = deafened;
+            Frightened = frightened;
+            Grappled = grappled;
+            Incapacitated = incapacitated;
+            Invisible = invisible;
+            Paralyzed = paralyzed;
+            Petrified = petrified;
+            Poisoned = poisoned;
+            Prone = prone;
+            Restrained = restrained;
+            Stunned = stunned;
+            Unconscious = unconscious;
+        }
     }
 
 }
