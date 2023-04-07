@@ -33,16 +33,14 @@
             this.nextRound = new System.Windows.Forms.Button();
             this.removeCreatureButton = new System.Windows.Forms.Button();
             this.menuGroupBox = new System.Windows.Forms.GroupBox();
-            this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.AddEntityButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.saveCreatureButton = new System.Windows.Forms.Button();
+            this.loadCreatureListButton = new System.Windows.Forms.Button();
             this.round1 = new System.Windows.Forms.Button();
             this.round2 = new System.Windows.Forms.Button();
             this.round3 = new System.Windows.Forms.Button();
@@ -85,11 +83,9 @@
             this.wisdomLabel = new System.Windows.Forms.Label();
             this.charismaLabel = new System.Windows.Forms.Label();
             this.addCreatureButton = new System.Windows.Forms.Button();
-            this.saveCreatureButton = new System.Windows.Forms.Button();
             this.sortEntitiesButton = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.loadCreatureListButton = new System.Windows.Forms.Button();
             this.STR = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.INT = new System.Windows.Forms.Label();
@@ -107,6 +103,12 @@
             this.descriptionLabel = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.subtractHpButton = new System.Windows.Forms.Button();
+            this.addHpButton = new System.Windows.Forms.Button();
+            this.div3Label = new System.Windows.Forms.Label();
+            this.div2Label = new System.Windows.Forms.Label();
+            this.div1Label = new System.Windows.Forms.Label();
+            this.editMenuButton = new System.Windows.Forms.Button();
             this.HPLabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tempHPLabel = new System.Windows.Forms.Label();
@@ -119,15 +121,17 @@
             this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.initiativeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.editButton = new System.Windows.Forms.Button();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
             this.Settings_group_box = new System.Windows.Forms.GroupBox();
             this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Color_choices = new System.Windows.Forms.GroupBox();
-            this.Red_color = new System.Windows.Forms.Button();
-            this.Green_color = new System.Windows.Forms.Button();
-            this.Blue_color = new System.Windows.Forms.Button();
+            this.ScrollBlue = new System.Windows.Forms.HScrollBar();
+            this.ScrollGreen = new System.Windows.Forms.HScrollBar();
+            this.ScrollRed = new System.Windows.Forms.HScrollBar();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
@@ -204,18 +208,19 @@
             // 
             // menuGroupBox
             // 
-            this.menuGroupBox.Controls.Add(this.button14);
+            this.menuGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.menuGroupBox.AutoSize = true;
             this.menuGroupBox.Controls.Add(this.button13);
             this.menuGroupBox.Controls.Add(this.Settings_button);
-            this.menuGroupBox.Controls.Add(this.button11);
             this.menuGroupBox.Controls.Add(this.button10);
-            this.menuGroupBox.Controls.Add(this.button9);
             this.menuGroupBox.Controls.Add(this.button8);
-            this.menuGroupBox.Controls.Add(this.button7);
-            this.menuGroupBox.Controls.Add(this.button6);
+            this.menuGroupBox.Controls.Add(this.AddEntityButton);
             this.menuGroupBox.Controls.Add(this.button5);
             this.menuGroupBox.Controls.Add(this.Copy_monster);
             this.menuGroupBox.Controls.Add(this.removeCreatureButton);
+            this.menuGroupBox.Controls.Add(this.saveCreatureButton);
+            this.menuGroupBox.Controls.Add(this.loadCreatureListButton);
             this.menuGroupBox.Location = new System.Drawing.Point(920, 151);
             this.menuGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.menuGroupBox.Name = "menuGroupBox";
@@ -226,31 +231,19 @@
             this.menuGroupBox.Text = "Menu";
             this.menuGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button14
+            // AddStatusEffect
             // 
-            this.button14.BackColor = System.Drawing.Color.Firebrick;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button14.Location = new System.Drawing.Point(192, 152);
-            this.button14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(86, 31);
-            this.button14.TabIndex = 15;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.Firebrick;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button13.Location = new System.Drawing.Point(99, 215);
-            this.button13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(86, 31);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = false;
+            AddStatusEffect.BackColor = Color.Firebrick;
+            AddStatusEffect.FlatStyle = FlatStyle.Flat;
+            AddStatusEffect.ForeColor = SystemColors.ControlLightLight;
+            AddStatusEffect.Location = new Point(99, 215);
+            AddStatusEffect.Margin = new Padding(3, 4, 3, 4);
+            AddStatusEffect.Name = "AddStatusEffect";
+            AddStatusEffect.Size = new Size(86, 31);
+            AddStatusEffect.TabIndex = 14;
+            AddStatusEffect.Text = "Status";
+            AddStatusEffect.UseVisualStyleBackColor = false;
+            AddStatusEffect.Click += AddStatusEffect_Click;
             // 
             // Settings_button
             // 
@@ -266,19 +259,6 @@
             this.Settings_button.UseVisualStyleBackColor = false;
             this.Settings_button.Click += new System.EventHandler(this.Settings_button_Click);
             // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Firebrick;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button11.Location = new System.Drawing.Point(99, 152);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(86, 31);
-            this.button11.TabIndex = 12;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.Firebrick;
@@ -291,19 +271,6 @@
             this.button10.TabIndex = 11;
             this.button10.Text = "button10";
             this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Firebrick;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button9.Location = new System.Drawing.Point(99, 88);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(86, 31);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -318,31 +285,19 @@
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // AddEntityButton
             // 
-            this.button7.BackColor = System.Drawing.Color.Firebrick;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Location = new System.Drawing.Point(7, 152);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 31);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Firebrick;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(7, 88);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 31);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.AddEntityButton.BackColor = System.Drawing.Color.Firebrick;
+            this.AddEntityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEntityButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddEntityButton.Location = new System.Drawing.Point(7, 88);
+            this.AddEntityButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddEntityButton.Name = "AddEntityButton";
+            this.AddEntityButton.Size = new System.Drawing.Size(121, 31);
+            this.AddEntityButton.TabIndex = 7;
+            this.AddEntityButton.Text = "Add Entity";
+            this.AddEntityButton.UseVisualStyleBackColor = false;
+            this.AddEntityButton.Click += new System.EventHandler(this.AddEntityButton_Click);
             // 
             // button5
             // 
@@ -356,6 +311,32 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = false;
+            // 
+            // saveCreatureButton
+            // 
+            this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
+            this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveCreatureButton.Location = new System.Drawing.Point(7, 152);
+            this.saveCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.saveCreatureButton.Name = "saveCreatureButton";
+            this.saveCreatureButton.Size = new System.Drawing.Size(121, 31);
+            this.saveCreatureButton.TabIndex = 54;
+            this.saveCreatureButton.Text = "Save Encounter";
+            this.saveCreatureButton.UseVisualStyleBackColor = false;
+            this.saveCreatureButton.Click += new System.EventHandler(this.saveCreatureButton_Click);
+            // 
+            // loadCreatureListButton
+            // 
+            this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
+            this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadCreatureListButton.Location = new System.Drawing.Point(153, 152);
+            this.loadCreatureListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loadCreatureListButton.Name = "loadCreatureListButton";
+            this.loadCreatureListButton.Size = new System.Drawing.Size(125, 31);
+            this.loadCreatureListButton.TabIndex = 56;
+            this.loadCreatureListButton.Text = "Load Encounter";
+            this.loadCreatureListButton.UseVisualStyleBackColor = false;
+            this.loadCreatureListButton.Click += new System.EventHandler(this.loadCreatureListButton_Click);
             // 
             // round1
             // 
@@ -838,64 +819,71 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameLabel.Location = new System.Drawing.Point(261, 51);
+            this.nameLabel.Location = new System.Drawing.Point(83, 25);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(0, 32);
+            this.nameLabel.Size = new System.Drawing.Size(78, 32);
             this.nameLabel.TabIndex = 45;
+            this.nameLabel.Text = "Name";
             // 
             // strengthLabel
             // 
             this.strengthLabel.AutoSize = true;
             this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.strengthLabel.Location = new System.Drawing.Point(90, 40);
+            this.strengthLabel.Location = new System.Drawing.Point(17, 247);
             this.strengthLabel.Name = "strengthLabel";
-            this.strengthLabel.Size = new System.Drawing.Size(0, 32);
+            this.strengthLabel.Size = new System.Drawing.Size(42, 32);
             this.strengthLabel.TabIndex = 46;
+            this.strengthLabel.Text = "SV";
             // 
             // dexterityLabel
             // 
             this.dexterityLabel.AutoSize = true;
             this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dexterityLabel.Location = new System.Drawing.Point(90, 80);
+            this.dexterityLabel.Location = new System.Drawing.Point(77, 247);
             this.dexterityLabel.Name = "dexterityLabel";
-            this.dexterityLabel.Size = new System.Drawing.Size(0, 32);
+            this.dexterityLabel.Size = new System.Drawing.Size(45, 32);
             this.dexterityLabel.TabIndex = 47;
+            this.dexterityLabel.Text = "DV";
             // 
             // constitutionLabel
             // 
             this.constitutionLabel.AutoSize = true;
             this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.constitutionLabel.Location = new System.Drawing.Point(90, 120);
+            this.constitutionLabel.Location = new System.Drawing.Point(136, 247);
             this.constitutionLabel.Name = "constitutionLabel";
-            this.constitutionLabel.Size = new System.Drawing.Size(0, 32);
+            this.constitutionLabel.Size = new System.Drawing.Size(44, 32);
             this.constitutionLabel.TabIndex = 48;
+            this.constitutionLabel.Text = "CV";
             // 
             // intelligenceLabel
             // 
             this.intelligenceLabel.AutoSize = true;
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.intelligenceLabel.Location = new System.Drawing.Point(90, 160);
+            this.intelligenceLabel.Location = new System.Drawing.Point(195, 247);
             this.intelligenceLabel.Name = "intelligenceLabel";
-            this.intelligenceLabel.Size = new System.Drawing.Size(0, 32);
+            this.intelligenceLabel.Size = new System.Drawing.Size(35, 32);
             this.intelligenceLabel.TabIndex = 49;
+            this.intelligenceLabel.Text = "IV";
             // 
             // wisdomLabel
             // 
             this.wisdomLabel.AutoSize = true;
             this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.wisdomLabel.Location = new System.Drawing.Point(90, 200);
+            this.wisdomLabel.Location = new System.Drawing.Point(255, 247);
             this.wisdomLabel.Name = "wisdomLabel";
-            this.wisdomLabel.Size = new System.Drawing.Size(0, 32);
+            this.wisdomLabel.Size = new System.Drawing.Size(51, 32);
             this.wisdomLabel.TabIndex = 50;
+            this.wisdomLabel.Text = "WV";
             // 
             // charismaLabel
             // 
             this.charismaLabel.AutoSize = true;
             this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.charismaLabel.Location = new System.Drawing.Point(90, 240);
+            this.charismaLabel.Location = new System.Drawing.Point(314, 247);
             this.charismaLabel.Name = "charismaLabel";
-            this.charismaLabel.Size = new System.Drawing.Size(0, 32);
+            this.charismaLabel.Size = new System.Drawing.Size(44, 32);
             this.charismaLabel.TabIndex = 51;
+            this.charismaLabel.Text = "CV";
             // 
             // addCreatureButton
             // 
@@ -909,19 +897,6 @@
             this.addCreatureButton.Text = "Add Entity";
             this.addCreatureButton.UseVisualStyleBackColor = false;
             this.addCreatureButton.Click += new System.EventHandler(this.addCreatureButton_Click);
-            // 
-            // saveCreatureButton
-            // 
-            this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
-            this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveCreatureButton.Location = new System.Drawing.Point(333, 248);
-            this.saveCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.saveCreatureButton.Name = "saveCreatureButton";
-            this.saveCreatureButton.Size = new System.Drawing.Size(114, 31);
-            this.saveCreatureButton.TabIndex = 54;
-            this.saveCreatureButton.Text = "Save Encounter";
-            this.saveCreatureButton.UseVisualStyleBackColor = false;
-            this.saveCreatureButton.Click += new System.EventHandler(this.saveCreatureButton_Click);
             // 
             // sortEntitiesButton
             // 
@@ -938,25 +913,12 @@
             // 
             // saveFileDialog
             // 
-            this.saveFileDialog.FileName = "creatureTest";
-            this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            saveFileDialog.FileName = "creatureTest";
+            saveFileDialog.FileOk += saveFileDialog1_FileOk;
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // loadCreatureListButton
-            // 
-            this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
-            this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadCreatureListButton.Location = new System.Drawing.Point(333, 287);
-            this.loadCreatureListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.loadCreatureListButton.Name = "loadCreatureListButton";
-            this.loadCreatureListButton.Size = new System.Drawing.Size(114, 31);
-            this.loadCreatureListButton.TabIndex = 56;
-            this.loadCreatureListButton.Text = "Load Encounter";
-            this.loadCreatureListButton.UseVisualStyleBackColor = false;
-            this.loadCreatureListButton.Click += new System.EventHandler(this.loadCreatureListButton_Click);
+            openFileDialog.FileName = "openFileDialog1";
             // 
             // STR
             // 
@@ -972,7 +934,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(204, 23);
+            this.label1.Location = new System.Drawing.Point(203, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 32);
             this.label1.TabIndex = 57;
@@ -982,7 +944,7 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(204, 143);
+            this.INT.Location = new System.Drawing.Point(203, 143);
             this.INT.Name = "INT";
             this.INT.Size = new System.Drawing.Size(55, 32);
             this.INT.TabIndex = 58;
@@ -993,7 +955,7 @@
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(204, 63);
+            this.DEX.Location = new System.Drawing.Point(203, 63);
             this.DEX.Name = "DEX";
             this.DEX.Size = new System.Drawing.Size(61, 32);
             this.DEX.TabIndex = 58;
@@ -1003,7 +965,7 @@
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(204, 183);
+            this.WIS.Location = new System.Drawing.Point(203, 183);
             this.WIS.Name = "WIS";
             this.WIS.Size = new System.Drawing.Size(59, 32);
             this.WIS.TabIndex = 60;
@@ -1013,7 +975,7 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(204, 223);
+            this.CHA.Location = new System.Drawing.Point(203, 223);
             this.CHA.Name = "CHA";
             this.CHA.Size = new System.Drawing.Size(64, 32);
             this.CHA.TabIndex = 61;
@@ -1023,7 +985,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(23, 240);
+            this.label2.Location = new System.Drawing.Point(306, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 67;
@@ -1033,7 +995,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(23, 200);
+            this.label3.Location = new System.Drawing.Point(247, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 32);
             this.label3.TabIndex = 66;
@@ -1043,7 +1005,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(23, 120);
+            this.label4.Location = new System.Drawing.Point(128, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 32);
             this.label4.TabIndex = 65;
@@ -1053,7 +1015,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(23, 80);
+            this.label5.Location = new System.Drawing.Point(69, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 32);
             this.label5.TabIndex = 63;
@@ -1063,7 +1025,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(23, 160);
+            this.label6.Location = new System.Drawing.Point(187, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 64;
@@ -1074,7 +1036,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(23, 40);
+            this.label7.Location = new System.Drawing.Point(9, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 32);
             this.label7.TabIndex = 62;
@@ -1084,17 +1046,17 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.name.Location = new System.Drawing.Point(182, 47);
+            this.name.Location = new System.Drawing.Point(8, 25);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(73, 28);
+            this.name.Size = new System.Drawing.Size(77, 28);
             this.name.TabIndex = 68;
-            this.name.Text = "Name:";
+            this.name.Text = "NAME:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(182, 83);
+            this.label8.Location = new System.Drawing.Point(7, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 28);
             this.label8.TabIndex = 69;
@@ -1102,13 +1064,14 @@
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.Location = new System.Drawing.Point(153, 115);
+            this.descriptionLabel.Location = new System.Drawing.Point(8, 328);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionLabel.Multiline = true;
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionLabel.Size = new System.Drawing.Size(223, 213);
+            this.descriptionLabel.Size = new System.Drawing.Size(378, 236);
             this.descriptionLabel.TabIndex = 70;
+            this.descriptionLabel.Text = "Description";
             // 
             // label9
             // 
@@ -1123,6 +1086,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.subtractHpButton);
+            this.groupBox2.Controls.Add(this.addHpButton);
+            this.groupBox2.Controls.Add(this.div3Label);
+            this.groupBox2.Controls.Add(this.div2Label);
+            this.groupBox2.Controls.Add(this.div1Label);
+            this.groupBox2.Controls.Add(this.editMenuButton);
             this.groupBox2.Controls.Add(this.HPLabel);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.tempHPLabel);
@@ -1149,26 +1121,99 @@
             this.groupBox2.Controls.Add(this.intelligenceLabel);
             this.groupBox2.Location = new System.Drawing.Point(327, 152);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 643);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(412, 650);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Description";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // subtractHpButton
+            // 
+            this.subtractHpButton.BackColor = System.Drawing.Color.Firebrick;
+            this.subtractHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subtractHpButton.Location = new System.Drawing.Point(201, 104);
+            this.subtractHpButton.Name = "subtractHpButton";
+            this.subtractHpButton.Size = new System.Drawing.Size(29, 28);
+            this.subtractHpButton.TabIndex = 85;
+            this.subtractHpButton.Text = "-";
+            this.subtractHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.subtractHpButton.UseVisualStyleBackColor = false;
+            this.subtractHpButton.Visible = false;
+            this.subtractHpButton.Click += new System.EventHandler(this.subtractHpButton_Click);
+            // 
+            // addHpButton
+            // 
+            this.addHpButton.BackColor = System.Drawing.Color.Firebrick;
+            this.addHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addHpButton.Location = new System.Drawing.Point(165, 104);
+            this.addHpButton.Name = "addHpButton";
+            this.addHpButton.Size = new System.Drawing.Size(29, 28);
+            this.addHpButton.TabIndex = 84;
+            this.addHpButton.Text = "+";
+            this.addHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.addHpButton.UseVisualStyleBackColor = false;
+            this.addHpButton.Visible = false;
+            this.addHpButton.Click += new System.EventHandler(this.addHpButton_Click);
+            // 
+            // div3Label
+            // 
+            this.div3Label.AutoSize = true;
+            this.div3Label.Location = new System.Drawing.Point(8, 275);
+            this.div3Label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.div3Label.Name = "div3Label";
+            this.div3Label.Size = new System.Drawing.Size(399, 20);
+            this.div3Label.TabIndex = 83;
+            this.div3Label.Text = "_________________________________________________________________";
+            // 
+            // div2Label
+            // 
+            this.div2Label.AutoSize = true;
+            this.div2Label.Location = new System.Drawing.Point(7, 193);
+            this.div2Label.Name = "div2Label";
+            this.div2Label.Size = new System.Drawing.Size(399, 20);
+            this.div2Label.TabIndex = 82;
+            this.div2Label.Text = "_________________________________________________________________";
+            // 
+            // div1Label
+            // 
+            this.div1Label.AutoSize = true;
+            this.div1Label.BackColor = System.Drawing.Color.Transparent;
+            this.div1Label.Location = new System.Drawing.Point(7, 53);
+            this.div1Label.Name = "div1Label";
+            this.div1Label.Size = new System.Drawing.Size(399, 20);
+            this.div1Label.TabIndex = 80;
+            this.div1Label.Text = "_________________________________________________________________";
+            // 
+            // editMenuButton
+            // 
+            this.editMenuButton.BackColor = System.Drawing.Color.Firebrick;
+            this.editMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editMenuButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.editMenuButton.Location = new System.Drawing.Point(21, 593);
+            this.editMenuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editMenuButton.Name = "editMenuButton";
+            this.editMenuButton.Size = new System.Drawing.Size(86, 31);
+            this.editMenuButton.TabIndex = 79;
+            this.editMenuButton.Text = "Edit";
+            this.editMenuButton.UseVisualStyleBackColor = false;
+            this.editMenuButton.Click += new System.EventHandler(this.editMenu_Click);
+            // 
             // HPLabel
             // 
             this.HPLabel.AutoSize = true;
             this.HPLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HPLabel.Location = new System.Drawing.Point(90, 400);
+            this.HPLabel.Location = new System.Drawing.Point(83, 100);
             this.HPLabel.Name = "HPLabel";
-            this.HPLabel.Size = new System.Drawing.Size(0, 32);
+            this.HPLabel.Size = new System.Drawing.Size(44, 32);
             this.HPLabel.TabIndex = 78;
+            this.HPLabel.Text = "HP";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(21, 400);
+            this.label17.Location = new System.Drawing.Point(14, 100);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(47, 32);
             this.label17.TabIndex = 77;
@@ -1178,16 +1223,17 @@
             // 
             this.tempHPLabel.AutoSize = true;
             this.tempHPLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tempHPLabel.Location = new System.Drawing.Point(90, 360);
+            this.tempHPLabel.Location = new System.Drawing.Point(83, 133);
             this.tempHPLabel.Name = "tempHPLabel";
-            this.tempHPLabel.Size = new System.Drawing.Size(0, 32);
+            this.tempHPLabel.Size = new System.Drawing.Size(57, 32);
             this.tempHPLabel.TabIndex = 76;
+            this.tempHPLabel.Text = "THP";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(21, 360);
+            this.label15.Location = new System.Drawing.Point(14, 133);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 32);
             this.label15.TabIndex = 75;
@@ -1197,16 +1243,17 @@
             // 
             this.initLabel.AutoSize = true;
             this.initLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.initLabel.Location = new System.Drawing.Point(90, 320);
+            this.initLabel.Location = new System.Drawing.Point(83, 167);
             this.initLabel.Name = "initLabel";
-            this.initLabel.Size = new System.Drawing.Size(0, 32);
+            this.initLabel.Size = new System.Drawing.Size(57, 32);
             this.initLabel.TabIndex = 74;
+            this.initLabel.Text = "INIT";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(21, 320);
+            this.label13.Location = new System.Drawing.Point(14, 167);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 32);
             this.label13.TabIndex = 73;
@@ -1216,17 +1263,18 @@
             // 
             this.ACLabel.AutoSize = true;
             this.ACLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ACLabel.Location = new System.Drawing.Point(90, 280);
+            this.ACLabel.Location = new System.Drawing.Point(83, 67);
             this.ACLabel.Name = "ACLabel";
-            this.ACLabel.Size = new System.Drawing.Size(0, 32);
+            this.ACLabel.Size = new System.Drawing.Size(44, 32);
             this.ACLabel.TabIndex = 72;
+            this.ACLabel.Text = "AC";
             this.ACLabel.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(23, 280);
+            this.label10.Location = new System.Drawing.Point(14, 67);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 32);
             this.label10.TabIndex = 71;
@@ -1234,6 +1282,9 @@
             // 
             // entityListGroupBox
             // 
+            this.entityListGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.entityListGroupBox.AutoSize = true;
             this.entityListGroupBox.Controls.Add(this.creatureListBox);
             this.entityListGroupBox.Controls.Add(this.sortEntitiesButton);
             this.entityListGroupBox.Location = new System.Drawing.Point(31, 152);
@@ -1245,9 +1296,9 @@
             // 
             // addEntityGroupBox
             // 
+            this.addEntityGroupBox.AutoSize = true;
             this.addEntityGroupBox.Controls.Add(this.label11);
             this.addEntityGroupBox.Controls.Add(this.initiativeNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.editButton);
             this.addEntityGroupBox.Controls.Add(this.descriptionTextBox);
             this.addEntityGroupBox.Controls.Add(this.nameTextBox);
             this.addEntityGroupBox.Controls.Add(this.strengthNumericUpDown);
@@ -1264,20 +1315,20 @@
             this.addEntityGroupBox.Controls.Add(this.label1);
             this.addEntityGroupBox.Controls.Add(this.addCreatureButton);
             this.addEntityGroupBox.Controls.Add(this.STR);
-            this.addEntityGroupBox.Controls.Add(this.saveCreatureButton);
-            this.addEntityGroupBox.Controls.Add(this.loadCreatureListButton);
             this.addEntityGroupBox.Location = new System.Drawing.Point(741, 459);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
-            this.addEntityGroupBox.Size = new System.Drawing.Size(469, 337);
+            this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addEntityGroupBox.Size = new System.Drawing.Size(1141, 510);
             this.addEntityGroupBox.TabIndex = 74;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
+            this.addEntityGroupBox.Visible = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(204, 259);
+            this.label11.Location = new System.Drawing.Point(203, 259);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 32);
             this.label11.TabIndex = 73;
@@ -1296,26 +1347,15 @@
             this.initiativeNumericUpDown.Size = new System.Drawing.Size(47, 27);
             this.initiativeNumericUpDown.TabIndex = 72;
             // 
-            // editButton
-            // 
-            this.editButton.BackColor = System.Drawing.Color.Firebrick;
-            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.editButton.Location = new System.Drawing.Point(342, 60);
-            this.editButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(86, 31);
-            this.editButton.TabIndex = 16;
-            this.editButton.Text = "Edit Entity";
-            this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
             // diceRollerGroupBox
             // 
+            this.diceRollerGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
             this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
-            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 284);
+            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 286);
             this.diceRollerGroupBox.TabIndex = 75;
             this.diceRollerGroupBox.TabStop = false;
             this.diceRollerGroupBox.Text = "Dice Roller";
@@ -1330,13 +1370,14 @@
             // 
             // Settings_group_box
             // 
-            this.Settings_group_box.BackColor = System.Drawing.Color.White;
+            this.Settings_group_box.AutoSize = true;
+            this.Settings_group_box.BackColor = System.Drawing.Color.Gray;
             this.Settings_group_box.Controls.Add(this.Change_Bcolor);
             this.Settings_group_box.Location = new System.Drawing.Point(1112, 399);
             this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Settings_group_box.Name = "Settings_group_box";
             this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Settings_group_box.Size = new System.Drawing.Size(134, 67);
+            this.Settings_group_box.Size = new System.Drawing.Size(134, 85);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
@@ -1344,8 +1385,7 @@
             // Change_Bcolor
             // 
             this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.Location = new System.Drawing.Point(7, 5);
-            this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Change_Bcolor.Location = new System.Drawing.Point(6, 10);
             this.Change_Bcolor.Name = "Change_Bcolor";
             this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
             this.Change_Bcolor.TabIndex = 0;
@@ -1355,56 +1395,81 @@
             // 
             // Color_choices
             // 
-            this.Color_choices.BackColor = System.Drawing.Color.White;
-            this.Color_choices.Controls.Add(this.Red_color);
-            this.Color_choices.Controls.Add(this.Green_color);
-            this.Color_choices.Controls.Add(this.Blue_color);
-            this.Color_choices.Location = new System.Drawing.Point(1126, 460);
-            this.Color_choices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Color_choices.AutoSize = true;
+            this.Color_choices.BackColor = System.Drawing.Color.DimGray;
+            this.Color_choices.Controls.Add(this.ScrollBlue);
+            this.Color_choices.Controls.Add(this.ScrollGreen);
+            this.Color_choices.Controls.Add(this.ScrollRed);
+            this.Color_choices.Controls.Add(this.label16);
+            this.Color_choices.Controls.Add(this.label14);
+            this.Color_choices.Controls.Add(this.label12);
+            this.Color_choices.Location = new System.Drawing.Point(1100, 465);
             this.Color_choices.Name = "Color_choices";
-            this.Color_choices.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Color_choices.Size = new System.Drawing.Size(137, 51);
+            this.Color_choices.Size = new System.Drawing.Size(219, 140);
             this.Color_choices.TabIndex = 77;
             this.Color_choices.TabStop = false;
             this.Color_choices.Visible = false;
             // 
-            // Red_color
+            // ScrollBlue
             // 
-            this.Red_color.BackColor = System.Drawing.Color.Firebrick;
-            this.Red_color.Location = new System.Drawing.Point(96, 11);
-            this.Red_color.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Red_color.Name = "Red_color";
-            this.Red_color.Size = new System.Drawing.Size(24, 31);
-            this.Red_color.TabIndex = 2;
-            this.Red_color.UseVisualStyleBackColor = false;
-            this.Red_color.Click += new System.EventHandler(this.Red_color_Click);
+            this.ScrollBlue.Location = new System.Drawing.Point(63, 97);
+            this.ScrollBlue.Maximum = 255;
+            this.ScrollBlue.Name = "ScrollBlue";
+            this.ScrollBlue.Size = new System.Drawing.Size(142, 17);
+            this.ScrollBlue.TabIndex = 8;
+            this.ScrollBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBlue_Scroll);
             // 
-            // Green_color
+            // ScrollGreen
             // 
-            this.Green_color.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Green_color.Location = new System.Drawing.Point(57, 11);
-            this.Green_color.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Green_color.Name = "Green_color";
-            this.Green_color.Size = new System.Drawing.Size(24, 31);
-            this.Green_color.TabIndex = 1;
-            this.Green_color.UseVisualStyleBackColor = false;
-            this.Green_color.Click += new System.EventHandler(this.Green_color_Click);
+            this.ScrollGreen.Location = new System.Drawing.Point(63, 67);
+            this.ScrollGreen.Maximum = 255;
+            this.ScrollGreen.Name = "ScrollGreen";
+            this.ScrollGreen.Size = new System.Drawing.Size(142, 17);
+            this.ScrollGreen.TabIndex = 7;
+            this.ScrollGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollGreen_Scroll);
             // 
-            // Blue_color
+            // ScrollRed
             // 
-            this.Blue_color.BackColor = System.Drawing.Color.Blue;
-            this.Blue_color.Location = new System.Drawing.Point(18, 12);
-            this.Blue_color.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Blue_color.Name = "Blue_color";
-            this.Blue_color.Size = new System.Drawing.Size(24, 31);
-            this.Blue_color.TabIndex = 0;
-            this.Blue_color.UseVisualStyleBackColor = false;
-            this.Blue_color.Click += new System.EventHandler(this.Blue_color_Click);
+            this.ScrollRed.Location = new System.Drawing.Point(63, 37);
+            this.ScrollRed.Maximum = 255;
+            this.ScrollRed.Name = "ScrollRed";
+            this.ScrollRed.Size = new System.Drawing.Size(142, 17);
+            this.ScrollRed.TabIndex = 6;
+            this.ScrollRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollRed_Scroll);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 97);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(43, 20);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "BLUE";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(10, 67);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 20);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "GREEN";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(10, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 20);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "RED";
             // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
             this.ClientSize = new System.Drawing.Size(1311, 855);
@@ -1447,6 +1512,7 @@
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
             this.Load += new System.EventHandler(this.mainGUI_Load);
+            this.Resize += new System.EventHandler(this.mainGUI_Resize);
             this.menuGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).EndInit();
@@ -1463,7 +1529,9 @@
             this.diceRollerGroupBox.ResumeLayout(false);
             this.Settings_group_box.ResumeLayout(false);
             this.Color_choices.ResumeLayout(false);
+            this.Color_choices.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1475,15 +1543,11 @@
         private Button removeCreatureButton;
         private GroupBox menuGroupBox;
         private Button button5;
-        private Button button14;
-        private Button button13;
+        private Button AddStatusEffect;
         private Button Settings_button;
-        private Button button11;
         private Button button10;
-        private Button button9;
         private Button button8;
-        private Button button7;
-        private Button button6;
+        private Button AddEntityButton;
         private Button round1;
         private Button round2;
         private Button round3;
@@ -1517,7 +1581,6 @@
         private NumericUpDown charismaNumericUpDown;
         private NumericUpDown wisdomNumericUpDown;
         private NumericUpDown intelligenceNumericUpDown;
-        private ListBox creatureListBox;
         private Label nameLabel;
         private Label strengthLabel;
         private Label dexterityLabel;
@@ -1560,14 +1623,23 @@
         private Label label13;
         private Label ACLabel;
         private Label label10;
-        private Button editButton;
         private GroupBox Settings_group_box;
         private Button Change_Bcolor;
         private GroupBox Color_choices;
-        private Button Red_color;
-        private Button Green_color;
-        private Button Blue_color;
         private Label label11;
         private NumericUpDown initiativeNumericUpDown;
+        private Button editMenuButton;
+        public ListBox creatureListBox;
+        private Label div3Label;
+        private Label div2Label;
+        private Label div1Label;
+        private HScrollBar ScrollBlue;
+        private HScrollBar ScrollGreen;
+        private HScrollBar ScrollRed;
+        private Label label16;
+        private Label label14;
+        private Label label12;
+        private Button addHpButton;
+        private Button subtractHpButton;
     }
 }

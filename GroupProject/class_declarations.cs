@@ -27,6 +27,25 @@ namespace GroupProject
         private string? Name;        // Creature name
         private byte Initiative;     // Place in initiative
 
+        public int abilityScoreModifier(byte statScore)
+        {
+            int statInt = (int)statScore;
+            int modifier = 0;
+            if (statInt < 10)
+            {
+                modifier = (statInt - 11) / 2;
+            }
+            else if (statInt > 11)
+            {
+                modifier = (statInt - 10) / 2;
+            }
+            else
+            {
+                modifier = 0;
+            }
+            return modifier;
+        }
+
         //Set and get for strength score
         public void SetStr(byte strVal)
         { Str = strVal; }
@@ -151,10 +170,6 @@ namespace GroupProject
             Wis = wisdom;
             Cha = charisma;
 
-            int tempDex = Dex;
-            int tempCon = Con;
-            AC = (byte)(10 + ((tempDex - 10) / 2));
-            MaxHP = (tempCon - 10) / 2;
             CurrentHP = MaxHP;
             TempHP = 0;
 
@@ -162,11 +177,12 @@ namespace GroupProject
 
         public void updateVals()
         {
+            //Removed because the add creature box now has section for HP and AC
             int tempDex = Dex;
             int tempCon = Con;
-            AC = (byte)(10 + ((tempDex - 10) / 2));
-            MaxHP = (tempCon - 10) / 2;
-            CurrentHP = MaxHP;
+            //AC = (byte)(10 + ((tempDex - 10) / 2));
+            //MaxHP = (tempCon - 10) / 2;
+            //CurrentHP = MaxHP;
         }
 
         public override string? ToString()
@@ -178,6 +194,66 @@ namespace GroupProject
         public Creature make_copy()
         {
             return new Creature(this.Name, this.Description, this.Str, this.Dex, this.Con, this.Int, this.Wis, this.Cha);
+        }
+    }
+
+    //Status Effect class declaration
+    class StatusEffect
+    {
+        private string Name = "";
+        private string Description = "";
+        private byte Duration = 0;      //Duration in rounds
+        private bool Blinded
+        { get; set; }
+        private bool Charmed
+        { get; set; }
+        private bool Deafened
+        { get; set; }
+        private bool Frightened
+        { get; set; }
+        private bool Grappled
+        { get; set; }
+        private bool Incapacitated
+        { get; set; }
+        private bool Invisible
+        { get; set; }
+        private bool Paralyzed
+        { get; set; }
+        private bool Petrified
+        { get; set; }
+        private bool Poisoned
+        { get; set; }
+        private bool Prone
+        { get; set; }
+        private bool Restrained
+        { get; set; }
+        private bool Stunned
+        { get; set; }
+        private bool Unconscious
+        { get; set; }
+
+        public StatusEffect(string name, string description, byte duration, bool blinded, bool charmed,
+                            bool deafened, bool frightened, bool grappled, bool incapacitated, bool invisible,
+                            bool paralyzed, bool petrified, bool poisoned, bool prone, bool restrained,
+                            bool stunned, bool unconscious)
+        {
+            Name = name;
+            Description = description;
+            Duration = duration;
+            Blinded = blinded;
+            Charmed = charmed;
+            Deafened = deafened;
+            Frightened = frightened;
+            Grappled = grappled;
+            Incapacitated = incapacitated;
+            Invisible = invisible;
+            Paralyzed = paralyzed;
+            Petrified = petrified;
+            Poisoned = poisoned;
+            Prone = prone;
+            Restrained = restrained;
+            Stunned = stunned;
+            Unconscious = unconscious;
         }
     }
 
