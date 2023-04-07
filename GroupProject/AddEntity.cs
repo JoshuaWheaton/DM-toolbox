@@ -17,6 +17,7 @@ namespace GroupProject
             InitializeComponent();
         }
 
+        // Function that will add a creature to the creature list when the "Add Enity" button is clicked
         private void AddButton_Click(object sender, EventArgs e)
         {
             mainGUI parentForm = (mainGUI)this.Owner;
@@ -30,7 +31,7 @@ namespace GroupProject
             byte wisdom = (byte)wisdomNumericUpDown.Value;
             byte charisma = (byte)charismaNumericUpDown.Value;
             byte initiative = (byte)initiativeNumericUpDown.Value;
-            byte hp = (byte)hitPointsNumericUpDown.Value;
+            int hp = (int)hitPointsNumericUpDown.Value;
             byte ac = (byte)acNumericUpDown.Value;
             
 
