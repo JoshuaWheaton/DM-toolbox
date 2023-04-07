@@ -206,7 +206,7 @@ namespace GroupProject
             openFileDialog.Filter = "Encounter files (*.enc)|*.enc";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                creatureList.Clear();
+                //creatureList.Clear();
                 // Open and read file
                 using (System.IO.StreamReader reader = new System.IO.StreamReader(openFileDialog.FileName))
                 {
@@ -838,7 +838,7 @@ namespace GroupProject
             AddEntityButton.BackColor = Color.FromArgb(r, g, b);
             button8.BackColor = Color.FromArgb(r, g, b);
             button10.BackColor = Color.FromArgb(r, g, b);
-            button13.BackColor = Color.FromArgb(r, g, b);
+            AddStatusEffect.BackColor = Color.FromArgb(r, g, b);
             addCreatureButton.BackColor = Color.FromArgb(r, g, b);
             editMenuButton.BackColor = Color.FromArgb(r, g, b);
             saveCreatureButton.BackColor = Color.FromArgb(r, g, b);

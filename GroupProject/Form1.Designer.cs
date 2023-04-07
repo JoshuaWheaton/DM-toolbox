@@ -33,7 +33,7 @@
             this.nextRound = new System.Windows.Forms.Button();
             this.removeCreatureButton = new System.Windows.Forms.Button();
             this.menuGroupBox = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
+            this.AddStatusEffect = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -211,7 +211,7 @@
             this.menuGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.menuGroupBox.AutoSize = true;
-            this.menuGroupBox.Controls.Add(this.button13);
+            this.menuGroupBox.Controls.Add(this.AddStatusEffect);
             this.menuGroupBox.Controls.Add(this.Settings_button);
             this.menuGroupBox.Controls.Add(this.button10);
             this.menuGroupBox.Controls.Add(this.button8);
