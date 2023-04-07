@@ -21,17 +21,7 @@ namespace GroupProject
         public mainGUI()
         {
             InitializeComponent();
-            nameLabel.Text = "";
-            ACLabel.Text = "";
-            HPLabel.Text = "";
-            tempHPLabel.Text = "";
-            initLabel.Text = "";
-            strengthLabel.Text = ""; ;
-            dexterityLabel.Text = ""; ;
-            constitutionLabel.Text = "";
-            intelligenceLabel.Text = "";
-            wisdomLabel.Text = "";
-            charismaLabel.Text = "";
+            clearDisplay();
         }
 
         //Function that sorts creature list by initiative
@@ -46,6 +36,25 @@ namespace GroupProject
         {
             Creature creature = creatureListBox.SelectedItem as Creature;
             HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
+        }
+
+        // Function that clears out all info displayed in the information groupbox
+        public void clearDisplay()
+        {
+            nameLabel.Text = "";
+            descriptionLabel.Text = "";
+            ACLabel.Text = "";
+            HPLabel.Text = "";
+            tempHPLabel.Text = "";
+            initLabel.Text = "";
+            strengthLabel.Text = ""; ;
+            dexterityLabel.Text = ""; ;
+            constitutionLabel.Text = "";
+            intelligenceLabel.Text = "";
+            wisdomLabel.Text = "";
+            charismaLabel.Text = "";
+            addHpButton.Hide();
+            subtractHpButton.Hide();
         }
 
         // Function which loads given creatures data into several labels
@@ -88,45 +97,9 @@ namespace GroupProject
             }
         }
 
-        // Function that will add a creature to the creature list when the "Add Enity" button is clicked
-        private void addCreatureButton_Click(object sender, EventArgs e)
+        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, int hp, byte ac)
         {
-            // Create a new creature with the given name, description, and stats
-            string name = nameTextBox.Text;
-            string description = descriptionTextBox.Text;
-            byte strength = (byte)strengthNumericUpDown.Value;
-            byte dexterity = (byte)dexterityNumericUpDown.Value;
-            byte constitution = (byte)constitutionNumericUpDown.Value;
-            byte intelligence = (byte)intelligenceNumericUpDown.Value;
-            byte wisdom = (byte)wisdomNumericUpDown.Value;
-            byte charisma = (byte)charismaNumericUpDown.Value;
-            byte initiative = (byte)initiativeNumericUpDown.Value;
-            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
-            creature.SetInitiative(initiative);
-
-            // Add the creature to the list
-            creatureList.Add(creature);
-
-            // Clear the form for the next creature
-            nameTextBox.Clear();
-            descriptionTextBox.Clear();
-            strengthNumericUpDown.Value = 10;
-            dexterityNumericUpDown.Value = 10;
-            constitutionNumericUpDown.Value = 10;
-            intelligenceNumericUpDown.Value = 10;
-            wisdomNumericUpDown.Value = 10;
-            charismaNumericUpDown.Value = 10;
-            initiativeNumericUpDown.Value = 0;
-
-            // Display the newly added creature to the list on the left for clear input feedback
-            creatureListBox.DataSource = null;
-            creatureListBox.DataSource = creatureList;
-            sortCreatureList();
-        }
-
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, byte hp, byte ac)
-        {
-            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, hp, ac, initiative);
             creature.SetInitiative(initiative);
             creature.SetMaxHP(hp);
             creature.SetHP(hp);
@@ -174,11 +147,30 @@ namespace GroupProject
 
             if (creature != null)
             {
-                creatureList.Remove(creature);
-                creatureListBox.DataSource = null;
-                creatureListBox.DataSource = creatureList;
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this creature?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    creatureList.Remove(creature);
+                    creatureListBox.DataSource = null;
+                    creatureListBox.DataSource = creatureList;
+                    clearDisplay();
+                }
             }
         }
+
+        private void deleteEncounterButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this creature?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                clearDisplay();
+                creatureListBox.DataSource = null;
+                creatureList.Clear();
+            }
+        }
+
 
         // Function that saves the current encounter to a file with the file extension .enc
         private void saveCreatureButton_Click(object sender, EventArgs e)
@@ -197,16 +189,13 @@ namespace GroupProject
                 }
             }
         }
-
-        // Function that loads a file with the file extension .enc and displays the entities in the encounter to be loaded
-        private void loadCreatureListButton_Click(object sender, EventArgs e)
+        private void loadEncounterFile()
         {
             // Load the list of creatures from a file
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Encounter files (*.enc)|*.enc";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                //creatureList.Clear();
                 // Open and read file
                 using (System.IO.StreamReader reader = new System.IO.StreamReader(openFileDialog.FileName))
                 {
@@ -225,6 +214,22 @@ namespace GroupProject
                 creatureListBox.DataSource = creatureList;
                 sortCreatureList();
             }
+        }
+
+        // Function that loads a file with the file extension .enc and displays the entities in the encounter to be loaded
+        private void loadCreatureListButton_Click(object sender, EventArgs e)
+        {
+            // Clear out the previous encounter, to over-ride it with the newly loaded one
+            creatureList.Clear();
+            // Load the new encounter
+            loadEncounterFile();
+        }
+
+        // Function that loads a file with the file extension .enc and appends the loaded file to the current encounter
+        private void loadGroupButton_Click(object sender, EventArgs e)
+        {
+            // Append a loaded encounter to the current displayed encounter
+            loadEncounterFile();
         }
 
         private void copyMonsterButton_Click(object sender, EventArgs e)
@@ -834,10 +839,10 @@ namespace GroupProject
             sortEntitiesButton.BackColor = Color.FromArgb(r, g, b);
             Copy_monster.BackColor = Color.FromArgb(r, g, b);
             removeCreatureButton.BackColor = Color.FromArgb(r, g, b);
-            button5.BackColor = Color.FromArgb(r, g, b);
+            deleteEncounterButton.BackColor = Color.FromArgb(r, g, b);
             AddEntityButton.BackColor = Color.FromArgb(r, g, b);
             button8.BackColor = Color.FromArgb(r, g, b);
-            button10.BackColor = Color.FromArgb(r, g, b);
+            loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
             AddStatusEffect.BackColor = Color.FromArgb(r, g, b);
             addCreatureButton.BackColor = Color.FromArgb(r, g, b);
             editMenuButton.BackColor = Color.FromArgb(r, g, b);
