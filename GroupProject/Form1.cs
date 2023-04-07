@@ -24,6 +24,10 @@ namespace GroupProject
             clearDisplay();
         }
 
+        private void mainGUI_Load(object sender, EventArgs e)
+        {
+        }
+
         //Function that sorts creature list by initiative
         public void sortCreatureList()
         {
@@ -714,9 +718,6 @@ namespace GroupProject
             }
         }
 
-        private void mainGUI_Load(object sender, EventArgs e)
-        {
-        }
 
         private void mainGUI_Resize(object sender, EventArgs e)
         {
@@ -867,6 +868,11 @@ namespace GroupProject
         {
             b = ScrollBlue.Value;
             setColor();
+        }
+
+        private void descriptionLabel_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void addHpButton_Click(object sender, EventArgs e)

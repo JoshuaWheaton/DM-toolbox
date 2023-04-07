@@ -132,6 +132,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.menuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
@@ -1018,6 +1020,7 @@
             this.descriptionLabel.Size = new System.Drawing.Size(331, 178);
             this.descriptionLabel.TabIndex = 70;
             this.descriptionLabel.Text = "Description";
+            this.descriptionLabel.TextChanged += new System.EventHandler(this.descriptionLabel_TextChanged);
             // 
             // label9
             // 
@@ -1597,5 +1600,7 @@
         private Button addHpButton;
         private Button subtractHpButton;
         private Button loadGroupButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
