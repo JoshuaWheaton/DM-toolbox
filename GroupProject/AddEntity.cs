@@ -53,5 +53,10 @@ namespace GroupProject
 
             parentForm.editButton_Click(sender, e);
         }
+
+        private void AddEntity_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

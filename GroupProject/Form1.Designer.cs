@@ -36,7 +36,7 @@
             this.loadGroupButton = new System.Windows.Forms.Button();
             this.AddStatusEffect = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.monsterButton = new System.Windows.Forms.Button();
             this.AddEntityButton = new System.Windows.Forms.Button();
             this.deleteEncounterButton = new System.Windows.Forms.Button();
             this.saveCreatureButton = new System.Windows.Forms.Button();
@@ -212,7 +212,7 @@
             this.menuGroupBox.Controls.Add(this.loadGroupButton);
             this.menuGroupBox.Controls.Add(this.AddStatusEffect);
             this.menuGroupBox.Controls.Add(this.Settings_button);
-            this.menuGroupBox.Controls.Add(this.button8);
+            this.menuGroupBox.Controls.Add(this.monsterButton);
             this.menuGroupBox.Controls.Add(this.AddEntityButton);
             this.menuGroupBox.Controls.Add(this.deleteEncounterButton);
             this.menuGroupBox.Controls.Add(this.saveCreatureButton);
@@ -243,12 +243,13 @@
             this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
             this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddStatusEffect.Location = new System.Drawing.Point(87, 161);
+            this.AddStatusEffect.Location = new System.Drawing.Point(134, 97);
             this.AddStatusEffect.Name = "AddStatusEffect";
-            this.AddStatusEffect.Size = new System.Drawing.Size(75, 23);
+            this.AddStatusEffect.Size = new System.Drawing.Size(109, 23);
             this.AddStatusEffect.TabIndex = 14;
-            this.AddStatusEffect.Text = "Status";
+            this.AddStatusEffect.Text = "Create Status";
             this.AddStatusEffect.UseVisualStyleBackColor = false;
+            this.AddStatusEffect.Click += new System.EventHandler(this.AddStatusEffect_Click);
             // 
             // Settings_button
             // 
@@ -263,17 +264,18 @@
             this.Settings_button.UseVisualStyleBackColor = false;
             this.Settings_button.Click += new System.EventHandler(this.Settings_button_Click);
             // 
-            // button8
+            // monsterButton
             // 
-            this.button8.BackColor = System.Drawing.Color.Firebrick;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button8.Location = new System.Drawing.Point(6, 161);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = false;
+            this.monsterButton.BackColor = System.Drawing.Color.Firebrick;
+            this.monsterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.monsterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.monsterButton.Location = new System.Drawing.Point(6, 97);
+            this.monsterButton.Name = "monsterButton";
+            this.monsterButton.Size = new System.Drawing.Size(106, 23);
+            this.monsterButton.TabIndex = 9;
+            this.monsterButton.Text = "Add Monster";
+            this.monsterButton.UseVisualStyleBackColor = false;
+            this.monsterButton.Click += new System.EventHandler(this.monsterButton_Click);
             // 
             // AddEntityButton
             // 
@@ -293,7 +295,7 @@
             this.deleteEncounterButton.BackColor = System.Drawing.Color.Firebrick;
             this.deleteEncounterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteEncounterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deleteEncounterButton.Location = new System.Drawing.Point(66, 105);
+            this.deleteEncounterButton.Location = new System.Drawing.Point(6, 165);
             this.deleteEncounterButton.Name = "deleteEncounterButton";
             this.deleteEncounterButton.Size = new System.Drawing.Size(109, 23);
             this.deleteEncounterButton.TabIndex = 6;
@@ -1470,7 +1472,6 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
-            this.Load += new System.EventHandler(this.mainGUI_Load);
             this.Resize += new System.EventHandler(this.mainGUI_Resize);
             this.menuGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
@@ -1504,7 +1505,7 @@
         private Button deleteEncounterButton;
         private Button AddStatusEffect;
         private Button Settings_button;
-        private Button button8;
+        private Button monsterButton;
         private Button AddEntityButton;
         private Button round1;
         private Button round2;

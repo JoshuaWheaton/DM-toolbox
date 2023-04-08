@@ -39,26 +39,30 @@
             this.userPrompt.AutoSize = true;
             this.userPrompt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.userPrompt.ForeColor = System.Drawing.SystemColors.Control;
-            this.userPrompt.Location = new System.Drawing.Point(12, 28);
+            this.userPrompt.Location = new System.Drawing.Point(10, 21);
             this.userPrompt.Name = "userPrompt";
-            this.userPrompt.Size = new System.Drawing.Size(330, 20);
+            this.userPrompt.Size = new System.Drawing.Size(263, 15);
             this.userPrompt.TabIndex = 0;
             this.userPrompt.Text = "How much would like to decrease the health by?";
             this.userPrompt.Click += new System.EventHandler(this.userPrompt_Click);
             // 
             // healthChangeNumericUpDown
             // 
-            this.healthChangeNumericUpDown.Location = new System.Drawing.Point(140, 75);
+            this.healthChangeNumericUpDown.Location = new System.Drawing.Point(122, 56);
+            this.healthChangeNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.healthChangeNumericUpDown.Name = "healthChangeNumericUpDown";
-            this.healthChangeNumericUpDown.Size = new System.Drawing.Size(70, 27);
+            this.healthChangeNumericUpDown.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.healthChangeNumericUpDown.Size = new System.Drawing.Size(61, 23);
             this.healthChangeNumericUpDown.TabIndex = 1;
             this.healthChangeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.healthChangeNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.healthChangeNumericUpDown_KeyDown);
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(125, 127);
+            this.confirmButton.Location = new System.Drawing.Point(109, 95);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(94, 29);
+            this.confirmButton.Size = new System.Drawing.Size(82, 22);
             this.confirmButton.TabIndex = 2;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -66,13 +70,14 @@
             // 
             // HPForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(351, 171);
+            this.ClientSize = new System.Drawing.Size(307, 128);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.healthChangeNumericUpDown);
             this.Controls.Add(this.userPrompt);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HPForm";
             this.Text = "HPForm";
             ((System.ComponentModel.ISupportInitialize)(this.healthChangeNumericUpDown)).EndInit();
