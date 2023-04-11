@@ -127,14 +127,14 @@ namespace GroupProject
         //Writing a creature to a file
         public string Serialize()
         {
-            return $"{Name}|{Description}|{Str}|{Dex}|{Con}|{Int}|{Wis}|{Cha}";
+            return $"{Name}|{Description}|{Str}|{Dex}|{Con}|{Int}|{Wis}|{Cha}|{MaxHP}|{AC}|{Initiative}";
         }
 
         //Reading a creature from a file
         public static Creature Deserialize(string serializedString)
         {
             string[] parts = serializedString.Split('|');
-            if (parts.Length == 8)
+            if (parts.Length == 11)
             {
                 string name = parts[0];
                 string description = parts[1];
@@ -144,13 +144,19 @@ namespace GroupProject
                 byte intelligence = 10;
                 byte wisdom = 10;
                 byte charisma = 10;
+                int maximumHP = 0;
+                byte armorClass = 0;
+                byte init = 0;
                 byte.TryParse(parts[2], out strength);
                 byte.TryParse(parts[3], out dexterity);
                 byte.TryParse(parts[4], out constitution);
                 byte.TryParse(parts[5], out intelligence);
                 byte.TryParse(parts[6], out wisdom);
                 byte.TryParse(parts[7], out charisma);
-                return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma);
+                int.TryParse(parts[8], out maximumHP);
+                byte.TryParse(parts[9], out armorClass);
+                byte.TryParse(parts[10], out init);
+                return new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, maximumHP, armorClass, init);
             }
             else
             {
@@ -159,7 +165,7 @@ namespace GroupProject
         }
 
         // Constructor
-        public Creature(string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma)
+        public Creature(string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, int maximumHP, byte armorClass, byte initative)
         {
             Name = name;
             Description = description;
@@ -169,8 +175,11 @@ namespace GroupProject
             Int = intelligence;
             Wis = wisdom;
             Cha = charisma;
+            MaxHP = maximumHP;
+            CurrentHP = maximumHP;
+            AC = armorClass;
+            Initiative = initative;
 
-            CurrentHP = MaxHP;
             TempHP = 0;
 
         }
@@ -193,7 +202,7 @@ namespace GroupProject
         //Copy creature
         public Creature make_copy()
         {
-            return new Creature(this.Name, this.Description, this.Str, this.Dex, this.Con, this.Int, this.Wis, this.Cha);
+            return new Creature(this.Name, this.Description, this.Str, this.Dex, this.Con, this.Int, this.Wis, this.Cha, this.CurrentHP, this.AC, this.Initiative);
         }
     }
 

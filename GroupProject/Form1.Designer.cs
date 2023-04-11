@@ -33,12 +33,12 @@
             this.nextRound = new System.Windows.Forms.Button();
             this.removeCreatureButton = new System.Windows.Forms.Button();
             this.menuGroupBox = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
+            this.loadGroupButton = new System.Windows.Forms.Button();
+            this.AddStatusEffect = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.AddEntityButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.deleteEncounterButton = new System.Windows.Forms.Button();
             this.saveCreatureButton = new System.Windows.Forms.Button();
             this.loadCreatureListButton = new System.Windows.Forms.Button();
             this.round1 = new System.Windows.Forms.Button();
@@ -153,12 +153,12 @@
             this.Copy_monster.BackColor = System.Drawing.Color.Firebrick;
             this.Copy_monster.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Copy_monster.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Copy_monster.Location = new System.Drawing.Point(7, 29);
+            this.Copy_monster.Location = new System.Drawing.Point(137, 595);
             this.Copy_monster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Copy_monster.Name = "Copy_monster";
-            this.Copy_monster.Size = new System.Drawing.Size(86, 31);
+            this.Copy_monster.Size = new System.Drawing.Size(123, 31);
             this.Copy_monster.TabIndex = 0;
-            this.Copy_monster.Text = " Copy M";
+            this.Copy_monster.Text = " Copy Creature";
             this.Copy_monster.UseVisualStyleBackColor = false;
             this.Copy_monster.Click += new System.EventHandler(this.copyMonsterButton_Click);
             // 
@@ -197,12 +197,12 @@
             this.removeCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.removeCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeCreatureButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeCreatureButton.Location = new System.Drawing.Point(99, 29);
+            this.removeCreatureButton.Location = new System.Drawing.Point(291, 595);
             this.removeCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.removeCreatureButton.Name = "removeCreatureButton";
-            this.removeCreatureButton.Size = new System.Drawing.Size(86, 31);
+            this.removeCreatureButton.Size = new System.Drawing.Size(95, 31);
             this.removeCreatureButton.TabIndex = 5;
-            this.removeCreatureButton.Text = "Del M";
+            this.removeCreatureButton.Text = "Del Creature";
             this.removeCreatureButton.UseVisualStyleBackColor = false;
             this.removeCreatureButton.Click += new System.EventHandler(this.removeCreatureButton_Click);
             // 
@@ -211,14 +211,12 @@
             this.menuGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.menuGroupBox.AutoSize = true;
-            this.menuGroupBox.Controls.Add(this.button13);
+            this.menuGroupBox.Controls.Add(this.loadGroupButton);
+            this.menuGroupBox.Controls.Add(this.AddStatusEffect);
             this.menuGroupBox.Controls.Add(this.Settings_button);
-            this.menuGroupBox.Controls.Add(this.button10);
             this.menuGroupBox.Controls.Add(this.button8);
             this.menuGroupBox.Controls.Add(this.AddEntityButton);
-            this.menuGroupBox.Controls.Add(this.button5);
-            this.menuGroupBox.Controls.Add(this.Copy_monster);
-            this.menuGroupBox.Controls.Add(this.removeCreatureButton);
+            this.menuGroupBox.Controls.Add(this.deleteEncounterButton);
             this.menuGroupBox.Controls.Add(this.saveCreatureButton);
             this.menuGroupBox.Controls.Add(this.loadCreatureListButton);
             this.menuGroupBox.Location = new System.Drawing.Point(920, 151);
@@ -231,19 +229,33 @@
             this.menuGroupBox.Text = "Menu";
             this.menuGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // loadGroupButton
+            // 
+            this.loadGroupButton.BackColor = System.Drawing.Color.Firebrick;
+            this.loadGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadGroupButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.loadGroupButton.Location = new System.Drawing.Point(7, 81);
+            this.loadGroupButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loadGroupButton.Name = "loadGroupButton";
+            this.loadGroupButton.Size = new System.Drawing.Size(121, 31);
+            this.loadGroupButton.TabIndex = 57;
+            this.loadGroupButton.Text = "Add Entity";
+            this.loadGroupButton.UseVisualStyleBackColor = false;
+            this.loadGroupButton.Click += new System.EventHandler(this.loadGroupButton_Click);
+            // 
             // AddStatusEffect
             // 
-            AddStatusEffect.BackColor = Color.Firebrick;
-            AddStatusEffect.FlatStyle = FlatStyle.Flat;
-            AddStatusEffect.ForeColor = SystemColors.ControlLightLight;
-            AddStatusEffect.Location = new Point(99, 215);
-            AddStatusEffect.Margin = new Padding(3, 4, 3, 4);
-            AddStatusEffect.Name = "AddStatusEffect";
-            AddStatusEffect.Size = new Size(86, 31);
-            AddStatusEffect.TabIndex = 14;
-            AddStatusEffect.Text = "Status";
-            AddStatusEffect.UseVisualStyleBackColor = false;
-            AddStatusEffect.Click += AddStatusEffect_Click;
+            this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
+            this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddStatusEffect.Location = new System.Drawing.Point(99, 215);
+            this.AddStatusEffect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddStatusEffect.Name = "AddStatusEffect";
+            this.AddStatusEffect.Size = new System.Drawing.Size(86, 31);
+            this.AddStatusEffect.TabIndex = 14;
+            this.AddStatusEffect.Text = "Status";
+            this.AddStatusEffect.UseVisualStyleBackColor = false;
+            this.AddStatusEffect.Click += new System.EventHandler(this.AddStatusEffect_Click);
             // 
             // Settings_button
             // 
@@ -258,19 +270,6 @@
             this.Settings_button.Text = "Settings";
             this.Settings_button.UseVisualStyleBackColor = false;
             this.Settings_button.Click += new System.EventHandler(this.Settings_button_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Firebrick;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button10.Location = new System.Drawing.Point(192, 88);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 31);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -290,33 +289,34 @@
             this.AddEntityButton.BackColor = System.Drawing.Color.Firebrick;
             this.AddEntityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEntityButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddEntityButton.Location = new System.Drawing.Point(7, 88);
+            this.AddEntityButton.Location = new System.Drawing.Point(7, 27);
             this.AddEntityButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddEntityButton.Name = "AddEntityButton";
             this.AddEntityButton.Size = new System.Drawing.Size(121, 31);
             this.AddEntityButton.TabIndex = 7;
-            this.AddEntityButton.Text = "Add Entity";
+            this.AddEntityButton.Text = "Create Entity";
             this.AddEntityButton.UseVisualStyleBackColor = false;
             this.AddEntityButton.Click += new System.EventHandler(this.AddEntityButton_Click);
             // 
-            // button5
+            // deleteEncounterButton
             // 
-            this.button5.BackColor = System.Drawing.Color.Firebrick;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(192, 29);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 31);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = false;
+            this.deleteEncounterButton.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteEncounterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteEncounterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.deleteEncounterButton.Location = new System.Drawing.Point(75, 140);
+            this.deleteEncounterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteEncounterButton.Name = "deleteEncounterButton";
+            this.deleteEncounterButton.Size = new System.Drawing.Size(125, 31);
+            this.deleteEncounterButton.TabIndex = 6;
+            this.deleteEncounterButton.Text = "Del Encounter";
+            this.deleteEncounterButton.UseVisualStyleBackColor = false;
+            this.deleteEncounterButton.Click += new System.EventHandler(this.deleteEncounterButton_Click);
             // 
             // saveCreatureButton
             // 
             this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveCreatureButton.Location = new System.Drawing.Point(7, 152);
+            this.saveCreatureButton.Location = new System.Drawing.Point(153, 27);
             this.saveCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveCreatureButton.Name = "saveCreatureButton";
             this.saveCreatureButton.Size = new System.Drawing.Size(121, 31);
@@ -329,7 +329,7 @@
             // 
             this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadCreatureListButton.Location = new System.Drawing.Point(153, 152);
+            this.loadCreatureListButton.Location = new System.Drawing.Point(153, 81);
             this.loadCreatureListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loadCreatureListButton.Name = "loadCreatureListButton";
             this.loadCreatureListButton.Size = new System.Drawing.Size(125, 31);
@@ -896,7 +896,6 @@
             this.addCreatureButton.TabIndex = 53;
             this.addCreatureButton.Text = "Add Entity";
             this.addCreatureButton.UseVisualStyleBackColor = false;
-            this.addCreatureButton.Click += new System.EventHandler(this.addCreatureButton_Click);
             // 
             // sortEntitiesButton
             // 
@@ -913,12 +912,11 @@
             // 
             // saveFileDialog
             // 
-            saveFileDialog.FileName = "creatureTest";
-            saveFileDialog.FileOk += saveFileDialog1_FileOk;
+            this.saveFileDialog.FileName = "creatureTest";
             // 
             // openFileDialog
             // 
-            openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // STR
             // 
@@ -1089,12 +1087,16 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.name);
+            this.groupBox2.Controls.Add(this.nameLabel);
             this.groupBox2.Controls.Add(this.subtractHpButton);
             this.groupBox2.Controls.Add(this.addHpButton);
             this.groupBox2.Controls.Add(this.div3Label);
             this.groupBox2.Controls.Add(this.div2Label);
             this.groupBox2.Controls.Add(this.div1Label);
             this.groupBox2.Controls.Add(this.editMenuButton);
+            this.groupBox2.Controls.Add(this.removeCreatureButton);
+            this.groupBox2.Controls.Add(this.Copy_monster);
             this.groupBox2.Controls.Add(this.HPLabel);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.tempHPLabel);
@@ -1109,10 +1111,8 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.name);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.nameLabel);
             this.groupBox2.Controls.Add(this.strengthLabel);
             this.groupBox2.Controls.Add(this.dexterityLabel);
             this.groupBox2.Controls.Add(this.charismaLabel);
@@ -1121,8 +1121,7 @@
             this.groupBox2.Controls.Add(this.intelligenceLabel);
             this.groupBox2.Location = new System.Drawing.Point(327, 152);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(412, 650);
+            this.groupBox2.Size = new System.Drawing.Size(412, 653);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Description";
@@ -1179,7 +1178,8 @@
             // 
             this.div1Label.AutoSize = true;
             this.div1Label.BackColor = System.Drawing.Color.Transparent;
-            this.div1Label.Location = new System.Drawing.Point(7, 53);
+            this.div1Label.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.div1Label.Location = new System.Drawing.Point(7, 47);
             this.div1Label.Name = "div1Label";
             this.div1Label.Size = new System.Drawing.Size(399, 20);
             this.div1Label.TabIndex = 80;
@@ -1190,12 +1190,12 @@
             this.editMenuButton.BackColor = System.Drawing.Color.Firebrick;
             this.editMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editMenuButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.editMenuButton.Location = new System.Drawing.Point(21, 593);
+            this.editMenuButton.Location = new System.Drawing.Point(9, 595);
             this.editMenuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editMenuButton.Name = "editMenuButton";
-            this.editMenuButton.Size = new System.Drawing.Size(86, 31);
+            this.editMenuButton.Size = new System.Drawing.Size(98, 31);
             this.editMenuButton.TabIndex = 79;
-            this.editMenuButton.Text = "Edit";
+            this.editMenuButton.Text = "Edit Creature";
             this.editMenuButton.UseVisualStyleBackColor = false;
             this.editMenuButton.Click += new System.EventHandler(this.editMenu_Click);
             // 
@@ -1317,8 +1317,7 @@
             this.addEntityGroupBox.Controls.Add(this.STR);
             this.addEntityGroupBox.Location = new System.Drawing.Point(741, 459);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
-            this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addEntityGroupBox.Size = new System.Drawing.Size(1141, 510);
+            this.addEntityGroupBox.Size = new System.Drawing.Size(1141, 509);
             this.addEntityGroupBox.TabIndex = 74;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
@@ -1355,7 +1354,7 @@
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
             this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
-            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 286);
+            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 288);
             this.diceRollerGroupBox.TabIndex = 75;
             this.diceRollerGroupBox.TabStop = false;
             this.diceRollerGroupBox.Text = "Dice Roller";
@@ -1377,7 +1376,7 @@
             this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Settings_group_box.Name = "Settings_group_box";
             this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Settings_group_box.Size = new System.Drawing.Size(134, 85);
+            this.Settings_group_box.Size = new System.Drawing.Size(134, 87);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
@@ -1385,7 +1384,7 @@
             // Change_Bcolor
             // 
             this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.Location = new System.Drawing.Point(6, 10);
+            this.Change_Bcolor.Location = new System.Drawing.Point(6, 11);
             this.Change_Bcolor.Name = "Change_Bcolor";
             this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
             this.Change_Bcolor.TabIndex = 0;
@@ -1403,9 +1402,9 @@
             this.Color_choices.Controls.Add(this.label16);
             this.Color_choices.Controls.Add(this.label14);
             this.Color_choices.Controls.Add(this.label12);
-            this.Color_choices.Location = new System.Drawing.Point(1100, 465);
+            this.Color_choices.Location = new System.Drawing.Point(1099, 465);
             this.Color_choices.Name = "Color_choices";
-            this.Color_choices.Size = new System.Drawing.Size(219, 140);
+            this.Color_choices.Size = new System.Drawing.Size(219, 144);
             this.Color_choices.TabIndex = 77;
             this.Color_choices.TabStop = false;
             this.Color_choices.Visible = false;
@@ -1542,10 +1541,9 @@
         private Button nextRound;
         private Button removeCreatureButton;
         private GroupBox menuGroupBox;
-        private Button button5;
+        private Button deleteEncounterButton;
         private Button AddStatusEffect;
         private Button Settings_button;
-        private Button button10;
         private Button button8;
         private Button AddEntityButton;
         private Button round1;
@@ -1641,5 +1639,6 @@
         private Label label12;
         private Button addHpButton;
         private Button subtractHpButton;
+        private Button loadGroupButton;
     }
 }
