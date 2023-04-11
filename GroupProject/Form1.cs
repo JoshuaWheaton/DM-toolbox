@@ -885,6 +885,8 @@ namespace GroupProject
             Change_Bcolor.BackColor = Color.FromArgb(r, g, b);
             loadGroupButton.BackColor = Color.FromArgb(r, g, b);
             Change_Pic.BackColor = Color.FromArgb(r, g, b);
+            addHpButton.BackColor = Color.FromArgb(r, g, b);
+            subtractHpButton.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
@@ -943,7 +945,7 @@ namespace GroupProject
                 dialog.Filter = "jpg files(*.jpg)| *.jpg| PNG files(*.png)| *.png";
 
                 // Set Form background picture to picture selected by user.
-                if(dialog.ShowDialog() == DialogResult.OK)
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     this.BackgroundImage = Image.FromFile(dialog.FileName);
                 }
@@ -952,6 +954,7 @@ namespace GroupProject
             {
                 MessageBox.Show("Image needs to be .jpg or .png", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
         private void descriptionLabel_TextChanged(object sender, EventArgs e)
         {
