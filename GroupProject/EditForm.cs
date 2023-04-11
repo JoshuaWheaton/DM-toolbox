@@ -55,5 +55,10 @@ namespace GroupProject
             // After the user edits the creature, close the pop up
             this.Close();
         }
+
+        private void EditForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

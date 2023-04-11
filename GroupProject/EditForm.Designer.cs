@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.acNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.hitPointsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.editButton = new System.Windows.Forms.Button();
@@ -49,9 +51,8 @@
             this.charismaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.STR = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.acNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.addEntityGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hitPointsNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
@@ -60,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // addEntityGroupBox
@@ -94,6 +94,24 @@
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Edit Entity";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(195, 341);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 32);
+            this.label3.TabIndex = 80;
+            this.label3.Text = "AC";
+            // 
+            // acNumericUpDown
+            // 
+            this.acNumericUpDown.Location = new System.Drawing.Point(271, 348);
+            this.acNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.acNumericUpDown.Name = "acNumericUpDown";
+            this.acNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.acNumericUpDown.TabIndex = 79;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -108,6 +126,11 @@
             // 
             this.hitPointsNumericUpDown.Location = new System.Drawing.Point(271, 308);
             this.hitPointsNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hitPointsNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.hitPointsNumericUpDown.Name = "hitPointsNumericUpDown";
             this.hitPointsNumericUpDown.Size = new System.Drawing.Size(47, 27);
             this.hitPointsNumericUpDown.TabIndex = 77;
@@ -347,24 +370,6 @@
             this.STR.TabIndex = 57;
             this.STR.Text = "STR";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(195, 341);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 32);
-            this.label3.TabIndex = 80;
-            this.label3.Text = "AC";
-            // 
-            // acNumericUpDown
-            // 
-            this.acNumericUpDown.Location = new System.Drawing.Point(271, 348);
-            this.acNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.acNumericUpDown.Name = "acNumericUpDown";
-            this.acNumericUpDown.Size = new System.Drawing.Size(47, 27);
-            this.acNumericUpDown.TabIndex = 79;
-            // 
             // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -376,8 +381,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditForm";
             this.Text = "EditForm";
+            this.Load += new System.EventHandler(this.EditForm_Load);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hitPointsNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
@@ -386,7 +393,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
