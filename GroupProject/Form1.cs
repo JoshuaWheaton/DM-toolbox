@@ -847,7 +847,6 @@ namespace GroupProject
             button8.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
             AddStatusEffect.BackColor = Color.FromArgb(r, g, b);
-            addCreatureButton.BackColor = Color.FromArgb(r, g, b);
             editMenuButton.BackColor = Color.FromArgb(r, g, b);
             saveCreatureButton.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);

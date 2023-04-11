@@ -66,14 +66,6 @@
             this.round14 = new System.Windows.Forms.Button();
             this.round13 = new System.Windows.Forms.Button();
             this.round25 = new System.Windows.Forms.Button();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.strengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.dexterityNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.constitutionNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.charismaNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.wisdomNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.intelligenceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.creatureListBox = new System.Windows.Forms.ListBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.strengthLabel = new System.Windows.Forms.Label();
@@ -82,16 +74,9 @@
             this.intelligenceLabel = new System.Windows.Forms.Label();
             this.wisdomLabel = new System.Windows.Forms.Label();
             this.charismaLabel = new System.Windows.Forms.Label();
-            this.addCreatureButton = new System.Windows.Forms.Button();
             this.sortEntitiesButton = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.STR = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.INT = new System.Windows.Forms.Label();
-            this.DEX = new System.Windows.Forms.Label();
-            this.WIS = new System.Windows.Forms.Label();
-            this.CHA = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -101,7 +86,6 @@
             this.name = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.subtractHpButton = new System.Windows.Forms.Button();
             this.addHpButton = new System.Windows.Forms.Button();
@@ -118,9 +102,6 @@
             this.ACLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.entityListGroupBox = new System.Windows.Forms.GroupBox();
-            this.addEntityGroupBox = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.initiativeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
             this.Settings_group_box = new System.Windows.Forms.GroupBox();
@@ -134,16 +115,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.menuGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
-            this.addEntityGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).BeginInit();
             this.diceRollerGroupBox.SuspendLayout();
             this.Settings_group_box.SuspendLayout();
             this.Color_choices.SuspendLayout();
@@ -154,9 +127,10 @@
             this.Copy_monster.BackColor = System.Drawing.Color.Firebrick;
             this.Copy_monster.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Copy_monster.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Copy_monster.Location = new System.Drawing.Point(120, 446);
+            this.Copy_monster.Location = new System.Drawing.Point(137, 595);
+            this.Copy_monster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Copy_monster.Name = "Copy_monster";
-            this.Copy_monster.Size = new System.Drawing.Size(108, 23);
+            this.Copy_monster.Size = new System.Drawing.Size(123, 31);
             this.Copy_monster.TabIndex = 0;
             this.Copy_monster.Text = " Copy Creature";
             this.Copy_monster.UseVisualStyleBackColor = false;
@@ -168,9 +142,10 @@
             this.prevRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prevRound.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.prevRound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.prevRound.Location = new System.Drawing.Point(27, 36);
+            this.prevRound.Location = new System.Drawing.Point(31, 48);
+            this.prevRound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.prevRound.Name = "prevRound";
-            this.prevRound.Size = new System.Drawing.Size(55, 47);
+            this.prevRound.Size = new System.Drawing.Size(63, 63);
             this.prevRound.TabIndex = 3;
             this.prevRound.Text = "Previous Round";
             this.prevRound.UseVisualStyleBackColor = false;
@@ -182,9 +157,10 @@
             this.nextRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextRound.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nextRound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nextRound.Location = new System.Drawing.Point(850, 36);
+            this.nextRound.Location = new System.Drawing.Point(971, 48);
+            this.nextRound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nextRound.Name = "nextRound";
-            this.nextRound.Size = new System.Drawing.Size(55, 47);
+            this.nextRound.Size = new System.Drawing.Size(63, 63);
             this.nextRound.TabIndex = 4;
             this.nextRound.Text = "Next Round";
             this.nextRound.UseVisualStyleBackColor = false;
@@ -195,9 +171,10 @@
             this.removeCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.removeCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeCreatureButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeCreatureButton.Location = new System.Drawing.Point(255, 446);
+            this.removeCreatureButton.Location = new System.Drawing.Point(291, 595);
+            this.removeCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.removeCreatureButton.Name = "removeCreatureButton";
-            this.removeCreatureButton.Size = new System.Drawing.Size(83, 23);
+            this.removeCreatureButton.Size = new System.Drawing.Size(95, 31);
             this.removeCreatureButton.TabIndex = 5;
             this.removeCreatureButton.Text = "Del Creature";
             this.removeCreatureButton.UseVisualStyleBackColor = false;
@@ -216,9 +193,11 @@
             this.menuGroupBox.Controls.Add(this.deleteEncounterButton);
             this.menuGroupBox.Controls.Add(this.saveCreatureButton);
             this.menuGroupBox.Controls.Add(this.loadCreatureListButton);
-            this.menuGroupBox.Location = new System.Drawing.Point(805, 113);
+            this.menuGroupBox.Location = new System.Drawing.Point(920, 151);
+            this.menuGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.menuGroupBox.Name = "menuGroupBox";
-            this.menuGroupBox.Size = new System.Drawing.Size(254, 214);
+            this.menuGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.menuGroupBox.Size = new System.Drawing.Size(290, 285);
             this.menuGroupBox.TabIndex = 6;
             this.menuGroupBox.TabStop = false;
             this.menuGroupBox.Text = "Menu";
@@ -229,9 +208,10 @@
             this.loadGroupButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadGroupButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.loadGroupButton.Location = new System.Drawing.Point(6, 61);
+            this.loadGroupButton.Location = new System.Drawing.Point(7, 81);
+            this.loadGroupButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loadGroupButton.Name = "loadGroupButton";
-            this.loadGroupButton.Size = new System.Drawing.Size(106, 23);
+            this.loadGroupButton.Size = new System.Drawing.Size(121, 31);
             this.loadGroupButton.TabIndex = 57;
             this.loadGroupButton.Text = "Add Entity";
             this.loadGroupButton.UseVisualStyleBackColor = false;
@@ -242,9 +222,10 @@
             this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
             this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddStatusEffect.Location = new System.Drawing.Point(87, 161);
+            this.AddStatusEffect.Location = new System.Drawing.Point(99, 215);
+            this.AddStatusEffect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddStatusEffect.Name = "AddStatusEffect";
-            this.AddStatusEffect.Size = new System.Drawing.Size(75, 23);
+            this.AddStatusEffect.Size = new System.Drawing.Size(86, 31);
             this.AddStatusEffect.TabIndex = 14;
             this.AddStatusEffect.Text = "Status";
             this.AddStatusEffect.UseVisualStyleBackColor = false;
@@ -255,9 +236,10 @@
             this.Settings_button.BackColor = System.Drawing.Color.Firebrick;
             this.Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Settings_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Settings_button.Location = new System.Drawing.Point(168, 161);
+            this.Settings_button.Location = new System.Drawing.Point(192, 215);
+            this.Settings_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Settings_button.Name = "Settings_button";
-            this.Settings_button.Size = new System.Drawing.Size(75, 23);
+            this.Settings_button.Size = new System.Drawing.Size(86, 31);
             this.Settings_button.TabIndex = 13;
             this.Settings_button.Text = "Settings";
             this.Settings_button.UseVisualStyleBackColor = false;
@@ -268,9 +250,10 @@
             this.button8.BackColor = System.Drawing.Color.Firebrick;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button8.Location = new System.Drawing.Point(6, 161);
+            this.button8.Location = new System.Drawing.Point(7, 215);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(86, 31);
             this.button8.TabIndex = 9;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = false;
@@ -280,9 +263,10 @@
             this.AddEntityButton.BackColor = System.Drawing.Color.Firebrick;
             this.AddEntityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEntityButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddEntityButton.Location = new System.Drawing.Point(6, 20);
+            this.AddEntityButton.Location = new System.Drawing.Point(7, 27);
+            this.AddEntityButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddEntityButton.Name = "AddEntityButton";
-            this.AddEntityButton.Size = new System.Drawing.Size(106, 23);
+            this.AddEntityButton.Size = new System.Drawing.Size(121, 31);
             this.AddEntityButton.TabIndex = 7;
             this.AddEntityButton.Text = "Create Entity";
             this.AddEntityButton.UseVisualStyleBackColor = false;
@@ -293,9 +277,10 @@
             this.deleteEncounterButton.BackColor = System.Drawing.Color.Firebrick;
             this.deleteEncounterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteEncounterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deleteEncounterButton.Location = new System.Drawing.Point(66, 105);
+            this.deleteEncounterButton.Location = new System.Drawing.Point(75, 140);
+            this.deleteEncounterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deleteEncounterButton.Name = "deleteEncounterButton";
-            this.deleteEncounterButton.Size = new System.Drawing.Size(109, 23);
+            this.deleteEncounterButton.Size = new System.Drawing.Size(125, 31);
             this.deleteEncounterButton.TabIndex = 6;
             this.deleteEncounterButton.Text = "Del Encounter";
             this.deleteEncounterButton.UseVisualStyleBackColor = false;
@@ -305,9 +290,10 @@
             // 
             this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveCreatureButton.Location = new System.Drawing.Point(134, 20);
+            this.saveCreatureButton.Location = new System.Drawing.Point(153, 27);
+            this.saveCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveCreatureButton.Name = "saveCreatureButton";
-            this.saveCreatureButton.Size = new System.Drawing.Size(106, 23);
+            this.saveCreatureButton.Size = new System.Drawing.Size(121, 31);
             this.saveCreatureButton.TabIndex = 54;
             this.saveCreatureButton.Text = "Save Encounter";
             this.saveCreatureButton.UseVisualStyleBackColor = false;
@@ -317,9 +303,10 @@
             // 
             this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadCreatureListButton.Location = new System.Drawing.Point(134, 61);
+            this.loadCreatureListButton.Location = new System.Drawing.Point(153, 81);
+            this.loadCreatureListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loadCreatureListButton.Name = "loadCreatureListButton";
-            this.loadCreatureListButton.Size = new System.Drawing.Size(109, 23);
+            this.loadCreatureListButton.Size = new System.Drawing.Size(125, 31);
             this.loadCreatureListButton.TabIndex = 56;
             this.loadCreatureListButton.Text = "Load Encounter";
             this.loadCreatureListButton.UseVisualStyleBackColor = false;
@@ -330,10 +317,11 @@
             this.round1.BackColor = System.Drawing.Color.Firebrick;
             this.round1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.round1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.round1.Location = new System.Drawing.Point(130, 49);
+            this.round1.Location = new System.Drawing.Point(149, 65);
+            this.round1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round1.Name = "round1";
             this.round1.Padding = new System.Windows.Forms.Padding(1);
-            this.round1.Size = new System.Drawing.Size(30, 23);
+            this.round1.Size = new System.Drawing.Size(34, 31);
             this.round1.TabIndex = 9;
             this.round1.Text = "1";
             this.round1.UseVisualStyleBackColor = false;
@@ -343,10 +331,11 @@
             // 
             this.round2.BackColor = System.Drawing.Color.Firebrick;
             this.round2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round2.Location = new System.Drawing.Point(157, 49);
+            this.round2.Location = new System.Drawing.Point(179, 65);
+            this.round2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round2.Name = "round2";
             this.round2.Padding = new System.Windows.Forms.Padding(1);
-            this.round2.Size = new System.Drawing.Size(30, 23);
+            this.round2.Size = new System.Drawing.Size(34, 31);
             this.round2.TabIndex = 10;
             this.round2.Text = "2";
             this.round2.UseVisualStyleBackColor = false;
@@ -356,10 +345,11 @@
             // 
             this.round3.BackColor = System.Drawing.Color.Firebrick;
             this.round3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round3.Location = new System.Drawing.Point(183, 49);
+            this.round3.Location = new System.Drawing.Point(209, 65);
+            this.round3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round3.Name = "round3";
             this.round3.Padding = new System.Windows.Forms.Padding(1);
-            this.round3.Size = new System.Drawing.Size(30, 23);
+            this.round3.Size = new System.Drawing.Size(34, 31);
             this.round3.TabIndex = 11;
             this.round3.Text = "3";
             this.round3.UseVisualStyleBackColor = false;
@@ -369,10 +359,11 @@
             // 
             this.round4.BackColor = System.Drawing.Color.Firebrick;
             this.round4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round4.Location = new System.Drawing.Point(209, 49);
+            this.round4.Location = new System.Drawing.Point(239, 65);
+            this.round4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round4.Name = "round4";
             this.round4.Padding = new System.Windows.Forms.Padding(1);
-            this.round4.Size = new System.Drawing.Size(30, 23);
+            this.round4.Size = new System.Drawing.Size(34, 31);
             this.round4.TabIndex = 13;
             this.round4.Text = "4";
             this.round4.UseVisualStyleBackColor = false;
@@ -382,10 +373,11 @@
             // 
             this.round8.BackColor = System.Drawing.Color.Firebrick;
             this.round8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round8.Location = new System.Drawing.Point(312, 49);
+            this.round8.Location = new System.Drawing.Point(357, 65);
+            this.round8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round8.Name = "round8";
             this.round8.Padding = new System.Windows.Forms.Padding(1);
-            this.round8.Size = new System.Drawing.Size(30, 23);
+            this.round8.Size = new System.Drawing.Size(34, 31);
             this.round8.TabIndex = 17;
             this.round8.Text = "8";
             this.round8.UseVisualStyleBackColor = false;
@@ -395,10 +387,11 @@
             // 
             this.round7.BackColor = System.Drawing.Color.Firebrick;
             this.round7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round7.Location = new System.Drawing.Point(286, 49);
+            this.round7.Location = new System.Drawing.Point(327, 65);
+            this.round7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round7.Name = "round7";
             this.round7.Padding = new System.Windows.Forms.Padding(1);
-            this.round7.Size = new System.Drawing.Size(30, 23);
+            this.round7.Size = new System.Drawing.Size(34, 31);
             this.round7.TabIndex = 16;
             this.round7.Text = "7";
             this.round7.UseVisualStyleBackColor = false;
@@ -408,10 +401,11 @@
             // 
             this.round6.BackColor = System.Drawing.Color.Firebrick;
             this.round6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round6.Location = new System.Drawing.Point(260, 49);
+            this.round6.Location = new System.Drawing.Point(297, 65);
+            this.round6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round6.Name = "round6";
             this.round6.Padding = new System.Windows.Forms.Padding(1);
-            this.round6.Size = new System.Drawing.Size(30, 23);
+            this.round6.Size = new System.Drawing.Size(34, 31);
             this.round6.TabIndex = 15;
             this.round6.Text = "6";
             this.round6.UseVisualStyleBackColor = false;
@@ -421,10 +415,11 @@
             // 
             this.round5.BackColor = System.Drawing.Color.Firebrick;
             this.round5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round5.Location = new System.Drawing.Point(233, 49);
+            this.round5.Location = new System.Drawing.Point(266, 65);
+            this.round5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round5.Name = "round5";
             this.round5.Padding = new System.Windows.Forms.Padding(1);
-            this.round5.Size = new System.Drawing.Size(30, 23);
+            this.round5.Size = new System.Drawing.Size(34, 31);
             this.round5.TabIndex = 14;
             this.round5.Text = "5";
             this.round5.UseVisualStyleBackColor = false;
@@ -434,9 +429,10 @@
             // 
             this.round12.BackColor = System.Drawing.Color.Firebrick;
             this.round12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round12.Location = new System.Drawing.Point(420, 49);
+            this.round12.Location = new System.Drawing.Point(480, 65);
+            this.round12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round12.Name = "round12";
-            this.round12.Size = new System.Drawing.Size(30, 23);
+            this.round12.Size = new System.Drawing.Size(34, 31);
             this.round12.TabIndex = 21;
             this.round12.Text = "12";
             this.round12.UseVisualStyleBackColor = false;
@@ -446,9 +442,10 @@
             // 
             this.round11.BackColor = System.Drawing.Color.Firebrick;
             this.round11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round11.Location = new System.Drawing.Point(394, 49);
+            this.round11.Location = new System.Drawing.Point(450, 65);
+            this.round11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round11.Name = "round11";
-            this.round11.Size = new System.Drawing.Size(30, 23);
+            this.round11.Size = new System.Drawing.Size(34, 31);
             this.round11.TabIndex = 20;
             this.round11.Text = "11";
             this.round11.UseVisualStyleBackColor = false;
@@ -458,9 +455,10 @@
             // 
             this.round10.BackColor = System.Drawing.Color.Firebrick;
             this.round10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round10.Location = new System.Drawing.Point(368, 49);
+            this.round10.Location = new System.Drawing.Point(421, 65);
+            this.round10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round10.Name = "round10";
-            this.round10.Size = new System.Drawing.Size(30, 23);
+            this.round10.Size = new System.Drawing.Size(34, 31);
             this.round10.TabIndex = 19;
             this.round10.Text = "10";
             this.round10.UseVisualStyleBackColor = false;
@@ -470,10 +468,11 @@
             // 
             this.round9.BackColor = System.Drawing.Color.Firebrick;
             this.round9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round9.Location = new System.Drawing.Point(341, 49);
+            this.round9.Location = new System.Drawing.Point(390, 65);
+            this.round9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round9.Name = "round9";
             this.round9.Padding = new System.Windows.Forms.Padding(1);
-            this.round9.Size = new System.Drawing.Size(30, 23);
+            this.round9.Size = new System.Drawing.Size(34, 31);
             this.round9.TabIndex = 18;
             this.round9.Text = "9";
             this.round9.UseVisualStyleBackColor = false;
@@ -483,9 +482,10 @@
             // 
             this.round24.BackColor = System.Drawing.Color.Firebrick;
             this.round24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round24.Location = new System.Drawing.Point(736, 49);
+            this.round24.Location = new System.Drawing.Point(841, 65);
+            this.round24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round24.Name = "round24";
-            this.round24.Size = new System.Drawing.Size(30, 23);
+            this.round24.Size = new System.Drawing.Size(34, 31);
             this.round24.TabIndex = 33;
             this.round24.Text = "24";
             this.round24.UseVisualStyleBackColor = false;
@@ -495,9 +495,10 @@
             // 
             this.round23.BackColor = System.Drawing.Color.Firebrick;
             this.round23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round23.Location = new System.Drawing.Point(710, 49);
+            this.round23.Location = new System.Drawing.Point(811, 65);
+            this.round23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round23.Name = "round23";
-            this.round23.Size = new System.Drawing.Size(30, 23);
+            this.round23.Size = new System.Drawing.Size(34, 31);
             this.round23.TabIndex = 32;
             this.round23.Text = "23";
             this.round23.UseVisualStyleBackColor = false;
@@ -507,9 +508,10 @@
             // 
             this.round22.BackColor = System.Drawing.Color.Firebrick;
             this.round22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round22.Location = new System.Drawing.Point(684, 49);
+            this.round22.Location = new System.Drawing.Point(782, 65);
+            this.round22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round22.Name = "round22";
-            this.round22.Size = new System.Drawing.Size(30, 23);
+            this.round22.Size = new System.Drawing.Size(34, 31);
             this.round22.TabIndex = 31;
             this.round22.Text = "22";
             this.round22.UseVisualStyleBackColor = false;
@@ -519,9 +521,10 @@
             // 
             this.round21.BackColor = System.Drawing.Color.Firebrick;
             this.round21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round21.Location = new System.Drawing.Point(657, 49);
+            this.round21.Location = new System.Drawing.Point(751, 65);
+            this.round21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round21.Name = "round21";
-            this.round21.Size = new System.Drawing.Size(30, 23);
+            this.round21.Size = new System.Drawing.Size(34, 31);
             this.round21.TabIndex = 30;
             this.round21.Text = "21";
             this.round21.UseVisualStyleBackColor = false;
@@ -531,9 +534,10 @@
             // 
             this.round20.BackColor = System.Drawing.Color.Firebrick;
             this.round20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round20.Location = new System.Drawing.Point(628, 49);
+            this.round20.Location = new System.Drawing.Point(718, 65);
+            this.round20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round20.Name = "round20";
-            this.round20.Size = new System.Drawing.Size(30, 23);
+            this.round20.Size = new System.Drawing.Size(34, 31);
             this.round20.TabIndex = 29;
             this.round20.Text = "20";
             this.round20.UseVisualStyleBackColor = false;
@@ -543,9 +547,10 @@
             // 
             this.round19.BackColor = System.Drawing.Color.Firebrick;
             this.round19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round19.Location = new System.Drawing.Point(602, 49);
+            this.round19.Location = new System.Drawing.Point(688, 65);
+            this.round19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round19.Name = "round19";
-            this.round19.Size = new System.Drawing.Size(30, 23);
+            this.round19.Size = new System.Drawing.Size(34, 31);
             this.round19.TabIndex = 28;
             this.round19.Text = "19";
             this.round19.UseVisualStyleBackColor = false;
@@ -555,9 +560,10 @@
             // 
             this.round18.BackColor = System.Drawing.Color.Firebrick;
             this.round18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round18.Location = new System.Drawing.Point(576, 49);
+            this.round18.Location = new System.Drawing.Point(658, 65);
+            this.round18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round18.Name = "round18";
-            this.round18.Size = new System.Drawing.Size(30, 23);
+            this.round18.Size = new System.Drawing.Size(34, 31);
             this.round18.TabIndex = 27;
             this.round18.Text = "18";
             this.round18.UseVisualStyleBackColor = false;
@@ -567,9 +573,10 @@
             // 
             this.round17.BackColor = System.Drawing.Color.Firebrick;
             this.round17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round17.Location = new System.Drawing.Point(549, 49);
+            this.round17.Location = new System.Drawing.Point(627, 65);
+            this.round17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round17.Name = "round17";
-            this.round17.Size = new System.Drawing.Size(30, 23);
+            this.round17.Size = new System.Drawing.Size(34, 31);
             this.round17.TabIndex = 26;
             this.round17.Text = "17";
             this.round17.UseVisualStyleBackColor = false;
@@ -579,9 +586,10 @@
             // 
             this.round16.BackColor = System.Drawing.Color.Firebrick;
             this.round16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round16.Location = new System.Drawing.Point(524, 49);
+            this.round16.Location = new System.Drawing.Point(599, 65);
+            this.round16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round16.Name = "round16";
-            this.round16.Size = new System.Drawing.Size(30, 23);
+            this.round16.Size = new System.Drawing.Size(34, 31);
             this.round16.TabIndex = 25;
             this.round16.Text = "16";
             this.round16.UseVisualStyleBackColor = false;
@@ -591,9 +599,10 @@
             // 
             this.round15.BackColor = System.Drawing.Color.Firebrick;
             this.round15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round15.Location = new System.Drawing.Point(498, 49);
+            this.round15.Location = new System.Drawing.Point(569, 65);
+            this.round15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round15.Name = "round15";
-            this.round15.Size = new System.Drawing.Size(30, 23);
+            this.round15.Size = new System.Drawing.Size(34, 31);
             this.round15.TabIndex = 24;
             this.round15.Text = "15";
             this.round15.UseVisualStyleBackColor = false;
@@ -603,9 +612,10 @@
             // 
             this.round14.BackColor = System.Drawing.Color.Firebrick;
             this.round14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round14.Location = new System.Drawing.Point(472, 49);
+            this.round14.Location = new System.Drawing.Point(539, 65);
+            this.round14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round14.Name = "round14";
-            this.round14.Size = new System.Drawing.Size(30, 23);
+            this.round14.Size = new System.Drawing.Size(34, 31);
             this.round14.TabIndex = 23;
             this.round14.Text = "14";
             this.round14.UseVisualStyleBackColor = false;
@@ -615,9 +625,10 @@
             // 
             this.round13.BackColor = System.Drawing.Color.Firebrick;
             this.round13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round13.Location = new System.Drawing.Point(445, 49);
+            this.round13.Location = new System.Drawing.Point(509, 65);
+            this.round13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round13.Name = "round13";
-            this.round13.Size = new System.Drawing.Size(30, 23);
+            this.round13.Size = new System.Drawing.Size(34, 31);
             this.round13.TabIndex = 22;
             this.round13.Text = "13";
             this.round13.UseVisualStyleBackColor = false;
@@ -627,144 +638,23 @@
             // 
             this.round25.BackColor = System.Drawing.Color.Firebrick;
             this.round25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round25.Location = new System.Drawing.Point(764, 49);
+            this.round25.Location = new System.Drawing.Point(873, 65);
+            this.round25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.round25.Name = "round25";
-            this.round25.Size = new System.Drawing.Size(30, 23);
+            this.round25.Size = new System.Drawing.Size(34, 31);
             this.round25.TabIndex = 34;
             this.round25.Text = "25";
             this.round25.UseVisualStyleBackColor = false;
             this.round25.Click += new System.EventHandler(this.round25_Click);
             // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Location = new System.Drawing.Point(18, 16);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.PlaceholderText = "Name";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 23);
-            this.nameTextBox.TabIndex = 36;
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(18, 57);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.PlaceholderText = "Description";
-            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTextBox.Size = new System.Drawing.Size(154, 182);
-            this.descriptionTextBox.TabIndex = 37;
-            this.descriptionTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // strengthNumericUpDown
-            // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(237, 21);
-            this.strengthNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.strengthNumericUpDown.Name = "strengthNumericUpDown";
-            this.strengthNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.strengthNumericUpDown.TabIndex = 38;
-            this.strengthNumericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.strengthNumericUpDown.ValueChanged += new System.EventHandler(this.strengthNumericUpDown_ValueChanged);
-            // 
-            // dexterityNumericUpDown
-            // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(237, 51);
-            this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.dexterityNumericUpDown.Name = "dexterityNumericUpDown";
-            this.dexterityNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.dexterityNumericUpDown.TabIndex = 39;
-            this.dexterityNumericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.dexterityNumericUpDown.ValueChanged += new System.EventHandler(this.dexterityNumericUpDown_ValueChanged);
-            // 
-            // constitutionNumericUpDown
-            // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(237, 81);
-            this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.constitutionNumericUpDown.Name = "constitutionNumericUpDown";
-            this.constitutionNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.constitutionNumericUpDown.TabIndex = 40;
-            this.constitutionNumericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // charismaNumericUpDown
-            // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(237, 171);
-            this.charismaNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.charismaNumericUpDown.Name = "charismaNumericUpDown";
-            this.charismaNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.charismaNumericUpDown.TabIndex = 43;
-            this.charismaNumericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // wisdomNumericUpDown
-            // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(237, 141);
-            this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.wisdomNumericUpDown.Name = "wisdomNumericUpDown";
-            this.wisdomNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.wisdomNumericUpDown.TabIndex = 42;
-            this.wisdomNumericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // intelligenceNumericUpDown
-            // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(237, 111);
-            this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.intelligenceNumericUpDown.Name = "intelligenceNumericUpDown";
-            this.intelligenceNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.intelligenceNumericUpDown.TabIndex = 41;
-            this.intelligenceNumericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // creatureListBox
             // 
             this.creatureListBox.FormattingEnabled = true;
-            this.creatureListBox.ItemHeight = 15;
-            this.creatureListBox.Location = new System.Drawing.Point(18, 60);
+            this.creatureListBox.ItemHeight = 20;
+            this.creatureListBox.Location = new System.Drawing.Point(21, 80);
+            this.creatureListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.creatureListBox.Name = "creatureListBox";
-            this.creatureListBox.Size = new System.Drawing.Size(204, 379);
+            this.creatureListBox.Size = new System.Drawing.Size(233, 504);
             this.creatureListBox.TabIndex = 44;
             this.creatureListBox.SelectedIndexChanged += new System.EventHandler(this.creatureListBox_SelectedIndexChanged);
             // 
@@ -772,9 +662,9 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameLabel.Location = new System.Drawing.Point(73, 19);
+            this.nameLabel.Location = new System.Drawing.Point(83, 25);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(62, 25);
+            this.nameLabel.Size = new System.Drawing.Size(78, 32);
             this.nameLabel.TabIndex = 45;
             this.nameLabel.Text = "Name";
             // 
@@ -782,9 +672,9 @@
             // 
             this.strengthLabel.AutoSize = true;
             this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.strengthLabel.Location = new System.Drawing.Point(15, 185);
+            this.strengthLabel.Location = new System.Drawing.Point(17, 247);
             this.strengthLabel.Name = "strengthLabel";
-            this.strengthLabel.Size = new System.Drawing.Size(34, 25);
+            this.strengthLabel.Size = new System.Drawing.Size(42, 32);
             this.strengthLabel.TabIndex = 46;
             this.strengthLabel.Text = "SV";
             // 
@@ -792,9 +682,9 @@
             // 
             this.dexterityLabel.AutoSize = true;
             this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dexterityLabel.Location = new System.Drawing.Point(67, 185);
+            this.dexterityLabel.Location = new System.Drawing.Point(77, 247);
             this.dexterityLabel.Name = "dexterityLabel";
-            this.dexterityLabel.Size = new System.Drawing.Size(37, 25);
+            this.dexterityLabel.Size = new System.Drawing.Size(45, 32);
             this.dexterityLabel.TabIndex = 47;
             this.dexterityLabel.Text = "DV";
             // 
@@ -802,9 +692,9 @@
             // 
             this.constitutionLabel.AutoSize = true;
             this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.constitutionLabel.Location = new System.Drawing.Point(119, 185);
+            this.constitutionLabel.Location = new System.Drawing.Point(136, 247);
             this.constitutionLabel.Name = "constitutionLabel";
-            this.constitutionLabel.Size = new System.Drawing.Size(36, 25);
+            this.constitutionLabel.Size = new System.Drawing.Size(44, 32);
             this.constitutionLabel.TabIndex = 48;
             this.constitutionLabel.Text = "CV";
             // 
@@ -812,9 +702,9 @@
             // 
             this.intelligenceLabel.AutoSize = true;
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.intelligenceLabel.Location = new System.Drawing.Point(171, 185);
+            this.intelligenceLabel.Location = new System.Drawing.Point(195, 247);
             this.intelligenceLabel.Name = "intelligenceLabel";
-            this.intelligenceLabel.Size = new System.Drawing.Size(29, 25);
+            this.intelligenceLabel.Size = new System.Drawing.Size(35, 32);
             this.intelligenceLabel.TabIndex = 49;
             this.intelligenceLabel.Text = "IV";
             // 
@@ -822,9 +712,9 @@
             // 
             this.wisdomLabel.AutoSize = true;
             this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.wisdomLabel.Location = new System.Drawing.Point(223, 185);
+            this.wisdomLabel.Location = new System.Drawing.Point(255, 247);
             this.wisdomLabel.Name = "wisdomLabel";
-            this.wisdomLabel.Size = new System.Drawing.Size(42, 25);
+            this.wisdomLabel.Size = new System.Drawing.Size(51, 32);
             this.wisdomLabel.TabIndex = 50;
             this.wisdomLabel.Text = "WV";
             // 
@@ -832,30 +722,20 @@
             // 
             this.charismaLabel.AutoSize = true;
             this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.charismaLabel.Location = new System.Drawing.Point(275, 185);
+            this.charismaLabel.Location = new System.Drawing.Point(314, 247);
             this.charismaLabel.Name = "charismaLabel";
-            this.charismaLabel.Size = new System.Drawing.Size(36, 25);
+            this.charismaLabel.Size = new System.Drawing.Size(44, 32);
             this.charismaLabel.TabIndex = 51;
             this.charismaLabel.Text = "CV";
-            // 
-            // addCreatureButton
-            // 
-            this.addCreatureButton.BackColor = System.Drawing.Color.Firebrick;
-            this.addCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCreatureButton.Location = new System.Drawing.Point(291, 16);
-            this.addCreatureButton.Name = "addCreatureButton";
-            this.addCreatureButton.Size = new System.Drawing.Size(100, 23);
-            this.addCreatureButton.TabIndex = 53;
-            this.addCreatureButton.Text = "Add Entity";
-            this.addCreatureButton.UseVisualStyleBackColor = false;
             // 
             // sortEntitiesButton
             // 
             this.sortEntitiesButton.BackColor = System.Drawing.Color.Firebrick;
             this.sortEntitiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sortEntitiesButton.Location = new System.Drawing.Point(122, 21);
+            this.sortEntitiesButton.Location = new System.Drawing.Point(139, 28);
+            this.sortEntitiesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sortEntitiesButton.Name = "sortEntitiesButton";
-            this.sortEntitiesButton.Size = new System.Drawing.Size(100, 23);
+            this.sortEntitiesButton.Size = new System.Drawing.Size(114, 31);
             this.sortEntitiesButton.TabIndex = 55;
             this.sortEntitiesButton.Text = "Sort";
             this.sortEntitiesButton.UseVisualStyleBackColor = false;
@@ -869,74 +749,13 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // STR
-            // 
-            this.STR.AutoSize = true;
-            this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STR.Location = new System.Drawing.Point(181, 17);
-            this.STR.Name = "STR";
-            this.STR.Size = new System.Drawing.Size(46, 25);
-            this.STR.TabIndex = 57;
-            this.STR.Text = "STR";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(178, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 25);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "STR";
-            // 
-            // INT
-            // 
-            this.INT.AutoSize = true;
-            this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(178, 107);
-            this.INT.Name = "INT";
-            this.INT.Size = new System.Drawing.Size(44, 25);
-            this.INT.TabIndex = 58;
-            this.INT.Text = "INT";
-            this.INT.Click += new System.EventHandler(this.INT_Click);
-            // 
-            // DEX
-            // 
-            this.DEX.AutoSize = true;
-            this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(178, 47);
-            this.DEX.Name = "DEX";
-            this.DEX.Size = new System.Drawing.Size(48, 25);
-            this.DEX.TabIndex = 58;
-            this.DEX.Text = "DEX";
-            // 
-            // WIS
-            // 
-            this.WIS.AutoSize = true;
-            this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(178, 137);
-            this.WIS.Name = "WIS";
-            this.WIS.Size = new System.Drawing.Size(48, 25);
-            this.WIS.TabIndex = 60;
-            this.WIS.Text = "WIS";
-            // 
-            // CHA
-            // 
-            this.CHA.AutoSize = true;
-            this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(178, 167);
-            this.CHA.Name = "CHA";
-            this.CHA.Size = new System.Drawing.Size(52, 25);
-            this.CHA.TabIndex = 61;
-            this.CHA.Text = "CHA";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(268, 160);
+            this.label2.Location = new System.Drawing.Point(306, 213);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 25);
+            this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 67;
             this.label2.Text = "CHA";
             // 
@@ -944,9 +763,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(216, 160);
+            this.label3.Location = new System.Drawing.Point(247, 213);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 25);
+            this.label3.Size = new System.Drawing.Size(59, 32);
             this.label3.TabIndex = 66;
             this.label3.Text = "WIS";
             // 
@@ -954,9 +773,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(112, 160);
+            this.label4.Location = new System.Drawing.Point(128, 213);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 25);
+            this.label4.Size = new System.Drawing.Size(66, 32);
             this.label4.TabIndex = 65;
             this.label4.Text = "CON";
             // 
@@ -964,9 +783,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(60, 160);
+            this.label5.Location = new System.Drawing.Point(69, 213);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.Size = new System.Drawing.Size(61, 32);
             this.label5.TabIndex = 63;
             this.label5.Text = "DEX";
             // 
@@ -974,9 +793,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(164, 160);
+            this.label6.Location = new System.Drawing.Point(187, 213);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 25);
+            this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 64;
             this.label6.Text = "INT";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -985,9 +804,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(8, 160);
+            this.label7.Location = new System.Drawing.Point(9, 213);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 25);
+            this.label7.Size = new System.Drawing.Size(57, 32);
             this.label7.TabIndex = 62;
             this.label7.Text = "STR";
             // 
@@ -995,9 +814,9 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.name.Location = new System.Drawing.Point(7, 19);
+            this.name.Location = new System.Drawing.Point(8, 25);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(62, 21);
+            this.name.Size = new System.Drawing.Size(77, 28);
             this.name.TabIndex = 68;
             this.name.Text = "NAME:";
             // 
@@ -1005,32 +824,22 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(6, 222);
+            this.label8.Location = new System.Drawing.Point(7, 296);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 21);
+            this.label8.Size = new System.Drawing.Size(126, 28);
             this.label8.TabIndex = 69;
             this.label8.Text = "Description:";
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.Location = new System.Drawing.Point(7, 246);
+            this.descriptionLabel.Location = new System.Drawing.Point(8, 328);
+            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionLabel.Multiline = true;
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionLabel.Size = new System.Drawing.Size(331, 178);
+            this.descriptionLabel.Size = new System.Drawing.Size(378, 236);
             this.descriptionLabel.TabIndex = 70;
             this.descriptionLabel.Text = "Description";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(180, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 25);
-            this.label9.TabIndex = 71;
-            this.label9.Text = "CON";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // groupBox2
             // 
@@ -1069,11 +878,9 @@
             this.groupBox2.Controls.Add(this.constitutionLabel);
             this.groupBox2.Controls.Add(this.wisdomLabel);
             this.groupBox2.Controls.Add(this.intelligenceLabel);
-            this.groupBox2.Location = new System.Drawing.Point(286, 114);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(327, 152);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(360, 490);
+            this.groupBox2.Size = new System.Drawing.Size(412, 653);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Description";
@@ -1083,10 +890,9 @@
             // 
             this.subtractHpButton.BackColor = System.Drawing.Color.Firebrick;
             this.subtractHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.subtractHpButton.Location = new System.Drawing.Point(176, 78);
-            this.subtractHpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.subtractHpButton.Location = new System.Drawing.Point(201, 104);
             this.subtractHpButton.Name = "subtractHpButton";
-            this.subtractHpButton.Size = new System.Drawing.Size(25, 21);
+            this.subtractHpButton.Size = new System.Drawing.Size(29, 28);
             this.subtractHpButton.TabIndex = 85;
             this.subtractHpButton.Text = "-";
             this.subtractHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1098,10 +904,9 @@
             // 
             this.addHpButton.BackColor = System.Drawing.Color.Firebrick;
             this.addHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addHpButton.Location = new System.Drawing.Point(144, 78);
-            this.addHpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addHpButton.Location = new System.Drawing.Point(165, 104);
             this.addHpButton.Name = "addHpButton";
-            this.addHpButton.Size = new System.Drawing.Size(25, 21);
+            this.addHpButton.Size = new System.Drawing.Size(29, 28);
             this.addHpButton.TabIndex = 84;
             this.addHpButton.Text = "+";
             this.addHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1112,19 +917,19 @@
             // div3Label
             // 
             this.div3Label.AutoSize = true;
-            this.div3Label.Location = new System.Drawing.Point(7, 206);
+            this.div3Label.Location = new System.Drawing.Point(8, 275);
             this.div3Label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.div3Label.Name = "div3Label";
-            this.div3Label.Size = new System.Drawing.Size(332, 15);
+            this.div3Label.Size = new System.Drawing.Size(399, 20);
             this.div3Label.TabIndex = 83;
             this.div3Label.Text = "_________________________________________________________________";
             // 
             // div2Label
             // 
             this.div2Label.AutoSize = true;
-            this.div2Label.Location = new System.Drawing.Point(6, 145);
+            this.div2Label.Location = new System.Drawing.Point(7, 193);
             this.div2Label.Name = "div2Label";
-            this.div2Label.Size = new System.Drawing.Size(332, 15);
+            this.div2Label.Size = new System.Drawing.Size(399, 20);
             this.div2Label.TabIndex = 82;
             this.div2Label.Text = "_________________________________________________________________";
             // 
@@ -1133,9 +938,9 @@
             this.div1Label.AutoSize = true;
             this.div1Label.BackColor = System.Drawing.Color.Transparent;
             this.div1Label.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.div1Label.Location = new System.Drawing.Point(6, 35);
+            this.div1Label.Location = new System.Drawing.Point(7, 47);
             this.div1Label.Name = "div1Label";
-            this.div1Label.Size = new System.Drawing.Size(332, 15);
+            this.div1Label.Size = new System.Drawing.Size(399, 20);
             this.div1Label.TabIndex = 80;
             this.div1Label.Text = "_________________________________________________________________";
             // 
@@ -1144,9 +949,10 @@
             this.editMenuButton.BackColor = System.Drawing.Color.Firebrick;
             this.editMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editMenuButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.editMenuButton.Location = new System.Drawing.Point(8, 446);
+            this.editMenuButton.Location = new System.Drawing.Point(9, 595);
+            this.editMenuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editMenuButton.Name = "editMenuButton";
-            this.editMenuButton.Size = new System.Drawing.Size(86, 23);
+            this.editMenuButton.Size = new System.Drawing.Size(98, 31);
             this.editMenuButton.TabIndex = 79;
             this.editMenuButton.Text = "Edit Creature";
             this.editMenuButton.UseVisualStyleBackColor = false;
@@ -1156,9 +962,9 @@
             // 
             this.HPLabel.AutoSize = true;
             this.HPLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HPLabel.Location = new System.Drawing.Point(73, 75);
+            this.HPLabel.Location = new System.Drawing.Point(83, 100);
             this.HPLabel.Name = "HPLabel";
-            this.HPLabel.Size = new System.Drawing.Size(36, 25);
+            this.HPLabel.Size = new System.Drawing.Size(44, 32);
             this.HPLabel.TabIndex = 78;
             this.HPLabel.Text = "HP";
             // 
@@ -1166,9 +972,9 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(12, 75);
+            this.label17.Location = new System.Drawing.Point(14, 100);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 25);
+            this.label17.Size = new System.Drawing.Size(47, 32);
             this.label17.TabIndex = 77;
             this.label17.Text = "HP";
             // 
@@ -1176,9 +982,9 @@
             // 
             this.tempHPLabel.AutoSize = true;
             this.tempHPLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tempHPLabel.Location = new System.Drawing.Point(73, 100);
+            this.tempHPLabel.Location = new System.Drawing.Point(83, 133);
             this.tempHPLabel.Name = "tempHPLabel";
-            this.tempHPLabel.Size = new System.Drawing.Size(46, 25);
+            this.tempHPLabel.Size = new System.Drawing.Size(57, 32);
             this.tempHPLabel.TabIndex = 76;
             this.tempHPLabel.Text = "THP";
             // 
@@ -1186,9 +992,9 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(12, 100);
+            this.label15.Location = new System.Drawing.Point(14, 133);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 25);
+            this.label15.Size = new System.Drawing.Size(66, 32);
             this.label15.TabIndex = 75;
             this.label15.Text = "T.HP";
             // 
@@ -1196,9 +1002,9 @@
             // 
             this.initLabel.AutoSize = true;
             this.initLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.initLabel.Location = new System.Drawing.Point(73, 125);
+            this.initLabel.Location = new System.Drawing.Point(83, 167);
             this.initLabel.Name = "initLabel";
-            this.initLabel.Size = new System.Drawing.Size(46, 25);
+            this.initLabel.Size = new System.Drawing.Size(57, 32);
             this.initLabel.TabIndex = 74;
             this.initLabel.Text = "INIT";
             // 
@@ -1206,9 +1012,9 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(12, 125);
+            this.label13.Location = new System.Drawing.Point(14, 167);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 25);
+            this.label13.Size = new System.Drawing.Size(63, 32);
             this.label13.TabIndex = 73;
             this.label13.Text = "INIT";
             // 
@@ -1216,9 +1022,9 @@
             // 
             this.ACLabel.AutoSize = true;
             this.ACLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ACLabel.Location = new System.Drawing.Point(73, 50);
+            this.ACLabel.Location = new System.Drawing.Point(83, 67);
             this.ACLabel.Name = "ACLabel";
-            this.ACLabel.Size = new System.Drawing.Size(36, 25);
+            this.ACLabel.Size = new System.Drawing.Size(44, 32);
             this.ACLabel.TabIndex = 72;
             this.ACLabel.Text = "AC";
             this.ACLabel.Click += new System.EventHandler(this.label11_Click);
@@ -1227,9 +1033,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(12, 50);
+            this.label10.Location = new System.Drawing.Point(14, 67);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 25);
+            this.label10.Size = new System.Drawing.Size(46, 32);
             this.label10.TabIndex = 71;
             this.label10.Text = "AC";
             // 
@@ -1240,67 +1046,12 @@
             this.entityListGroupBox.AutoSize = true;
             this.entityListGroupBox.Controls.Add(this.creatureListBox);
             this.entityListGroupBox.Controls.Add(this.sortEntitiesButton);
-            this.entityListGroupBox.Location = new System.Drawing.Point(27, 114);
-            this.entityListGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.entityListGroupBox.Location = new System.Drawing.Point(31, 152);
             this.entityListGroupBox.Name = "entityListGroupBox";
-            this.entityListGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.entityListGroupBox.Size = new System.Drawing.Size(240, 483);
+            this.entityListGroupBox.Size = new System.Drawing.Size(274, 644);
             this.entityListGroupBox.TabIndex = 73;
             this.entityListGroupBox.TabStop = false;
             this.entityListGroupBox.Text = "Entity List";
-            // 
-            // addEntityGroupBox
-            // 
-            this.addEntityGroupBox.AutoSize = true;
-            this.addEntityGroupBox.Controls.Add(this.label11);
-            this.addEntityGroupBox.Controls.Add(this.initiativeNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.descriptionTextBox);
-            this.addEntityGroupBox.Controls.Add(this.nameTextBox);
-            this.addEntityGroupBox.Controls.Add(this.strengthNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.label9);
-            this.addEntityGroupBox.Controls.Add(this.dexterityNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.CHA);
-            this.addEntityGroupBox.Controls.Add(this.constitutionNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.WIS);
-            this.addEntityGroupBox.Controls.Add(this.intelligenceNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.DEX);
-            this.addEntityGroupBox.Controls.Add(this.wisdomNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.INT);
-            this.addEntityGroupBox.Controls.Add(this.charismaNumericUpDown);
-            this.addEntityGroupBox.Controls.Add(this.label1);
-            this.addEntityGroupBox.Controls.Add(this.addCreatureButton);
-            this.addEntityGroupBox.Controls.Add(this.STR);
-            this.addEntityGroupBox.Location = new System.Drawing.Point(648, 344);
-            this.addEntityGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addEntityGroupBox.Name = "addEntityGroupBox";
-            this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addEntityGroupBox.Size = new System.Drawing.Size(998, 382);
-            this.addEntityGroupBox.TabIndex = 74;
-            this.addEntityGroupBox.TabStop = false;
-            this.addEntityGroupBox.Text = "Add Entity";
-            this.addEntityGroupBox.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(178, 194);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 25);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "INIT";
-            // 
-            // initiativeNumericUpDown
-            // 
-            this.initiativeNumericUpDown.Location = new System.Drawing.Point(237, 198);
-            this.initiativeNumericUpDown.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.initiativeNumericUpDown.Name = "initiativeNumericUpDown";
-            this.initiativeNumericUpDown.Size = new System.Drawing.Size(41, 23);
-            this.initiativeNumericUpDown.TabIndex = 72;
             // 
             // diceRollerGroupBox
             // 
@@ -1308,21 +1059,18 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
-            this.diceRollerGroupBox.Location = new System.Drawing.Point(648, 114);
-            this.diceRollerGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
-            this.diceRollerGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.diceRollerGroupBox.Size = new System.Drawing.Size(145, 216);
+            this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 288);
             this.diceRollerGroupBox.TabIndex = 75;
             this.diceRollerGroupBox.TabStop = false;
             this.diceRollerGroupBox.Text = "Dice Roller";
             // 
             // diceRollerTextBox
             // 
-            this.diceRollerTextBox.Location = new System.Drawing.Point(18, 22);
-            this.diceRollerTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.diceRollerTextBox.Location = new System.Drawing.Point(21, 29);
             this.diceRollerTextBox.Name = "diceRollerTextBox";
-            this.diceRollerTextBox.Size = new System.Drawing.Size(110, 174);
+            this.diceRollerTextBox.Size = new System.Drawing.Size(125, 231);
             this.diceRollerTextBox.TabIndex = 0;
             this.diceRollerTextBox.Text = "";
             // 
@@ -1332,9 +1080,11 @@
             this.Settings_group_box.BackColor = System.Drawing.Color.DimGray;
             this.Settings_group_box.Controls.Add(this.Change_Pic);
             this.Settings_group_box.Controls.Add(this.Change_Bcolor);
-            this.Settings_group_box.Location = new System.Drawing.Point(973, 299);
+            this.Settings_group_box.Location = new System.Drawing.Point(1112, 399);
+            this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Settings_group_box.Name = "Settings_group_box";
-            this.Settings_group_box.Size = new System.Drawing.Size(117, 112);
+            this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Settings_group_box.Size = new System.Drawing.Size(134, 149);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
@@ -1342,9 +1092,10 @@
             // Change_Pic
             // 
             this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Pic.Location = new System.Drawing.Point(5, 53);
+            this.Change_Pic.Location = new System.Drawing.Point(6, 71);
+            this.Change_Pic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Change_Pic.Name = "Change_Pic";
-            this.Change_Pic.Size = new System.Drawing.Size(105, 36);
+            this.Change_Pic.Size = new System.Drawing.Size(120, 48);
             this.Change_Pic.TabIndex = 1;
             this.Change_Pic.Text = "Background Pic";
             this.Change_Pic.UseVisualStyleBackColor = false;
@@ -1353,10 +1104,9 @@
             // Change_Bcolor
             // 
             this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.Location = new System.Drawing.Point(5, 13);
-            this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Change_Bcolor.Location = new System.Drawing.Point(6, 17);
             this.Change_Bcolor.Name = "Change_Bcolor";
-            this.Change_Bcolor.Size = new System.Drawing.Size(105, 36);
+            this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
             this.Change_Bcolor.TabIndex = 0;
             this.Change_Bcolor.Text = "Set Main Color";
             this.Change_Bcolor.UseVisualStyleBackColor = false;
@@ -1372,57 +1122,55 @@
             this.Color_choices.Controls.Add(this.label16);
             this.Color_choices.Controls.Add(this.label14);
             this.Color_choices.Controls.Add(this.label12);
-            this.Color_choices.Location = new System.Drawing.Point(940, 401);
-            this.Color_choices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Color_choices.Location = new System.Drawing.Point(1074, 535);
             this.Color_choices.Name = "Color_choices";
-            this.Color_choices.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Color_choices.Size = new System.Drawing.Size(192, 108);
+            this.Color_choices.Size = new System.Drawing.Size(219, 144);
             this.Color_choices.TabIndex = 77;
             this.Color_choices.TabStop = false;
             this.Color_choices.Visible = false;
             // 
             // ScrollBlue
             // 
-            this.ScrollBlue.Location = new System.Drawing.Point(55, 73);
+            this.ScrollBlue.Location = new System.Drawing.Point(63, 97);
             this.ScrollBlue.Maximum = 255;
             this.ScrollBlue.Name = "ScrollBlue";
-            this.ScrollBlue.Size = new System.Drawing.Size(124, 17);
+            this.ScrollBlue.Size = new System.Drawing.Size(142, 17);
             this.ScrollBlue.TabIndex = 8;
             this.ScrollBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollBlue_Scroll);
             // 
             // ScrollGreen
             // 
-            this.ScrollGreen.Location = new System.Drawing.Point(55, 50);
+            this.ScrollGreen.Location = new System.Drawing.Point(63, 67);
             this.ScrollGreen.Maximum = 255;
             this.ScrollGreen.Name = "ScrollGreen";
-            this.ScrollGreen.Size = new System.Drawing.Size(124, 17);
+            this.ScrollGreen.Size = new System.Drawing.Size(142, 17);
             this.ScrollGreen.TabIndex = 7;
             this.ScrollGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollGreen_Scroll);
             // 
             // ScrollRed
             // 
-            this.ScrollRed.Location = new System.Drawing.Point(55, 28);
+            this.ScrollRed.Location = new System.Drawing.Point(63, 37);
             this.ScrollRed.Maximum = 255;
             this.ScrollRed.Name = "ScrollRed";
-            this.ScrollRed.Size = new System.Drawing.Size(124, 17);
+            this.ScrollRed.Size = new System.Drawing.Size(142, 17);
             this.ScrollRed.TabIndex = 6;
             this.ScrollRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ScrollRed_Scroll);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 73);
+            this.label16.Location = new System.Drawing.Point(10, 97);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 15);
+            this.label16.Size = new System.Drawing.Size(43, 20);
             this.label16.TabIndex = 5;
             this.label16.Text = "BLUE";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 50);
+            this.label14.Location = new System.Drawing.Point(10, 67);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 15);
+            this.label14.Size = new System.Drawing.Size(55, 20);
             this.label14.TabIndex = 4;
             this.label14.Text = "GREEN";
             // 
@@ -1430,25 +1178,24 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(9, 28);
+            this.label12.Location = new System.Drawing.Point(10, 37);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 15);
+            this.label12.Size = new System.Drawing.Size(37, 20);
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
             // 
             // mainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1147, 641);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1311, 855);
             this.Controls.Add(this.Color_choices);
             this.Controls.Add(this.Settings_group_box);
             this.Controls.Add(this.diceRollerGroupBox);
-            this.Controls.Add(this.addEntityGroupBox);
             this.Controls.Add(this.entityListGroupBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.round1);
@@ -1481,23 +1228,15 @@
             this.Controls.Add(this.round2);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
             this.Load += new System.EventHandler(this.mainGUI_Load);
             this.Resize += new System.EventHandler(this.mainGUI_Resize);
             this.menuGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.strengthNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dexterityNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.constitutionNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.charismaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wisdomNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intelligenceNumericUpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.entityListGroupBox.ResumeLayout(false);
-            this.addEntityGroupBox.ResumeLayout(false);
-            this.addEntityGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.initiativeNumericUpDown)).EndInit();
             this.diceRollerGroupBox.ResumeLayout(false);
             this.Settings_group_box.ResumeLayout(false);
             this.Color_choices.ResumeLayout(false);
@@ -1544,14 +1283,6 @@
         private Button round14;
         private Button round13;
         private Button round25;
-        private TextBox nameTextBox;
-        private TextBox descriptionTextBox;
-        private NumericUpDown strengthNumericUpDown;
-        private NumericUpDown dexterityNumericUpDown;
-        private NumericUpDown constitutionNumericUpDown;
-        private NumericUpDown charismaNumericUpDown;
-        private NumericUpDown wisdomNumericUpDown;
-        private NumericUpDown intelligenceNumericUpDown;
         private Label nameLabel;
         private Label strengthLabel;
         private Label dexterityLabel;
@@ -1559,18 +1290,11 @@
         private Label intelligenceLabel;
         private Label wisdomLabel;
         private Label charismaLabel;
-        private Button addCreatureButton;
         private Button saveCreatureButton;
         private Button sortEntitiesButton;
         private SaveFileDialog saveFileDialog;
         private OpenFileDialog openFileDialog;
         private Button loadCreatureListButton;
-        private Label STR;
-        private Label label1;
-        private Label INT;
-        private Label DEX;
-        private Label WIS;
-        private Label CHA;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -1580,10 +1304,8 @@
         private Label name;
         private Label label8;
         private TextBox descriptionLabel;
-        private Label label9;
         private GroupBox groupBox2;
         private GroupBox entityListGroupBox;
-        private GroupBox addEntityGroupBox;
         private GroupBox diceRollerGroupBox;
         private RichTextBox diceRollerTextBox;
         private Label HPLabel;
@@ -1597,8 +1319,6 @@
         private GroupBox Settings_group_box;
         private Button Change_Bcolor;
         private GroupBox Color_choices;
-        private Label label11;
-        private NumericUpDown initiativeNumericUpDown;
         private Button editMenuButton;
         public ListBox creatureListBox;
         private Label div3Label;
