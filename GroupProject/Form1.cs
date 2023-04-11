@@ -795,6 +795,7 @@ namespace GroupProject
 
         private void Settings_button_Click(object sender, EventArgs e)
         {
+            // Make GroupBox with settings buttons visible.
             if (Settings_group_box.Visible == true)
             {
                 Settings_group_box.Visible = false;
@@ -806,6 +807,7 @@ namespace GroupProject
 
         private void Change_Bcolor_Click(object sender, EventArgs e)
         {
+            // Make GroupBox with RGB scrollbars visible.
             if (Color_choices.Visible == true)
             {
                 Color_choices.Visible = false;
@@ -865,6 +867,7 @@ namespace GroupProject
          }
         private void setColor()
         {
+            // Sets color of all buttons based on the scroll bars.
             prevRound.BackColor = Color.FromArgb(r,g,b);
             nextRound.BackColor = Color.FromArgb(r, g, b);
             sortEntitiesButton.BackColor = Color.FromArgb(r, g, b);
@@ -881,7 +884,7 @@ namespace GroupProject
             Settings_button.BackColor = Color.FromArgb(r, g, b);
             Change_Bcolor.BackColor = Color.FromArgb(r, g, b);
             loadGroupButton.BackColor = Color.FromArgb(r, g, b);
-
+            Change_Pic.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
@@ -928,6 +931,27 @@ namespace GroupProject
             b = ScrollBlue.Value;
             setColor();
         }
+
+
+        private void Change_Pic_Click(object sender, EventArgs e)
+        {
+            // Try and catch in case of error
+            try
+            {
+                // Get Image
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)| *.jpg| PNG files(*.png)| *.png";
+
+                // Set Form background picture to picture selected by user.
+                if(dialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.BackgroundImage = Image.FromFile(dialog.FileName);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Image needs to be .jpg or .png", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         private void descriptionLabel_TextChanged(object sender, EventArgs e)
         {

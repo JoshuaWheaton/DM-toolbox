@@ -105,6 +105,7 @@
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
             this.Settings_group_box = new System.Windows.Forms.GroupBox();
+            this.Change_Pic = new System.Windows.Forms.Button();
             this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Color_choices = new System.Windows.Forms.GroupBox();
             this.ScrollBlue = new System.Windows.Forms.HScrollBar();
@@ -1077,21 +1078,34 @@
             // Settings_group_box
             // 
             this.Settings_group_box.AutoSize = true;
-            this.Settings_group_box.BackColor = System.Drawing.Color.Gray;
+            this.Settings_group_box.BackColor = System.Drawing.Color.DimGray;
+            this.Settings_group_box.Controls.Add(this.Change_Pic);
             this.Settings_group_box.Controls.Add(this.Change_Bcolor);
             this.Settings_group_box.Location = new System.Drawing.Point(1112, 399);
             this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Settings_group_box.Name = "Settings_group_box";
             this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Settings_group_box.Size = new System.Drawing.Size(134, 87);
+            this.Settings_group_box.Size = new System.Drawing.Size(134, 149);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
             // 
+            // Change_Pic
+            // 
+            this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
+            this.Change_Pic.Location = new System.Drawing.Point(6, 71);
+            this.Change_Pic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Change_Pic.Name = "Change_Pic";
+            this.Change_Pic.Size = new System.Drawing.Size(120, 48);
+            this.Change_Pic.TabIndex = 1;
+            this.Change_Pic.Text = "Background Pic";
+            this.Change_Pic.UseVisualStyleBackColor = false;
+            this.Change_Pic.Click += new System.EventHandler(this.Change_Pic_Click);
+            // 
             // Change_Bcolor
             // 
             this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.Location = new System.Drawing.Point(6, 11);
+            this.Change_Bcolor.Location = new System.Drawing.Point(6, 17);
             this.Change_Bcolor.Name = "Change_Bcolor";
             this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
             this.Change_Bcolor.TabIndex = 0;
@@ -1109,7 +1123,7 @@
             this.Color_choices.Controls.Add(this.label16);
             this.Color_choices.Controls.Add(this.label14);
             this.Color_choices.Controls.Add(this.label12);
-            this.Color_choices.Location = new System.Drawing.Point(1099, 465);
+            this.Color_choices.Location = new System.Drawing.Point(1074, 535);
             this.Color_choices.Name = "Color_choices";
             this.Color_choices.Size = new System.Drawing.Size(219, 144);
             this.Color_choices.TabIndex = 77;
@@ -1178,6 +1192,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::GroupProject.Properties.Resources._4a55526f0568117ab1807a87c13a6802;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1311, 855);
             this.Controls.Add(this.Color_choices);
             this.Controls.Add(this.Settings_group_box);
@@ -1212,6 +1227,7 @@
             this.Controls.Add(this.prevRound);
             this.Controls.Add(this.round3);
             this.Controls.Add(this.round2);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainGUI";
@@ -1316,6 +1332,7 @@
         private Button addHpButton;
         private Button subtractHpButton;
         private Button loadGroupButton;
+        private Button Change_Pic;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private RichTextBox descriptionLabel;
