@@ -959,6 +959,11 @@ namespace GroupProject
             monsterForm.Show();
         }
 
+        private void addCreatureButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void addHpButton_Click(object sender, EventArgs e)
         {
             if (creatureListBox.SelectedItem != null)
