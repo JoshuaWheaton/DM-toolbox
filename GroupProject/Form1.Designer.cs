@@ -286,6 +286,7 @@
             this.monsterButton.Text = "Add Monster";
             this.monsterButton.UseVisualStyleBackColor = false;
             this.monsterButton.Click += new System.EventHandler(this.monsterButton_Click);
+
             // 
             // AddEntityButton
             // 
