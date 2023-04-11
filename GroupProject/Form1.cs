@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
@@ -59,14 +60,44 @@ namespace GroupProject
             subtractHpButton.Hide();
         }
 
+        //Sets the description box in a way which uses RTF
+        private void setDescription(string desc)
+        {
+            StringBuilder text = new StringBuilder();
+
+            //append format header information;
+            text.Append(@"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}" + @"{\f1\fnil Microsoft Sans Serif;}}\viewkind4\uc1\pard\lang2052\f0\fs17");
+
+            //Add description
+            text.Append(desc);
+
+            //Replace necessary characters
+            text.Replace("<p>", "<p> ");
+            text.Replace("<p>", "");
+            text.Replace("</p>", "\\par\\par");
+            text.Replace("<em>", "\\i");
+            text.Replace("</em>", "\\i0");
+            text.Replace("<strong>", "<strong> ");
+            text.Replace("<strong>", "\\b");
+            text.Replace("</strong>", "\\b0");
+
+
+
+            // the end
+            text.Append(@"}");
+
+            descriptionLabel.Rtf = text.ToString();
+        }
+
         // Function which loads given creatures data into several labels
         private void loadEntity(Creature creature)
         {
             // Display the creature's name, description, and stats in the form
             if (creature != null)
             {
+                string desc = creature.GetDescription();
                 nameLabel.Text = creature.GetName();
-                descriptionLabel.Text = creature.GetDescription();
+                setDescription(desc);
                 strengthLabel.Text = creature.GetStr().ToString();
                 dexterityLabel.Text = creature.GetDex().ToString();
                 constitutionLabel.Text = creature.GetCon().ToString();

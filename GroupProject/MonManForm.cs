@@ -90,7 +90,7 @@ namespace GroupProject
             mainGUI parentForm = (mainGUI)this.Owner;
 
             // Load the list of creatures from a file
-            string filePath = "MonsterManual.enc";
+            string filePath = "..//..//..//MonsterManual//MonsterManual.enc";
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string line;
