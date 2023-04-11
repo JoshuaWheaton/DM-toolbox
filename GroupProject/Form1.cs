@@ -276,6 +276,7 @@ namespace GroupProject
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
             }
+            sortCreatureList();
         }
 
         // Function that creates a popup of the EditForm.cs form, and sets this form as it's parent

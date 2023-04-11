@@ -53,6 +53,7 @@ namespace GroupProject
             parentForm.editButton_Click(sender, e);
 
             // After the user edits the creature, close the pop up
+            parentForm.sortCreatureList();
             this.Close();
         }
 
