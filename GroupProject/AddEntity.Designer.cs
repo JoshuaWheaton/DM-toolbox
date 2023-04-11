@@ -98,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(203, 342);
+            this.label3.Location = new System.Drawing.Point(203, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 32);
             this.label3.TabIndex = 78;
@@ -126,6 +126,11 @@
             // 
             this.hitPointsNumericUpDown.Location = new System.Drawing.Point(271, 308);
             this.hitPointsNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hitPointsNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.hitPointsNumericUpDown.Name = "hitPointsNumericUpDown";
             this.hitPointsNumericUpDown.Size = new System.Drawing.Size(47, 27);
             this.hitPointsNumericUpDown.TabIndex = 75;
@@ -375,6 +380,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddEntity";
             this.Text = "AddEntity";
+            this.Load += new System.EventHandler(this.AddEntity_Load);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).EndInit();

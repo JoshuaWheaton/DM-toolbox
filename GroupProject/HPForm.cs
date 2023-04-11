@@ -13,6 +13,7 @@ namespace GroupProject
     public partial class HPForm : Form
     {
         private string changeType;
+        private bool isEdited = false;
         public HPForm(string labelText, string changeType)
         {
             InitializeComponent();
@@ -52,6 +53,16 @@ namespace GroupProject
         private void userPrompt_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void healthChangeNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!isEdited && e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9 ||
+                !isEdited && e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                healthChangeNumericUpDown.Text = ""; // Clear the previous value
+                isEdited = true; // Set the flag to true to indicate that the control has been edited
+            }
         }
     }
 }

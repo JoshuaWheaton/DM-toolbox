@@ -1,4 +1,6 @@
 using System;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -11,6 +13,7 @@ namespace GroupProject
         private List<Creature> creatureList = new List<Creature>(); // Create a list of creatures
         private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
         private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
+        private MonManForm monsterForm; // A MomManForm variable monsterForm that creates a pop up containing a list of every creature from the monster manual
         private AddStatusEffect AddStatus; //An AddStatusEffect variable that allows functions to create the Add Status Effect form
         private int r=0, g=0, b=0;
         private Rectangle OriginalRectangleEntity;
@@ -57,14 +60,44 @@ namespace GroupProject
             subtractHpButton.Hide();
         }
 
+        //Sets the description box in a way which uses RTF
+        private void setDescription(string desc)
+        {
+            StringBuilder text = new StringBuilder();
+
+            //append format header information;
+            text.Append(@"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}" + @"{\f1\fnil Microsoft Sans Serif;}}\viewkind4\uc1\pard\lang2052\f0\fs17");
+
+            //Add description
+            text.Append(desc);
+
+            //Replace necessary characters
+            text.Replace("<p>", "<p> ");
+            text.Replace("<p>", "");
+            text.Replace("</p>", "\\par\\par");
+            text.Replace("<em>", "\\i");
+            text.Replace("</em>", "\\i0");
+            text.Replace("<strong>", "<strong> ");
+            text.Replace("<strong>", "\\b");
+            text.Replace("</strong>", "\\b0");
+
+
+
+            // the end
+            text.Append(@"}");
+
+            descriptionLabel.Rtf = text.ToString();
+        }
+
         // Function which loads given creatures data into several labels
         private void loadEntity(Creature creature)
         {
             // Display the creature's name, description, and stats in the form
             if (creature != null)
             {
+                string desc = creature.GetDescription();
                 nameLabel.Text = creature.GetName();
-                descriptionLabel.Text = creature.GetDescription();
+                setDescription(desc);
                 strengthLabel.Text = creature.GetStr().ToString();
                 dexterityLabel.Text = creature.GetDex().ToString();
                 constitutionLabel.Text = creature.GetCon().ToString();
@@ -243,6 +276,7 @@ namespace GroupProject
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
             }
+            sortCreatureList();
         }
 
         // Function that creates a popup of the EditForm.cs form, and sets this form as it's parent
@@ -395,152 +429,152 @@ namespace GroupProject
             {
                 case 1:
                     round1.BackColor = Color.Green;
-                    round2.BackColor = Color.Firebrick;
-                    round25.BackColor = Color.Firebrick;
+                    round2.BackColor = Settings_button.BackColor;
+                    round25.BackColor = Settings_button.BackColor;
                     break;
 
                 case 2:
                     round2.BackColor = Color.Green;
-                    round3.BackColor = Color.Firebrick;
-                    round1.BackColor = Color.Firebrick;
+                    round3.BackColor = Settings_button.BackColor;
+                    round1.BackColor = Settings_button.BackColor;
                     break;
 
                 case 3:
                     round3.BackColor = Color.Green;
-                    round4.BackColor = Color.Firebrick;
-                    round2.BackColor = Color.Firebrick;
+                    round4.BackColor = Settings_button.BackColor;
+                    round2.BackColor = Settings_button.BackColor;
                     break;
 
                 case 4:
                     round4.BackColor = Color.Green;
-                    round5.BackColor = Color.Firebrick;
-                    round3.BackColor = Color.Firebrick;
+                    round5.BackColor = Settings_button.BackColor;
+                    round3.BackColor = Settings_button.BackColor;
                     break;
 
                 case 5:
                     round5.BackColor = Color.Green;
-                    round6.BackColor = Color.Firebrick;
-                    round4.BackColor = Color.Firebrick;
+                    round6.BackColor = Settings_button.BackColor;
+                    round4.BackColor = Settings_button.BackColor;
                     break;
 
                 case 6:
                     round6.BackColor = Color.Green;
-                    round7.BackColor = Color.Firebrick;
-                    round5.BackColor = Color.Firebrick;
+                    round7.BackColor = Settings_button.BackColor;
+                    round5.BackColor = Settings_button.BackColor;
                     break;
 
                 case 7:
                     round7.BackColor = Color.Green;
-                    round8.BackColor = Color.Firebrick;
-                    round6.BackColor = Color.Firebrick;
+                    round8.BackColor = Settings_button.BackColor;
+                    round6.BackColor = Settings_button.BackColor;
                     break;
 
                 case 8:
                     round8.BackColor = Color.Green;
-                    round9.BackColor = Color.Firebrick;
-                    round7.BackColor = Color.Firebrick;
+                    round9.BackColor = Settings_button.BackColor;
+                    round7.BackColor = Settings_button.BackColor;
                     break;
 
                 case 9:
                     round9.BackColor = Color.Green;
-                    round10.BackColor = Color.Firebrick;
-                    round8.BackColor = Color.Firebrick;
+                    round10.BackColor = Settings_button.BackColor;
+                    round8.BackColor = Settings_button.BackColor;
                     break;
 
                 case 10:
                     round10.BackColor = Color.Green;
-                    round11.BackColor = Color.Firebrick;
-                    round9.BackColor = Color.Firebrick;
+                    round11.BackColor = Settings_button.BackColor;
+                    round9.BackColor = Settings_button.BackColor;
                     break;
 
                 case 11:
                     round11.BackColor = Color.Green;
-                    round12.BackColor = Color.Firebrick;
-                    round10.BackColor = Color.Firebrick;
+                    round12.BackColor = Settings_button.BackColor;
+                    round10.BackColor = Settings_button.BackColor;
                     break;
 
                 case 12:
                     round12.BackColor = Color.Green;
-                    round13.BackColor = Color.Firebrick;
-                    round11.BackColor = Color.Firebrick;
+                    round13.BackColor = Settings_button.BackColor;
+                    round11.BackColor = Settings_button.BackColor;
                     break;
 
                 case 13:
                     round13.BackColor = Color.Green;
-                    round14.BackColor = Color.Firebrick;
-                    round12.BackColor = Color.Firebrick;
+                    round14.BackColor = Settings_button.BackColor;
+                    round12.BackColor = Settings_button.BackColor;
                     break;
 
                 case 14:
                     round14.BackColor = Color.Green;
-                    round15.BackColor = Color.Firebrick;
-                    round13.BackColor = Color.Firebrick;
+                    round15.BackColor = Settings_button.BackColor;
+                    round13.BackColor = Settings_button.BackColor;
                     break;
 
                 case 15:
                     round15.BackColor = Color.Green;
-                    round16.BackColor = Color.Firebrick;
-                    round14.BackColor = Color.Firebrick;
+                    round16.BackColor = Settings_button.BackColor;
+                    round14.BackColor = Settings_button.BackColor;
                     break;
 
                 case 16:
                     round16.BackColor = Color.Green;
-                    round17.BackColor = Color.Firebrick;
-                    round15.BackColor = Color.Firebrick;
+                    round17.BackColor = Settings_button.BackColor;
+                    round15.BackColor = Settings_button.BackColor;
                     break;
 
                 case 17:
                     round17.BackColor = Color.Green;
-                    round18.BackColor = Color.Firebrick;
-                    round16.BackColor = Color.Firebrick;
+                    round18.BackColor = Settings_button.BackColor;
+                    round16.BackColor = Settings_button.BackColor;
                     break;
 
                 case 18:
                     round18.BackColor = Color.Green;
-                    round19.BackColor = Color.Firebrick;
-                    round17.BackColor = Color.Firebrick;
+                    round19.BackColor = Settings_button.BackColor;
+                    round17.BackColor = Settings_button.BackColor;
                     break;
 
                 case 19:
                     round19.BackColor = Color.Green;
-                    round20.BackColor = Color.Firebrick;
-                    round18.BackColor = Color.Firebrick;
+                    round20.BackColor = Settings_button.BackColor;
+                    round18.BackColor = Settings_button.BackColor;
                     break;
 
                 case 20:
                     round20.BackColor = Color.Green;
-                    round21.BackColor = Color.Firebrick;
-                    round19.BackColor = Color.Firebrick;
+                    round21.BackColor = Settings_button.BackColor;
+                    round19.BackColor = Settings_button.BackColor;
                     break;
 
                 case 21:
                     round21.BackColor = Color.Green;
-                    round22.BackColor = Color.Firebrick;
-                    round20.BackColor = Color.Firebrick;
+                    round22.BackColor = Settings_button.BackColor;
+                    round20.BackColor = Settings_button.BackColor;
                     break;
 
                 case 22:
                     round22.BackColor = Color.Green;
-                    round23.BackColor = Color.Firebrick;
-                    round21.BackColor = Color.Firebrick;
+                    round23.BackColor = Settings_button.BackColor;
+                    round21.BackColor = Settings_button.BackColor;
                     break;
 
                 case 23:
                     round23.BackColor = Color.Green;
-                    round24.BackColor = Color.Firebrick;
-                    round22.BackColor = Color.Firebrick;
+                    round24.BackColor = Settings_button.BackColor;
+                    round22.BackColor = Settings_button.BackColor;
                     break;
 
                 case 24:
                     round24.BackColor = Color.Green;
-                    round25.BackColor = Color.Firebrick;
-                    round23.BackColor = Color.Firebrick;
+                    round25.BackColor = Settings_button.BackColor;
+                    round23.BackColor = Settings_button.BackColor;
                     break;
 
                 case 25:
                     round25.BackColor = Color.Green;
-                    round1.BackColor = Color.Firebrick;
-                    round24.BackColor = Color.Firebrick;
+                    round1.BackColor = Settings_button.BackColor;
+                    round24.BackColor = Settings_button.BackColor;
                     break;
             }
         }
@@ -564,159 +598,156 @@ namespace GroupProject
             {
                 case 1:
                     round1.BackColor = Color.Green;
-                    round2.BackColor = Color.Firebrick;
-                    round25.BackColor = Color.Firebrick;
+                    round2.BackColor = Settings_button.BackColor;
+                    round25.BackColor = Settings_button.BackColor;
                     break;
 
                 case 2:
                     round2.BackColor = Color.Green;
-                    round3.BackColor = Color.Firebrick;
-                    round1.BackColor = Color.Firebrick;
+                    round3.BackColor = Settings_button.BackColor;
+                    round1.BackColor = Settings_button.BackColor;
                     break;
 
                 case 3:
                     round3.BackColor = Color.Green;
-                    round4.BackColor = Color.Firebrick;
-                    round2.BackColor = Color.Firebrick;
+                    round4.BackColor = Settings_button.BackColor;
+                    round2.BackColor = Settings_button.BackColor;
                     break;
 
                 case 4:
                     round4.BackColor = Color.Green;
-                    round5.BackColor = Color.Firebrick;
-                    round3.BackColor = Color.Firebrick;
+                    round5.BackColor = Settings_button.BackColor;
+                    round3.BackColor = Settings_button.BackColor;
                     break;
 
                 case 5:
                     round5.BackColor = Color.Green;
-                    round6.BackColor = Color.Firebrick;
-                    round4.BackColor = Color.Firebrick;
+                    round6.BackColor = Settings_button.BackColor;
+                    round4.BackColor = Settings_button.BackColor;
                     break;
 
                 case 6:
                     round6.BackColor = Color.Green;
-                    round7.BackColor = Color.Firebrick;
-                    round5.BackColor = Color.Firebrick;
+                    round7.BackColor = Settings_button.BackColor;
+                    round5.BackColor = Settings_button.BackColor;
                     break;
 
                 case 7:
                     round7.BackColor = Color.Green;
-                    round8.BackColor = Color.Firebrick;
-                    round6.BackColor = Color.Firebrick;
+                    round8.BackColor = Settings_button.BackColor;
+                    round6.BackColor = Settings_button.BackColor;
                     break;
 
                 case 8:
                     round8.BackColor = Color.Green;
-                    round9.BackColor = Color.Firebrick;
-                    round7.BackColor = Color.Firebrick;
+                    round9.BackColor = Settings_button.BackColor;
+                    round7.BackColor = Settings_button.BackColor;
                     break;
 
                 case 9:
                     round9.BackColor = Color.Green;
-                    round10.BackColor = Color.Firebrick;
-                    round8.BackColor = Color.Firebrick;
+                    round10.BackColor = Settings_button.BackColor;
+                    round8.BackColor = Settings_button.BackColor;
                     break;
 
                 case 10:
                     round10.BackColor = Color.Green;
-                    round11.BackColor = Color.Firebrick;
-                    round9.BackColor = Color.Firebrick;
+                    round11.BackColor = Settings_button.BackColor;
+                    round9.BackColor = Settings_button.BackColor;
                     break;
 
                 case 11:
                     round11.BackColor = Color.Green;
-                    round12.BackColor = Color.Firebrick;
-                    round10.BackColor = Color.Firebrick;
+                    round12.BackColor = Settings_button.BackColor;
+                    round10.BackColor = Settings_button.BackColor;
                     break;
 
                 case 12:
                     round12.BackColor = Color.Green;
-                    round13.BackColor = Color.Firebrick;
-                    round11.BackColor = Color.Firebrick;
+                    round13.BackColor = Settings_button.BackColor;
+                    round11.BackColor = Settings_button.BackColor;
                     break;
 
                 case 13:
                     round13.BackColor = Color.Green;
-                    round14.BackColor = Color.Firebrick;
-                    round12.BackColor = Color.Firebrick;
+                    round14.BackColor = Settings_button.BackColor;
+                    round12.BackColor = Settings_button.BackColor;
                     break;
 
                 case 14:
                     round14.BackColor = Color.Green;
-                    round15.BackColor = Color.Firebrick;
-                    round13.BackColor = Color.Firebrick;
+                    round15.BackColor = Settings_button.BackColor;
+                    round13.BackColor = Settings_button.BackColor;
                     break;
 
                 case 15:
                     round15.BackColor = Color.Green;
-                    round16.BackColor = Color.Firebrick;
-                    round14.BackColor = Color.Firebrick;
+                    round16.BackColor = Settings_button.BackColor;
+                    round14.BackColor = Settings_button.BackColor;
                     break;
 
                 case 16:
                     round16.BackColor = Color.Green;
-                    round17.BackColor = Color.Firebrick;
-                    round15.BackColor = Color.Firebrick;
+                    round17.BackColor = Settings_button.BackColor;
+                    round15.BackColor = Settings_button.BackColor;
                     break;
 
                 case 17:
                     round17.BackColor = Color.Green;
-                    round18.BackColor = Color.Firebrick;
-                    round16.BackColor = Color.Firebrick;
+                    round18.BackColor = Settings_button.BackColor;
+                    round16.BackColor = Settings_button.BackColor;
                     break;
 
                 case 18:
                     round18.BackColor = Color.Green;
-                    round19.BackColor = Color.Firebrick;
-                    round17.BackColor = Color.Firebrick;
+                    round19.BackColor = Settings_button.BackColor;
+                    round17.BackColor = Settings_button.BackColor;
                     break;
 
                 case 19:
                     round19.BackColor = Color.Green;
-                    round20.BackColor = Color.Firebrick;
-                    round18.BackColor = Color.Firebrick;
+                    round20.BackColor = Settings_button.BackColor;
+                    round18.BackColor = Settings_button.BackColor;
                     break;
 
                 case 20:
                     round20.BackColor = Color.Green;
-                    round21.BackColor = Color.Firebrick;
-                    round19.BackColor = Color.Firebrick;
+                    round21.BackColor = Settings_button.BackColor;
+                    round19.BackColor = Settings_button.BackColor;
                     break;
 
                 case 21:
                     round21.BackColor = Color.Green;
-                    round22.BackColor = Color.Firebrick;
-                    round20.BackColor = Color.Firebrick;
+                    round22.BackColor = Settings_button.BackColor;
+                    round20.BackColor = Settings_button.BackColor;
                     break;
 
                 case 22:
                     round22.BackColor = Color.Green;
-                    round23.BackColor = Color.Firebrick;
-                    round21.BackColor = Color.Firebrick;
+                    round23.BackColor = Settings_button.BackColor;
+                    round21.BackColor = Settings_button.BackColor;
                     break;
 
                 case 23:
                     round23.BackColor = Color.Green;
-                    round24.BackColor = Color.Firebrick;
-                    round22.BackColor = Color.Firebrick;
+                    round24.BackColor = Settings_button.BackColor;
+                    round22.BackColor = Settings_button.BackColor;
                     break;
 
                 case 24:
                     round24.BackColor = Color.Green;
-                    round25.BackColor = Color.Firebrick;
-                    round23.BackColor = Color.Firebrick;
+                    round25.BackColor = Settings_button.BackColor;
+                    round23.BackColor = Settings_button.BackColor;
                     break;
 
                 case 25:
                     round25.BackColor = Color.Green;
-                    round1.BackColor = Color.Firebrick;
-                    round24.BackColor = Color.Firebrick;
+                    round1.BackColor = Settings_button.BackColor;
+                    round24.BackColor = Settings_button.BackColor;
                     break;
             }
         }
 
-        private void mainGUI_Load(object sender, EventArgs e)
-        {
-        }
 
         private void mainGUI_Resize(object sender, EventArgs e)
         {
@@ -844,7 +875,7 @@ namespace GroupProject
             removeCreatureButton.BackColor = Color.FromArgb(r, g, b);
             deleteEncounterButton.BackColor = Color.FromArgb(r, g, b);
             AddEntityButton.BackColor = Color.FromArgb(r, g, b);
-            button8.BackColor = Color.FromArgb(r, g, b);
+            monsterButton.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
             AddStatusEffect.BackColor = Color.FromArgb(r, g, b);
             editMenuButton.BackColor = Color.FromArgb(r, g, b);
@@ -854,6 +885,34 @@ namespace GroupProject
             Change_Bcolor.BackColor = Color.FromArgb(r, g, b);
             loadGroupButton.BackColor = Color.FromArgb(r, g, b);
             Change_Pic.BackColor = Color.FromArgb(r, g, b);
+            // Round Colors
+            round1.BackColor = Color.FromArgb(r, g, b);
+            round2.BackColor = Color.FromArgb(r, g, b);
+            round3.BackColor = Color.FromArgb(r, g, b);
+            round4.BackColor = Color.FromArgb(r, g, b);
+            round5.BackColor = Color.FromArgb(r, g, b);
+            round6.BackColor = Color.FromArgb(r, g, b);
+            round7.BackColor = Color.FromArgb(r, g, b);
+            round8.BackColor = Color.FromArgb(r, g, b);
+            round9.BackColor = Color.FromArgb(r, g, b);
+            round10.BackColor = Color.FromArgb(r, g, b);
+            round11.BackColor = Color.FromArgb(r, g, b);
+            round12.BackColor = Color.FromArgb(r, g, b);
+            round13.BackColor = Color.FromArgb(r, g, b);
+            round14.BackColor = Color.FromArgb(r, g, b);
+            round15.BackColor = Color.FromArgb(r, g, b);
+            round16.BackColor = Color.FromArgb(r, g, b);
+            round17.BackColor = Color.FromArgb(r, g, b);
+            round18.BackColor = Color.FromArgb(r, g, b);
+            round19.BackColor = Color.FromArgb(r, g, b);
+            round20.BackColor = Color.FromArgb(r, g, b);
+            round21.BackColor = Color.FromArgb(r, g, b);
+            round22.BackColor = Color.FromArgb(r, g, b);
+            round23.BackColor = Color.FromArgb(r, g, b);
+            round24.BackColor = Color.FromArgb(r, g, b);
+            round25.BackColor = Color.FromArgb(r, g, b);
+
+
         }
 
         private void ScrollRed_Scroll(object sender, ScrollEventArgs e)
@@ -872,6 +931,7 @@ namespace GroupProject
             b = ScrollBlue.Value;
             setColor();
         }
+
 
         private void Change_Pic_Click(object sender, EventArgs e)
         {
@@ -892,6 +952,39 @@ namespace GroupProject
             {
                 MessageBox.Show("Image needs to be .jpg or .png", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        private void descriptionLabel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monsterButton_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the EditForm
+            monsterForm = new MonManForm();
+
+            // Make the popup a child of the main form
+            monsterForm.Owner = this;
+            monsterForm.addMonsterButton.BackColor = Settings_button.BackColor;
+
+            // Display the EditForm as a modal dialog box
+            // Create a screen object to determine which monitor the mainGUI is on
+            Screen screen = Screen.FromControl(this);
+
+            // Calculate the position of the pop-up form on the same screen
+            int x = screen.WorkingArea.Right - monsterForm.Width * 2;
+            int y = screen.WorkingArea.Bottom - monsterForm.Height * 2;
+
+            // Set the start position and location of the pop-up form
+            monsterForm.StartPosition = FormStartPosition.Manual;
+            monsterForm.Location = new Point(x, y);
+
+            monsterForm.Show();
+        }
+
+        private void addCreatureButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void addHpButton_Click(object sender, EventArgs e)

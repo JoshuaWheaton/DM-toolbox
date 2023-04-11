@@ -36,7 +36,7 @@
             this.loadGroupButton = new System.Windows.Forms.Button();
             this.AddStatusEffect = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.monsterButton = new System.Windows.Forms.Button();
             this.AddEntityButton = new System.Windows.Forms.Button();
             this.deleteEncounterButton = new System.Windows.Forms.Button();
             this.saveCreatureButton = new System.Windows.Forms.Button();
@@ -85,8 +85,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.descriptionLabel = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.descriptionLabel = new System.Windows.Forms.RichTextBox();
             this.subtractHpButton = new System.Windows.Forms.Button();
             this.addHpButton = new System.Windows.Forms.Button();
             this.div3Label = new System.Windows.Forms.Label();
@@ -114,6 +114,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.menuGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
@@ -188,7 +190,7 @@
             this.menuGroupBox.Controls.Add(this.loadGroupButton);
             this.menuGroupBox.Controls.Add(this.AddStatusEffect);
             this.menuGroupBox.Controls.Add(this.Settings_button);
-            this.menuGroupBox.Controls.Add(this.button8);
+            this.menuGroupBox.Controls.Add(this.monsterButton);
             this.menuGroupBox.Controls.Add(this.AddEntityButton);
             this.menuGroupBox.Controls.Add(this.deleteEncounterButton);
             this.menuGroupBox.Controls.Add(this.saveCreatureButton);
@@ -213,7 +215,7 @@
             this.loadGroupButton.Name = "loadGroupButton";
             this.loadGroupButton.Size = new System.Drawing.Size(121, 31);
             this.loadGroupButton.TabIndex = 57;
-            this.loadGroupButton.Text = "Add Entity";
+            this.loadGroupButton.Text = "Load Entity";
             this.loadGroupButton.UseVisualStyleBackColor = false;
             this.loadGroupButton.Click += new System.EventHandler(this.loadGroupButton_Click);
             // 
@@ -222,12 +224,12 @@
             this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
             this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddStatusEffect.Location = new System.Drawing.Point(99, 215);
+            this.AddStatusEffect.Location = new System.Drawing.Point(153, 129);
             this.AddStatusEffect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddStatusEffect.Name = "AddStatusEffect";
-            this.AddStatusEffect.Size = new System.Drawing.Size(86, 31);
+            this.AddStatusEffect.Size = new System.Drawing.Size(125, 31);
             this.AddStatusEffect.TabIndex = 14;
-            this.AddStatusEffect.Text = "Status";
+            this.AddStatusEffect.Text = "Create Status";
             this.AddStatusEffect.UseVisualStyleBackColor = false;
             this.AddStatusEffect.Click += new System.EventHandler(this.AddStatusEffect_Click);
             // 
@@ -245,18 +247,19 @@
             this.Settings_button.UseVisualStyleBackColor = false;
             this.Settings_button.Click += new System.EventHandler(this.Settings_button_Click);
             // 
-            // button8
+            // monsterButton
             // 
-            this.button8.BackColor = System.Drawing.Color.Firebrick;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button8.Location = new System.Drawing.Point(7, 215);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 31);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = false;
+            this.monsterButton.BackColor = System.Drawing.Color.Firebrick;
+            this.monsterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.monsterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.monsterButton.Location = new System.Drawing.Point(7, 129);
+            this.monsterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.monsterButton.Name = "monsterButton";
+            this.monsterButton.Size = new System.Drawing.Size(121, 31);
+            this.monsterButton.TabIndex = 9;
+            this.monsterButton.Text = "Add Monster";
+            this.monsterButton.UseVisualStyleBackColor = false;
+            this.monsterButton.Click += new System.EventHandler(this.monsterButton_Click);
             // 
             // AddEntityButton
             // 
@@ -277,7 +280,7 @@
             this.deleteEncounterButton.BackColor = System.Drawing.Color.Firebrick;
             this.deleteEncounterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteEncounterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deleteEncounterButton.Location = new System.Drawing.Point(75, 140);
+            this.deleteEncounterButton.Location = new System.Drawing.Point(7, 220);
             this.deleteEncounterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deleteEncounterButton.Name = "deleteEncounterButton";
             this.deleteEncounterButton.Size = new System.Drawing.Size(125, 31);
@@ -830,22 +833,12 @@
             this.label8.TabIndex = 69;
             this.label8.Text = "Description:";
             // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.Location = new System.Drawing.Point(8, 328);
-            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.descriptionLabel.Multiline = true;
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionLabel.Size = new System.Drawing.Size(378, 236);
-            this.descriptionLabel.TabIndex = 70;
-            this.descriptionLabel.Text = "Description";
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.descriptionLabel);
             this.groupBox2.Controls.Add(this.name);
             this.groupBox2.Controls.Add(this.nameLabel);
             this.groupBox2.Controls.Add(this.subtractHpButton);
@@ -866,7 +859,6 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.descriptionLabel);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label6);
@@ -886,11 +878,20 @@
             this.groupBox2.Text = "Entity Description";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Location = new System.Drawing.Point(17, 335);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(369, 249);
+            this.descriptionLabel.TabIndex = 86;
+            this.descriptionLabel.Text = "Description";
+            this.descriptionLabel.TextChanged += new System.EventHandler(this.descriptionLabel_TextChanged);
+            // 
             // subtractHpButton
             // 
             this.subtractHpButton.BackColor = System.Drawing.Color.Firebrick;
             this.subtractHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.subtractHpButton.Location = new System.Drawing.Point(201, 104);
+            this.subtractHpButton.Location = new System.Drawing.Point(223, 104);
             this.subtractHpButton.Name = "subtractHpButton";
             this.subtractHpButton.Size = new System.Drawing.Size(29, 28);
             this.subtractHpButton.TabIndex = 85;
@@ -904,7 +905,7 @@
             // 
             this.addHpButton.BackColor = System.Drawing.Color.Firebrick;
             this.addHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addHpButton.Location = new System.Drawing.Point(165, 104);
+            this.addHpButton.Location = new System.Drawing.Point(187, 104);
             this.addHpButton.Name = "addHpButton";
             this.addHpButton.Size = new System.Drawing.Size(29, 28);
             this.addHpButton.TabIndex = 84;
@@ -1231,7 +1232,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
-            this.Load += new System.EventHandler(this.mainGUI_Load);
             this.Resize += new System.EventHandler(this.mainGUI_Resize);
             this.menuGroupBox.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1256,7 +1256,7 @@
         private Button deleteEncounterButton;
         private Button AddStatusEffect;
         private Button Settings_button;
-        private Button button8;
+        private Button monsterButton;
         private Button AddEntityButton;
         private Button round1;
         private Button round2;
@@ -1303,7 +1303,6 @@
         private Label label7;
         private Label name;
         private Label label8;
-        private TextBox descriptionLabel;
         private GroupBox groupBox2;
         private GroupBox entityListGroupBox;
         private GroupBox diceRollerGroupBox;
@@ -1334,5 +1333,8 @@
         private Button subtractHpButton;
         private Button loadGroupButton;
         private Button Change_Pic;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private RichTextBox descriptionLabel;
     }
 }
