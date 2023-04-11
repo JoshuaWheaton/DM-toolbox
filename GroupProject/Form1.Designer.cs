@@ -214,7 +214,7 @@
             this.loadGroupButton.Name = "loadGroupButton";
             this.loadGroupButton.Size = new System.Drawing.Size(121, 31);
             this.loadGroupButton.TabIndex = 57;
-            this.loadGroupButton.Text = "Add Entity";
+            this.loadGroupButton.Text = "Load Entity";
             this.loadGroupButton.UseVisualStyleBackColor = false;
             this.loadGroupButton.Click += new System.EventHandler(this.loadGroupButton_Click);
             // 
