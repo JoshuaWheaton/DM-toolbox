@@ -15,7 +15,7 @@ namespace GroupProject
 {
     public partial class EditForm : Form
     {
-        
+
         // Constructor
         public EditForm()
         {
@@ -46,7 +46,7 @@ namespace GroupProject
             selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
             selectedCreature.SetInitiative((byte)initiativeNumericUpDown.Value);
             selectedCreature.SetMaxHP((byte)hitPointsNumericUpDown.Value);
-            if(selectedCreature.GetCurrentHP() > selectedCreature.GetMaxHP()) { selectedCreature.SetHP((byte)hitPointsNumericUpDown.Value); }
+            if (selectedCreature.GetCurrentHP() > selectedCreature.GetMaxHP()) { selectedCreature.SetHP((byte)hitPointsNumericUpDown.Value); }
             selectedCreature.SetAC((byte)acNumericUpDown.Value);
 
             parentForm.editButton_Click(sender, e);
@@ -59,6 +59,15 @@ namespace GroupProject
         private void EditForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Enter_keypress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                editButton_Click(sender, e);
+            }
         }
     }
 }

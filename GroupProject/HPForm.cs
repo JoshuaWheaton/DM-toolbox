@@ -42,7 +42,7 @@ namespace GroupProject
             }
             else
             {
-                
+
                 return; // No creature selected
             }
 
@@ -62,6 +62,16 @@ namespace GroupProject
             {
                 healthChangeNumericUpDown.Text = ""; // Clear the previous value
                 isEdited = true; // Set the flag to true to indicate that the control has been edited
+            }
+        }
+
+        private void Enter_keypress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                button1_Click(sender, e);
+
             }
         }
     }

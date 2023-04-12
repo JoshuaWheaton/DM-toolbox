@@ -77,9 +77,11 @@
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.healthChangeNumericUpDown);
             this.Controls.Add(this.userPrompt);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HPForm";
             this.Text = "HPForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_keypress);
             ((System.ComponentModel.ISupportInitialize)(this.healthChangeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
