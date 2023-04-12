@@ -203,7 +203,6 @@
             this.menuGroupBox.TabIndex = 6;
             this.menuGroupBox.TabStop = false;
             this.menuGroupBox.Text = "Menu";
-            this.menuGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // loadGroupButton
             // 
@@ -328,7 +327,6 @@
             this.round1.TabIndex = 9;
             this.round1.Text = "1";
             this.round1.UseVisualStyleBackColor = false;
-            this.round1.Click += new System.EventHandler(this.round1_Click);
             // 
             // round2
             // 
@@ -342,7 +340,6 @@
             this.round2.TabIndex = 10;
             this.round2.Text = "2";
             this.round2.UseVisualStyleBackColor = false;
-            this.round2.Click += new System.EventHandler(this.round2_Click);
             // 
             // round3
             // 
@@ -356,7 +353,6 @@
             this.round3.TabIndex = 11;
             this.round3.Text = "3";
             this.round3.UseVisualStyleBackColor = false;
-            this.round3.Click += new System.EventHandler(this.round3_Click);
             // 
             // round4
             // 
@@ -370,7 +366,6 @@
             this.round4.TabIndex = 13;
             this.round4.Text = "4";
             this.round4.UseVisualStyleBackColor = false;
-            this.round4.Click += new System.EventHandler(this.round4_Click);
             // 
             // round8
             // 
@@ -384,7 +379,6 @@
             this.round8.TabIndex = 17;
             this.round8.Text = "8";
             this.round8.UseVisualStyleBackColor = false;
-            this.round8.Click += new System.EventHandler(this.round8_Click);
             // 
             // round7
             // 
@@ -398,7 +392,6 @@
             this.round7.TabIndex = 16;
             this.round7.Text = "7";
             this.round7.UseVisualStyleBackColor = false;
-            this.round7.Click += new System.EventHandler(this.round7_Click);
             // 
             // round6
             // 
@@ -412,7 +405,6 @@
             this.round6.TabIndex = 15;
             this.round6.Text = "6";
             this.round6.UseVisualStyleBackColor = false;
-            this.round6.Click += new System.EventHandler(this.round6_Click);
             // 
             // round5
             // 
@@ -426,7 +418,6 @@
             this.round5.TabIndex = 14;
             this.round5.Text = "5";
             this.round5.UseVisualStyleBackColor = false;
-            this.round5.Click += new System.EventHandler(this.round5_Click);
             // 
             // round12
             // 
@@ -439,7 +430,6 @@
             this.round12.TabIndex = 21;
             this.round12.Text = "12";
             this.round12.UseVisualStyleBackColor = false;
-            this.round12.Click += new System.EventHandler(this.round12_Click);
             // 
             // round11
             // 
@@ -452,7 +442,6 @@
             this.round11.TabIndex = 20;
             this.round11.Text = "11";
             this.round11.UseVisualStyleBackColor = false;
-            this.round11.Click += new System.EventHandler(this.round11_Click);
             // 
             // round10
             // 
@@ -465,7 +454,6 @@
             this.round10.TabIndex = 19;
             this.round10.Text = "10";
             this.round10.UseVisualStyleBackColor = false;
-            this.round10.Click += new System.EventHandler(this.round10_Click);
             // 
             // round9
             // 
@@ -479,7 +467,6 @@
             this.round9.TabIndex = 18;
             this.round9.Text = "9";
             this.round9.UseVisualStyleBackColor = false;
-            this.round9.Click += new System.EventHandler(this.round9_Click);
             // 
             // round24
             // 
@@ -492,7 +479,6 @@
             this.round24.TabIndex = 33;
             this.round24.Text = "24";
             this.round24.UseVisualStyleBackColor = false;
-            this.round24.Click += new System.EventHandler(this.round24_Click);
             // 
             // round23
             // 
@@ -505,7 +491,6 @@
             this.round23.TabIndex = 32;
             this.round23.Text = "23";
             this.round23.UseVisualStyleBackColor = false;
-            this.round23.Click += new System.EventHandler(this.round23_Click);
             // 
             // round22
             // 
@@ -518,7 +503,6 @@
             this.round22.TabIndex = 31;
             this.round22.Text = "22";
             this.round22.UseVisualStyleBackColor = false;
-            this.round22.Click += new System.EventHandler(this.round22_Click);
             // 
             // round21
             // 
@@ -531,7 +515,6 @@
             this.round21.TabIndex = 30;
             this.round21.Text = "21";
             this.round21.UseVisualStyleBackColor = false;
-            this.round21.Click += new System.EventHandler(this.round21_Click);
             // 
             // round20
             // 
@@ -544,7 +527,6 @@
             this.round20.TabIndex = 29;
             this.round20.Text = "20";
             this.round20.UseVisualStyleBackColor = false;
-            this.round20.Click += new System.EventHandler(this.round20_Click);
             // 
             // round19
             // 
@@ -557,7 +539,6 @@
             this.round19.TabIndex = 28;
             this.round19.Text = "19";
             this.round19.UseVisualStyleBackColor = false;
-            this.round19.Click += new System.EventHandler(this.round19_Click);
             // 
             // round18
             // 
@@ -570,7 +551,6 @@
             this.round18.TabIndex = 27;
             this.round18.Text = "18";
             this.round18.UseVisualStyleBackColor = false;
-            this.round18.Click += new System.EventHandler(this.round18_Click);
             // 
             // round17
             // 
@@ -583,7 +563,6 @@
             this.round17.TabIndex = 26;
             this.round17.Text = "17";
             this.round17.UseVisualStyleBackColor = false;
-            this.round17.Click += new System.EventHandler(this.round17_Click);
             // 
             // round16
             // 
@@ -596,7 +575,6 @@
             this.round16.TabIndex = 25;
             this.round16.Text = "16";
             this.round16.UseVisualStyleBackColor = false;
-            this.round16.Click += new System.EventHandler(this.round16_Click);
             // 
             // round15
             // 
@@ -609,7 +587,6 @@
             this.round15.TabIndex = 24;
             this.round15.Text = "15";
             this.round15.UseVisualStyleBackColor = false;
-            this.round15.Click += new System.EventHandler(this.round15_Click);
             // 
             // round14
             // 
@@ -622,7 +599,6 @@
             this.round14.TabIndex = 23;
             this.round14.Text = "14";
             this.round14.UseVisualStyleBackColor = false;
-            this.round14.Click += new System.EventHandler(this.round14_Click);
             // 
             // round13
             // 
@@ -635,7 +611,6 @@
             this.round13.TabIndex = 22;
             this.round13.Text = "13";
             this.round13.UseVisualStyleBackColor = false;
-            this.round13.Click += new System.EventHandler(this.round13_Click);
             // 
             // round25
             // 
@@ -648,7 +623,6 @@
             this.round25.TabIndex = 34;
             this.round25.Text = "25";
             this.round25.UseVisualStyleBackColor = false;
-            this.round25.Click += new System.EventHandler(this.round25_Click);
             // 
             // creatureListBox
             // 
@@ -801,7 +775,6 @@
             this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 64;
             this.label6.Text = "INT";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -876,7 +849,6 @@
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entity Description";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // descriptionLabel
             // 
@@ -885,7 +857,6 @@
             this.descriptionLabel.Size = new System.Drawing.Size(369, 249);
             this.descriptionLabel.TabIndex = 86;
             this.descriptionLabel.Text = "Description";
-            this.descriptionLabel.TextChanged += new System.EventHandler(this.descriptionLabel_TextChanged);
             // 
             // subtractHpButton
             // 
@@ -1028,7 +999,6 @@
             this.ACLabel.Size = new System.Drawing.Size(44, 32);
             this.ACLabel.TabIndex = 72;
             this.ACLabel.Text = "AC";
-            this.ACLabel.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -1060,7 +1030,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
-            this.diceRollerGroupBox.Location = new System.Drawing.Point(741, 152);
+            this.diceRollerGroupBox.Location = new System.Drawing.Point(745, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
             this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 288);
             this.diceRollerGroupBox.TabIndex = 75;
@@ -1232,7 +1202,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
-            this.Resize += new System.EventHandler(this.mainGUI_Resize);
             this.menuGroupBox.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

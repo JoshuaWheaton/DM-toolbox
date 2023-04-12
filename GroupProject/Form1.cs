@@ -27,7 +27,7 @@ namespace GroupProject
             clearDisplay();
         }
 
-        //Function that sorts creature list by initiative
+        //Helper function that sorts creature list by initiative
         public void sortCreatureList()
         {
             creatureList = creatureList.OrderByDescending(o => o.GetInitiative()).ToList();
@@ -95,9 +95,8 @@ namespace GroupProject
             // Display the creature's name, description, and stats in the form
             if (creature != null)
             {
-                string desc = creature.GetDescription();
                 nameLabel.Text = creature.GetName();
-                setDescription(desc);
+                setDescription(creature.GetDescription());
                 strengthLabel.Text = creature.GetStr().ToString();
                 dexterityLabel.Text = creature.GetDex().ToString();
                 constitutionLabel.Text = creature.GetCon().ToString();
@@ -130,14 +129,13 @@ namespace GroupProject
             }
         }
 
+        // Creatures a creature with the given inputs and adds it to the list of creatures
         public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, int hp, byte ac)
         {
+            //Create creature and add to list
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, hp, ac, initiative);
-            creature.SetInitiative(initiative);
-            creature.SetMaxHP(hp);
-            creature.SetHP(hp);
-            creature.SetAC(ac);
             creatureList.Add(creature);
+
             // Display the newly added creature to the list on the left for clear input feedback
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
@@ -192,9 +190,10 @@ namespace GroupProject
             }
         }
 
+        // Removes all entities from the creature list
         private void deleteEncounterButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this creature?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete all creatures?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -222,6 +221,8 @@ namespace GroupProject
                 }
             }
         }
+
+        //Allows user to load a pre-existing encounter
         private void loadEncounterFile()
         {
             // Load the list of creatures from a file
@@ -242,7 +243,7 @@ namespace GroupProject
                         }
                     }
                 }
-                // Display the entities in the npc list
+                // Display the entities in the entity list
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
                 sortCreatureList();
@@ -250,6 +251,7 @@ namespace GroupProject
         }
 
         // Function that loads a file with the file extension .enc and displays the entities in the encounter to be loaded
+        //CLears out previous encounter before new one loads
         private void loadCreatureListButton_Click(object sender, EventArgs e)
         {
             // Clear out the previous encounter, to over-ride it with the newly loaded one
@@ -259,12 +261,14 @@ namespace GroupProject
         }
 
         // Function that loads a file with the file extension .enc and appends the loaded file to the current encounter
+        //Similar to above but does not clear previous encounter
         private void loadGroupButton_Click(object sender, EventArgs e)
         {
             // Append a loaded encounter to the current displayed encounter
             loadEncounterFile();
         }
 
+        //Creates a copy of the selected monster
         private void copyMonsterButton_Click(object sender, EventArgs e)
         {
             if (creatureListBox.SelectedItem != null)
@@ -306,110 +310,7 @@ namespace GroupProject
             editForm.Show();
         }
 
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void round1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round6_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round7_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round8_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round9_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round10_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round11_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round12_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round13_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round14_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round15_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round16_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round17_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round18_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round19_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round20_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round21_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round22_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round23_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round24_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void round25_Click(object sender, EventArgs e)
-        {
-        }
-
+        //Goes to previous round, changing the buttons as necessary
         private void prevRound_Click(object sender, EventArgs e)
         {
             // Decrement the round
@@ -579,6 +480,7 @@ namespace GroupProject
             }
         }
 
+        //Goes to next round, changing the buttons as necessary
         private void nextRound_Click(object sender, EventArgs e)
         {
             // Decrement the round
@@ -748,51 +650,7 @@ namespace GroupProject
             }
         }
 
-
-        private void mainGUI_Resize(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void INT_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-        }
-
-        private void dexterityNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void strengthNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-        }
-
+        //Opens the settings menu
         private void Settings_button_Click(object sender, EventArgs e)
         {
             // Make GroupBox with settings buttons visible.
@@ -805,6 +663,7 @@ namespace GroupProject
                 Settings_group_box.Visible = true;
         }
 
+        //Open the menu to change button colors
         private void Change_Bcolor_Click(object sender, EventArgs e)
         {
             // Make GroupBox with RGB scrollbars visible.
@@ -816,10 +675,7 @@ namespace GroupProject
                 Color_choices.Visible = true;
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-        }
-
+        //Creates pop up form for creating a new entity
         private void AddEntityButton_Click(object sender, EventArgs e)
         {
             // Create a new instance of the EditForm
@@ -843,6 +699,7 @@ namespace GroupProject
             AddForm.Show();
         }
 
+        //Creates new menu for adding a status effect
         private void AddStatusEffect_Click(object sender, EventArgs e)
         {
             //Create a new instance of AddStatusEffect
@@ -865,6 +722,8 @@ namespace GroupProject
 
             AddStatus.Show();
          }
+        
+        //Gets currently selected rgb values and sets all the buttons to that color
         private void setColor()
         {
             // Sets color of all buttons based on the scroll bars.
@@ -917,24 +776,28 @@ namespace GroupProject
 
         }
 
+        //Gets red color from scrool bar
         private void ScrollRed_Scroll(object sender, ScrollEventArgs e)
         {
             r = ScrollRed.Value;
             setColor();
         }
 
+        //Gets green color from scrool bar
         private void ScrollGreen_Scroll(object sender, ScrollEventArgs e)
         {
             g = ScrollGreen.Value;
             setColor();
         }
+
+        //Gets blue color from scrool bar
         private void ScrollBlue_Scroll(object sender, ScrollEventArgs e)
         {
             b = ScrollBlue.Value;
             setColor();
         }
 
-
+        //Allows user to change background color
         private void Change_Pic_Click(object sender, EventArgs e)
         {
             // Try and catch in case of error
@@ -956,11 +819,7 @@ namespace GroupProject
             }
         }
 
-        private void descriptionLabel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Opens up monster manual form
         private void monsterButton_Click(object sender, EventArgs e)
         {
             // Create a new instance of the EditForm
@@ -985,11 +844,8 @@ namespace GroupProject
             monsterForm.Show();
         }
 
-        private void addCreatureButton_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        //Opens up add health form
         private void addHpButton_Click(object sender, EventArgs e)
         {
             if (creatureListBox.SelectedItem != null)
@@ -1018,6 +874,7 @@ namespace GroupProject
 
         }
 
+        //Opens up subtract health form
         private void subtractHpButton_Click(object sender, EventArgs e)
         {
             if (creatureListBox.SelectedItem != null)
