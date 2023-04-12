@@ -48,7 +48,6 @@ namespace GroupProject
             selectedCreature.SetMaxHP((byte)hitPointsNumericUpDown.Value);
             if(selectedCreature.GetCurrentHP() > selectedCreature.GetMaxHP()) { selectedCreature.SetHP((byte)hitPointsNumericUpDown.Value); }
             selectedCreature.SetAC((byte)acNumericUpDown.Value);
-            selectedCreature.updateVals();
 
             parentForm.editButton_Click(sender, e);
 
