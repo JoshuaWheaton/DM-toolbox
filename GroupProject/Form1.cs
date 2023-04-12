@@ -1,9 +1,4 @@
-using System;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GroupProject
 {
@@ -15,7 +10,7 @@ namespace GroupProject
         private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
         private MonManForm monsterForm; // A MomManForm variable monsterForm that creates a pop up containing a list of every creature from the monster manual
         private AddStatusEffect AddStatus; //An AddStatusEffect variable that allows functions to create the Add Status Effect form
-        private int r=0, g=0, b=0;
+        private int r = 0, g = 0, b = 0;
         private Rectangle OriginalRectangleEntity;
         private Rectangle OriginalFormSize;
         private HPForm addHealth;
@@ -81,8 +76,6 @@ namespace GroupProject
             text.Replace("<strong>", "\\b");
             text.Replace("</strong>", "\\b0");
 
-
-
             // the end
             text.Append(@"}");
 
@@ -109,7 +102,7 @@ namespace GroupProject
                 HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
                 addHpButton.Show();
                 subtractHpButton.Show();
-                
+
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
                 if (editForm != null)
@@ -130,7 +123,7 @@ namespace GroupProject
         }
 
         // Creatures a creature with the given inputs and adds it to the list of creatures
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, int hp, byte ac)
+        public void AddtoList(string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, int hp, byte ac)
         {
             //Create creature and add to list
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, hp, ac, initiative);
@@ -202,7 +195,6 @@ namespace GroupProject
                 creatureList.Clear();
             }
         }
-
 
         // Function that saves the current encounter to a file with the file extension .enc
         private void saveCreatureButton_Click(object sender, EventArgs e)
@@ -721,13 +713,13 @@ namespace GroupProject
             AddStatus.Location = new Point(x, y);
 
             AddStatus.Show();
-         }
-        
+        }
+
         //Gets currently selected rgb values and sets all the buttons to that color
         private void setColor()
         {
             // Sets color of all buttons based on the scroll bars.
-            prevRound.BackColor = Color.FromArgb(r,g,b);
+            prevRound.BackColor = Color.FromArgb(r, g, b);
             nextRound.BackColor = Color.FromArgb(r, g, b);
             sortEntitiesButton.BackColor = Color.FromArgb(r, g, b);
             Copy_monster.BackColor = Color.FromArgb(r, g, b);
@@ -772,8 +764,6 @@ namespace GroupProject
             round23.BackColor = Color.FromArgb(r, g, b);
             round24.BackColor = Color.FromArgb(r, g, b);
             round25.BackColor = Color.FromArgb(r, g, b);
-
-
         }
 
         //Gets red color from scrool bar
@@ -844,7 +834,6 @@ namespace GroupProject
             monsterForm.Show();
         }
 
-
         //Opens up add health form
         private void addHpButton_Click(object sender, EventArgs e)
         {
@@ -869,9 +858,7 @@ namespace GroupProject
                 addHealth.Location = new Point(x, y);
 
                 addHealth.Show();
-
             }
-
         }
 
         //Opens up subtract health form
