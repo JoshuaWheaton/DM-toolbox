@@ -35,13 +35,16 @@
             this.removeCreatureButton = new System.Windows.Forms.Button();
             this.menuGroupBox = new System.Windows.Forms.GroupBox();
             this.loadGroupButton = new System.Windows.Forms.Button();
-            this.AddStatusEffect = new System.Windows.Forms.Button();
+            this.Settings_group_box = new System.Windows.Forms.GroupBox();
+            this.Change_Pic = new System.Windows.Forms.Button();
+            this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
             this.monsterButton = new System.Windows.Forms.Button();
             this.AddEntityButton = new System.Windows.Forms.Button();
             this.deleteEncounterButton = new System.Windows.Forms.Button();
             this.saveCreatureButton = new System.Windows.Forms.Button();
             this.loadCreatureListButton = new System.Windows.Forms.Button();
+            this.AddStatusEffect = new System.Windows.Forms.Button();
             this.round1 = new System.Windows.Forms.Button();
             this.round2 = new System.Windows.Forms.Button();
             this.round3 = new System.Windows.Forms.Button();
@@ -79,7 +82,9 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.label2 = new System.Windows.Forms.Label();
-            this.NextTurn = new Systems.Windows.FormsButton();
+            this.NextTurn = new System.Windows.Forms.Button();
+            this.RemoveStatus = new System.Windows.Forms.Button();
+            this.statusListBox = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -88,6 +93,8 @@
             this.name = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.subtractTempHpButton = new System.Windows.Forms.Button();
+            this.addTempHpButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.RichTextBox();
             this.subtractHpButton = new System.Windows.Forms.Button();
             this.addHpButton = new System.Windows.Forms.Button();
@@ -106,9 +113,6 @@
             this.entityListGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
-            this.Settings_group_box = new System.Windows.Forms.GroupBox();
-            this.Change_Pic = new System.Windows.Forms.Button();
-            this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Color_choices = new System.Windows.Forms.GroupBox();
             this.ScrollBlue = new System.Windows.Forms.HScrollBar();
             this.ScrollGreen = new System.Windows.Forms.HScrollBar();
@@ -118,13 +122,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.subtractTempHpButton = new System.Windows.Forms.Button();
-            this.addTempHpButton = new System.Windows.Forms.Button();
             this.menuGroupBox.SuspendLayout();
+            this.Settings_group_box.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
             this.diceRollerGroupBox.SuspendLayout();
-            this.Settings_group_box.SuspendLayout();
             this.Color_choices.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,18 +195,18 @@
             this.menuGroupBox.AutoSize = true;
             this.menuGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.menuGroupBox.Controls.Add(this.loadGroupButton);
-            this.menuGroupBox.Controls.Add(this.AddStatusEffect);
+            this.menuGroupBox.Controls.Add(this.Settings_group_box);
             this.menuGroupBox.Controls.Add(this.Settings_button);
             this.menuGroupBox.Controls.Add(this.monsterButton);
             this.menuGroupBox.Controls.Add(this.AddEntityButton);
             this.menuGroupBox.Controls.Add(this.deleteEncounterButton);
             this.menuGroupBox.Controls.Add(this.saveCreatureButton);
             this.menuGroupBox.Controls.Add(this.loadCreatureListButton);
-            this.menuGroupBox.Location = new System.Drawing.Point(920, 151);
+            this.menuGroupBox.Location = new System.Drawing.Point(1003, 152);
             this.menuGroupBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.menuGroupBox.Name = "menuGroupBox";
             this.menuGroupBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.menuGroupBox.Size = new System.Drawing.Size(290, 285);
+            this.menuGroupBox.Size = new System.Drawing.Size(296, 424);
             this.menuGroupBox.TabIndex = 6;
             this.menuGroupBox.TabStop = false;
             this.menuGroupBox.Text = "Menu";
@@ -223,19 +225,45 @@
             this.loadGroupButton.UseVisualStyleBackColor = false;
             this.loadGroupButton.Click += new System.EventHandler(this.loadGroupButton_Click);
             // 
-            // AddStatusEffect
+            // Settings_group_box
             // 
-            this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
-            this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddStatusEffect.Location = new System.Drawing.Point(153, 129);
-            this.AddStatusEffect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.AddStatusEffect.Name = "AddStatusEffect";
-            this.AddStatusEffect.Size = new System.Drawing.Size(125, 31);
-            this.AddStatusEffect.TabIndex = 14;
-            this.AddStatusEffect.Text = "Create Status";
-            this.AddStatusEffect.UseVisualStyleBackColor = false;
-            this.AddStatusEffect.Click += new System.EventHandler(this.AddStatusEffect_Click);
+            this.Settings_group_box.AutoSize = true;
+            this.Settings_group_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.Settings_group_box.Controls.Add(this.Change_Pic);
+            this.Settings_group_box.Controls.Add(this.Change_Bcolor);
+            this.Settings_group_box.Location = new System.Drawing.Point(156, 247);
+            this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Settings_group_box.Name = "Settings_group_box";
+            this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Settings_group_box.Size = new System.Drawing.Size(134, 149);
+            this.Settings_group_box.TabIndex = 76;
+            this.Settings_group_box.TabStop = false;
+            this.Settings_group_box.Visible = false;
+            // 
+            // Change_Pic
+            // 
+            this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
+            this.Change_Pic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Change_Pic.Location = new System.Drawing.Point(6, 71);
+            this.Change_Pic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Change_Pic.Name = "Change_Pic";
+            this.Change_Pic.Size = new System.Drawing.Size(120, 48);
+            this.Change_Pic.TabIndex = 1;
+            this.Change_Pic.Text = "Background Pic";
+            this.Change_Pic.UseVisualStyleBackColor = false;
+            this.Change_Pic.Click += new System.EventHandler(this.Change_Pic_Click);
+            // 
+            // Change_Bcolor
+            // 
+            this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
+            this.Change_Bcolor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Change_Bcolor.Location = new System.Drawing.Point(6, 17);
+            this.Change_Bcolor.Name = "Change_Bcolor";
+            this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
+            this.Change_Bcolor.TabIndex = 0;
+            this.Change_Bcolor.Text = "Set Main Color";
+            this.Change_Bcolor.UseVisualStyleBackColor = false;
+            this.Change_Bcolor.Click += new System.EventHandler(this.Change_Bcolor_Click);
             // 
             // Settings_button
             // 
@@ -323,17 +351,17 @@
             // 
             // AddStatusEffect
             // 
-            this.AddStatusEffect.BackColor = Color.Firebrick;
-            this.AddStatusEffect.FlatStyle = FlatStyle.Flat;
-            this.AddStatusEffect.ForeColor = SystemColors.ControlLightLight;
-            this.AddStatusEffect.Location = new Point(399, 81);
-            this.AddStatusEffect.Margin = new Padding(3, 4, 3, 4);
+            this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
+            this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddStatusEffect.Location = new System.Drawing.Point(399, 81);
+            this.AddStatusEffect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddStatusEffect.Name = "AddStatusEffect";
-            this.AddStatusEffect.Size = new Size(86, 31);
+            this.AddStatusEffect.Size = new System.Drawing.Size(86, 31);
             this.AddStatusEffect.TabIndex = 14;
             this.AddStatusEffect.Text = "Add";
             this.AddStatusEffect.UseVisualStyleBackColor = false;
-            this.AddStatusEffect.Click += AddStatusEffect_Click;
+            this.AddStatusEffect.Click += new System.EventHandler(this.AddStatusEffect_Click);
             // 
             // round1
             // 
@@ -780,7 +808,7 @@
             // 
             // saveFileDialog
             // 
-            saveFileDialog.FileName = "creatureTest";
+            this.saveFileDialog.FileName = "creatureTest";
             // 
             // openFileDialog
             // 
@@ -797,6 +825,42 @@
             this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 67;
             this.label2.Text = "CHA";
+            // 
+            // NextTurn
+            // 
+            this.NextTurn.BackColor = System.Drawing.Color.Firebrick;
+            this.NextTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextTurn.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.NextTurn.Location = new System.Drawing.Point(19, 30);
+            this.NextTurn.Name = "NextTurn";
+            this.NextTurn.Size = new System.Drawing.Size(114, 31);
+            this.NextTurn.TabIndex = 56;
+            this.NextTurn.Text = "Next Turn";
+            this.NextTurn.UseVisualStyleBackColor = false;
+            this.NextTurn.Click += new System.EventHandler(this.NextTurn_Click);
+            // 
+            // RemoveStatus
+            // 
+            this.RemoveStatus.BackColor = System.Drawing.Color.Firebrick;
+            this.RemoveStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RemoveStatus.Location = new System.Drawing.Point(401, 133);
+            this.RemoveStatus.Name = "RemoveStatus";
+            this.RemoveStatus.Size = new System.Drawing.Size(84, 29);
+            this.RemoveStatus.TabIndex = 1;
+            this.RemoveStatus.Text = "Remove";
+            this.RemoveStatus.UseVisualStyleBackColor = false;
+            this.RemoveStatus.Click += new System.EventHandler(this.RemoveStatus_Click);
+            // 
+            // statusListBox
+            // 
+            this.statusListBox.FormattingEnabled = true;
+            this.statusListBox.ItemHeight = 20;
+            this.statusListBox.Location = new System.Drawing.Point(261, 75);
+            this.statusListBox.Name = "statusListBox";
+            this.statusListBox.Size = new System.Drawing.Size(134, 124);
+            this.statusListBox.TabIndex = 0;
+            this.statusListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.statusListBox_MouseDoubleClick);
             // 
             // label3
             // 
@@ -891,8 +955,8 @@
             this.groupBox2.Controls.Add(this.subtractTempHpButton);
             this.groupBox2.Controls.Add(this.addTempHpButton);
             this.groupBox2.Controls.Add(this.descriptionLabel);
-            this.groupBox2.Controls.Add(this.RemoveStatus);
             this.groupBox2.Controls.Add(this.AddStatusEffect);
+            this.groupBox2.Controls.Add(this.RemoveStatus);
             this.groupBox2.Controls.Add(this.statusListBox);
             this.groupBox2.Controls.Add(this.name);
             this.groupBox2.Controls.Add(this.nameLabel);
@@ -927,31 +991,39 @@
             this.groupBox2.Controls.Add(this.intelligenceLabel);
             this.groupBox2.Location = new System.Drawing.Point(327, 152);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(412, 653);
+            this.groupBox2.Size = new System.Drawing.Size(491, 653);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             // 
-            // RemoveStatus
+            // subtractTempHpButton
             // 
-            RemoveStatus.BackColor = Color.Firebrick;
-            RemoveStatus.FlatStyle = FlatStyle.Flat;
-            RemoveStatus.Location = new Point(401, 133);
-            RemoveStatus.Name = "RemoveStatus";
-            RemoveStatus.Size = new Size(84, 29);
-            RemoveStatus.TabIndex = 1;
-            RemoveStatus.Text = "Remove";
-            RemoveStatus.UseVisualStyleBackColor = false;
-            RemoveStatus.Click += RemoveStatus_Click;
-             // 
-            // statusListBox
+            this.subtractTempHpButton.BackColor = System.Drawing.Color.Firebrick;
+            this.subtractTempHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subtractTempHpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.subtractTempHpButton.Location = new System.Drawing.Point(223, 138);
+            this.subtractTempHpButton.Name = "subtractTempHpButton";
+            this.subtractTempHpButton.Size = new System.Drawing.Size(29, 28);
+            this.subtractTempHpButton.TabIndex = 88;
+            this.subtractTempHpButton.Text = "-";
+            this.subtractTempHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.subtractTempHpButton.UseVisualStyleBackColor = false;
+            this.subtractTempHpButton.Visible = false;
+            this.subtractTempHpButton.Click += new System.EventHandler(this.subtractTempHpButton_Click);
             // 
-            statusListBox.FormattingEnabled = true;
-            statusListBox.ItemHeight = 20;
-            statusListBox.Location = new Point(261, 75);
-            statusListBox.Name = "statusListBox";
-            statusListBox.Size = new Size(134, 124);
-            statusListBox.TabIndex = 0;
-            statusListBox.MouseDoubleClick += statusListBox_MouseDoubleClick;
+            // addTempHpButton
+            // 
+            this.addTempHpButton.BackColor = System.Drawing.Color.Firebrick;
+            this.addTempHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addTempHpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addTempHpButton.Location = new System.Drawing.Point(187, 138);
+            this.addTempHpButton.Name = "addTempHpButton";
+            this.addTempHpButton.Size = new System.Drawing.Size(29, 28);
+            this.addTempHpButton.TabIndex = 87;
+            this.addTempHpButton.Text = "+";
+            this.addTempHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.addTempHpButton.UseVisualStyleBackColor = false;
+            this.addTempHpButton.Visible = false;
+            this.addTempHpButton.Click += new System.EventHandler(this.addTempHpButton_Click);
             // 
             // descriptionLabel
             // 
@@ -1158,7 +1230,7 @@
             this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
-            this.diceRollerGroupBox.Location = new System.Drawing.Point(745, 152);
+            this.diceRollerGroupBox.Location = new System.Drawing.Point(829, 152);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
             this.diceRollerGroupBox.Size = new System.Drawing.Size(166, 288);
             this.diceRollerGroupBox.TabIndex = 75;
@@ -1172,46 +1244,6 @@
             this.diceRollerTextBox.Size = new System.Drawing.Size(125, 231);
             this.diceRollerTextBox.TabIndex = 0;
             this.diceRollerTextBox.Text = "";
-            // 
-            // Settings_group_box
-            // 
-            this.Settings_group_box.AutoSize = true;
-            this.Settings_group_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.Settings_group_box.Controls.Add(this.Change_Pic);
-            this.Settings_group_box.Controls.Add(this.Change_Bcolor);
-            this.Settings_group_box.Location = new System.Drawing.Point(1112, 399);
-            this.Settings_group_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Settings_group_box.Name = "Settings_group_box";
-            this.Settings_group_box.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Settings_group_box.Size = new System.Drawing.Size(134, 149);
-            this.Settings_group_box.TabIndex = 76;
-            this.Settings_group_box.TabStop = false;
-            this.Settings_group_box.Visible = false;
-            // 
-            // Change_Pic
-            // 
-            this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Pic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Change_Pic.Location = new System.Drawing.Point(6, 71);
-            this.Change_Pic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Change_Pic.Name = "Change_Pic";
-            this.Change_Pic.Size = new System.Drawing.Size(120, 48);
-            this.Change_Pic.TabIndex = 1;
-            this.Change_Pic.Text = "Background Pic";
-            this.Change_Pic.UseVisualStyleBackColor = false;
-            this.Change_Pic.Click += new System.EventHandler(this.Change_Pic_Click);
-            // 
-            // Change_Bcolor
-            // 
-            this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Change_Bcolor.Location = new System.Drawing.Point(6, 17);
-            this.Change_Bcolor.Name = "Change_Bcolor";
-            this.Change_Bcolor.Size = new System.Drawing.Size(120, 48);
-            this.Change_Bcolor.TabIndex = 0;
-            this.Change_Bcolor.Text = "Set Main Color";
-            this.Change_Bcolor.UseVisualStyleBackColor = false;
-            this.Change_Bcolor.Click += new System.EventHandler(this.Change_Bcolor_Click);
             // 
             // Color_choices
             // 
@@ -1288,36 +1320,6 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
             // 
-            // subtractTempHpButton
-            // 
-            this.subtractTempHpButton.BackColor = System.Drawing.Color.Firebrick;
-            this.subtractTempHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.subtractTempHpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.subtractTempHpButton.Location = new System.Drawing.Point(223, 138);
-            this.subtractTempHpButton.Name = "subtractTempHpButton";
-            this.subtractTempHpButton.Size = new System.Drawing.Size(29, 28);
-            this.subtractTempHpButton.TabIndex = 88;
-            this.subtractTempHpButton.Text = "-";
-            this.subtractTempHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.subtractTempHpButton.UseVisualStyleBackColor = false;
-            this.subtractTempHpButton.Visible = false;
-            this.subtractTempHpButton.Click += new System.EventHandler(this.subtractTempHpButton_Click);
-            // 
-            // addTempHpButton
-            // 
-            this.addTempHpButton.BackColor = System.Drawing.Color.Firebrick;
-            this.addTempHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addTempHpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addTempHpButton.Location = new System.Drawing.Point(187, 138);
-            this.addTempHpButton.Name = "addTempHpButton";
-            this.addTempHpButton.Size = new System.Drawing.Size(29, 28);
-            this.addTempHpButton.TabIndex = 87;
-            this.addTempHpButton.Text = "+";
-            this.addTempHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addTempHpButton.UseVisualStyleBackColor = false;
-            this.addTempHpButton.Visible = false;
-            this.addTempHpButton.Click += new System.EventHandler(this.addTempHpButton_Click);
-            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1328,7 +1330,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1311, 855);
             this.Controls.Add(this.Color_choices);
-            this.Controls.Add(this.Settings_group_box);
             this.Controls.Add(this.diceRollerGroupBox);
             this.Controls.Add(this.entityListGroupBox);
             this.Controls.Add(this.groupBox2);
@@ -1366,15 +1367,17 @@
             this.Name = "mainGUI";
             this.Text = "DM-Toolbox";
             this.menuGroupBox.ResumeLayout(false);
+            this.menuGroupBox.PerformLayout();
+            this.Settings_group_box.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.entityListGroupBox.ResumeLayout(false);
             this.diceRollerGroupBox.ResumeLayout(false);
-            this.Settings_group_box.ResumeLayout(false);
             this.Color_choices.ResumeLayout(false);
             this.Color_choices.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
