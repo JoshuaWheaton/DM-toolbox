@@ -38,20 +38,23 @@
             // monsterManListBox
             // 
             this.monsterManListBox.FormattingEnabled = true;
-            this.monsterManListBox.ItemHeight = 15;
-            this.monsterManListBox.Location = new System.Drawing.Point(12, 41);
+            this.monsterManListBox.ItemHeight = 20;
+            this.monsterManListBox.Location = new System.Drawing.Point(14, 55);
+            this.monsterManListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.monsterManListBox.Name = "monsterManListBox";
-            this.monsterManListBox.Size = new System.Drawing.Size(205, 304);
+            this.monsterManListBox.Size = new System.Drawing.Size(234, 404);
             this.monsterManListBox.TabIndex = 0;
+            this.monsterManListBox.DoubleClick += new System.EventHandler(this.monsterManListBox_DoubleClick);
             // 
             // addMonsterButton
             // 
             this.addMonsterButton.BackColor = System.Drawing.Color.Firebrick;
             this.addMonsterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMonsterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addMonsterButton.Location = new System.Drawing.Point(12, 351);
+            this.addMonsterButton.Location = new System.Drawing.Point(14, 468);
+            this.addMonsterButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addMonsterButton.Name = "addMonsterButton";
-            this.addMonsterButton.Size = new System.Drawing.Size(94, 23);
+            this.addMonsterButton.Size = new System.Drawing.Size(107, 31);
             this.addMonsterButton.TabIndex = 75;
             this.addMonsterButton.Text = "Add Monster";
             this.addMonsterButton.UseVisualStyleBackColor = false;
@@ -59,9 +62,10 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(71, 12);
+            this.searchBox.Location = new System.Drawing.Point(81, 16);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(146, 23);
+            this.searchBox.Size = new System.Drawing.Size(166, 27);
             this.searchBox.TabIndex = 76;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -69,24 +73,27 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchLabel.Location = new System.Drawing.Point(5, 14);
+            this.searchLabel.Location = new System.Drawing.Point(6, 19);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(60, 21);
+            this.searchLabel.Size = new System.Drawing.Size(74, 28);
             this.searchLabel.TabIndex = 77;
             this.searchLabel.Text = "Search:";
             // 
             // MonManForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(229, 382);
+            this.ClientSize = new System.Drawing.Size(262, 509);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.addMonsterButton);
             this.Controls.Add(this.monsterManListBox);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MonManForm";
             this.Text = "Monster Manual Creatures";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterKeypress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

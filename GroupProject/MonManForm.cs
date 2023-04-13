@@ -109,5 +109,23 @@ namespace GroupProject
             monsterManListBox.DataSource = null;
             monsterManListBox.DataSource = monsterList;
         }
+
+        private void enterKeypress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                addMonsterButton_Click(sender, e);
+            }
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void monsterManListBox_DoubleClick(object sender, EventArgs e)
+        {
+            addMonsterButton_Click(sender , e);
+        }
     }
 }
