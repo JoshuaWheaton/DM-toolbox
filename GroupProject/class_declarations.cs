@@ -28,6 +28,7 @@ namespace GroupProject
         //Set up list of status effect objects so that status effects can be added
         public List<StatusEffect> StatusEffects = new List<StatusEffect>();
 
+        //Calculates ability modifier given an ability score
         public int abilityScoreModifier(byte statScore)
         {
             int statInt = (int)statScore;
@@ -185,16 +186,7 @@ namespace GroupProject
 
         }
 
-        public void updateVals()
-        {
-            //Removed because the add creature box now has section for HP and AC
-            int tempDex = Dex;
-            int tempCon = Con;
-            //AC = (byte)(10 + ((tempDex - 10) / 2));
-            //MaxHP = (tempCon - 10) / 2;
-            //CurrentHP = MaxHP;
-        }
-
+        //To string override
         public override string? ToString()
         {
             return Name;

@@ -87,9 +87,11 @@
             this.addEntityGroupBox.Controls.Add(this.charismaNumericUpDown);
             this.addEntityGroupBox.Controls.Add(this.label1);
             this.addEntityGroupBox.Controls.Add(this.STR);
-            this.addEntityGroupBox.Location = new System.Drawing.Point(24, 32);
+            this.addEntityGroupBox.Location = new System.Drawing.Point(21, 24);
+            this.addEntityGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
-            this.addEntityGroupBox.Size = new System.Drawing.Size(469, 388);
+            this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addEntityGroupBox.Size = new System.Drawing.Size(410, 291);
             this.addEntityGroupBox.TabIndex = 76;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Add Entity";
@@ -98,36 +100,39 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(203, 342);
+            this.label3.Location = new System.Drawing.Point(178, 256);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 32);
+            this.label3.Size = new System.Drawing.Size(37, 25);
             this.label3.TabIndex = 78;
             this.label3.Text = "AC";
             // 
             // acNumericUpDown
             // 
-            this.acNumericUpDown.Location = new System.Drawing.Point(271, 348);
-            this.acNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.acNumericUpDown.Location = new System.Drawing.Point(237, 261);
             this.acNumericUpDown.Name = "acNumericUpDown";
-            this.acNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.acNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.acNumericUpDown.TabIndex = 77;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(195, 300);
+            this.label2.Location = new System.Drawing.Point(171, 225);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 32);
+            this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 76;
             this.label2.Text = "M.HP";
             // 
             // hitPointsNumericUpDown
             // 
-            this.hitPointsNumericUpDown.Location = new System.Drawing.Point(271, 308);
-            this.hitPointsNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hitPointsNumericUpDown.Location = new System.Drawing.Point(237, 231);
+            this.hitPointsNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.hitPointsNumericUpDown.Name = "hitPointsNumericUpDown";
-            this.hitPointsNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.hitPointsNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.hitPointsNumericUpDown.TabIndex = 75;
             // 
             // AddButton
@@ -135,10 +140,9 @@
             this.AddButton.BackColor = System.Drawing.Color.Firebrick;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddButton.Location = new System.Drawing.Point(355, 28);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddButton.Location = new System.Drawing.Point(311, 21);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(86, 31);
+            this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 74;
             this.AddButton.Text = "Add Entity";
             this.AddButton.UseVisualStyleBackColor = false;
@@ -148,56 +152,52 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(203, 260);
+            this.label11.Location = new System.Drawing.Point(178, 195);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 32);
+            this.label11.Size = new System.Drawing.Size(50, 25);
             this.label11.TabIndex = 73;
             this.label11.Text = "INIT";
             // 
             // initiativeNumericUpDown
             // 
-            this.initiativeNumericUpDown.Location = new System.Drawing.Point(271, 268);
-            this.initiativeNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.initiativeNumericUpDown.Location = new System.Drawing.Point(237, 201);
             this.initiativeNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.initiativeNumericUpDown.Name = "initiativeNumericUpDown";
-            this.initiativeNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.initiativeNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.initiativeNumericUpDown.TabIndex = 72;
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(21, 76);
-            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.descriptionTextBox.Location = new System.Drawing.Point(18, 57);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.PlaceholderText = "Description";
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTextBox.Size = new System.Drawing.Size(175, 241);
+            this.descriptionTextBox.Size = new System.Drawing.Size(154, 182);
             this.descriptionTextBox.TabIndex = 37;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(21, 21);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.nameTextBox.Location = new System.Drawing.Point(18, 16);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.PlaceholderText = "Name";
-            this.nameTextBox.Size = new System.Drawing.Size(114, 27);
+            this.nameTextBox.Size = new System.Drawing.Size(100, 23);
             this.nameTextBox.TabIndex = 36;
             // 
             // strengthNumericUpDown
             // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(271, 28);
-            this.strengthNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(237, 21);
             this.strengthNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.strengthNumericUpDown.Name = "strengthNumericUpDown";
-            this.strengthNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.strengthNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.strengthNumericUpDown.TabIndex = 38;
             this.strengthNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -209,23 +209,22 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(206, 100);
+            this.label9.Location = new System.Drawing.Point(180, 75);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 32);
+            this.label9.Size = new System.Drawing.Size(53, 25);
             this.label9.TabIndex = 71;
             this.label9.Text = "CON";
             // 
             // dexterityNumericUpDown
             // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(271, 68);
-            this.dexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(237, 51);
             this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.dexterityNumericUpDown.Name = "dexterityNumericUpDown";
-            this.dexterityNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.dexterityNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.dexterityNumericUpDown.TabIndex = 39;
             this.dexterityNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -237,23 +236,22 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(203, 220);
+            this.CHA.Location = new System.Drawing.Point(178, 165);
             this.CHA.Name = "CHA";
-            this.CHA.Size = new System.Drawing.Size(64, 32);
+            this.CHA.Size = new System.Drawing.Size(52, 25);
             this.CHA.TabIndex = 61;
             this.CHA.Text = "CHA";
             // 
             // constitutionNumericUpDown
             // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(271, 108);
-            this.constitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(237, 81);
             this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.constitutionNumericUpDown.Name = "constitutionNumericUpDown";
-            this.constitutionNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.constitutionNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.constitutionNumericUpDown.TabIndex = 40;
             this.constitutionNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -265,23 +263,22 @@
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(203, 180);
+            this.WIS.Location = new System.Drawing.Point(178, 135);
             this.WIS.Name = "WIS";
-            this.WIS.Size = new System.Drawing.Size(59, 32);
+            this.WIS.Size = new System.Drawing.Size(48, 25);
             this.WIS.TabIndex = 60;
             this.WIS.Text = "WIS";
             // 
             // intelligenceNumericUpDown
             // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(271, 148);
-            this.intelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(237, 111);
             this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.intelligenceNumericUpDown.Name = "intelligenceNumericUpDown";
-            this.intelligenceNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.intelligenceNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.intelligenceNumericUpDown.TabIndex = 41;
             this.intelligenceNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -293,23 +290,22 @@
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(203, 60);
+            this.DEX.Location = new System.Drawing.Point(178, 45);
             this.DEX.Name = "DEX";
-            this.DEX.Size = new System.Drawing.Size(61, 32);
+            this.DEX.Size = new System.Drawing.Size(48, 25);
             this.DEX.TabIndex = 58;
             this.DEX.Text = "DEX";
             // 
             // wisdomNumericUpDown
             // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(271, 188);
-            this.wisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(237, 141);
             this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.wisdomNumericUpDown.Name = "wisdomNumericUpDown";
-            this.wisdomNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.wisdomNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.wisdomNumericUpDown.TabIndex = 42;
             this.wisdomNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -321,23 +317,22 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(203, 140);
+            this.INT.Location = new System.Drawing.Point(178, 105);
             this.INT.Name = "INT";
-            this.INT.Size = new System.Drawing.Size(55, 32);
+            this.INT.Size = new System.Drawing.Size(44, 25);
             this.INT.TabIndex = 58;
             this.INT.Text = "INT";
             // 
             // charismaNumericUpDown
             // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(271, 228);
-            this.charismaNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(237, 171);
             this.charismaNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.charismaNumericUpDown.Name = "charismaNumericUpDown";
-            this.charismaNumericUpDown.Size = new System.Drawing.Size(47, 27);
+            this.charismaNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.charismaNumericUpDown.TabIndex = 43;
             this.charismaNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -349,9 +344,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(203, 20);
+            this.label1.Location = new System.Drawing.Point(178, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 32);
+            this.label1.Size = new System.Drawing.Size(46, 25);
             this.label1.TabIndex = 57;
             this.label1.Text = "STR";
             // 
@@ -359,22 +354,23 @@
             // 
             this.STR.AutoSize = true;
             this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STR.Location = new System.Drawing.Point(207, 20);
+            this.STR.Location = new System.Drawing.Point(181, 15);
             this.STR.Name = "STR";
-            this.STR.Size = new System.Drawing.Size(57, 32);
+            this.STR.Size = new System.Drawing.Size(46, 25);
             this.STR.TabIndex = 57;
             this.STR.Text = "STR";
             // 
             // AddEntity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(517, 432);
+            this.ClientSize = new System.Drawing.Size(452, 324);
             this.Controls.Add(this.addEntityGroupBox);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.KeyPreview = true;
             this.Name = "AddEntity";
             this.Text = "AddEntity";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_keypress);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.acNumericUpDown)).EndInit();
