@@ -135,7 +135,7 @@
             this.Copy_monster.BackColor = System.Drawing.Color.Firebrick;
             this.Copy_monster.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Copy_monster.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Copy_monster.Location = new System.Drawing.Point(137, 595);
+            this.Copy_monster.Location = new System.Drawing.Point(187, 595);
             this.Copy_monster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Copy_monster.Name = "Copy_monster";
             this.Copy_monster.Size = new System.Drawing.Size(123, 31);
@@ -179,7 +179,7 @@
             this.removeCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.removeCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeCreatureButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.removeCreatureButton.Location = new System.Drawing.Point(291, 595);
+            this.removeCreatureButton.Location = new System.Drawing.Point(378, 595);
             this.removeCreatureButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.removeCreatureButton.Name = "removeCreatureButton";
             this.removeCreatureButton.Size = new System.Drawing.Size(95, 31);
@@ -726,7 +726,7 @@
             this.strengthLabel.BackColor = System.Drawing.Color.Transparent;
             this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.strengthLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.strengthLabel.Location = new System.Drawing.Point(17, 247);
+            this.strengthLabel.Location = new System.Drawing.Point(20, 247);
             this.strengthLabel.Name = "strengthLabel";
             this.strengthLabel.Size = new System.Drawing.Size(42, 32);
             this.strengthLabel.TabIndex = 46;
@@ -738,7 +738,7 @@
             this.dexterityLabel.BackColor = System.Drawing.Color.Transparent;
             this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dexterityLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.dexterityLabel.Location = new System.Drawing.Point(77, 247);
+            this.dexterityLabel.Location = new System.Drawing.Point(100, 249);
             this.dexterityLabel.Name = "dexterityLabel";
             this.dexterityLabel.Size = new System.Drawing.Size(45, 32);
             this.dexterityLabel.TabIndex = 47;
@@ -750,7 +750,7 @@
             this.constitutionLabel.BackColor = System.Drawing.Color.Transparent;
             this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.constitutionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.constitutionLabel.Location = new System.Drawing.Point(136, 247);
+            this.constitutionLabel.Location = new System.Drawing.Point(180, 249);
             this.constitutionLabel.Name = "constitutionLabel";
             this.constitutionLabel.Size = new System.Drawing.Size(44, 32);
             this.constitutionLabel.TabIndex = 48;
@@ -762,7 +762,7 @@
             this.intelligenceLabel.BackColor = System.Drawing.Color.Transparent;
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.intelligenceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.intelligenceLabel.Location = new System.Drawing.Point(195, 247);
+            this.intelligenceLabel.Location = new System.Drawing.Point(260, 249);
             this.intelligenceLabel.Name = "intelligenceLabel";
             this.intelligenceLabel.Size = new System.Drawing.Size(35, 32);
             this.intelligenceLabel.TabIndex = 49;
@@ -774,7 +774,7 @@
             this.wisdomLabel.BackColor = System.Drawing.Color.Transparent;
             this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.wisdomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.wisdomLabel.Location = new System.Drawing.Point(255, 247);
+            this.wisdomLabel.Location = new System.Drawing.Point(340, 249);
             this.wisdomLabel.Name = "wisdomLabel";
             this.wisdomLabel.Size = new System.Drawing.Size(51, 32);
             this.wisdomLabel.TabIndex = 50;
@@ -786,7 +786,7 @@
             this.charismaLabel.BackColor = System.Drawing.Color.Transparent;
             this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.charismaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.charismaLabel.Location = new System.Drawing.Point(314, 247);
+            this.charismaLabel.Location = new System.Drawing.Point(420, 247);
             this.charismaLabel.Name = "charismaLabel";
             this.charismaLabel.Size = new System.Drawing.Size(44, 32);
             this.charismaLabel.TabIndex = 51;
@@ -820,7 +820,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.label2.Location = new System.Drawing.Point(306, 213);
+            this.label2.Location = new System.Drawing.Point(410, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 67;
@@ -868,7 +868,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.label3.Location = new System.Drawing.Point(247, 213);
+            this.label3.Location = new System.Drawing.Point(330, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 32);
             this.label3.TabIndex = 66;
@@ -880,7 +880,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.label4.Location = new System.Drawing.Point(128, 213);
+            this.label4.Location = new System.Drawing.Point(170, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 32);
             this.label4.TabIndex = 65;
@@ -892,7 +892,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.label5.Location = new System.Drawing.Point(69, 213);
+            this.label5.Location = new System.Drawing.Point(90, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 32);
             this.label5.TabIndex = 63;
@@ -904,7 +904,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.label6.Location = new System.Drawing.Point(187, 213);
+            this.label6.Location = new System.Drawing.Point(250, 215);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 64;
@@ -916,7 +916,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
-            this.label7.Location = new System.Drawing.Point(9, 213);
+            this.label7.Location = new System.Drawing.Point(10, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 32);
             this.label7.TabIndex = 62;
@@ -1029,7 +1029,7 @@
             // 
             this.descriptionLabel.Location = new System.Drawing.Point(17, 335);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(369, 249);
+            this.descriptionLabel.Size = new System.Drawing.Size(456, 249);
             this.descriptionLabel.TabIndex = 86;
             this.descriptionLabel.Text = "Description";
             // 
@@ -1071,9 +1071,9 @@
             this.div3Label.Location = new System.Drawing.Point(8, 275);
             this.div3Label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.div3Label.Name = "div3Label";
-            this.div3Label.Size = new System.Drawing.Size(399, 20);
+            this.div3Label.Size = new System.Drawing.Size(471, 20);
             this.div3Label.TabIndex = 83;
-            this.div3Label.Text = "_________________________________________________________________";
+            this.div3Label.Text = "_____________________________________________________________________________";
             // 
             // div2Label
             // 
@@ -1082,9 +1082,9 @@
             this.div2Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(62)))), ((int)(((byte)(46)))));
             this.div2Label.Location = new System.Drawing.Point(7, 193);
             this.div2Label.Name = "div2Label";
-            this.div2Label.Size = new System.Drawing.Size(399, 20);
+            this.div2Label.Size = new System.Drawing.Size(471, 20);
             this.div2Label.TabIndex = 82;
-            this.div2Label.Text = "_________________________________________________________________";
+            this.div2Label.Text = "_____________________________________________________________________________";
             // 
             // div1Label
             // 
@@ -1094,16 +1094,16 @@
             this.div1Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(62)))), ((int)(((byte)(46)))));
             this.div1Label.Location = new System.Drawing.Point(7, 47);
             this.div1Label.Name = "div1Label";
-            this.div1Label.Size = new System.Drawing.Size(399, 20);
+            this.div1Label.Size = new System.Drawing.Size(471, 20);
             this.div1Label.TabIndex = 80;
-            this.div1Label.Text = "_________________________________________________________________";
+            this.div1Label.Text = "_____________________________________________________________________________";
             // 
             // editMenuButton
             // 
             this.editMenuButton.BackColor = System.Drawing.Color.Firebrick;
             this.editMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editMenuButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.editMenuButton.Location = new System.Drawing.Point(9, 595);
+            this.editMenuButton.Location = new System.Drawing.Point(17, 595);
             this.editMenuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editMenuButton.Name = "editMenuButton";
             this.editMenuButton.Size = new System.Drawing.Size(98, 31);

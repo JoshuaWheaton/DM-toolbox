@@ -56,6 +56,9 @@ namespace GroupProject
             subtractHpButton.Hide();
             addTempHpButton.Hide();
             subtractTempHpButton.Hide();
+            RemoveStatus.Hide();
+            AddStatusEffect.Hide();
+            statusListBox.Hide();
         }
 
         //Sets the description box in a way which uses RTF
@@ -109,6 +112,9 @@ namespace GroupProject
                 statusListBox.DataSource = creature.StatusEffects;
                 addTempHpButton.Show();
                 subtractTempHpButton.Show();
+                RemoveStatus.Show();
+                AddStatusEffect.Show();
+                statusListBox.Show();
 
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
