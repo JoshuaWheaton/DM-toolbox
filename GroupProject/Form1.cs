@@ -12,9 +12,7 @@ namespace GroupProject
         private EditForm editForm;  // A EditForm variable editForm that allows functions to access members of the edit form
         private AddEntity AddForm;  // A AddEntity variable AddForm that allows functions to access members of the add form
         private AddStatusEffect AddStatus; //An AddStatusEffect variable that allows functions to create the Add Status Effect form
-        private int r=0, g=0, b=0;
-        private Rectangle OriginalRectangleEntity;
-        private Rectangle OriginalFormSize;
+        private int r = 0, g = 0, b = 0;
         private HPForm addHealth;
 
         // Constructor
@@ -77,7 +75,9 @@ namespace GroupProject
                 HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
                 addHpButton.Show();
                 subtractHpButton.Show();
-                
+                statusListBox.DataSource = null;
+                statusListBox.DataSource = creature.StatusEffects;
+
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
                 if (editForm != null)
@@ -97,7 +97,7 @@ namespace GroupProject
             }
         }
 
-        public void AddtoList( string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, int hp, byte ac)
+        public void AddtoCrtrList(string name, string description, byte strength, byte dexterity, byte constitution, byte intelligence, byte wisdom, byte charisma, byte initiative, int hp, byte ac)
         {
             Creature creature = new Creature(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, hp, ac, initiative);
             creature.SetInitiative(initiative);
@@ -109,6 +109,48 @@ namespace GroupProject
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
             sortCreatureList();
+        }
+
+        // Add a status effect to the status effect list
+        public void AddtoStatusList(StatusEffect newStatEffect)
+        {
+            Creature creature = (Creature)creatureListBox.SelectedItem;
+            creature.StatusEffects.Add(newStatEffect);
+            //Display the newly added status effect to the list
+            statusListBox.DataSource = null;
+            statusListBox.DataSource = creature.StatusEffects;
+        }
+
+        // Display information about status effect
+        public void displayEffectDetails(StatusEffect displayEffect)
+        {
+            displayEffect.DisplayStatusInfo();
+        }
+
+        // Show details of a status effect when it is double clicked
+        private void statusListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            StatusEffect selectedEffect = (StatusEffect)statusListBox.SelectedItem;
+            if (selectedEffect == null)
+            {
+                return; //If therer is no selected effect, return nothing
+            }
+
+            //Display selected status affect's details
+            selectedEffect.DisplayStatusInfo();
+        }
+
+        //Remove Status Effect from list
+        private void RemoveStatus_Click(object sender, EventArgs e)
+        {
+            Creature creature = (Creature)creatureListBox.SelectedItem;
+            StatusEffect selectedEffect = (StatusEffect)statusListBox.SelectedItem;
+            if (selectedEffect != null)
+            {
+                creature.StatusEffects.Remove(selectedEffect);
+                statusListBox.DataSource = null;
+                statusListBox.DataSource = creature.StatusEffects;
+            }
         }
 
         // A function called by the Edit Form popup form that sorts the creatures, and updates the listbox
@@ -831,10 +873,10 @@ namespace GroupProject
             AddStatus.Location = new Point(x, y);
 
             AddStatus.Show();
-         }
+        }
         private void setColor()
         {
-            prevRound.BackColor = Color.FromArgb(r,g,b);
+            prevRound.BackColor = Color.FromArgb(r, g, b);
             nextRound.BackColor = Color.FromArgb(r, g, b);
             sortEntitiesButton.BackColor = Color.FromArgb(r, g, b);
             Copy_monster.BackColor = Color.FromArgb(r, g, b);
@@ -844,7 +886,7 @@ namespace GroupProject
             button8.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
             AddStatusEffect.BackColor = Color.FromArgb(r, g, b);
-            addCreatureButton.BackColor = Color.FromArgb(r, g, b);
+            loadGroupButton.BackColor = Color.FromArgb(r, g, b);
             editMenuButton.BackColor = Color.FromArgb(r, g, b);
             saveCreatureButton.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
@@ -921,6 +963,35 @@ namespace GroupProject
 
                 addHealth.Show();
             }
+        }
+
+        private void NextTurn_Click(object sender, EventArgs e)
+        {
+            string saves = "";
+            Creature thisGuy = (Creature)creatureListBox.SelectedItem;
+            //Search the creature's status effect list and compile its EoT saves
+            saves = findEoTSaves(thisGuy.StatusEffects);
+            //If selected creature has a saving throw to make at the end of the turn, display alert
+            if(saves != "")
+            {
+                MessageBox.Show($"{thisGuy.GetName()} needs to make the following saving throw(s):\n" + saves);
+            }
+            //Progess the turn to the next creature
+                //Use a try/catch to set the index back to zero if it goes out of range
+            //Search the new creature's status effect list and compile its SoT saves
+            //Check if newly selected creature has a saving throw to make at the start of its turn
+
+        }
+
+        private string findEoTSaves(List<StatusEffect> effects)
+        {
+            string saveList = "";
+            foreach (StatusEffect effect in effects)
+            {
+                if(effect.EndOfTurn == true)
+                { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
+            }
+            return saveList;
         }
     }
 }

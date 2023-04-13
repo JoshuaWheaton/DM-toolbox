@@ -36,7 +36,7 @@ namespace GroupProject
             
 
             // Add the creature to the list
-            parentForm.AddtoList(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative, hp, ac);
+            parentForm.AddtoCrtrList(name, description, strength, dexterity, constitution, intelligence, wisdom, charisma, initiative, hp, ac);
 
             // Clear the form for the next creature
             nameTextBox.Clear();
