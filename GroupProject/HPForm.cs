@@ -13,12 +13,14 @@ namespace GroupProject
     public partial class HPForm : Form
     {
         private string changeType;
+        private string hpType;
         private bool isEdited = false;
-        public HPForm(string labelText, string changeType)
+        public HPForm(string labelText, string changeType, string hpType)
         {
             InitializeComponent();
             userPrompt.Text = labelText;
             this.changeType = changeType;
+            this.hpType = hpType;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,11 +35,25 @@ namespace GroupProject
 
                 if (changeType == "ADD")
                 {
-                    selectedCreature.SetHP(selectedCreature.GetCurrentHP() + healthChange);
+                    if (hpType == "NORMAL")
+                    {
+                        selectedCreature.SetHP(selectedCreature.GetCurrentHP() + healthChange);
+                    }
+                    else if(hpType == "TEMP")
+                    {
+                        selectedCreature.SetTempHP(selectedCreature.GetTempHP() + healthChange);
+                    }
                 }
                 else if (changeType == "SUB")
                 {
-                    selectedCreature.SetHP(selectedCreature.GetCurrentHP() - healthChange);
+                    if (hpType == "NORMAL")
+                    {
+                        selectedCreature.SetHP(selectedCreature.GetCurrentHP() - healthChange);
+                    }
+                    else if (hpType == "TEMP")
+                    {
+                        selectedCreature.SetTempHP(selectedCreature.GetTempHP() - healthChange);
+                    }
                 }
             }
             else

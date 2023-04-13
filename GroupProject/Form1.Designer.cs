@@ -117,6 +117,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.subtractTempHpButton = new System.Windows.Forms.Button();
+            this.addTempHpButton = new System.Windows.Forms.Button();
             this.menuGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
@@ -871,6 +873,8 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.AutoSize = true;
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.groupBox2.Controls.Add(this.subtractTempHpButton);
+            this.groupBox2.Controls.Add(this.addTempHpButton);
             this.groupBox2.Controls.Add(this.descriptionLabel);
             this.groupBox2.Controls.Add(this.name);
             this.groupBox2.Controls.Add(this.nameLabel);
@@ -1243,6 +1247,36 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
             // 
+            // subtractTempHpButton
+            // 
+            this.subtractTempHpButton.BackColor = System.Drawing.Color.Firebrick;
+            this.subtractTempHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subtractTempHpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.subtractTempHpButton.Location = new System.Drawing.Point(223, 138);
+            this.subtractTempHpButton.Name = "subtractTempHpButton";
+            this.subtractTempHpButton.Size = new System.Drawing.Size(29, 28);
+            this.subtractTempHpButton.TabIndex = 88;
+            this.subtractTempHpButton.Text = "-";
+            this.subtractTempHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.subtractTempHpButton.UseVisualStyleBackColor = false;
+            this.subtractTempHpButton.Visible = false;
+            this.subtractTempHpButton.Click += new System.EventHandler(this.subtractTempHpButton_Click);
+            // 
+            // addTempHpButton
+            // 
+            this.addTempHpButton.BackColor = System.Drawing.Color.Firebrick;
+            this.addTempHpButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addTempHpButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addTempHpButton.Location = new System.Drawing.Point(187, 138);
+            this.addTempHpButton.Name = "addTempHpButton";
+            this.addTempHpButton.Size = new System.Drawing.Size(29, 28);
+            this.addTempHpButton.TabIndex = 87;
+            this.addTempHpButton.Text = "+";
+            this.addTempHpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.addTempHpButton.UseVisualStyleBackColor = false;
+            this.addTempHpButton.Visible = false;
+            this.addTempHpButton.Click += new System.EventHandler(this.addTempHpButton_Click);
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1393,5 +1427,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private RichTextBox descriptionLabel;
+        private Button subtractTempHpButton;
+        private Button addTempHpButton;
     }
 }
