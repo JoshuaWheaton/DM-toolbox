@@ -79,6 +79,7 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.label2 = new System.Windows.Forms.Label();
+            this.NextTurn = new Systems.Windows.FormsButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -319,6 +320,20 @@
             this.loadCreatureListButton.Text = "Load Encounter";
             this.loadCreatureListButton.UseVisualStyleBackColor = false;
             this.loadCreatureListButton.Click += new System.EventHandler(this.loadCreatureListButton_Click);
+            // 
+            // AddStatusEffect
+            // 
+            this.AddStatusEffect.BackColor = Color.Firebrick;
+            this.AddStatusEffect.FlatStyle = FlatStyle.Flat;
+            this.AddStatusEffect.ForeColor = SystemColors.ControlLightLight;
+            this.AddStatusEffect.Location = new Point(399, 81);
+            this.AddStatusEffect.Margin = new Padding(3, 4, 3, 4);
+            this.AddStatusEffect.Name = "AddStatusEffect";
+            this.AddStatusEffect.Size = new Size(86, 31);
+            this.AddStatusEffect.TabIndex = 14;
+            this.AddStatusEffect.Text = "Add";
+            this.AddStatusEffect.UseVisualStyleBackColor = false;
+            this.AddStatusEffect.Click += AddStatusEffect_Click;
             // 
             // round1
             // 
@@ -765,7 +780,7 @@
             // 
             // saveFileDialog
             // 
-            this.saveFileDialog.FileName = "creatureTest";
+            saveFileDialog.FileName = "creatureTest";
             // 
             // openFileDialog
             // 
@@ -876,6 +891,9 @@
             this.groupBox2.Controls.Add(this.subtractTempHpButton);
             this.groupBox2.Controls.Add(this.addTempHpButton);
             this.groupBox2.Controls.Add(this.descriptionLabel);
+            this.groupBox2.Controls.Add(this.RemoveStatus);
+            this.groupBox2.Controls.Add(this.AddStatusEffect);
+            this.groupBox2.Controls.Add(this.statusListBox);
             this.groupBox2.Controls.Add(this.name);
             this.groupBox2.Controls.Add(this.nameLabel);
             this.groupBox2.Controls.Add(this.subtractHpButton);
@@ -912,6 +930,28 @@
             this.groupBox2.Size = new System.Drawing.Size(412, 653);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
+            // 
+            // RemoveStatus
+            // 
+            RemoveStatus.BackColor = Color.Firebrick;
+            RemoveStatus.FlatStyle = FlatStyle.Flat;
+            RemoveStatus.Location = new Point(401, 133);
+            RemoveStatus.Name = "RemoveStatus";
+            RemoveStatus.Size = new Size(84, 29);
+            RemoveStatus.TabIndex = 1;
+            RemoveStatus.Text = "Remove";
+            RemoveStatus.UseVisualStyleBackColor = false;
+            RemoveStatus.Click += RemoveStatus_Click;
+             // 
+            // statusListBox
+            // 
+            statusListBox.FormattingEnabled = true;
+            statusListBox.ItemHeight = 20;
+            statusListBox.Location = new Point(261, 75);
+            statusListBox.Name = "statusListBox";
+            statusListBox.Size = new Size(134, 124);
+            statusListBox.TabIndex = 0;
+            statusListBox.MouseDoubleClick += statusListBox_MouseDoubleClick;
             // 
             // descriptionLabel
             // 
@@ -1104,6 +1144,7 @@
             this.entityListGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.entityListGroupBox.Controls.Add(this.creatureListBox);
             this.entityListGroupBox.Controls.Add(this.sortEntitiesButton);
+            this.entityListGroupBox.Controls.Add(this.NextTurn);
             this.entityListGroupBox.Location = new System.Drawing.Point(31, 152);
             this.entityListGroupBox.Name = "entityListGroupBox";
             this.entityListGroupBox.Size = new System.Drawing.Size(274, 644);
@@ -1334,7 +1375,6 @@
             this.Color_choices.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -1423,6 +1463,9 @@
         private Button addHpButton;
         private Button subtractHpButton;
         private Button loadGroupButton;
+        private ListBox statusListBox;
+        private Button RemoveStatus;
+        private Button NextTurn;
         private Button Change_Pic;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;

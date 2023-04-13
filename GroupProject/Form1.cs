@@ -105,6 +105,8 @@ namespace GroupProject
                 HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
                 addHpButton.Show();
                 subtractHpButton.Show();
+                statusListBox.DataSource = null;
+                statusListBox.DataSource = creature.StatusEffects;
                 addTempHpButton.Show();
                 subtractTempHpButton.Show();
 
@@ -138,6 +140,48 @@ namespace GroupProject
             creatureListBox.DataSource = null;
             creatureListBox.DataSource = creatureList;
             sortCreatureList();
+        }
+
+        // Add a status effect to the status effect list
+        public void AddtoStatusList(StatusEffect newStatEffect)
+        {
+            Creature creature = (Creature)creatureListBox.SelectedItem;
+            creature.StatusEffects.Add(newStatEffect);
+            //Display the newly added status effect to the list
+            statusListBox.DataSource = null;
+            statusListBox.DataSource = creature.StatusEffects;
+        }
+
+        // Display information about status effect
+        public void displayEffectDetails(StatusEffect displayEffect)
+        {
+            displayEffect.DisplayStatusInfo();
+        }
+
+        // Show details of a status effect when it is double clicked
+        private void statusListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            StatusEffect selectedEffect = (StatusEffect)statusListBox.SelectedItem;
+            if (selectedEffect == null)
+            {
+                return; //If therer is no selected effect, return nothing
+            }
+
+            //Display selected status affect's details
+            selectedEffect.DisplayStatusInfo();
+        }
+
+        //Remove Status Effect from list
+        private void RemoveStatus_Click(object sender, EventArgs e)
+        {
+            Creature creature = (Creature)creatureListBox.SelectedItem;
+            StatusEffect selectedEffect = (StatusEffect)statusListBox.SelectedItem;
+            if (selectedEffect != null)
+            {
+                creature.StatusEffects.Remove(selectedEffect);
+                statusListBox.DataSource = null;
+                statusListBox.DataSource = creature.StatusEffects;
+            }
         }
 
         // A function called by the Edit Form popup form that sorts the creatures, and updates the listbox
@@ -719,7 +763,6 @@ namespace GroupProject
 
             AddStatus.Show();
         }
-
         //Gets currently selected rgb values and sets all the buttons to that color
         private void setColor()
         {
@@ -734,6 +777,7 @@ namespace GroupProject
             monsterButton.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
             AddStatusEffect.BackColor = Color.FromArgb(r, g, b);
+            loadGroupButton.BackColor = Color.FromArgb(r, g, b);
             editMenuButton.BackColor = Color.FromArgb(r, g, b);
             saveCreatureButton.BackColor = Color.FromArgb(r, g, b);
             loadCreatureListButton.BackColor = Color.FromArgb(r, g, b);
@@ -945,6 +989,35 @@ namespace GroupProject
 
                 addHealth.Show();
             }
+        }
+
+        private void NextTurn_Click(object sender, EventArgs e)
+        {
+            string saves = "";
+            Creature thisGuy = (Creature)creatureListBox.SelectedItem;
+            //Search the creature's status effect list and compile its EoT saves
+            saves = findEoTSaves(thisGuy.StatusEffects);
+            //If selected creature has a saving throw to make at the end of the turn, display alert
+            if(saves != "")
+            {
+                MessageBox.Show($"{thisGuy.GetName()} needs to make the following saving throw(s):\n" + saves);
+            }
+            //Progess the turn to the next creature
+                //Use a try/catch to set the index back to zero if it goes out of range
+            //Search the new creature's status effect list and compile its SoT saves
+            //Check if newly selected creature has a saving throw to make at the start of its turn
+
+        }
+
+        private string findEoTSaves(List<StatusEffect> effects)
+        {
+            string saveList = "";
+            foreach (StatusEffect effect in effects)
+            {
+                if(effect.EndOfTurn == true)
+                { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
+            }
+            return saveList;
         }
     }
 }
