@@ -53,5 +53,20 @@ namespace GroupProject
 
             parentForm.editButton_Click(sender, e);
         }
+
+        //Function to handle enter key to add new creature to creature list as well as escape key to close form.
+        private void Enter_keypress(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                AddButton_Click(sender, e);
+                
+            }
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

@@ -19,14 +19,16 @@ namespace GroupProject
         private byte Cha; // Charisma Score, value from 1-30
 
         //Miscellaneous combat attributes: Movement Speed, Armor Class, Size, Description, Name, Initiative
-        private int Move;   // Movement Speed
         private byte AC;    // Armor Class
-        private byte Size;  // Creature Size. 1 = Tiny, 2 = Small, 3 = Medium, 4 = Large, 5 = Huge, 6 = Gargantuan
                             // Used for a switch case to determine hitpoints during creature creation
         private string? Description; // Misc descriptions
         private string? Name;        // Creature name
         private byte Initiative;     // Place in initiative
 
+        //Set up list of status effect objects so that status effects can be added
+        public List<StatusEffect> StatusEffects = new List<StatusEffect>();
+
+        //Calculates ability modifier given an ability score
         public int abilityScoreModifier(byte statScore)
         {
             int statInt = (int)statScore;
@@ -184,16 +186,7 @@ namespace GroupProject
 
         }
 
-        public void updateVals()
-        {
-            //Removed because the add creature box now has section for HP and AC
-            int tempDex = Dex;
-            int tempCon = Con;
-            //AC = (byte)(10 + ((tempDex - 10) / 2));
-            //MaxHP = (tempCon - 10) / 2;
-            //CurrentHP = MaxHP;
-        }
-
+        //To string override
         public override string? ToString()
         {
             return Name;
@@ -207,11 +200,33 @@ namespace GroupProject
     }
 
     //Status Effect class declaration
-    class StatusEffect
+    public class StatusEffect
     {
-        private string Name = "";
-        private string Description = "";
-        private byte Duration = 0;      //Duration in rounds
+        //Name of the status effect
+        public string Name = "";
+
+        //Additional details about what the status effect does
+        private string OtherEffects = "";
+
+        //Duration in rounds
+        private byte Duration = 0;
+
+        //Type of Saving throw
+        public string saveType = "";
+
+        //Saving Throw DC
+        public byte saveDC = 0;
+
+        //Checkboxes for when the afflicted creaature gets a saving throw to end the effect
+        //Made public to implement search functions
+        public bool StartOfTurn
+        { get; set; }
+        public bool EndOfTurn
+        { get; set; }
+        public bool WhenDamaged
+        { get; set; }
+
+        //Status Conditions
         private bool Blinded
         { get; set; }
         private bool Charmed
@@ -241,14 +256,19 @@ namespace GroupProject
         private bool Unconscious
         { get; set; }
 
-        public StatusEffect(string name, string description, byte duration, bool blinded, bool charmed,
-                            bool deafened, bool frightened, bool grappled, bool incapacitated, bool invisible,
-                            bool paralyzed, bool petrified, bool poisoned, bool prone, bool restrained,
-                            bool stunned, bool unconscious)
+        public StatusEffect(string name, byte duration, bool SoT, bool EoT, bool onDmg, string svType, byte svDC, string otherFx,
+                            bool blinded, bool charmed, bool deafened, bool frightened, bool grappled,
+                            bool incapacitated, bool invisible, bool paralyzed, bool petrified, bool poisoned,
+                            bool prone, bool restrained, bool stunned, bool unconscious)
         {
             Name = name;
-            Description = description;
             Duration = duration;
+            StartOfTurn = SoT;
+            EndOfTurn = EoT;
+            WhenDamaged = onDmg;
+            saveType = svType;
+            saveDC = svDC;
+            OtherEffects = otherFx;
             Blinded = blinded;
             Charmed = charmed;
             Deafened = deafened;
@@ -263,6 +283,68 @@ namespace GroupProject
             Restrained = restrained;
             Stunned = stunned;
             Unconscious = unconscious;
+        }
+
+        public void DisplayStatusInfo()
+        {
+            //Test Name Box
+            string displayStrn = Name + '\n';
+
+            //Test Duration
+            displayStrn += $"\nDuration: {Duration} rounds\n";
+
+            //Test Saving Throw DC
+            displayStrn += $"\nDC {saveDC} {saveType} Save";
+
+            //Test Saving Throw Checkboxes
+            displayStrn += "\nSaving Throw Conditions:\n";
+            if (StartOfTurn)
+            { displayStrn += "Save at start of turn\n"; }
+            if (EndOfTurn)
+            { displayStrn += "Save at end of turn\n"; }
+            if (WhenDamaged)
+            { displayStrn += "Save on damage\n"; }
+
+            //Test OtherEffects Box
+            displayStrn += $"\nOther Effects:\n{OtherEffects}\n";
+
+            //Test Condition Checkboxes
+            displayStrn += "\nStatus Conditions:\n";
+            if (Blinded)
+            { displayStrn += "Blinded\n"; }
+            if (Charmed)
+            { displayStrn += "Charmed\n"; }
+            if (Deafened)
+            { displayStrn += "Deafened\n"; }
+            if (Frightened)
+            { displayStrn += "Frightened\n"; }
+            if (Grappled)
+            { displayStrn += "Grappled\n"; }
+            if (Incapacitated)
+            { displayStrn += "Incapacitated\n"; }
+            if (Invisible)
+            { displayStrn += "Invisible\n"; }
+            if (Paralyzed)
+            { displayStrn += "Paralyzed\n"; }
+            if (Petrified)
+            { displayStrn += "Petrified\n"; }
+            if (Poisoned)
+            { displayStrn += "Poisoned\n"; }
+            if (Prone)
+            { displayStrn += "Prone\n"; }
+            if (Restrained)
+            { displayStrn += "Restrained\n"; }
+            if (Stunned)
+            { displayStrn += "Stunned\n"; }
+            if (Unconscious)
+            { displayStrn += "Unconscious\n"; }
+
+            MessageBox.Show($"{displayStrn}");
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 

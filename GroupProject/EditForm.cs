@@ -15,7 +15,7 @@ namespace GroupProject
 {
     public partial class EditForm : Form
     {
-        
+
         // Constructor
         public EditForm()
         {
@@ -46,14 +46,23 @@ namespace GroupProject
             selectedCreature.SetCha((byte)charismaNumericUpDown.Value);
             selectedCreature.SetInitiative((byte)initiativeNumericUpDown.Value);
             selectedCreature.SetMaxHP((byte)hitPointsNumericUpDown.Value);
-            if(selectedCreature.GetCurrentHP() > selectedCreature.GetMaxHP()) { selectedCreature.SetHP((byte)hitPointsNumericUpDown.Value); }
+            if (selectedCreature.GetCurrentHP() > selectedCreature.GetMaxHP()) { selectedCreature.SetHP((byte)hitPointsNumericUpDown.Value); }
             selectedCreature.SetAC((byte)acNumericUpDown.Value);
-            selectedCreature.updateVals();
 
             parentForm.editButton_Click(sender, e);
 
             // After the user edits the creature, close the pop up
+            parentForm.sortCreatureList();
             this.Close();
+        }
+
+        private void Enter_keypress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                editButton_Click(sender, e);
+            }
         }
     }
 }

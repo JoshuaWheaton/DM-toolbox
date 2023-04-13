@@ -32,30 +32,36 @@
             OtherEffectsLabel = new Label();
             StatusDurationLabel = new Label();
             ConditionsBox = new GroupBox();
+            Unconscious = new CheckBox();
+            Stunned = new CheckBox();
+            Restrained = new CheckBox();
+            Prone = new CheckBox();
+            Poisoned = new CheckBox();
+            Petrified = new CheckBox();
+            Paralyzed = new CheckBox();
+            Invisible = new CheckBox();
+            Incapacitated = new CheckBox();
+            Grappled = new CheckBox();
+            Frightened = new CheckBox();
+            Deafened = new CheckBox();
             Charmed = new CheckBox();
             Blinded = new CheckBox();
             StatusNameBox = new TextBox();
             OtherEffectsBox = new TextBox();
             StatusDuration = new NumericUpDown();
-            Deafened = new CheckBox();
-            Frightened = new CheckBox();
-            Grappled = new CheckBox();
-            Incapacitated = new CheckBox();
-            Invisible = new CheckBox();
-            Paralyzed = new CheckBox();
-            Petrified = new CheckBox();
-            Poisoned = new CheckBox();
-            Prone = new CheckBox();
-            Restrained = new CheckBox();
-            Stunned = new CheckBox();
-            Unconscious = new CheckBox();
-            EndOfTurn = new CheckBox();
+            SvEndOfTurn = new CheckBox();
             SavingThrowBox = new GroupBox();
-            StartOfTurn = new CheckBox();
-            checkBox1 = new CheckBox();
+            SaveDCLabel = new Label();
+            SaveDCBox = new NumericUpDown();
+            AddStatusButton = new Button();
+            SvOnDmg = new CheckBox();
+            SvStartOfTurn = new CheckBox();
+            SaveStatLabel = new Label();
+            SaveStatBox = new TextBox();
             ConditionsBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)StatusDuration).BeginInit();
             SavingThrowBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SaveDCBox).BeginInit();
             SuspendLayout();
             // 
             // StatusName
@@ -108,6 +114,138 @@
             ConditionsBox.TabStop = false;
             ConditionsBox.Text = "Conditions";
             // 
+            // Unconscious
+            // 
+            Unconscious.AccessibleDescription = "";
+            Unconscious.AutoSize = true;
+            Unconscious.Location = new Point(144, 199);
+            Unconscious.Name = "Unconscious";
+            Unconscious.Size = new Size(113, 24);
+            Unconscious.TabIndex = 18;
+            Unconscious.Text = "Unconscious";
+            Unconscious.UseVisualStyleBackColor = true;
+            // 
+            // Stunned
+            // 
+            Stunned.AccessibleDescription = "";
+            Stunned.AutoSize = true;
+            Stunned.Location = new Point(144, 169);
+            Stunned.Name = "Stunned";
+            Stunned.Size = new Size(85, 24);
+            Stunned.TabIndex = 17;
+            Stunned.Text = "Stunned";
+            Stunned.UseVisualStyleBackColor = true;
+            // 
+            // Restrained
+            // 
+            Restrained.AccessibleDescription = "";
+            Restrained.AutoSize = true;
+            Restrained.Location = new Point(144, 139);
+            Restrained.Name = "Restrained";
+            Restrained.Size = new Size(101, 24);
+            Restrained.TabIndex = 16;
+            Restrained.Text = "Restrained";
+            Restrained.UseVisualStyleBackColor = true;
+            // 
+            // Prone
+            // 
+            Prone.AccessibleDescription = "";
+            Prone.AutoSize = true;
+            Prone.Location = new Point(144, 109);
+            Prone.Name = "Prone";
+            Prone.Size = new Size(69, 24);
+            Prone.TabIndex = 15;
+            Prone.Text = "Prone";
+            Prone.UseVisualStyleBackColor = true;
+            // 
+            // Poisoned
+            // 
+            Poisoned.AccessibleDescription = "";
+            Poisoned.AutoSize = true;
+            Poisoned.Location = new Point(144, 79);
+            Poisoned.Name = "Poisoned";
+            Poisoned.Size = new Size(91, 24);
+            Poisoned.TabIndex = 14;
+            Poisoned.Text = "Poisoned";
+            Poisoned.UseVisualStyleBackColor = true;
+            // 
+            // Petrified
+            // 
+            Petrified.AccessibleDescription = "";
+            Petrified.AutoSize = true;
+            Petrified.Location = new Point(144, 49);
+            Petrified.Name = "Petrified";
+            Petrified.Size = new Size(86, 24);
+            Petrified.TabIndex = 13;
+            Petrified.Text = "Petrified";
+            Petrified.UseVisualStyleBackColor = true;
+            // 
+            // Paralyzed
+            // 
+            Paralyzed.AccessibleDescription = "";
+            Paralyzed.AutoSize = true;
+            Paralyzed.Location = new Point(144, 22);
+            Paralyzed.Name = "Paralyzed";
+            Paralyzed.Size = new Size(94, 24);
+            Paralyzed.TabIndex = 12;
+            Paralyzed.Text = "Paralyzed";
+            Paralyzed.UseVisualStyleBackColor = true;
+            // 
+            // Invisible
+            // 
+            Invisible.AccessibleDescription = "";
+            Invisible.AutoSize = true;
+            Invisible.Location = new Point(7, 199);
+            Invisible.Name = "Invisible";
+            Invisible.Size = new Size(85, 24);
+            Invisible.TabIndex = 11;
+            Invisible.Text = "Invisible";
+            Invisible.UseVisualStyleBackColor = true;
+            // 
+            // Incapacitated
+            // 
+            Incapacitated.AccessibleDescription = "";
+            Incapacitated.AutoSize = true;
+            Incapacitated.Location = new Point(7, 169);
+            Incapacitated.Name = "Incapacitated";
+            Incapacitated.Size = new Size(121, 24);
+            Incapacitated.TabIndex = 10;
+            Incapacitated.Text = "Incapacitated";
+            Incapacitated.UseVisualStyleBackColor = true;
+            // 
+            // Grappled
+            // 
+            Grappled.AccessibleDescription = "";
+            Grappled.AutoSize = true;
+            Grappled.Location = new Point(6, 139);
+            Grappled.Name = "Grappled";
+            Grappled.Size = new Size(93, 24);
+            Grappled.TabIndex = 9;
+            Grappled.Text = "Grappled";
+            Grappled.UseVisualStyleBackColor = true;
+            // 
+            // Frightened
+            // 
+            Frightened.AccessibleDescription = "";
+            Frightened.AutoSize = true;
+            Frightened.Location = new Point(6, 109);
+            Frightened.Name = "Frightened";
+            Frightened.Size = new Size(102, 24);
+            Frightened.TabIndex = 8;
+            Frightened.Text = "Frightened";
+            Frightened.UseVisualStyleBackColor = true;
+            // 
+            // Deafened
+            // 
+            Deafened.AccessibleDescription = "";
+            Deafened.AutoSize = true;
+            Deafened.Location = new Point(6, 79);
+            Deafened.Name = "Deafened";
+            Deafened.Size = new Size(96, 24);
+            Deafened.TabIndex = 7;
+            Deafened.Text = "Deafened";
+            Deafened.UseVisualStyleBackColor = true;
+            // 
             // Charmed
             // 
             Charmed.AccessibleDescription = "";
@@ -152,153 +290,26 @@
             StatusDuration.Size = new Size(55, 27);
             StatusDuration.TabIndex = 6;
             // 
-            // Deafened
+            // SvEndOfTurn
             // 
-            Deafened.AccessibleDescription = "";
-            Deafened.AutoSize = true;
-            Deafened.Location = new Point(6, 79);
-            Deafened.Name = "Deafened";
-            Deafened.Size = new Size(96, 24);
-            Deafened.TabIndex = 7;
-            Deafened.Text = "Deafened";
-            Deafened.UseVisualStyleBackColor = true;
-            // 
-            // Frightened
-            // 
-            Frightened.AccessibleDescription = "";
-            Frightened.AutoSize = true;
-            Frightened.Location = new Point(6, 109);
-            Frightened.Name = "Frightened";
-            Frightened.Size = new Size(102, 24);
-            Frightened.TabIndex = 8;
-            Frightened.Text = "Frightened";
-            Frightened.UseVisualStyleBackColor = true;
-            // 
-            // Grappled
-            // 
-            Grappled.AccessibleDescription = "";
-            Grappled.AutoSize = true;
-            Grappled.Location = new Point(6, 139);
-            Grappled.Name = "Grappled";
-            Grappled.Size = new Size(93, 24);
-            Grappled.TabIndex = 9;
-            Grappled.Text = "Grappled";
-            Grappled.UseVisualStyleBackColor = true;
-            // 
-            // Incapacitated
-            // 
-            Incapacitated.AccessibleDescription = "";
-            Incapacitated.AutoSize = true;
-            Incapacitated.Location = new Point(7, 169);
-            Incapacitated.Name = "Incapacitated";
-            Incapacitated.Size = new Size(121, 24);
-            Incapacitated.TabIndex = 10;
-            Incapacitated.Text = "Incapacitated";
-            Incapacitated.UseVisualStyleBackColor = true;
-            // 
-            // Invisible
-            // 
-            Invisible.AccessibleDescription = "";
-            Invisible.AutoSize = true;
-            Invisible.Location = new Point(7, 199);
-            Invisible.Name = "Invisible";
-            Invisible.Size = new Size(85, 24);
-            Invisible.TabIndex = 11;
-            Invisible.Text = "Invisible";
-            Invisible.UseVisualStyleBackColor = true;
-            // 
-            // Paralyzed
-            // 
-            Paralyzed.AccessibleDescription = "";
-            Paralyzed.AutoSize = true;
-            Paralyzed.Location = new Point(144, 22);
-            Paralyzed.Name = "Paralyzed";
-            Paralyzed.Size = new Size(94, 24);
-            Paralyzed.TabIndex = 12;
-            Paralyzed.Text = "Paralyzed";
-            Paralyzed.UseVisualStyleBackColor = true;
-            // 
-            // Petrified
-            // 
-            Petrified.AccessibleDescription = "";
-            Petrified.AutoSize = true;
-            Petrified.Location = new Point(144, 49);
-            Petrified.Name = "Petrified";
-            Petrified.Size = new Size(86, 24);
-            Petrified.TabIndex = 13;
-            Petrified.Text = "Petrified";
-            Petrified.UseVisualStyleBackColor = true;
-            // 
-            // Poisoned
-            // 
-            Poisoned.AccessibleDescription = "";
-            Poisoned.AutoSize = true;
-            Poisoned.Location = new Point(144, 79);
-            Poisoned.Name = "Poisoned";
-            Poisoned.Size = new Size(91, 24);
-            Poisoned.TabIndex = 14;
-            Poisoned.Text = "Poisoned";
-            Poisoned.UseVisualStyleBackColor = true;
-            // 
-            // Prone
-            // 
-            Prone.AccessibleDescription = "";
-            Prone.AutoSize = true;
-            Prone.Location = new Point(144, 109);
-            Prone.Name = "Prone";
-            Prone.Size = new Size(69, 24);
-            Prone.TabIndex = 15;
-            Prone.Text = "Prone";
-            Prone.UseVisualStyleBackColor = true;
-            // 
-            // Restrained
-            // 
-            Restrained.AccessibleDescription = "";
-            Restrained.AutoSize = true;
-            Restrained.Location = new Point(144, 139);
-            Restrained.Name = "Restrained";
-            Restrained.Size = new Size(101, 24);
-            Restrained.TabIndex = 16;
-            Restrained.Text = "Restrained";
-            Restrained.UseVisualStyleBackColor = true;
-            // 
-            // Stunned
-            // 
-            Stunned.AccessibleDescription = "";
-            Stunned.AutoSize = true;
-            Stunned.Location = new Point(144, 169);
-            Stunned.Name = "Stunned";
-            Stunned.Size = new Size(85, 24);
-            Stunned.TabIndex = 17;
-            Stunned.Text = "Stunned";
-            Stunned.UseVisualStyleBackColor = true;
-            // 
-            // Unconscious
-            // 
-            Unconscious.AccessibleDescription = "";
-            Unconscious.AutoSize = true;
-            Unconscious.Location = new Point(144, 199);
-            Unconscious.Name = "Unconscious";
-            Unconscious.Size = new Size(113, 24);
-            Unconscious.TabIndex = 18;
-            Unconscious.Text = "Unconscious";
-            Unconscious.UseVisualStyleBackColor = true;
-            // 
-            // EndOfTurn
-            // 
-            EndOfTurn.AutoSize = true;
-            EndOfTurn.Location = new Point(6, 49);
-            EndOfTurn.Name = "EndOfTurn";
-            EndOfTurn.Size = new Size(107, 24);
-            EndOfTurn.TabIndex = 7;
-            EndOfTurn.Text = "End of Turn";
-            EndOfTurn.UseVisualStyleBackColor = true;
+            SvEndOfTurn.AutoSize = true;
+            SvEndOfTurn.Location = new Point(6, 125);
+            SvEndOfTurn.Name = "SvEndOfTurn";
+            SvEndOfTurn.Size = new Size(107, 24);
+            SvEndOfTurn.TabIndex = 7;
+            SvEndOfTurn.Text = "End of Turn";
+            SvEndOfTurn.UseVisualStyleBackColor = true;
             // 
             // SavingThrowBox
             // 
-            SavingThrowBox.Controls.Add(checkBox1);
-            SavingThrowBox.Controls.Add(StartOfTurn);
-            SavingThrowBox.Controls.Add(EndOfTurn);
+            SavingThrowBox.Controls.Add(SaveStatBox);
+            SavingThrowBox.Controls.Add(SaveStatLabel);
+            SavingThrowBox.Controls.Add(SaveDCLabel);
+            SavingThrowBox.Controls.Add(SaveDCBox);
+            SavingThrowBox.Controls.Add(AddStatusButton);
+            SavingThrowBox.Controls.Add(SvOnDmg);
+            SavingThrowBox.Controls.Add(SvStartOfTurn);
+            SavingThrowBox.Controls.Add(SvEndOfTurn);
             SavingThrowBox.Location = new Point(209, 9);
             SavingThrowBox.Name = "SavingThrowBox";
             SavingThrowBox.Size = new Size(136, 230);
@@ -306,27 +317,72 @@
             SavingThrowBox.TabStop = false;
             SavingThrowBox.Text = "Saving Throws";
             // 
-            // StartOfTurn
+            // SaveDCLabel
             // 
-            StartOfTurn.AccessibleDescription = "";
-            StartOfTurn.AutoSize = true;
-            StartOfTurn.Location = new Point(6, 22);
-            StartOfTurn.Name = "StartOfTurn";
-            StartOfTurn.Size = new Size(113, 24);
-            StartOfTurn.TabIndex = 8;
-            StartOfTurn.Text = "Start of Turn";
-            StartOfTurn.UseVisualStyleBackColor = true;
+            SaveDCLabel.AutoSize = true;
+            SaveDCLabel.Location = new Point(6, 60);
+            SaveDCLabel.Name = "SaveDCLabel";
+            SaveDCLabel.Size = new Size(67, 20);
+            SaveDCLabel.TabIndex = 11;
+            SaveDCLabel.Text = "Save DC:";
             // 
-            // checkBox1
+            // SaveDCBox
             // 
-            checkBox1.AccessibleDescription = "";
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 79);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(109, 24);
-            checkBox1.TabIndex = 9;
-            checkBox1.Text = "On damage";
-            checkBox1.UseVisualStyleBackColor = true;
+            SaveDCBox.Location = new Point(79, 58);
+            SaveDCBox.Name = "SaveDCBox";
+            SaveDCBox.Size = new Size(40, 27);
+            SaveDCBox.TabIndex = 10;
+            // 
+            // AddStatusButton
+            // 
+            AddStatusButton.BackColor = Color.Firebrick;
+            AddStatusButton.FlatStyle = FlatStyle.Flat;
+            AddStatusButton.ForeColor = SystemColors.ControlLight;
+            AddStatusButton.Location = new Point(6, 194);
+            AddStatusButton.Name = "AddStatusButton";
+            AddStatusButton.Size = new Size(124, 29);
+            AddStatusButton.TabIndex = 9;
+            AddStatusButton.Text = "Add Status";
+            AddStatusButton.UseVisualStyleBackColor = false;
+            AddStatusButton.Click += AddStatusButton_Click;
+            // 
+            // SvOnDmg
+            // 
+            SvOnDmg.AccessibleDescription = "";
+            SvOnDmg.AutoSize = true;
+            SvOnDmg.Location = new Point(6, 155);
+            SvOnDmg.Name = "SvOnDmg";
+            SvOnDmg.Size = new Size(109, 24);
+            SvOnDmg.TabIndex = 9;
+            SvOnDmg.Text = "On damage";
+            SvOnDmg.UseVisualStyleBackColor = true;
+            // 
+            // SvStartOfTurn
+            // 
+            SvStartOfTurn.AccessibleDescription = "";
+            SvStartOfTurn.AutoSize = true;
+            SvStartOfTurn.Location = new Point(6, 95);
+            SvStartOfTurn.Name = "SvStartOfTurn";
+            SvStartOfTurn.Size = new Size(113, 24);
+            SvStartOfTurn.TabIndex = 8;
+            SvStartOfTurn.Text = "Start of Turn";
+            SvStartOfTurn.UseVisualStyleBackColor = true;
+            // 
+            // SaveStatLabel
+            // 
+            SaveStatLabel.AutoSize = true;
+            SaveStatLabel.Location = new Point(6, 30);
+            SaveStatLabel.Name = "SaveStatLabel";
+            SaveStatLabel.Size = new Size(73, 20);
+            SaveStatLabel.TabIndex = 12;
+            SaveStatLabel.Text = "Save Stat:";
+            // 
+            // SaveStatBox
+            // 
+            SaveStatBox.Location = new Point(79, 26);
+            SaveStatBox.Name = "SaveStatBox";
+            SaveStatBox.Size = new Size(40, 27);
+            SaveStatBox.TabIndex = 13;
             // 
             // AddStatusEffect
             // 
@@ -349,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)StatusDuration).EndInit();
             SavingThrowBox.ResumeLayout(false);
             SavingThrowBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SaveDCBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -376,9 +433,14 @@
         private CheckBox Grappled;
         private CheckBox Frightened;
         private CheckBox Deafened;
-        private CheckBox EndOfTurn;
+        private CheckBox SvEndOfTurn;
         private GroupBox SavingThrowBox;
-        private CheckBox checkBox1;
-        private CheckBox StartOfTurn;
+        private CheckBox SvOnDmg;
+        private CheckBox SvStartOfTurn;
+        private Button AddStatusButton;
+        private Label SaveDCLabel;
+        private NumericUpDown SaveDCBox;
+        private TextBox SaveStatBox;
+        private Label SaveStatLabel;
     }
 }
