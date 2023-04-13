@@ -371,7 +371,6 @@
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "EditForm";
             this.Text = "EditForm";
-            this.Load += new System.EventHandler(this.EditForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_keypress);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();

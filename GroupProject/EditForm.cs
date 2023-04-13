@@ -56,11 +56,6 @@ namespace GroupProject
             this.Close();
         }
 
-        private void EditForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Enter_keypress(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

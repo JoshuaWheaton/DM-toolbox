@@ -34,6 +34,7 @@ namespace GroupProject
         {
             Creature creature = creatureListBox.SelectedItem as Creature;
             HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
+            tempHPLabel.Text = creature.GetTempHP().ToString();
         }
 
         // Function that clears out all info displayed in the information groupbox
@@ -53,6 +54,8 @@ namespace GroupProject
             charismaLabel.Text = "";
             addHpButton.Hide();
             subtractHpButton.Hide();
+            addTempHpButton.Hide();
+            subtractTempHpButton.Hide();
         }
 
         //Sets the description box in a way which uses RTF
@@ -102,6 +105,8 @@ namespace GroupProject
                 HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
                 addHpButton.Show();
                 subtractHpButton.Show();
+                addTempHpButton.Show();
+                subtractTempHpButton.Show();
 
                 // If the edit popup form is open, update it with the values of the
                 // selected creature, so it can be edited
@@ -834,13 +839,67 @@ namespace GroupProject
             monsterForm.Show();
         }
 
+        //Pops up temp hp form
+        private void addTempHpButton_Click(object sender, EventArgs e)
+        {
+            if (creatureListBox.SelectedItem != null)
+            {
+                // Create a new instance of the HpForm
+                addHealth = new HPForm("How much would like to increase the health by?", "ADD", "TEMP");
+
+                // Make the popup a child of the main form
+                addHealth.Owner = this;
+
+                // Display the EditForm as a modal dialog box
+                // Create a screen object to determine which monitor the mainGUI is on
+                Screen screen = Screen.FromControl(this);
+
+                // Calculate the position of the pop-up form on the same screen
+                int x = screen.WorkingArea.Right - addHealth.Width * 2;
+                int y = screen.WorkingArea.Bottom - addHealth.Height * 2;
+
+                // Set the start position and location of the pop-up form
+                addHealth.StartPosition = FormStartPosition.Manual;
+                addHealth.Location = new Point(x, y);
+
+                addHealth.Show();
+            }
+        }
+
+        //Pops up temp hp form
+        private void subtractTempHpButton_Click(object sender, EventArgs e)
+        {
+            if (creatureListBox.SelectedItem != null)
+            {
+                // Create a new instance of the HpForm
+                addHealth = new HPForm("How much would like to decrease the health by?", "SUB", "TEMP");
+
+                // Make the popup a child of the main form
+                addHealth.Owner = this;
+
+                // Display the EditForm as a modal dialog box
+                // Create a screen object to determine which monitor the mainGUI is on
+                Screen screen = Screen.FromControl(this);
+
+                // Calculate the position of the pop-up form on the same screen
+                int x = screen.WorkingArea.Right - addHealth.Width * 2;
+                int y = screen.WorkingArea.Bottom - addHealth.Height * 2;
+
+                // Set the start position and location of the pop-up form
+                addHealth.StartPosition = FormStartPosition.Manual;
+                addHealth.Location = new Point(x, y);
+
+                addHealth.Show();
+            }
+        }
+
         //Opens up add health form
         private void addHpButton_Click(object sender, EventArgs e)
         {
             if (creatureListBox.SelectedItem != null)
             {
                 // Create a new instance of the HpForm
-                addHealth = new HPForm("How much would like to increase the health by?", "ADD");
+                addHealth = new HPForm("How much would like to increase the health by?", "ADD", "NORMAL");
 
                 // Make the popup a child of the main form
                 addHealth.Owner = this;
@@ -867,7 +926,7 @@ namespace GroupProject
             if (creatureListBox.SelectedItem != null)
             {
                 // Create a new instance of the HpForm
-                addHealth = new HPForm("How much would like to decrease the health by?", "SUB");
+                addHealth = new HPForm("How much would like to decrease the health by?", "SUB", "NORMAL");
 
                 // Make the popup a child of the main form
                 addHealth.Owner = this;
