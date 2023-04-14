@@ -209,7 +209,7 @@ namespace GroupProject
         private string OtherEffects = "";
 
         //Duration in rounds
-        private byte Duration = 0;
+        public byte Duration = 0;
 
         //Type of Saving throw
         public string saveType = "";

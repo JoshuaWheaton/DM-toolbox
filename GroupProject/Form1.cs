@@ -1003,16 +1003,37 @@ namespace GroupProject
             Creature thisGuy = (Creature)creatureListBox.SelectedItem;
             //Search the creature's status effect list and compile its EoT saves
             saves = findEoTSaves(thisGuy.StatusEffects);
+
             //If selected creature has a saving throw to make at the end of the turn, display alert
             if(saves != "")
             {
                 MessageBox.Show($"{thisGuy.GetName()} needs to make the following saving throw(s):\n" + saves);
             }
-            //Progess the turn to the next creature
-                //Use a try/catch to set the index back to zero if it goes out of range
-            //Search the new creature's status effect list and compile its SoT saves
-            //Check if newly selected creature has a saving throw to make at the start of its turn
 
+            decrementDuration(thisGuy.StatusEffects);
+
+            //Progess the turn to the next creature
+            try
+            {
+                creatureListBox.SelectedIndex += 1;
+                thisGuy = (Creature)creatureListBox.SelectedItem;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                creatureListBox.SelectedIndex = 0;
+                nextRound_Click(sender, e);
+            }
+
+            //Use a try/catch to set the index back to zero if it goes out of range
+            //Search the new creature's status effect list and compile its SoT saves
+            saves = "";
+            saves = findSoTSaves(thisGuy.StatusEffects);
+
+            //If newly selected creature has a saving throw to make at the start of its turn, display alert
+            if(saves != "")
+            {
+                MessageBox.Show($"{thisGuy.GetName()} needs to make the following saving throw(s):\n" + saves);
+            }
         }
 
         private string findEoTSaves(List<StatusEffect> effects)
@@ -1024,6 +1045,26 @@ namespace GroupProject
                 { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
             }
             return saveList;
+        }
+
+        private string findSoTSaves(List<StatusEffect> effects)
+        {
+            string saveList = "";
+            foreach(StatusEffect effect in effects)
+            {
+                if (effect.StartOfTurn == true)
+                { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
+            }
+            return saveList;
+        }
+
+        private void decrementDuration(List<StatusEffect> effects)
+        {
+            for(int i = 0; i < effects.Count; i++)
+            {
+                effects[i].Duration -= 1;
+            }
+            effects.RemoveAll(effect =>  effect.Duration == 0);
         }
     }
 }
