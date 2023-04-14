@@ -35,6 +35,7 @@ namespace GroupProject
             Creature creature = creatureListBox.SelectedItem as Creature;
             HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
             tempHPLabel.Text = creature.GetTempHP().ToString();
+            sortCreatureList();
         }
 
         // Function that clears out all info displayed in the information groupbox

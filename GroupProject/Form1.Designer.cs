@@ -700,6 +700,7 @@
             // creatureListBox
             // 
             this.creatureListBox.FormattingEnabled = true;
+            this.creatureListBox.HorizontalScrollbar = true;
             this.creatureListBox.ItemHeight = 20;
             this.creatureListBox.Location = new System.Drawing.Point(21, 80);
             this.creatureListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -855,6 +856,7 @@
             // statusListBox
             // 
             this.statusListBox.FormattingEnabled = true;
+            this.statusListBox.HorizontalScrollbar = true;
             this.statusListBox.ItemHeight = 20;
             this.statusListBox.Location = new System.Drawing.Point(261, 75);
             this.statusListBox.Name = "statusListBox";
