@@ -794,6 +794,10 @@ namespace GroupProject
             Change_Pic.BackColor = Color.FromArgb(r, g, b);
             addHpButton.BackColor = Color.FromArgb(r, g, b);
             subtractHpButton.BackColor = Color.FromArgb(r, g, b);
+            NextTurn.BackColor = Color.FromArgb(r, g, b);
+            addTempHpButton.BackColor = Color.FromArgb(r, g, b);
+            subtractTempHpButton.BackColor = Color.FromArgb(r, g, b);
+            RemoveStatus.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
