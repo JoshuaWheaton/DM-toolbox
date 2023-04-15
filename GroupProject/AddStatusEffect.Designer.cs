@@ -51,13 +51,13 @@
             StatusDuration = new NumericUpDown();
             SvEndOfTurn = new CheckBox();
             SavingThrowBox = new GroupBox();
+            SaveStatBox = new TextBox();
+            SaveStatLabel = new Label();
             SaveDCLabel = new Label();
             SaveDCBox = new NumericUpDown();
             AddStatusButton = new Button();
             SvOnDmg = new CheckBox();
             SvStartOfTurn = new CheckBox();
-            SaveStatLabel = new Label();
-            SaveStatBox = new TextBox();
             ConditionsBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)StatusDuration).BeginInit();
             SavingThrowBox.SuspendLayout();
@@ -289,6 +289,7 @@
             StatusDuration.Name = "StatusDuration";
             StatusDuration.Size = new Size(55, 27);
             StatusDuration.TabIndex = 6;
+            StatusDuration.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // SvEndOfTurn
             // 
@@ -317,6 +318,22 @@
             SavingThrowBox.TabStop = false;
             SavingThrowBox.Text = "Saving Throws";
             // 
+            // SaveStatBox
+            // 
+            SaveStatBox.Location = new Point(79, 26);
+            SaveStatBox.Name = "SaveStatBox";
+            SaveStatBox.Size = new Size(40, 27);
+            SaveStatBox.TabIndex = 13;
+            // 
+            // SaveStatLabel
+            // 
+            SaveStatLabel.AutoSize = true;
+            SaveStatLabel.Location = new Point(6, 30);
+            SaveStatLabel.Name = "SaveStatLabel";
+            SaveStatLabel.Size = new Size(73, 20);
+            SaveStatLabel.TabIndex = 12;
+            SaveStatLabel.Text = "Save Stat:";
+            // 
             // SaveDCLabel
             // 
             SaveDCLabel.AutoSize = true;
@@ -332,6 +349,7 @@
             SaveDCBox.Name = "SaveDCBox";
             SaveDCBox.Size = new Size(40, 27);
             SaveDCBox.TabIndex = 10;
+            SaveDCBox.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // AddStatusButton
             // 
@@ -367,22 +385,6 @@
             SvStartOfTurn.TabIndex = 8;
             SvStartOfTurn.Text = "Start of Turn";
             SvStartOfTurn.UseVisualStyleBackColor = true;
-            // 
-            // SaveStatLabel
-            // 
-            SaveStatLabel.AutoSize = true;
-            SaveStatLabel.Location = new Point(6, 30);
-            SaveStatLabel.Name = "SaveStatLabel";
-            SaveStatLabel.Size = new Size(73, 20);
-            SaveStatLabel.TabIndex = 12;
-            SaveStatLabel.Text = "Save Stat:";
-            // 
-            // SaveStatBox
-            // 
-            SaveStatBox.Location = new Point(79, 26);
-            SaveStatBox.Name = "SaveStatBox";
-            SaveStatBox.Size = new Size(40, 27);
-            SaveStatBox.TabIndex = 13;
             // 
             // AddStatusEffect
             // 
