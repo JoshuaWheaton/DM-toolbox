@@ -122,6 +122,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.Text_color = new System.Windows.Forms.Button();
             this.menuGroupBox.SuspendLayout();
             this.Settings_group_box.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -199,7 +200,7 @@
             this.menuGroupBox.Controls.Add(this.loadCreatureListButton);
             this.menuGroupBox.Location = new System.Drawing.Point(976, 114);
             this.menuGroupBox.Name = "menuGroupBox";
-            this.menuGroupBox.Size = new System.Drawing.Size(138, 329);
+            this.menuGroupBox.Size = new System.Drawing.Size(138, 306);
             this.menuGroupBox.TabIndex = 6;
             this.menuGroupBox.TabStop = false;
             this.menuGroupBox.Text = "Menu";
@@ -222,7 +223,7 @@
             this.Settings_button.BackColor = System.Drawing.Color.Firebrick;
             this.Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Settings_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Settings_button.Location = new System.Drawing.Point(17, 284);
+            this.Settings_button.Location = new System.Drawing.Point(17, 261);
             this.Settings_button.Name = "Settings_button";
             this.Settings_button.Size = new System.Drawing.Size(109, 23);
             this.Settings_button.TabIndex = 13;
@@ -299,11 +300,12 @@
             // 
             this.Settings_group_box.AutoSize = true;
             this.Settings_group_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.Settings_group_box.Controls.Add(this.Text_color);
             this.Settings_group_box.Controls.Add(this.Change_Pic);
             this.Settings_group_box.Controls.Add(this.Change_Bcolor);
-            this.Settings_group_box.Location = new System.Drawing.Point(987, 425);
+            this.Settings_group_box.Location = new System.Drawing.Point(987, 400);
             this.Settings_group_box.Name = "Settings_group_box";
-            this.Settings_group_box.Size = new System.Drawing.Size(117, 111);
+            this.Settings_group_box.Size = new System.Drawing.Size(117, 136);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
@@ -312,9 +314,9 @@
             // 
             this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
             this.Change_Pic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Change_Pic.Location = new System.Drawing.Point(5, 53);
+            this.Change_Pic.Location = new System.Drawing.Point(5, 48);
             this.Change_Pic.Name = "Change_Pic";
-            this.Change_Pic.Size = new System.Drawing.Size(105, 36);
+            this.Change_Pic.Size = new System.Drawing.Size(105, 30);
             this.Change_Pic.TabIndex = 1;
             this.Change_Pic.Text = "Background Pic";
             this.Change_Pic.UseVisualStyleBackColor = false;
@@ -327,9 +329,9 @@
             this.Change_Bcolor.Location = new System.Drawing.Point(5, 13);
             this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Change_Bcolor.Name = "Change_Bcolor";
-            this.Change_Bcolor.Size = new System.Drawing.Size(105, 36);
+            this.Change_Bcolor.Size = new System.Drawing.Size(105, 30);
             this.Change_Bcolor.TabIndex = 0;
-            this.Change_Bcolor.Text = "Set Main Color";
+            this.Change_Bcolor.Text = "Set Button Color";
             this.Change_Bcolor.UseVisualStyleBackColor = false;
             this.Change_Bcolor.Click += new System.EventHandler(this.Change_Bcolor_Click);
             // 
@@ -1297,6 +1299,18 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
             // 
+            // Text_color
+            // 
+            this.Text_color.BackColor = System.Drawing.Color.Firebrick;
+            this.Text_color.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Text_color.Location = new System.Drawing.Point(6, 84);
+            this.Text_color.Name = "Text_color";
+            this.Text_color.Size = new System.Drawing.Size(105, 30);
+            this.Text_color.TabIndex = 2;
+            this.Text_color.Text = "Set Text Color";
+            this.Text_color.UseVisualStyleBackColor = false;
+            this.Text_color.Click += new System.EventHandler(this.Text_color_Click);
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1451,5 +1465,6 @@
         private RichTextBox descriptionLabel;
         private Button subtractTempHpButton;
         private Button addTempHpButton;
+        private Button Text_color;
     }
 }
