@@ -720,7 +720,10 @@ namespace GroupProject
                 Color_choices.Visible = false;
             }
             else
+            {
                 Color_choices.Visible = true;
+                Color_choices.BringToFront();
+            }
         }
 
         //Creates pop up form for creating a new entity
