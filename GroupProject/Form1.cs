@@ -14,8 +14,6 @@ namespace GroupProject
         private Rectangle OriginalRectangleEntity;
         private Rectangle OriginalFormSize;
         private HPForm addHealth;
-        private int text_flag = 0;
-        private int button_flag = 0;
 
         // Constructor
         public mainGUI()
@@ -719,23 +717,10 @@ namespace GroupProject
             // Make GroupBox with RGB scrollbars visible.
             if (Color_choices.Visible == true)
             {
-                if (text_flag == 1)
-                {
-                    text_flag = 0;
-                    button_flag = 1;
-                }
-                else
-                {
-                    button_flag = 0;
-                    Color_choices.Visible = false;
-                }
+                Color_choices.Visible = false;
             }
             else
-            {
-                button_flag = 1;
                 Color_choices.Visible = true;
-                Color_choices.BringToFront();
-            }
         }
 
         //Creates pop up form for creating a new entity
@@ -839,73 +824,27 @@ namespace GroupProject
             round23.BackColor = Color.FromArgb(r, g, b);
             round24.BackColor = Color.FromArgb(r, g, b);
             round25.BackColor = Color.FromArgb(r, g, b);
-            Text_color.BackColor = Color.FromArgb(r, g, b);
         }
-        private void setTextColor()
-        {
-            name.ForeColor = Color.FromArgb(r, g, b);
-            nameLabel.ForeColor = Color.FromArgb(r, g, b);
-            label10.ForeColor = Color.FromArgb(r, g, b);
-            label17.ForeColor = Color.FromArgb(r, g, b);
-            label15.ForeColor = Color.FromArgb(r, g, b);
-            label13.ForeColor = Color.FromArgb(r, g, b);
-            label7.ForeColor = Color.FromArgb(r, g, b);
-            label5.ForeColor = Color.FromArgb(r, g, b);
-            label6.ForeColor = Color.FromArgb(r, g, b);
-            label4.ForeColor = Color.FromArgb(r, g, b);
-            label3.ForeColor = Color.FromArgb(r, g, b);
-            label2.ForeColor = Color.FromArgb(r, g, b);
-            label8.ForeColor = Color.FromArgb(r, g, b);
-            label12.ForeColor = Color.FromArgb(r, g, b);
-            label14.ForeColor = Color.FromArgb(r, g, b);
-            label16.ForeColor = Color.FromArgb(r, g, b);
-            ACLabel.ForeColor = Color.FromArgb(r, g, b);
-            HPLabel.ForeColor = Color.FromArgb(r, g, b);
-            tempHPLabel.ForeColor = Color.FromArgb(r, g, b);
-            initLabel.ForeColor = Color.FromArgb(r, g, b);
-            strengthLabel.ForeColor = Color.FromArgb(r, g, b);
-            dexterityLabel.ForeColor = Color.FromArgb(r, g, b);
-            constitutionLabel.ForeColor = Color.FromArgb(r, g, b);
-            intelligenceLabel.ForeColor = Color.FromArgb(r, g, b);
-            wisdomLabel.ForeColor = Color.FromArgb(r, g, b);
-            charismaLabel.ForeColor = Color.FromArgb(r, g, b);
 
-
-        }
         //Gets red color from scrool bar
         private void ScrollRed_Scroll(object sender, ScrollEventArgs e)
         {
             r = ScrollRed.Value;
-            if(text_flag == 1)
-            {
-                setTextColor();
-            }
-            else
-                setColor();
+            setColor();
         }
 
         //Gets green color from scrool bar
         private void ScrollGreen_Scroll(object sender, ScrollEventArgs e)
         {
             g = ScrollGreen.Value;
-            if (text_flag == 1)
-            {
-                setTextColor();
-            }
-            else
-                setColor();
+            setColor();
         }
 
         //Gets blue color from scrool bar
         private void ScrollBlue_Scroll(object sender, ScrollEventArgs e)
         {
             b = ScrollBlue.Value;
-            if (text_flag == 1)
-            {
-                setTextColor();
-            }
-            else
-                setColor();
+            setColor();
         }
 
         //Allows user to change background color
@@ -1060,30 +999,6 @@ namespace GroupProject
                 addHealth.Location = new Point(x, y);
 
                 addHealth.Show();
-            }
-        }
-
-        private void Text_color_Click(object sender, EventArgs e)
-        {
-            // Make GroupBox with RGB scrollbars visible.
-            if (Color_choices.Visible == true)
-            {
-                if (button_flag == 1)
-                {
-                    text_flag = 1;
-                    button_flag = 0;
-                }
-                else
-                {
-                    text_flag = 0;
-                    Color_choices.Visible = false;
-                }
-            }
-            else
-            {
-                text_flag = 1;
-                Color_choices.Visible = true;
-                Color_choices.BringToFront();
             }
         }
 
