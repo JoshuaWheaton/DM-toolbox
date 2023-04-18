@@ -379,7 +379,7 @@ namespace GroupProject
 
             // Calculate the position of the pop-up form on the same screen
             int x = screen.WorkingArea.Right - editForm.Width * 2;
-            int y = screen.WorkingArea.Bottom - editForm.Height * 2;
+            int y = screen.WorkingArea.Bottom - editForm.Height - 300;
 
             // Set the start position and location of the pop-up form
             editForm.StartPosition = FormStartPosition.Manual;
@@ -895,7 +895,7 @@ namespace GroupProject
 
             // Calculate the position of the pop-up form on the same screen
             int x = screen.WorkingArea.Right - AddForm.Width * 2;
-            int y = screen.WorkingArea.Bottom - AddForm.Height * 2;
+            int y = screen.WorkingArea.Bottom - AddForm.Height - 300;
 
             // Set the start position and location of the pop-up form
             AddForm.StartPosition = FormStartPosition.Manual;
