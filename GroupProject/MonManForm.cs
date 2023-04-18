@@ -90,15 +90,7 @@ namespace GroupProject
             mainGUI parentForm = (mainGUI)this.Owner;
 
             // Load the list of creatures from a file
-            // Get the path of the folder that the .exe file is in
-            string exeFolderPath = Path.GetDirectoryName(Application.ExecutablePath);
-
-            // Combine the folder path with the name of your file
-            string filePath = Path.Combine(exeFolderPath, "MonsterManual.enc");
-
-            // Load the list of creatures from a file
-            // Note: Make sure that the "MonsterManual.enc" file is in the same folder as your .exe file
-            //       before running your application
+            string filePath = "..//..//..//MonsterManual//MonsterManual.enc";
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string line;
