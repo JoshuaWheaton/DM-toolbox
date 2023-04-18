@@ -110,6 +110,7 @@ namespace GroupProject
             text.Replace("<strong>", "<strong> ");
             text.Replace("<strong>", "\\b");
             text.Replace("</strong>", "\\b0");
+            text.Replace("<br>", "\\line ");
 
             // the end
             text.Append(@"}");
@@ -307,7 +308,7 @@ namespace GroupProject
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Open and read file
-                using (System.IO.StreamReader reader = new System.IO.StreamReader(openFileDialog.FileName))
+                using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                 {
                     string line;
                     while ((line = reader.ReadLine()) != null)
@@ -320,6 +321,7 @@ namespace GroupProject
                     }
                 }
                 // Display the entities in the entity list
+                clearDisplay();
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
                 sortCreatureList();

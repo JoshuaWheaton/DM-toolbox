@@ -98,7 +98,6 @@
             this.descriptionLabel = new System.Windows.Forms.RichTextBox();
             this.subtractHpButton = new System.Windows.Forms.Button();
             this.addHpButton = new System.Windows.Forms.Button();
-            this.div3Label = new System.Windows.Forms.Label();
             this.div2Label = new System.Windows.Forms.Label();
             this.div1Label = new System.Windows.Forms.Label();
             this.editMenuButton = new System.Windows.Forms.Button();
@@ -110,6 +109,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.ACLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.div3Label = new System.Windows.Forms.Label();
             this.entityListGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
@@ -949,7 +949,6 @@
             this.groupBox2.Controls.Add(this.nameLabel);
             this.groupBox2.Controls.Add(this.subtractHpButton);
             this.groupBox2.Controls.Add(this.addHpButton);
-            this.groupBox2.Controls.Add(this.div3Label);
             this.groupBox2.Controls.Add(this.div2Label);
             this.groupBox2.Controls.Add(this.div1Label);
             this.groupBox2.Controls.Add(this.editMenuButton);
@@ -976,6 +975,7 @@
             this.groupBox2.Controls.Add(this.constitutionLabel);
             this.groupBox2.Controls.Add(this.wisdomLabel);
             this.groupBox2.Controls.Add(this.intelligenceLabel);
+            this.groupBox2.Controls.Add(this.div3Label);
             this.groupBox2.Location = new System.Drawing.Point(286, 114);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -1021,6 +1021,7 @@
             this.descriptionLabel.Location = new System.Drawing.Point(15, 251);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.ReadOnly = true;
             this.descriptionLabel.Size = new System.Drawing.Size(400, 188);
             this.descriptionLabel.TabIndex = 86;
             this.descriptionLabel.Text = "Description";
@@ -1056,18 +1057,6 @@
             this.addHpButton.UseVisualStyleBackColor = false;
             this.addHpButton.Visible = false;
             this.addHpButton.Click += new System.EventHandler(this.addHpButton_Click);
-            // 
-            // div3Label
-            // 
-            this.div3Label.AutoSize = true;
-            this.div3Label.BackColor = System.Drawing.Color.Transparent;
-            this.div3Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(62)))), ((int)(((byte)(46)))));
-            this.div3Label.Location = new System.Drawing.Point(7, 206);
-            this.div3Label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.div3Label.Name = "div3Label";
-            this.div3Label.Size = new System.Drawing.Size(392, 15);
-            this.div3Label.TabIndex = 83;
-            this.div3Label.Text = "_____________________________________________________________________________";
             // 
             // div2Label
             // 
@@ -1200,6 +1189,18 @@
             this.label10.Size = new System.Drawing.Size(37, 25);
             this.label10.TabIndex = 71;
             this.label10.Text = "AC";
+            // 
+            // div3Label
+            // 
+            this.div3Label.AutoSize = true;
+            this.div3Label.BackColor = System.Drawing.Color.Transparent;
+            this.div3Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(62)))), ((int)(((byte)(46)))));
+            this.div3Label.Location = new System.Drawing.Point(7, 206);
+            this.div3Label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.div3Label.Name = "div3Label";
+            this.div3Label.Size = new System.Drawing.Size(392, 15);
+            this.div3Label.TabIndex = 83;
+            this.div3Label.Text = "_____________________________________________________________________________";
             // 
             // entityListGroupBox
             // 
