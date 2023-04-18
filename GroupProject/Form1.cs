@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.Text;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace GroupProject
 {
@@ -16,8 +14,6 @@ namespace GroupProject
         private Rectangle OriginalRectangleEntity;
         private Rectangle OriginalFormSize;
         private HPForm addHealth;
-        private string backgroundImageString;
-        private Color buttonColor;
 
         // 25 Variables that store the round history, each is a list of creature objects
         private List<Creature> round1List = new List<Creature>();
@@ -955,8 +951,6 @@ namespace GroupProject
             Change_Pic.BackColor = Color.FromArgb(r, g, b);
             addHpButton.BackColor = Color.FromArgb(r, g, b);
             subtractHpButton.BackColor = Color.FromArgb(r, g, b);
-            saveSettingsButton.BackColor = Color.FromArgb(r, g, b);
-            defaultSettingsButton.BackColor = Color.FromArgb(r, g, b);
             NextTurn.BackColor = Color.FromArgb(r, g, b);
             addTempHpButton.BackColor = Color.FromArgb(r, g, b);
             subtractTempHpButton.BackColor = Color.FromArgb(r, g, b);
@@ -987,8 +981,6 @@ namespace GroupProject
             round23.BackColor = Color.FromArgb(r, g, b);
             round24.BackColor = Color.FromArgb(r, g, b);
             round25.BackColor = Color.FromArgb(r, g, b);
-
-            buttonColor = Color.FromArgb(r, g, b);
         }
 
         //Gets red color from scrool bar
@@ -1026,8 +1018,7 @@ namespace GroupProject
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     this.BackgroundImage = Image.FromFile(dialog.FileName);
-                    backgroundImageString = dialog.FileName;
-                }   
+                }
             }
             catch (Exception)
             {
@@ -1060,59 +1051,6 @@ namespace GroupProject
             monsterForm.Show();
         }
 
-        private void saveSettingsButton_Click(object sender, EventArgs e)
-        {
-            // Save the background image path
-            Properties.Settings.Default.BackgroundImage = backgroundImageString;
-            Properties.Settings.Default.ButtonColor = buttonColor;
-
-            // Save the settings
-            Properties.Settings.Default.Save();
-
-            // Give feedback that the settings saved properly
-            MessageBox.Show("Settings Successfully Saved.");
-        }
-
-        private void mainGUI_Load(object sender, EventArgs e)
-        {
-            // Load the background image
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.BackgroundImage)
-                && !Properties.Settings.Default.BackgroundImage.Equals(Properties.Settings.Default.Properties["BackgroundImage"].DefaultValue))
-            {
-                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.BackgroundImage);
-            }
-
-            // set button colors
-            Color buttonColor = Properties.Settings.Default.ButtonColor;
-            SetButtonColors(this.Controls, buttonColor);
-        }
-
-        private void SetButtonColors(Control.ControlCollection controls, Color buttonColor)
-        {
-            foreach (Control control in controls)
-            {
-                if (control is Button)
-                {
-                    ((Button)control).BackColor = buttonColor;
-                }
-                else if (control.HasChildren)
-                {
-                    SetButtonColors(control.Controls, buttonColor);
-                }
-            }
-        }
-
-        private void defaultSettingsButton_Click(object sender, EventArgs e)
-        {
-            // Reset the settings to their default values
-            Properties.Settings.Default.Reset();
-
-            // Save the settings
-            Properties.Settings.Default.Save();
-
-            // Inform the user they need to restart the program for the settings to take effect
-            MessageBox.Show("You must restart for the settings to be returned to default.");
-        }
         //Pops up temp hp form
         private void addTempHpButton_Click(object sender, EventArgs e)
         {
