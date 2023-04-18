@@ -13,12 +13,14 @@ namespace GroupProject
     public partial class HPForm : Form
     {
         private string changeType;
+        private string hpType;
         private bool isEdited = false;
-        public HPForm(string labelText, string changeType)
+        public HPForm(string labelText, string changeType, string hpType)
         {
             InitializeComponent();
             userPrompt.Text = labelText;
             this.changeType = changeType;
+            this.hpType = hpType;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,11 +35,31 @@ namespace GroupProject
 
                 if (changeType == "ADD")
                 {
-                    selectedCreature.SetHP(selectedCreature.GetCurrentHP() + healthChange);
+                    if (hpType == "NORMAL")
+                    {
+                        selectedCreature.SetHP(selectedCreature.GetCurrentHP() + healthChange);
+                    }
+                    else if(hpType == "TEMP")
+                    {
+                        selectedCreature.SetTempHP(selectedCreature.GetTempHP() + healthChange);
+                    }
                 }
                 else if (changeType == "SUB")
                 {
-                    selectedCreature.SetHP(selectedCreature.GetCurrentHP() - healthChange);
+                    if (hpType == "NORMAL")
+                    {
+                        selectedCreature.SetHP(selectedCreature.GetCurrentHP() - healthChange);
+                    }
+                    else if (hpType == "TEMP")
+                    {
+                        selectedCreature.SetTempHP(selectedCreature.GetTempHP() - healthChange);
+                    }
+
+                    //Call for saving throws that activate on damage
+                    string saves = "";
+                    saves = findOnDmgSaves(selectedCreature.StatusEffects);
+                    if (saves != "")
+                    { MessageBox.Show($"{selectedCreature.GetName()} needs to make the following saving throw(s):\n" + saves); }
                 }
             }
             else
@@ -73,6 +95,16 @@ namespace GroupProject
                 button1_Click(sender, e);
 
             }
+        }
+        private string findOnDmgSaves(List<StatusEffect> effects)
+        {
+            string saveList = "";
+            foreach (StatusEffect effect in effects)
+            {
+                if (effect.WhenDamaged == true)
+                { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
+            }
+            return saveList;
         }
     }
 }

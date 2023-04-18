@@ -37,12 +37,13 @@
             // 
             // monsterManListBox
             // 
+            this.monsterManListBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.monsterManListBox.FormattingEnabled = true;
             this.monsterManListBox.ItemHeight = 20;
             this.monsterManListBox.Location = new System.Drawing.Point(14, 55);
             this.monsterManListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.monsterManListBox.Name = "monsterManListBox";
-            this.monsterManListBox.Size = new System.Drawing.Size(234, 404);
+            this.monsterManListBox.Size = new System.Drawing.Size(259, 384);
             this.monsterManListBox.TabIndex = 0;
             this.monsterManListBox.DoubleClick += new System.EventHandler(this.monsterManListBox_DoubleClick);
             // 
@@ -65,7 +66,7 @@
             this.searchBox.Location = new System.Drawing.Point(81, 16);
             this.searchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(166, 27);
+            this.searchBox.Size = new System.Drawing.Size(192, 27);
             this.searchBox.TabIndex = 76;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -84,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(262, 509);
+            this.ClientSize = new System.Drawing.Size(285, 509);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.addMonsterButton);
