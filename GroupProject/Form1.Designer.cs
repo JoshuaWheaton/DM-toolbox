@@ -36,6 +36,8 @@
             this.menuGroupBox = new System.Windows.Forms.GroupBox();
             this.loadGroupButton = new System.Windows.Forms.Button();
             this.Settings_group_box = new System.Windows.Forms.GroupBox();
+            this.defaultSettingsButton = new System.Windows.Forms.Button();
+            this.saveSettingsButton = new System.Windows.Forms.Button();
             this.Change_Pic = new System.Windows.Forms.Button();
             this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
@@ -120,20 +122,14 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.Settings_group_box = new System.Windows.Forms.GroupBox();
-            this.saveSettingsButton = new System.Windows.Forms.Button();
-            this.Change_Pic = new System.Windows.Forms.Button();
-            this.Change_Bcolor = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.defaultSettingsButton = new System.Windows.Forms.Button();
             this.menuGroupBox.SuspendLayout();
             this.Settings_group_box.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
             this.diceRollerGroupBox.SuspendLayout();
             this.Color_choices.SuspendLayout();
-            this.Settings_group_box.SuspendLayout();
             this.SuspendLayout();
             // 
             // Copy_monster
@@ -196,17 +192,18 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.menuGroupBox.AutoSize = true;
             this.menuGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.menuGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuGroupBox.Controls.Add(this.loadGroupButton);
-            this.menuGroupBox.Controls.Add(this.Settings_group_box);
             this.menuGroupBox.Controls.Add(this.Settings_button);
-            this.menuGroupBox.Controls.Add(this.monsterButton);
-            this.menuGroupBox.Controls.Add(this.AddEntityButton);
             this.menuGroupBox.Controls.Add(this.deleteEncounterButton);
+            this.menuGroupBox.Controls.Add(this.Settings_group_box);
+            this.menuGroupBox.Controls.Add(this.AddEntityButton);
+            this.menuGroupBox.Controls.Add(this.monsterButton);
             this.menuGroupBox.Controls.Add(this.saveCreatureButton);
             this.menuGroupBox.Controls.Add(this.loadCreatureListButton);
-            this.menuGroupBox.Location = new System.Drawing.Point(805, 113);
+            this.menuGroupBox.Location = new System.Drawing.Point(901, 114);
             this.menuGroupBox.Name = "menuGroupBox";
-            this.menuGroupBox.Size = new System.Drawing.Size(254, 214);
+            this.menuGroupBox.Size = new System.Drawing.Size(132, 511);
             this.menuGroupBox.TabIndex = 6;
             this.menuGroupBox.TabStop = false;
             this.menuGroupBox.Text = "Menu";
@@ -216,7 +213,7 @@
             this.loadGroupButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadGroupButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.loadGroupButton.Location = new System.Drawing.Point(6, 61);
+            this.loadGroupButton.Location = new System.Drawing.Point(17, 78);
             this.loadGroupButton.Name = "loadGroupButton";
             this.loadGroupButton.Size = new System.Drawing.Size(106, 23);
             this.loadGroupButton.TabIndex = 57;
@@ -226,26 +223,42 @@
             // 
             // Settings_group_box
             // 
-            this.AddStatusEffect.BackColor = System.Drawing.Color.Firebrick;
-            this.AddStatusEffect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStatusEffect.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddStatusEffect.Location = new System.Drawing.Point(134, 97);
-            this.AddStatusEffect.Name = "AddStatusEffect";
-            this.AddStatusEffect.Size = new System.Drawing.Size(109, 23);
-            this.AddStatusEffect.TabIndex = 14;
-            this.AddStatusEffect.Text = "Create Status";
-            this.AddStatusEffect.UseVisualStyleBackColor = false;
-            this.AddStatusEffect.Click += new System.EventHandler(this.AddStatusEffect_Click);
             this.Settings_group_box.AutoSize = true;
-            this.Settings_group_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.Settings_group_box.BackColor = System.Drawing.Color.DimGray;
+            this.Settings_group_box.Controls.Add(this.defaultSettingsButton);
+            this.Settings_group_box.Controls.Add(this.saveSettingsButton);
             this.Settings_group_box.Controls.Add(this.Change_Pic);
             this.Settings_group_box.Controls.Add(this.Change_Bcolor);
-            this.Settings_group_box.Location = new System.Drawing.Point(136, 185);
+            this.Settings_group_box.Location = new System.Drawing.Point(9, 232);
             this.Settings_group_box.Name = "Settings_group_box";
-            this.Settings_group_box.Size = new System.Drawing.Size(117, 112);
+            this.Settings_group_box.Size = new System.Drawing.Size(117, 188);
             this.Settings_group_box.TabIndex = 76;
             this.Settings_group_box.TabStop = false;
             this.Settings_group_box.Visible = false;
+            // 
+            // defaultSettingsButton
+            // 
+            this.defaultSettingsButton.BackColor = System.Drawing.Color.Firebrick;
+            this.defaultSettingsButton.Location = new System.Drawing.Point(6, 131);
+            this.defaultSettingsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.defaultSettingsButton.Name = "defaultSettingsButton";
+            this.defaultSettingsButton.Size = new System.Drawing.Size(105, 36);
+            this.defaultSettingsButton.TabIndex = 3;
+            this.defaultSettingsButton.Text = "Default Settings";
+            this.defaultSettingsButton.UseVisualStyleBackColor = false;
+            this.defaultSettingsButton.Click += new System.EventHandler(this.defaultSettingsButton_Click);
+            // 
+            // saveSettingsButton
+            // 
+            this.saveSettingsButton.BackColor = System.Drawing.Color.Firebrick;
+            this.saveSettingsButton.Location = new System.Drawing.Point(6, 91);
+            this.saveSettingsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveSettingsButton.Name = "saveSettingsButton";
+            this.saveSettingsButton.Size = new System.Drawing.Size(105, 36);
+            this.saveSettingsButton.TabIndex = 2;
+            this.saveSettingsButton.Text = "Save Settings";
+            this.saveSettingsButton.UseVisualStyleBackColor = false;
+            this.saveSettingsButton.Click += new System.EventHandler(this.saveSettingsButton_Click);
             // 
             // Change_Pic
             // 
@@ -277,7 +290,7 @@
             this.Settings_button.BackColor = System.Drawing.Color.Firebrick;
             this.Settings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Settings_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Settings_button.Location = new System.Drawing.Point(168, 161);
+            this.Settings_button.Location = new System.Drawing.Point(35, 203);
             this.Settings_button.Name = "Settings_button";
             this.Settings_button.Size = new System.Drawing.Size(75, 23);
             this.Settings_button.TabIndex = 13;
@@ -290,7 +303,7 @@
             this.monsterButton.BackColor = System.Drawing.Color.Firebrick;
             this.monsterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.monsterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.monsterButton.Location = new System.Drawing.Point(6, 97);
+            this.monsterButton.Location = new System.Drawing.Point(17, 49);
             this.monsterButton.Name = "monsterButton";
             this.monsterButton.Size = new System.Drawing.Size(106, 23);
             this.monsterButton.TabIndex = 9;
@@ -303,7 +316,7 @@
             this.AddEntityButton.BackColor = System.Drawing.Color.Firebrick;
             this.AddEntityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEntityButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.AddEntityButton.Location = new System.Drawing.Point(6, 20);
+            this.AddEntityButton.Location = new System.Drawing.Point(17, 22);
             this.AddEntityButton.Name = "AddEntityButton";
             this.AddEntityButton.Size = new System.Drawing.Size(106, 23);
             this.AddEntityButton.TabIndex = 7;
@@ -316,7 +329,7 @@
             this.deleteEncounterButton.BackColor = System.Drawing.Color.Firebrick;
             this.deleteEncounterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteEncounterButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deleteEncounterButton.Location = new System.Drawing.Point(6, 165);
+            this.deleteEncounterButton.Location = new System.Drawing.Point(17, 165);
             this.deleteEncounterButton.Name = "deleteEncounterButton";
             this.deleteEncounterButton.Size = new System.Drawing.Size(109, 23);
             this.deleteEncounterButton.TabIndex = 6;
@@ -329,7 +342,7 @@
             this.saveCreatureButton.BackColor = System.Drawing.Color.Firebrick;
             this.saveCreatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveCreatureButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.saveCreatureButton.Location = new System.Drawing.Point(134, 20);
+            this.saveCreatureButton.Location = new System.Drawing.Point(17, 107);
             this.saveCreatureButton.Name = "saveCreatureButton";
             this.saveCreatureButton.Size = new System.Drawing.Size(106, 23);
             this.saveCreatureButton.TabIndex = 54;
@@ -342,7 +355,7 @@
             this.loadCreatureListButton.BackColor = System.Drawing.Color.Firebrick;
             this.loadCreatureListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadCreatureListButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.loadCreatureListButton.Location = new System.Drawing.Point(134, 61);
+            this.loadCreatureListButton.Location = new System.Drawing.Point(17, 136);
             this.loadCreatureListButton.Name = "loadCreatureListButton";
             this.loadCreatureListButton.Size = new System.Drawing.Size(109, 23);
             this.loadCreatureListButton.TabIndex = 56;
@@ -381,8 +394,8 @@
             // 
             this.round2.BackColor = System.Drawing.Color.Firebrick;
             this.round2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round2.Location = new System.Drawing.Point(157, 49);
             this.round2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round2.Location = new System.Drawing.Point(157, 49);
             this.round2.Name = "round2";
             this.round2.Padding = new System.Windows.Forms.Padding(1);
             this.round2.Size = new System.Drawing.Size(30, 23);
@@ -395,8 +408,8 @@
             // 
             this.round3.BackColor = System.Drawing.Color.Firebrick;
             this.round3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round3.Location = new System.Drawing.Point(183, 49);
             this.round3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round3.Location = new System.Drawing.Point(183, 49);
             this.round3.Name = "round3";
             this.round3.Padding = new System.Windows.Forms.Padding(1);
             this.round3.Size = new System.Drawing.Size(30, 23);
@@ -409,8 +422,8 @@
             // 
             this.round4.BackColor = System.Drawing.Color.Firebrick;
             this.round4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round4.Location = new System.Drawing.Point(209, 49);
             this.round4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round4.Location = new System.Drawing.Point(209, 49);
             this.round4.Name = "round4";
             this.round4.Padding = new System.Windows.Forms.Padding(1);
             this.round4.Size = new System.Drawing.Size(30, 23);
@@ -423,8 +436,8 @@
             // 
             this.round8.BackColor = System.Drawing.Color.Firebrick;
             this.round8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round8.Location = new System.Drawing.Point(312, 49);
             this.round8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round8.Location = new System.Drawing.Point(312, 49);
             this.round8.Name = "round8";
             this.round8.Padding = new System.Windows.Forms.Padding(1);
             this.round8.Size = new System.Drawing.Size(30, 23);
@@ -437,8 +450,8 @@
             // 
             this.round7.BackColor = System.Drawing.Color.Firebrick;
             this.round7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round7.Location = new System.Drawing.Point(286, 49);
             this.round7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round7.Location = new System.Drawing.Point(286, 49);
             this.round7.Name = "round7";
             this.round7.Padding = new System.Windows.Forms.Padding(1);
             this.round7.Size = new System.Drawing.Size(30, 23);
@@ -451,8 +464,8 @@
             // 
             this.round6.BackColor = System.Drawing.Color.Firebrick;
             this.round6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round6.Location = new System.Drawing.Point(260, 49);
             this.round6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round6.Location = new System.Drawing.Point(260, 49);
             this.round6.Name = "round6";
             this.round6.Padding = new System.Windows.Forms.Padding(1);
             this.round6.Size = new System.Drawing.Size(30, 23);
@@ -465,8 +478,8 @@
             // 
             this.round5.BackColor = System.Drawing.Color.Firebrick;
             this.round5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round5.Location = new System.Drawing.Point(233, 49);
             this.round5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round5.Location = new System.Drawing.Point(233, 49);
             this.round5.Name = "round5";
             this.round5.Padding = new System.Windows.Forms.Padding(1);
             this.round5.Size = new System.Drawing.Size(30, 23);
@@ -479,8 +492,8 @@
             // 
             this.round12.BackColor = System.Drawing.Color.Firebrick;
             this.round12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round12.Location = new System.Drawing.Point(420, 49);
             this.round12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round12.Location = new System.Drawing.Point(420, 49);
             this.round12.Name = "round12";
             this.round12.Size = new System.Drawing.Size(30, 23);
             this.round12.TabIndex = 21;
@@ -492,8 +505,8 @@
             // 
             this.round11.BackColor = System.Drawing.Color.Firebrick;
             this.round11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round11.Location = new System.Drawing.Point(394, 49);
             this.round11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round11.Location = new System.Drawing.Point(394, 49);
             this.round11.Name = "round11";
             this.round11.Size = new System.Drawing.Size(30, 23);
             this.round11.TabIndex = 20;
@@ -505,8 +518,8 @@
             // 
             this.round10.BackColor = System.Drawing.Color.Firebrick;
             this.round10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round10.Location = new System.Drawing.Point(368, 49);
             this.round10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round10.Location = new System.Drawing.Point(368, 49);
             this.round10.Name = "round10";
             this.round10.Size = new System.Drawing.Size(30, 23);
             this.round10.TabIndex = 19;
@@ -518,8 +531,8 @@
             // 
             this.round9.BackColor = System.Drawing.Color.Firebrick;
             this.round9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round9.Location = new System.Drawing.Point(341, 49);
             this.round9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round9.Location = new System.Drawing.Point(341, 49);
             this.round9.Name = "round9";
             this.round9.Padding = new System.Windows.Forms.Padding(1);
             this.round9.Size = new System.Drawing.Size(30, 23);
@@ -532,8 +545,8 @@
             // 
             this.round24.BackColor = System.Drawing.Color.Firebrick;
             this.round24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round24.Location = new System.Drawing.Point(736, 49);
             this.round24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round24.Location = new System.Drawing.Point(736, 49);
             this.round24.Name = "round24";
             this.round24.Size = new System.Drawing.Size(30, 23);
             this.round24.TabIndex = 33;
@@ -545,8 +558,8 @@
             // 
             this.round23.BackColor = System.Drawing.Color.Firebrick;
             this.round23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round23.Location = new System.Drawing.Point(710, 49);
             this.round23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round23.Location = new System.Drawing.Point(710, 49);
             this.round23.Name = "round23";
             this.round23.Size = new System.Drawing.Size(30, 23);
             this.round23.TabIndex = 32;
@@ -558,8 +571,8 @@
             // 
             this.round22.BackColor = System.Drawing.Color.Firebrick;
             this.round22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round22.Location = new System.Drawing.Point(684, 49);
             this.round22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round22.Location = new System.Drawing.Point(684, 49);
             this.round22.Name = "round22";
             this.round22.Size = new System.Drawing.Size(30, 23);
             this.round22.TabIndex = 31;
@@ -571,8 +584,8 @@
             // 
             this.round21.BackColor = System.Drawing.Color.Firebrick;
             this.round21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round21.Location = new System.Drawing.Point(657, 49);
             this.round21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round21.Location = new System.Drawing.Point(657, 49);
             this.round21.Name = "round21";
             this.round21.Size = new System.Drawing.Size(30, 23);
             this.round21.TabIndex = 30;
@@ -584,8 +597,8 @@
             // 
             this.round20.BackColor = System.Drawing.Color.Firebrick;
             this.round20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round20.Location = new System.Drawing.Point(628, 49);
             this.round20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round20.Location = new System.Drawing.Point(628, 49);
             this.round20.Name = "round20";
             this.round20.Size = new System.Drawing.Size(30, 23);
             this.round20.TabIndex = 29;
@@ -597,8 +610,8 @@
             // 
             this.round19.BackColor = System.Drawing.Color.Firebrick;
             this.round19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round19.Location = new System.Drawing.Point(602, 49);
             this.round19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round19.Location = new System.Drawing.Point(602, 49);
             this.round19.Name = "round19";
             this.round19.Size = new System.Drawing.Size(30, 23);
             this.round19.TabIndex = 28;
@@ -610,8 +623,8 @@
             // 
             this.round18.BackColor = System.Drawing.Color.Firebrick;
             this.round18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round18.Location = new System.Drawing.Point(576, 49);
             this.round18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round18.Location = new System.Drawing.Point(576, 49);
             this.round18.Name = "round18";
             this.round18.Size = new System.Drawing.Size(30, 23);
             this.round18.TabIndex = 27;
@@ -623,8 +636,8 @@
             // 
             this.round17.BackColor = System.Drawing.Color.Firebrick;
             this.round17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round17.Location = new System.Drawing.Point(549, 49);
             this.round17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round17.Location = new System.Drawing.Point(549, 49);
             this.round17.Name = "round17";
             this.round17.Size = new System.Drawing.Size(30, 23);
             this.round17.TabIndex = 26;
@@ -636,8 +649,8 @@
             // 
             this.round16.BackColor = System.Drawing.Color.Firebrick;
             this.round16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round16.Location = new System.Drawing.Point(524, 49);
             this.round16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round16.Location = new System.Drawing.Point(524, 49);
             this.round16.Name = "round16";
             this.round16.Size = new System.Drawing.Size(30, 23);
             this.round16.TabIndex = 25;
@@ -649,8 +662,8 @@
             // 
             this.round15.BackColor = System.Drawing.Color.Firebrick;
             this.round15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round15.Location = new System.Drawing.Point(498, 49);
             this.round15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round15.Location = new System.Drawing.Point(498, 49);
             this.round15.Name = "round15";
             this.round15.Size = new System.Drawing.Size(30, 23);
             this.round15.TabIndex = 24;
@@ -662,8 +675,8 @@
             // 
             this.round14.BackColor = System.Drawing.Color.Firebrick;
             this.round14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round14.Location = new System.Drawing.Point(472, 49);
             this.round14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round14.Location = new System.Drawing.Point(472, 49);
             this.round14.Name = "round14";
             this.round14.Size = new System.Drawing.Size(30, 23);
             this.round14.TabIndex = 23;
@@ -675,8 +688,8 @@
             // 
             this.round13.BackColor = System.Drawing.Color.Firebrick;
             this.round13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round13.Location = new System.Drawing.Point(445, 49);
             this.round13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round13.Location = new System.Drawing.Point(445, 49);
             this.round13.Name = "round13";
             this.round13.Size = new System.Drawing.Size(30, 23);
             this.round13.TabIndex = 22;
@@ -688,8 +701,8 @@
             // 
             this.round25.BackColor = System.Drawing.Color.Firebrick;
             this.round25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.round25.Location = new System.Drawing.Point(764, 49);
             this.round25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.round25.Location = new System.Drawing.Point(764, 49);
             this.round25.Name = "round25";
             this.round25.Size = new System.Drawing.Size(30, 23);
             this.round25.TabIndex = 34;
@@ -700,7 +713,8 @@
             // creatureListBox
             // 
             this.creatureListBox.FormattingEnabled = true;
-            this.creatureListBox.HorizontalScrollbar = true;            this.creatureListBox.ItemHeight = 15;
+            this.creatureListBox.HorizontalScrollbar = true;
+            this.creatureListBox.ItemHeight = 15;
             this.creatureListBox.Location = new System.Drawing.Point(18, 60);
             this.creatureListBox.Name = "creatureListBox";
             this.creatureListBox.Size = new System.Drawing.Size(204, 379);
@@ -724,8 +738,8 @@
             this.strengthLabel.AutoSize = true;
             this.strengthLabel.BackColor = System.Drawing.Color.Transparent;
             this.strengthLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.strengthLabel.Location = new System.Drawing.Point(15, 185);
             this.strengthLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.strengthLabel.Location = new System.Drawing.Point(15, 185);
             this.strengthLabel.Name = "strengthLabel";
             this.strengthLabel.Size = new System.Drawing.Size(34, 25);
             this.strengthLabel.TabIndex = 46;
@@ -736,8 +750,8 @@
             this.dexterityLabel.AutoSize = true;
             this.dexterityLabel.BackColor = System.Drawing.Color.Transparent;
             this.dexterityLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dexterityLabel.Location = new System.Drawing.Point(67, 185);
             this.dexterityLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.dexterityLabel.Location = new System.Drawing.Point(67, 185);
             this.dexterityLabel.Name = "dexterityLabel";
             this.dexterityLabel.Size = new System.Drawing.Size(37, 25);
             this.dexterityLabel.TabIndex = 47;
@@ -748,8 +762,8 @@
             this.constitutionLabel.AutoSize = true;
             this.constitutionLabel.BackColor = System.Drawing.Color.Transparent;
             this.constitutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.constitutionLabel.Location = new System.Drawing.Point(119, 185);
             this.constitutionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.constitutionLabel.Location = new System.Drawing.Point(119, 185);
             this.constitutionLabel.Name = "constitutionLabel";
             this.constitutionLabel.Size = new System.Drawing.Size(36, 25);
             this.constitutionLabel.TabIndex = 48;
@@ -760,8 +774,8 @@
             this.intelligenceLabel.AutoSize = true;
             this.intelligenceLabel.BackColor = System.Drawing.Color.Transparent;
             this.intelligenceLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.intelligenceLabel.Location = new System.Drawing.Point(171, 185);
             this.intelligenceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.intelligenceLabel.Location = new System.Drawing.Point(171, 185);
             this.intelligenceLabel.Name = "intelligenceLabel";
             this.intelligenceLabel.Size = new System.Drawing.Size(29, 25);
             this.intelligenceLabel.TabIndex = 49;
@@ -772,8 +786,8 @@
             this.wisdomLabel.AutoSize = true;
             this.wisdomLabel.BackColor = System.Drawing.Color.Transparent;
             this.wisdomLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.wisdomLabel.Location = new System.Drawing.Point(223, 185);
             this.wisdomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.wisdomLabel.Location = new System.Drawing.Point(223, 185);
             this.wisdomLabel.Name = "wisdomLabel";
             this.wisdomLabel.Size = new System.Drawing.Size(42, 25);
             this.wisdomLabel.TabIndex = 50;
@@ -784,8 +798,8 @@
             this.charismaLabel.AutoSize = true;
             this.charismaLabel.BackColor = System.Drawing.Color.Transparent;
             this.charismaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.charismaLabel.Location = new System.Drawing.Point(275, 185);
             this.charismaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.charismaLabel.Location = new System.Drawing.Point(275, 185);
             this.charismaLabel.Name = "charismaLabel";
             this.charismaLabel.Size = new System.Drawing.Size(36, 25);
             this.charismaLabel.TabIndex = 51;
@@ -817,8 +831,8 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(268, 160);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.label2.Location = new System.Drawing.Point(268, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 67;
@@ -869,8 +883,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(216, 160);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.label3.Location = new System.Drawing.Point(216, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 25);
             this.label3.TabIndex = 66;
@@ -881,8 +895,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(112, 160);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.label4.Location = new System.Drawing.Point(112, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 25);
             this.label4.TabIndex = 65;
@@ -893,8 +907,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(60, 160);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.label5.Location = new System.Drawing.Point(60, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 25);
             this.label5.TabIndex = 63;
@@ -905,8 +919,8 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(164, 160);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.label6.Location = new System.Drawing.Point(164, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 25);
             this.label6.TabIndex = 64;
@@ -917,8 +931,8 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(8, 160);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(62)))), ((int)(((byte)(39)))));
+            this.label7.Location = new System.Drawing.Point(8, 160);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 25);
             this.label7.TabIndex = 62;
@@ -995,7 +1009,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(360, 490);
+            this.groupBox2.Size = new System.Drawing.Size(431, 511);
             this.groupBox2.TabIndex = 72;
             this.groupBox2.TabStop = false;
             // 
@@ -1036,8 +1050,8 @@
             this.descriptionLabel.Location = new System.Drawing.Point(15, 251);
             this.descriptionLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(323, 188);
             this.descriptionLabel.ReadOnly = true;
+            this.descriptionLabel.Size = new System.Drawing.Size(323, 188);
             this.descriptionLabel.TabIndex = 86;
             this.descriptionLabel.Text = "Description";
             // 
@@ -1073,16 +1087,6 @@
             this.addHpButton.Visible = false;
             this.addHpButton.Click += new System.EventHandler(this.addHpButton_Click);
             // 
-            // div3Label
-            // 
-            this.div3Label.AutoSize = true;
-            this.div3Label.Location = new System.Drawing.Point(7, 206);
-            this.div3Label.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.div3Label.Name = "div3Label";
-            this.div3Label.Size = new System.Drawing.Size(332, 15);
-            this.div3Label.TabIndex = 83;
-            this.div3Label.Text = "_________________________________________________________________";
-            // 
             // div2Label
             // 
             this.div2Label.AutoSize = true;
@@ -1090,7 +1094,7 @@
             this.div2Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(62)))), ((int)(((byte)(46)))));
             this.div2Label.Location = new System.Drawing.Point(6, 145);
             this.div2Label.Name = "div2Label";
-            this.div2Label.Size = new System.Drawing.Size(332, 15);
+            this.div2Label.Size = new System.Drawing.Size(392, 15);
             this.div2Label.TabIndex = 82;
             this.div2Label.Text = "_____________________________________________________________________________";
             // 
@@ -1251,7 +1255,7 @@
             this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
-            this.diceRollerGroupBox.Location = new System.Drawing.Point(652, 114);
+            this.diceRollerGroupBox.Location = new System.Drawing.Point(736, 114);
             this.diceRollerGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
             this.diceRollerGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1279,7 +1283,7 @@
             this.Color_choices.Controls.Add(this.label16);
             this.Color_choices.Controls.Add(this.label14);
             this.Color_choices.Controls.Add(this.label12);
-            this.Color_choices.Location = new System.Drawing.Point(781, 352);
+            this.Color_choices.Location = new System.Drawing.Point(901, 517);
             this.Color_choices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Color_choices.Name = "Color_choices";
             this.Color_choices.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1346,68 +1350,6 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
             // 
-            // Settings_group_box
-            // 
-            this.Settings_group_box.AutoSize = true;
-            this.Settings_group_box.BackColor = System.Drawing.Color.DimGray;
-            this.Settings_group_box.Controls.Add(this.defaultSettingsButton);
-            this.Settings_group_box.Controls.Add(this.saveSettingsButton);
-            this.Settings_group_box.Controls.Add(this.Change_Pic);
-            this.Settings_group_box.Controls.Add(this.Change_Bcolor);
-            this.Settings_group_box.Location = new System.Drawing.Point(973, 299);
-            this.Settings_group_box.Name = "Settings_group_box";
-            this.Settings_group_box.Size = new System.Drawing.Size(117, 188);
-            this.Settings_group_box.TabIndex = 76;
-            this.Settings_group_box.TabStop = false;
-            this.Settings_group_box.Visible = false;
-            // 
-            // saveSettingsButton
-            // 
-            this.saveSettingsButton.BackColor = System.Drawing.Color.Firebrick;
-            this.saveSettingsButton.Location = new System.Drawing.Point(6, 91);
-            this.saveSettingsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.saveSettingsButton.Name = "saveSettingsButton";
-            this.saveSettingsButton.Size = new System.Drawing.Size(105, 36);
-            this.saveSettingsButton.TabIndex = 2;
-            this.saveSettingsButton.Text = "Save Settings";
-            this.saveSettingsButton.UseVisualStyleBackColor = false;
-            this.saveSettingsButton.Click += new System.EventHandler(this.saveSettingsButton_Click);
-            // 
-            // Change_Pic
-            // 
-            this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Pic.Location = new System.Drawing.Point(5, 53);
-            this.Change_Pic.Name = "Change_Pic";
-            this.Change_Pic.Size = new System.Drawing.Size(105, 36);
-            this.Change_Pic.TabIndex = 1;
-            this.Change_Pic.Text = "Background Pic";
-            this.Change_Pic.UseVisualStyleBackColor = false;
-            this.Change_Pic.Click += new System.EventHandler(this.Change_Pic_Click);
-            // 
-            // Change_Bcolor
-            // 
-            this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.Location = new System.Drawing.Point(5, 13);
-            this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Change_Bcolor.Name = "Change_Bcolor";
-            this.Change_Bcolor.Size = new System.Drawing.Size(105, 36);
-            this.Change_Bcolor.TabIndex = 0;
-            this.Change_Bcolor.Text = "Set Main Color";
-            this.Change_Bcolor.UseVisualStyleBackColor = false;
-            this.Change_Bcolor.Click += new System.EventHandler(this.Change_Bcolor_Click);
-            // 
-            // defaultSettingsButton
-            // 
-            this.defaultSettingsButton.BackColor = System.Drawing.Color.Firebrick;
-            this.defaultSettingsButton.Location = new System.Drawing.Point(6, 131);
-            this.defaultSettingsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.defaultSettingsButton.Name = "defaultSettingsButton";
-            this.defaultSettingsButton.Size = new System.Drawing.Size(105, 36);
-            this.defaultSettingsButton.TabIndex = 3;
-            this.defaultSettingsButton.Text = "Default Settings";
-            this.defaultSettingsButton.UseVisualStyleBackColor = false;
-            this.defaultSettingsButton.Click += new System.EventHandler(this.defaultSettingsButton_Click);
-            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1463,7 +1405,6 @@
             this.diceRollerGroupBox.ResumeLayout(false);
             this.Color_choices.ResumeLayout(false);
             this.Color_choices.PerformLayout();
-            this.Settings_group_box.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
