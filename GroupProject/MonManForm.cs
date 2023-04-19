@@ -94,11 +94,13 @@ namespace GroupProject
             string exeFolderPath = Path.GetDirectoryName(Application.ExecutablePath);
 
             // Combine the folder path with the name of your file
-            string filePath = Path.Combine(exeFolderPath, "MonsterManual.enc");
+            string fileName = "MonsterManual.enc";
+            string filePath = Path.Combine(exeFolderPath, "Data", fileName);
 
             // Load the list of creatures from a file
-            // Note: Make sure that the "MonsterManual.enc" file is in the same folder as your .exe file
-            //       before running your application
+            // Note: Make sure that the "MonsterManual.enc" file is in the "Data" folder 
+            //       that is located in the same directory as your .exe file before 
+            //       running your application
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string line;
