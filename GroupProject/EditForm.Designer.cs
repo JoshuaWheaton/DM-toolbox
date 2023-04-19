@@ -91,7 +91,7 @@
             this.addEntityGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addEntityGroupBox.Name = "addEntityGroupBox";
             this.addEntityGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addEntityGroupBox.Size = new System.Drawing.Size(410, 291);
+            this.addEntityGroupBox.Size = new System.Drawing.Size(904, 469);
             this.addEntityGroupBox.TabIndex = 75;
             this.addEntityGroupBox.TabStop = false;
             this.addEntityGroupBox.Text = "Edit Entity";
@@ -100,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(171, 256);
+            this.label3.Location = new System.Drawing.Point(688, 258);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 25);
             this.label3.TabIndex = 80;
@@ -108,7 +108,7 @@
             // 
             // acNumericUpDown
             // 
-            this.acNumericUpDown.Location = new System.Drawing.Point(237, 261);
+            this.acNumericUpDown.Location = new System.Drawing.Point(754, 263);
             this.acNumericUpDown.Name = "acNumericUpDown";
             this.acNumericUpDown.Size = new System.Drawing.Size(41, 23);
             this.acNumericUpDown.TabIndex = 79;
@@ -117,7 +117,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(171, 226);
+            this.label2.Location = new System.Drawing.Point(688, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 78;
@@ -125,7 +125,7 @@
             // 
             // hitPointsNumericUpDown
             // 
-            this.hitPointsNumericUpDown.Location = new System.Drawing.Point(237, 231);
+            this.hitPointsNumericUpDown.Location = new System.Drawing.Point(754, 233);
             this.hitPointsNumericUpDown.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -140,7 +140,7 @@
             this.editButton.BackColor = System.Drawing.Color.Firebrick;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.editButton.Location = new System.Drawing.Point(311, 21);
+            this.editButton.Location = new System.Drawing.Point(813, 23);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(75, 23);
             this.editButton.TabIndex = 74;
@@ -152,7 +152,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(178, 196);
+            this.label11.Location = new System.Drawing.Point(695, 198);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 25);
             this.label11.TabIndex = 73;
@@ -160,7 +160,7 @@
             // 
             // initiativeNumericUpDown
             // 
-            this.initiativeNumericUpDown.Location = new System.Drawing.Point(237, 201);
+            this.initiativeNumericUpDown.Location = new System.Drawing.Point(754, 203);
             this.initiativeNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -177,7 +177,7 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.PlaceholderText = "Description";
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTextBox.Size = new System.Drawing.Size(154, 182);
+            this.descriptionTextBox.Size = new System.Drawing.Size(664, 390);
             this.descriptionTextBox.TabIndex = 37;
             // 
             // nameTextBox
@@ -190,7 +190,7 @@
             // 
             // strengthNumericUpDown
             // 
-            this.strengthNumericUpDown.Location = new System.Drawing.Point(237, 21);
+            this.strengthNumericUpDown.Location = new System.Drawing.Point(754, 23);
             this.strengthNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -209,7 +209,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(180, 76);
+            this.label9.Location = new System.Drawing.Point(697, 78);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 25);
             this.label9.TabIndex = 71;
@@ -217,7 +217,7 @@
             // 
             // dexterityNumericUpDown
             // 
-            this.dexterityNumericUpDown.Location = new System.Drawing.Point(237, 51);
+            this.dexterityNumericUpDown.Location = new System.Drawing.Point(754, 53);
             this.dexterityNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -236,7 +236,7 @@
             // 
             this.CHA.AutoSize = true;
             this.CHA.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CHA.Location = new System.Drawing.Point(178, 166);
+            this.CHA.Location = new System.Drawing.Point(695, 168);
             this.CHA.Name = "CHA";
             this.CHA.Size = new System.Drawing.Size(52, 25);
             this.CHA.TabIndex = 61;
@@ -244,7 +244,7 @@
             // 
             // constitutionNumericUpDown
             // 
-            this.constitutionNumericUpDown.Location = new System.Drawing.Point(237, 81);
+            this.constitutionNumericUpDown.Location = new System.Drawing.Point(754, 83);
             this.constitutionNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -263,7 +263,7 @@
             // 
             this.WIS.AutoSize = true;
             this.WIS.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WIS.Location = new System.Drawing.Point(178, 136);
+            this.WIS.Location = new System.Drawing.Point(695, 138);
             this.WIS.Name = "WIS";
             this.WIS.Size = new System.Drawing.Size(48, 25);
             this.WIS.TabIndex = 60;
@@ -271,7 +271,7 @@
             // 
             // intelligenceNumericUpDown
             // 
-            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(237, 111);
+            this.intelligenceNumericUpDown.Location = new System.Drawing.Point(754, 113);
             this.intelligenceNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -290,7 +290,7 @@
             // 
             this.DEX.AutoSize = true;
             this.DEX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DEX.Location = new System.Drawing.Point(178, 46);
+            this.DEX.Location = new System.Drawing.Point(695, 48);
             this.DEX.Name = "DEX";
             this.DEX.Size = new System.Drawing.Size(48, 25);
             this.DEX.TabIndex = 58;
@@ -298,7 +298,7 @@
             // 
             // wisdomNumericUpDown
             // 
-            this.wisdomNumericUpDown.Location = new System.Drawing.Point(237, 141);
+            this.wisdomNumericUpDown.Location = new System.Drawing.Point(754, 143);
             this.wisdomNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -317,7 +317,7 @@
             // 
             this.INT.AutoSize = true;
             this.INT.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.INT.Location = new System.Drawing.Point(178, 106);
+            this.INT.Location = new System.Drawing.Point(695, 108);
             this.INT.Name = "INT";
             this.INT.Size = new System.Drawing.Size(44, 25);
             this.INT.TabIndex = 58;
@@ -325,7 +325,7 @@
             // 
             // charismaNumericUpDown
             // 
-            this.charismaNumericUpDown.Location = new System.Drawing.Point(237, 171);
+            this.charismaNumericUpDown.Location = new System.Drawing.Point(754, 173);
             this.charismaNumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -344,7 +344,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(178, 16);
+            this.label1.Location = new System.Drawing.Point(695, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 25);
             this.label1.TabIndex = 57;
@@ -354,7 +354,7 @@
             // 
             this.STR.AutoSize = true;
             this.STR.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STR.Location = new System.Drawing.Point(181, 16);
+            this.STR.Location = new System.Drawing.Point(698, 18);
             this.STR.Name = "STR";
             this.STR.Size = new System.Drawing.Size(46, 25);
             this.STR.TabIndex = 57;
@@ -365,13 +365,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(434, 311);
+            this.ClientSize = new System.Drawing.Size(928, 491);
             this.Controls.Add(this.addEntityGroupBox);
             this.KeyPreview = true;
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "EditForm";
             this.Text = "EditForm";
-            this.Load += new System.EventHandler(this.EditForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_keypress);
             this.addEntityGroupBox.ResumeLayout(false);
             this.addEntityGroupBox.PerformLayout();
