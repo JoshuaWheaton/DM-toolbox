@@ -189,6 +189,10 @@ namespace GroupProject
         //To string override
         public override string? ToString()
         {
+            /*  Testing idea of including HP in the creature name
+            string hpDisplay = CurrentHP.ToString() + '/' + MaxHP.ToString();
+            return $"{hpDisplay,-8}{Name, -30}";
+            */
             return Name;
         }
 
@@ -209,7 +213,7 @@ namespace GroupProject
         private string OtherEffects = "";
 
         //Duration in rounds
-        private byte Duration = 0;
+        public byte Duration = 0;
 
         //Type of Saving throw
         public string saveType = "";

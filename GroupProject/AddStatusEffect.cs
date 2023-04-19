@@ -79,7 +79,7 @@ namespace GroupProject
             { unconscious = true; }
 
             //Call constructor
-            StatusEffect newEffect = new StatusEffect(name, duration, sot, eot, onDmg, saveType, saveDC,otherEffects, blinded,
+            StatusEffect newEffect = new StatusEffect(name, duration, sot, eot, onDmg, saveType, saveDC, otherEffects, blinded,
                                                       charmed, deafened, frightened, grappled, incapacitated,
                                                       invisible, paralyzed, petrified, poisoned, prone,
                                                       restrained, stunned, unconscious);

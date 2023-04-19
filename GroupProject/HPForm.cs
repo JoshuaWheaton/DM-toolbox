@@ -54,6 +54,12 @@ namespace GroupProject
                     {
                         selectedCreature.SetTempHP(selectedCreature.GetTempHP() - healthChange);
                     }
+
+                    //Call for saving throws that activate on damage
+                    string saves = "";
+                    saves = findOnDmgSaves(selectedCreature.StatusEffects);
+                    if (saves != "")
+                    { MessageBox.Show($"{selectedCreature.GetName()} needs to make the following saving throw(s):\n" + saves); }
                 }
             }
             else
@@ -89,6 +95,16 @@ namespace GroupProject
                 button1_Click(sender, e);
 
             }
+        }
+        private string findOnDmgSaves(List<StatusEffect> effects)
+        {
+            string saveList = "";
+            foreach (StatusEffect effect in effects)
+            {
+                if (effect.WhenDamaged == true)
+                { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
+            }
+            return saveList;
         }
     }
 }

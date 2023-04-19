@@ -15,6 +15,34 @@ namespace GroupProject
         private Rectangle OriginalFormSize;
         private HPForm addHealth;
 
+        // 25 Variables that store the round history, each is a list of creature objects
+        private List<Creature> round1List = new List<Creature>();
+        private List<Creature> round2List = new List<Creature>();
+        private List<Creature> round3List = new List<Creature>();
+        private List<Creature> round4List = new List<Creature>();
+        private List<Creature> round5List = new List<Creature>();
+        private List<Creature> round6List = new List<Creature>();
+        private List<Creature> round7List = new List<Creature>();
+        private List<Creature> round8List = new List<Creature>();
+        private List<Creature> round9List = new List<Creature>();
+        private List<Creature> round10List = new List<Creature>();
+        private List<Creature> round11List = new List<Creature>();
+        private List<Creature> round12List = new List<Creature>();
+        private List<Creature> round13List = new List<Creature>();
+        private List<Creature> round14List = new List<Creature>();
+        private List<Creature> round15List = new List<Creature>();
+        private List<Creature> round16List = new List<Creature>();
+        private List<Creature> round17List = new List<Creature>();
+        private List<Creature> round18List = new List<Creature>();
+        private List<Creature> round19List = new List<Creature>();
+        private List<Creature> round20List = new List<Creature>();
+        private List<Creature> round21List = new List<Creature>();
+        private List<Creature> round22List = new List<Creature>();
+        private List<Creature> round23List = new List<Creature>();
+        private List<Creature> round24List = new List<Creature>();
+        private List<Creature> round25List = new List<Creature>();
+
+
         // Constructor
         public mainGUI()
         {
@@ -35,6 +63,7 @@ namespace GroupProject
             Creature creature = creatureListBox.SelectedItem as Creature;
             HPLabel.Text = creature.GetCurrentHP().ToString() + "/" + creature.GetMaxHP().ToString();
             tempHPLabel.Text = creature.GetTempHP().ToString();
+            sortCreatureList();
         }
 
         // Function that clears out all info displayed in the information groupbox
@@ -81,6 +110,7 @@ namespace GroupProject
             text.Replace("<strong>", "<strong> ");
             text.Replace("<strong>", "\\b");
             text.Replace("</strong>", "\\b0");
+            text.Replace("<br>", "\\line ");
 
             // the end
             text.Append(@"}");
@@ -278,7 +308,7 @@ namespace GroupProject
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Open and read file
-                using (System.IO.StreamReader reader = new System.IO.StreamReader(openFileDialog.FileName))
+                using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                 {
                     string line;
                     while ((line = reader.ReadLine()) != null)
@@ -291,6 +321,7 @@ namespace GroupProject
                     }
                 }
                 // Display the entities in the entity list
+                clearDisplay();
                 creatureListBox.DataSource = null;
                 creatureListBox.DataSource = creatureList;
                 sortCreatureList();
@@ -348,7 +379,7 @@ namespace GroupProject
 
             // Calculate the position of the pop-up form on the same screen
             int x = screen.WorkingArea.Right - editForm.Width * 2;
-            int y = screen.WorkingArea.Bottom - editForm.Height * 2;
+            int y = screen.WorkingArea.Bottom - editForm.Height - 300;
 
             // Set the start position and location of the pop-up form
             editForm.StartPosition = FormStartPosition.Manual;
@@ -528,7 +559,7 @@ namespace GroupProject
         }
 
         //Goes to next round, changing the buttons as necessary
-        private void nextRound_Click(object sender, EventArgs e)
+        public void nextRound_Click(object sender, EventArgs e)
         {
             // Decrement the round
             initCounter++;
@@ -542,6 +573,8 @@ namespace GroupProject
             // ACTIVE ROUND - > Change color to green
             // NEXT ROUND - > Ensure it is the default color
             // PREVIOUS ROUND - > Ensure it is the default color
+            // CREATE A LIST - > Set this as a new list of creatures
+            // SET THE ROUND LIST - > Set the round list to the current creature list, this is so it can creature a history of creatureList
             // Exit case
             switch (initCounter)
             {
@@ -549,150 +582,275 @@ namespace GroupProject
                     round1.BackColor = Color.Green;
                     round2.BackColor = Settings_button.BackColor;
                     round25.BackColor = Settings_button.BackColor;
+                    foreach(Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round1List.Add(copy_creature);
+                    }
                     break;
 
                 case 2:
                     round2.BackColor = Color.Green;
                     round3.BackColor = Settings_button.BackColor;
                     round1.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round2List.Add(copy_creature);
+                    }
                     break;
 
                 case 3:
                     round3.BackColor = Color.Green;
                     round4.BackColor = Settings_button.BackColor;
                     round2.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round3List.Add(copy_creature);
+                    }
                     break;
 
                 case 4:
                     round4.BackColor = Color.Green;
                     round5.BackColor = Settings_button.BackColor;
                     round3.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round4List.Add(copy_creature);
+                    }
                     break;
 
                 case 5:
                     round5.BackColor = Color.Green;
                     round6.BackColor = Settings_button.BackColor;
                     round4.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round5List.Add(copy_creature);
+                    }
                     break;
 
                 case 6:
                     round6.BackColor = Color.Green;
                     round7.BackColor = Settings_button.BackColor;
                     round5.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round6List.Add(copy_creature);
+                    }
                     break;
 
                 case 7:
                     round7.BackColor = Color.Green;
                     round8.BackColor = Settings_button.BackColor;
                     round6.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round7List.Add(copy_creature);
+                    }
                     break;
 
                 case 8:
                     round8.BackColor = Color.Green;
                     round9.BackColor = Settings_button.BackColor;
                     round7.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round8List.Add(copy_creature);
+                    }
                     break;
 
                 case 9:
                     round9.BackColor = Color.Green;
                     round10.BackColor = Settings_button.BackColor;
                     round8.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round9List.Add(copy_creature);
+                    }
                     break;
 
                 case 10:
                     round10.BackColor = Color.Green;
                     round11.BackColor = Settings_button.BackColor;
                     round9.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round10List.Add(copy_creature);
+                    }
                     break;
 
                 case 11:
                     round11.BackColor = Color.Green;
                     round12.BackColor = Settings_button.BackColor;
                     round10.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round11List.Add(copy_creature);
+                    }
                     break;
 
                 case 12:
                     round12.BackColor = Color.Green;
                     round13.BackColor = Settings_button.BackColor;
                     round11.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round12List.Add(copy_creature);
+                    }
                     break;
 
                 case 13:
                     round13.BackColor = Color.Green;
                     round14.BackColor = Settings_button.BackColor;
                     round12.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round13List.Add(copy_creature);
+                    }
                     break;
 
                 case 14:
                     round14.BackColor = Color.Green;
                     round15.BackColor = Settings_button.BackColor;
                     round13.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round14List.Add(copy_creature);
+                    }
                     break;
 
                 case 15:
                     round15.BackColor = Color.Green;
                     round16.BackColor = Settings_button.BackColor;
                     round14.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round15List.Add(copy_creature);
+                    }
                     break;
 
                 case 16:
                     round16.BackColor = Color.Green;
                     round17.BackColor = Settings_button.BackColor;
                     round15.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round16List.Add(copy_creature);
+                    }
                     break;
 
                 case 17:
                     round17.BackColor = Color.Green;
                     round18.BackColor = Settings_button.BackColor;
                     round16.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round17List.Add(copy_creature);
+                    }
                     break;
 
                 case 18:
                     round18.BackColor = Color.Green;
                     round19.BackColor = Settings_button.BackColor;
                     round17.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round18List.Add(copy_creature);
+                    }
                     break;
 
                 case 19:
                     round19.BackColor = Color.Green;
                     round20.BackColor = Settings_button.BackColor;
                     round18.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round19List.Add(copy_creature);
+                    }
                     break;
 
                 case 20:
                     round20.BackColor = Color.Green;
                     round21.BackColor = Settings_button.BackColor;
                     round19.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round20List.Add(copy_creature);
+                    }
                     break;
 
                 case 21:
                     round21.BackColor = Color.Green;
                     round22.BackColor = Settings_button.BackColor;
                     round20.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round21List.Add(copy_creature);
+                    }
                     break;
 
                 case 22:
                     round22.BackColor = Color.Green;
                     round23.BackColor = Settings_button.BackColor;
                     round21.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round22List.Add(copy_creature);
+                    }
                     break;
 
                 case 23:
                     round23.BackColor = Color.Green;
                     round24.BackColor = Settings_button.BackColor;
                     round22.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round23List.Add(copy_creature);
+                    }
                     break;
 
                 case 24:
                     round24.BackColor = Color.Green;
                     round25.BackColor = Settings_button.BackColor;
                     round23.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round24List.Add(copy_creature);
+                    }
                     break;
 
                 case 25:
                     round25.BackColor = Color.Green;
                     round1.BackColor = Settings_button.BackColor;
                     round24.BackColor = Settings_button.BackColor;
+                    foreach (Creature creature in creatureList)
+                    {
+                        Creature copy_creature = creature.make_copy();
+                        round25List.Add(copy_creature);
+                    }
                     break;
             }
         }
@@ -737,7 +895,7 @@ namespace GroupProject
 
             // Calculate the position of the pop-up form on the same screen
             int x = screen.WorkingArea.Right - AddForm.Width * 2;
-            int y = screen.WorkingArea.Bottom - AddForm.Height * 2;
+            int y = screen.WorkingArea.Bottom - AddForm.Height - 300;
 
             // Set the start position and location of the pop-up form
             AddForm.StartPosition = FormStartPosition.Manual;
@@ -793,6 +951,10 @@ namespace GroupProject
             Change_Pic.BackColor = Color.FromArgb(r, g, b);
             addHpButton.BackColor = Color.FromArgb(r, g, b);
             subtractHpButton.BackColor = Color.FromArgb(r, g, b);
+            NextTurn.BackColor = Color.FromArgb(r, g, b);
+            addTempHpButton.BackColor = Color.FromArgb(r, g, b);
+            subtractTempHpButton.BackColor = Color.FromArgb(r, g, b);
+            RemoveStatus.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
@@ -997,22 +1159,368 @@ namespace GroupProject
             }
         }
 
+        private void round1_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 1)
+            {
+                creatureListBox.DataSource = round1List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round2_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 2)
+            {
+                creatureListBox.DataSource = round2List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round3_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 3)
+            {
+                creatureListBox.DataSource = round3List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round4_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 4)
+            {
+                creatureListBox.DataSource = round4List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round5_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 5)
+            {
+                creatureListBox.DataSource = round5List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round6_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 6)
+            {
+                creatureListBox.DataSource = round6List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round7_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 7)
+            {
+                creatureListBox.DataSource = round7List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round8_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 8)
+            {
+                creatureListBox.DataSource = round8List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round9_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 9)
+            {
+                creatureListBox.DataSource = round9List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round10_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was click
+            if (initCounter >= 10)
+            {
+                creatureListBox.DataSource = round10List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round11_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 11)
+            {
+                creatureListBox.DataSource = round11List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round12_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 12)
+            {
+                creatureListBox.DataSource = round12List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round13_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 13)
+            {
+                creatureListBox.DataSource = round13List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round14_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 14)
+            {
+                creatureListBox.DataSource = round14List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round15_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 15)
+            {
+                creatureListBox.DataSource = round15List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round16_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 16)
+            {
+                creatureListBox.DataSource = round16List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round17_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 17)
+            {
+                creatureListBox.DataSource = round17List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round18_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 18)
+            {
+                creatureListBox.DataSource = round18List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round19_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 19)
+            {
+                creatureListBox.DataSource = round19List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round20_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 20)
+            {
+                creatureListBox.DataSource = round20List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round21_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 21)
+            {
+                creatureListBox.DataSource = round21List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round22_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 22)
+            {
+                creatureListBox.DataSource = round22List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round23_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 23)
+            {
+                creatureListBox.DataSource = round23List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round24_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 24)
+            {
+                creatureListBox.DataSource = round24List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
+        private void round25_Click(object sender, EventArgs e)
+        {
+            // Display the round history based on what round number was clicked
+            if (initCounter >= 25)
+            {
+                creatureListBox.DataSource = round25List;
+            }
+            else
+            {
+                MessageBox.Show("This round has not been reached yet.");
+            }
+        }
+
         private void NextTurn_Click(object sender, EventArgs e)
         {
             string saves = "";
             Creature thisGuy = (Creature)creatureListBox.SelectedItem;
             //Search the creature's status effect list and compile its EoT saves
             saves = findEoTSaves(thisGuy.StatusEffects);
+
             //If selected creature has a saving throw to make at the end of the turn, display alert
             if(saves != "")
             {
                 MessageBox.Show($"{thisGuy.GetName()} needs to make the following saving throw(s):\n" + saves);
             }
-            //Progess the turn to the next creature
-                //Use a try/catch to set the index back to zero if it goes out of range
-            //Search the new creature's status effect list and compile its SoT saves
-            //Check if newly selected creature has a saving throw to make at the start of its turn
 
+            decrementDuration(thisGuy.StatusEffects);
+
+            //Progess the turn to the next creature
+            try
+            {
+                creatureListBox.SelectedIndex += 1;
+                thisGuy = (Creature)creatureListBox.SelectedItem;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                creatureListBox.SelectedIndex = 0;
+                nextRound_Click(sender, e);
+            }
+
+            //Use a try/catch to set the index back to zero if it goes out of range
+            //Search the new creature's status effect list and compile its SoT saves
+            saves = "";
+            saves = findSoTSaves(thisGuy.StatusEffects);
+
+            //If newly selected creature has a saving throw to make at the start of its turn, display alert
+            if(saves != "")
+            {
+                MessageBox.Show($"{thisGuy.GetName()} needs to make the following saving throw(s):\n" + saves);
+            }
         }
 
         private string findEoTSaves(List<StatusEffect> effects)
@@ -1024,6 +1532,26 @@ namespace GroupProject
                 { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
             }
             return saveList;
+        }
+
+        private string findSoTSaves(List<StatusEffect> effects)
+        {
+            string saveList = "";
+            foreach(StatusEffect effect in effects)
+            {
+                if (effect.StartOfTurn == true)
+                { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
+            }
+            return saveList;
+        }
+
+        private void decrementDuration(List<StatusEffect> effects)
+        {
+            for(int i = 0; i < effects.Count; i++)
+            {
+                effects[i].Duration -= 1;
+            }
+            effects.RemoveAll(effect =>  effect.Duration == 0);
         }
     }
 }
