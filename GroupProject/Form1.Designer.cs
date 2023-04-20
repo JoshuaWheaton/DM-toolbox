@@ -35,15 +35,15 @@
             this.removeCreatureButton = new System.Windows.Forms.Button();
             this.menuGroupBox = new System.Windows.Forms.GroupBox();
             this.loadGroupButton = new System.Windows.Forms.Button();
-            this.Settings_group_box = new System.Windows.Forms.GroupBox();
-            this.Change_Pic = new System.Windows.Forms.Button();
-            this.Change_Bcolor = new System.Windows.Forms.Button();
             this.Settings_button = new System.Windows.Forms.Button();
             this.monsterButton = new System.Windows.Forms.Button();
             this.AddEntityButton = new System.Windows.Forms.Button();
             this.deleteEncounterButton = new System.Windows.Forms.Button();
             this.saveCreatureButton = new System.Windows.Forms.Button();
             this.loadCreatureListButton = new System.Windows.Forms.Button();
+            this.Settings_group_box = new System.Windows.Forms.GroupBox();
+            this.Change_Pic = new System.Windows.Forms.Button();
+            this.Change_Bcolor = new System.Windows.Forms.Button();
             this.AddStatusEffect = new System.Windows.Forms.Button();
             this.round1 = new System.Windows.Forms.Button();
             this.round2 = new System.Windows.Forms.Button();
@@ -136,6 +136,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.Text_color_button = new System.Windows.Forms.Button();
             this.menuGroupBox.SuspendLayout();
             this.Settings_group_box.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,44 +234,6 @@
             this.loadGroupButton.UseVisualStyleBackColor = false;
             this.loadGroupButton.Click += new System.EventHandler(this.loadGroupButton_Click);
             // 
-            // Settings_group_box
-            // 
-            this.Settings_group_box.AutoSize = true;
-            this.Settings_group_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.Settings_group_box.Controls.Add(this.Change_Pic);
-            this.Settings_group_box.Controls.Add(this.Change_Bcolor);
-            this.Settings_group_box.Location = new System.Drawing.Point(985, 395);
-            this.Settings_group_box.Name = "Settings_group_box";
-            this.Settings_group_box.Size = new System.Drawing.Size(117, 130);
-            this.Settings_group_box.TabIndex = 76;
-            this.Settings_group_box.TabStop = false;
-            this.Settings_group_box.Visible = false;
-            // 
-            // Change_Pic
-            // 
-            this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Pic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Change_Pic.Location = new System.Drawing.Point(5, 53);
-            this.Change_Pic.Name = "Change_Pic";
-            this.Change_Pic.Size = new System.Drawing.Size(105, 36);
-            this.Change_Pic.TabIndex = 1;
-            this.Change_Pic.Text = "Background Pic";
-            this.Change_Pic.UseVisualStyleBackColor = false;
-            this.Change_Pic.Click += new System.EventHandler(this.Change_Pic_Click);
-            // 
-            // Change_Bcolor
-            // 
-            this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
-            this.Change_Bcolor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Change_Bcolor.Location = new System.Drawing.Point(5, 13);
-            this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Change_Bcolor.Name = "Change_Bcolor";
-            this.Change_Bcolor.Size = new System.Drawing.Size(105, 36);
-            this.Change_Bcolor.TabIndex = 0;
-            this.Change_Bcolor.Text = "Set Main Color";
-            this.Change_Bcolor.UseVisualStyleBackColor = false;
-            this.Change_Bcolor.Click += new System.EventHandler(this.Change_Bcolor_Click);
-            // 
             // Settings_button
             // 
             this.Settings_button.BackColor = System.Drawing.Color.Firebrick;
@@ -348,6 +311,45 @@
             this.loadCreatureListButton.Text = "Load Encounter";
             this.loadCreatureListButton.UseVisualStyleBackColor = false;
             this.loadCreatureListButton.Click += new System.EventHandler(this.loadCreatureListButton_Click);
+            // 
+            // Settings_group_box
+            // 
+            this.Settings_group_box.AutoSize = true;
+            this.Settings_group_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.Settings_group_box.Controls.Add(this.Text_color_button);
+            this.Settings_group_box.Controls.Add(this.Change_Pic);
+            this.Settings_group_box.Controls.Add(this.Change_Bcolor);
+            this.Settings_group_box.Location = new System.Drawing.Point(985, 395);
+            this.Settings_group_box.Name = "Settings_group_box";
+            this.Settings_group_box.Size = new System.Drawing.Size(117, 152);
+            this.Settings_group_box.TabIndex = 76;
+            this.Settings_group_box.TabStop = false;
+            this.Settings_group_box.Visible = false;
+            // 
+            // Change_Pic
+            // 
+            this.Change_Pic.BackColor = System.Drawing.Color.Firebrick;
+            this.Change_Pic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Change_Pic.Location = new System.Drawing.Point(5, 53);
+            this.Change_Pic.Name = "Change_Pic";
+            this.Change_Pic.Size = new System.Drawing.Size(105, 36);
+            this.Change_Pic.TabIndex = 1;
+            this.Change_Pic.Text = "Background Pic";
+            this.Change_Pic.UseVisualStyleBackColor = false;
+            this.Change_Pic.Click += new System.EventHandler(this.Change_Pic_Click);
+            // 
+            // Change_Bcolor
+            // 
+            this.Change_Bcolor.BackColor = System.Drawing.Color.Firebrick;
+            this.Change_Bcolor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Change_Bcolor.Location = new System.Drawing.Point(5, 13);
+            this.Change_Bcolor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Change_Bcolor.Name = "Change_Bcolor";
+            this.Change_Bcolor.Size = new System.Drawing.Size(105, 36);
+            this.Change_Bcolor.TabIndex = 0;
+            this.Change_Bcolor.Text = "Set Main Color";
+            this.Change_Bcolor.UseVisualStyleBackColor = false;
+            this.Change_Bcolor.Click += new System.EventHandler(this.Change_Bcolor_Click);
             // 
             // AddStatusEffect
             // 
@@ -1452,7 +1454,7 @@
             this.Color_choices.Controls.Add(this.label16);
             this.Color_choices.Controls.Add(this.label14);
             this.Color_choices.Controls.Add(this.label12);
-            this.Color_choices.Location = new System.Drawing.Point(935, 520);
+            this.Color_choices.Location = new System.Drawing.Point(935, 525);
             this.Color_choices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Color_choices.Name = "Color_choices";
             this.Color_choices.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1518,6 +1520,18 @@
             this.label12.Size = new System.Drawing.Size(28, 15);
             this.label12.TabIndex = 3;
             this.label12.Text = "RED";
+            // 
+            // Text_color_button
+            // 
+            this.Text_color_button.BackColor = System.Drawing.Color.Firebrick;
+            this.Text_color_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Text_color_button.Location = new System.Drawing.Point(5, 94);
+            this.Text_color_button.Name = "Text_color_button";
+            this.Text_color_button.Size = new System.Drawing.Size(105, 36);
+            this.Text_color_button.TabIndex = 2;
+            this.Text_color_button.Text = "Text Color";
+            this.Text_color_button.UseVisualStyleBackColor = false;
+            this.Text_color_button.Click += new System.EventHandler(this.Text_color_Click);
             // 
             // mainGUI
             // 
@@ -1690,5 +1704,6 @@
         private RadioButton d4Die;
         private NumericUpDown modCounter;
         private NumericUpDown dieCounter;
+        private Button Text_color_button;
     }
 }
