@@ -1,4 +1,5 @@
 using System.Text;
+using System.Windows.Forms;
 
 namespace GroupProject
 {
@@ -955,6 +956,7 @@ namespace GroupProject
             addTempHpButton.BackColor = Color.FromArgb(r, g, b);
             subtractTempHpButton.BackColor = Color.FromArgb(r, g, b);
             RemoveStatus.BackColor = Color.FromArgb(r, g, b);
+            rollButton.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
@@ -1532,6 +1534,96 @@ namespace GroupProject
                 { saveList += $"{effect.Name}: DC {effect.saveDC} {effect.saveType} Save\n"; }
             }
             return saveList;
+        }
+
+        private void rollButton_Click(object sender, EventArgs e)
+        {
+            Random roll = new Random();
+            byte diceCount, currentRoll, totalRoll = 0;
+
+            // Initialize the diceCount value
+            diceCount = (byte)dieCounter.Value;
+
+            // Roll as many dice as the user selects and
+            // Add to the total roll value
+            if (d4Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 5);
+                    totalRoll += currentRoll;
+                }
+            }
+            else if (d6Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 7);
+                    totalRoll += currentRoll;
+                }
+            }
+            else if (d8Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 9);
+                    totalRoll += currentRoll;
+                }
+            }
+            else if (d10Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 11);
+                    totalRoll += currentRoll;
+                }
+            }
+            else if (d12Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 13);
+                    totalRoll += currentRoll;
+                }
+            }
+            else if (d20Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 21);
+                    totalRoll += currentRoll;
+                }
+            }
+            else if (d100Die.Checked)
+            {
+                for (int i = 1; i <= diceCount; i++)
+                {
+                    currentRoll = (byte)roll.Next(1, 101);
+                    totalRoll += currentRoll;
+                }
+            }
+
+            // Calculate Modifier input as needed
+            if (negCheckBox.Checked)
+            {
+                if (totalRoll > modCounter.Value)
+                {
+                    totalRoll -= (byte)modCounter.Value;
+                    // STRETCH: Identify a proper modified roll and
+                    // A roll that would be negative (signed byte?)
+                }
+            }
+            else
+            {
+                totalRoll += (byte)modCounter.Value;
+            }
+
+            dieTextBox.Text = totalRoll.ToString();
+        }
+
+        private void negCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("The modifier value is now a negative.");
         }
 
         private string findSoTSaves(List<StatusEffect> effects)

@@ -112,6 +112,20 @@
             this.div3Label = new System.Windows.Forms.Label();
             this.entityListGroupBox = new System.Windows.Forms.GroupBox();
             this.diceRollerGroupBox = new System.Windows.Forms.GroupBox();
+            this.dieTextBox = new System.Windows.Forms.TextBox();
+            this.rollButton = new System.Windows.Forms.Button();
+            this.negCheckBox = new System.Windows.Forms.CheckBox();
+            this.modifierLabel = new System.Windows.Forms.Label();
+            this.countLabel = new System.Windows.Forms.Label();
+            this.d20Die = new System.Windows.Forms.RadioButton();
+            this.d10Die = new System.Windows.Forms.RadioButton();
+            this.d6Die = new System.Windows.Forms.RadioButton();
+            this.d100Die = new System.Windows.Forms.RadioButton();
+            this.d12Die = new System.Windows.Forms.RadioButton();
+            this.d8Die = new System.Windows.Forms.RadioButton();
+            this.d4Die = new System.Windows.Forms.RadioButton();
+            this.modCounter = new System.Windows.Forms.NumericUpDown();
+            this.dieCounter = new System.Windows.Forms.NumericUpDown();
             this.diceRollerTextBox = new System.Windows.Forms.RichTextBox();
             this.Color_choices = new System.Windows.Forms.GroupBox();
             this.ScrollBlue = new System.Windows.Forms.HScrollBar();
@@ -127,6 +141,8 @@
             this.groupBox2.SuspendLayout();
             this.entityListGroupBox.SuspendLayout();
             this.diceRollerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.modCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieCounter)).BeginInit();
             this.Color_choices.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1225,22 +1241,202 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.diceRollerGroupBox.AutoSize = true;
             this.diceRollerGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.diceRollerGroupBox.Controls.Add(this.dieTextBox);
+            this.diceRollerGroupBox.Controls.Add(this.rollButton);
+            this.diceRollerGroupBox.Controls.Add(this.negCheckBox);
+            this.diceRollerGroupBox.Controls.Add(this.modifierLabel);
+            this.diceRollerGroupBox.Controls.Add(this.countLabel);
+            this.diceRollerGroupBox.Controls.Add(this.d20Die);
+            this.diceRollerGroupBox.Controls.Add(this.d10Die);
+            this.diceRollerGroupBox.Controls.Add(this.d6Die);
+            this.diceRollerGroupBox.Controls.Add(this.d100Die);
+            this.diceRollerGroupBox.Controls.Add(this.d12Die);
+            this.diceRollerGroupBox.Controls.Add(this.d8Die);
+            this.diceRollerGroupBox.Controls.Add(this.d4Die);
+            this.diceRollerGroupBox.Controls.Add(this.modCounter);
+            this.diceRollerGroupBox.Controls.Add(this.dieCounter);
             this.diceRollerGroupBox.Controls.Add(this.diceRollerTextBox);
             this.diceRollerGroupBox.Location = new System.Drawing.Point(725, 114);
             this.diceRollerGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.diceRollerGroupBox.Name = "diceRollerGroupBox";
             this.diceRollerGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.diceRollerGroupBox.Size = new System.Drawing.Size(145, 216);
+            this.diceRollerGroupBox.Size = new System.Drawing.Size(145, 230);
             this.diceRollerGroupBox.TabIndex = 75;
             this.diceRollerGroupBox.TabStop = false;
             this.diceRollerGroupBox.Text = "Dice Roller";
             // 
+            // dieTextBox
+            // 
+            this.dieTextBox.Location = new System.Drawing.Point(91, 174);
+            this.dieTextBox.Name = "dieTextBox";
+            this.dieTextBox.ReadOnly = true;
+            this.dieTextBox.Size = new System.Drawing.Size(32, 23);
+            this.dieTextBox.TabIndex = 78;
+            // 
+            // rollButton
+            // 
+            this.rollButton.BackColor = System.Drawing.Color.Firebrick;
+            this.rollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rollButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rollButton.Location = new System.Drawing.Point(15, 174);
+            this.rollButton.Name = "rollButton";
+            this.rollButton.Size = new System.Drawing.Size(55, 23);
+            this.rollButton.TabIndex = 77;
+            this.rollButton.Text = "Roll";
+            this.rollButton.UseVisualStyleBackColor = false;
+            this.rollButton.Click += new System.EventHandler(this.rollButton_Click);
+            // 
+            // negCheckBox
+            // 
+            this.negCheckBox.AutoSize = true;
+            this.negCheckBox.BackColor = System.Drawing.Color.White;
+            this.negCheckBox.Location = new System.Drawing.Point(51, 149);
+            this.negCheckBox.Name = "negCheckBox";
+            this.negCheckBox.Size = new System.Drawing.Size(31, 19);
+            this.negCheckBox.TabIndex = 12;
+            this.negCheckBox.Text = "-";
+            this.negCheckBox.UseVisualStyleBackColor = false;
+            this.negCheckBox.CheckedChanged += new System.EventHandler(this.negCheckBox_CheckedChanged);
+            // 
+            // modifierLabel
+            // 
+            this.modifierLabel.AutoSize = true;
+            this.modifierLabel.BackColor = System.Drawing.Color.White;
+            this.modifierLabel.Location = new System.Drawing.Point(15, 153);
+            this.modifierLabel.Name = "modifierLabel";
+            this.modifierLabel.Size = new System.Drawing.Size(35, 15);
+            this.modifierLabel.TabIndex = 11;
+            this.modifierLabel.Text = "Mod:";
+            // 
+            // countLabel
+            // 
+            this.countLabel.AutoSize = true;
+            this.countLabel.BackColor = System.Drawing.Color.White;
+            this.countLabel.Location = new System.Drawing.Point(15, 125);
+            this.countLabel.Name = "countLabel";
+            this.countLabel.Size = new System.Drawing.Size(43, 15);
+            this.countLabel.TabIndex = 10;
+            this.countLabel.Text = "Count:";
+            // 
+            // d20Die
+            // 
+            this.d20Die.AutoSize = true;
+            this.d20Die.BackColor = System.Drawing.Color.White;
+            this.d20Die.Location = new System.Drawing.Point(79, 75);
+            this.d20Die.Name = "d20Die";
+            this.d20Die.Size = new System.Drawing.Size(44, 19);
+            this.d20Die.TabIndex = 9;
+            this.d20Die.TabStop = true;
+            this.d20Die.Text = "d20";
+            this.d20Die.UseVisualStyleBackColor = false;
+            // 
+            // d10Die
+            // 
+            this.d10Die.AutoSize = true;
+            this.d10Die.BackColor = System.Drawing.Color.White;
+            this.d10Die.Location = new System.Drawing.Point(79, 51);
+            this.d10Die.Name = "d10Die";
+            this.d10Die.Size = new System.Drawing.Size(44, 19);
+            this.d10Die.TabIndex = 8;
+            this.d10Die.TabStop = true;
+            this.d10Die.Text = "d10";
+            this.d10Die.UseVisualStyleBackColor = false;
+            // 
+            // d6Die
+            // 
+            this.d6Die.AutoSize = true;
+            this.d6Die.BackColor = System.Drawing.Color.White;
+            this.d6Die.Location = new System.Drawing.Point(80, 26);
+            this.d6Die.Name = "d6Die";
+            this.d6Die.Size = new System.Drawing.Size(38, 19);
+            this.d6Die.TabIndex = 7;
+            this.d6Die.TabStop = true;
+            this.d6Die.Text = "d6";
+            this.d6Die.UseVisualStyleBackColor = false;
+            // 
+            // d100Die
+            // 
+            this.d100Die.AutoSize = true;
+            this.d100Die.BackColor = System.Drawing.Color.White;
+            this.d100Die.Location = new System.Drawing.Point(15, 100);
+            this.d100Die.Name = "d100Die";
+            this.d100Die.Size = new System.Drawing.Size(50, 19);
+            this.d100Die.TabIndex = 6;
+            this.d100Die.TabStop = true;
+            this.d100Die.Text = "d100";
+            this.d100Die.UseVisualStyleBackColor = false;
+            // 
+            // d12Die
+            // 
+            this.d12Die.AutoSize = true;
+            this.d12Die.BackColor = System.Drawing.Color.White;
+            this.d12Die.Location = new System.Drawing.Point(15, 75);
+            this.d12Die.Name = "d12Die";
+            this.d12Die.Size = new System.Drawing.Size(44, 19);
+            this.d12Die.TabIndex = 5;
+            this.d12Die.TabStop = true;
+            this.d12Die.Text = "d12";
+            this.d12Die.UseVisualStyleBackColor = false;
+            // 
+            // d8Die
+            // 
+            this.d8Die.AutoSize = true;
+            this.d8Die.BackColor = System.Drawing.Color.White;
+            this.d8Die.Location = new System.Drawing.Point(15, 50);
+            this.d8Die.Name = "d8Die";
+            this.d8Die.Size = new System.Drawing.Size(38, 19);
+            this.d8Die.TabIndex = 4;
+            this.d8Die.TabStop = true;
+            this.d8Die.Text = "d8";
+            this.d8Die.UseVisualStyleBackColor = false;
+            // 
+            // d4Die
+            // 
+            this.d4Die.AutoSize = true;
+            this.d4Die.BackColor = System.Drawing.Color.White;
+            this.d4Die.Location = new System.Drawing.Point(15, 26);
+            this.d4Die.Name = "d4Die";
+            this.d4Die.Size = new System.Drawing.Size(38, 19);
+            this.d4Die.TabIndex = 3;
+            this.d4Die.TabStop = true;
+            this.d4Die.Text = "d4";
+            this.d4Die.UseVisualStyleBackColor = false;
+            // 
+            // modCounter
+            // 
+            this.modCounter.Location = new System.Drawing.Point(88, 145);
+            this.modCounter.Name = "modCounter";
+            this.modCounter.Size = new System.Drawing.Size(30, 23);
+            this.modCounter.TabIndex = 2;
+            // 
+            // dieCounter
+            // 
+            this.dieCounter.Location = new System.Drawing.Point(88, 116);
+            this.dieCounter.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.dieCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.dieCounter.Name = "dieCounter";
+            this.dieCounter.Size = new System.Drawing.Size(30, 23);
+            this.dieCounter.TabIndex = 1;
+            this.dieCounter.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // diceRollerTextBox
             // 
-            this.diceRollerTextBox.Location = new System.Drawing.Point(18, 22);
+            this.diceRollerTextBox.Location = new System.Drawing.Point(9, 22);
             this.diceRollerTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.diceRollerTextBox.Name = "diceRollerTextBox";
-            this.diceRollerTextBox.Size = new System.Drawing.Size(110, 174);
+            this.diceRollerTextBox.Size = new System.Drawing.Size(128, 188);
             this.diceRollerTextBox.TabIndex = 0;
             this.diceRollerTextBox.Text = "";
             // 
@@ -1373,6 +1569,9 @@
             this.groupBox2.PerformLayout();
             this.entityListGroupBox.ResumeLayout(false);
             this.diceRollerGroupBox.ResumeLayout(false);
+            this.diceRollerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.modCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieCounter)).EndInit();
             this.Color_choices.ResumeLayout(false);
             this.Color_choices.PerformLayout();
             this.ResumeLayout(false);
@@ -1475,5 +1674,19 @@
         private RichTextBox descriptionLabel;
         private Button subtractTempHpButton;
         private Button addTempHpButton;
+        private TextBox dieTextBox;
+        private Button rollButton;
+        private CheckBox negCheckBox;
+        private Label modifierLabel;
+        private Label countLabel;
+        private RadioButton d20Die;
+        private RadioButton d10Die;
+        private RadioButton d6Die;
+        private RadioButton d100Die;
+        private RadioButton d12Die;
+        private RadioButton d8Die;
+        private RadioButton d4Die;
+        private NumericUpDown modCounter;
+        private NumericUpDown dieCounter;
     }
 }
