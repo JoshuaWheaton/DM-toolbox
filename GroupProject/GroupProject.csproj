@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>D:\Schoolwork\DM-toolbox Test</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
