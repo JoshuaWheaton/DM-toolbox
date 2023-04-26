@@ -1,4 +1,4 @@
-﻿About:
+About:
 The DM-Toolbox is an all-in-one tool designed specifically for dungeon masters to manage and run tabletop role-playing game (RPG) encounters. With its intuitive and user-friendly interface, the DM-Toolbox offers a wide range of features to help streamline the DM's work.
 
 One of the standout features of the DM-Toolbox is the ability to create new creatures or load existing ones into the encounter. You can also add any creature from the monster manual into your encounter. Once your creatures are added, you can save the encounter as a .enc file for future use or load any .enc file into the encounter.
@@ -65,3 +65,4 @@ The user can also click the “Next Turn” button just above the encounter list
 
 Dice Roller:
 The dice roller panel, allows the user to select the dice they wish to roll, followed by the “count”, which is the number of dice you wish to roll. You may then check if the roll has a modifier or not, if it does you can input the modifier in the number text box to the right of the check box. Once you have selected your desired dice, you can click the “Roll” button, where the program will roll your dice, and show you the result.
+
