@@ -10,6 +10,7 @@ using System.Data;
 using System.DirectoryServices;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -85,12 +86,13 @@ namespace GroupProject
         // Method to load the list of creatures from a file and display them in a ListBox control
         private void loadMonsterFile()
         {
+            // Get the directory containing the .exe file
+            string exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            // Get a reference to the main form
-            mainGUI parentForm = (mainGUI)this.Owner;
+            // Combine the directory path with the relative path to the MonsterManual.enc file
+            string filePath = Path.Combine(exePath, "data", "MonsterManual.enc");
 
-            // Load the list of creatures from a file
-            string filePath = "..//..//..//MonsterManual//MonsterManual.enc";
+            // Load the list of creatures from the file
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string line;
@@ -109,7 +111,6 @@ namespace GroupProject
             monsterManListBox.DataSource = null;
             monsterManListBox.DataSource = monsterList;
         }
-
         private void enterKeypress(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
