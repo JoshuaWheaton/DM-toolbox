@@ -19,6 +19,7 @@ namespace GroupProject
         private int button_flag = 0;
         private string backgroundImageString;
         private Color buttonColor;
+        private Color textColor;
 
         // 25 Variables that store the round history, each is a list of creature objects
         private List<Creature> round1List = new List<Creature>();
@@ -53,6 +54,55 @@ namespace GroupProject
         {
             InitializeComponent();
             clearDisplay();
+            loadSettings();
+        }
+
+        public void loadSettings()
+        {
+            // Load the background image
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.BackgroundImage)
+                && !Properties.Settings.Default.BackgroundImage.Equals(Properties.Settings.Default.Properties["BackgroundImage"].DefaultValue))
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.BackgroundImage);
+            }
+
+            // set button colors
+            Color buttonColor = Properties.Settings.Default.ButtonColor;
+            SetButtonColors(this.Controls, buttonColor);
+
+            // set text color
+            Color textColor = Properties.Settings.Default.TextColor;
+            SetTextColor(this.Controls, textColor);
+        }
+
+        private void SetButtonColors(Control.ControlCollection controls, Color buttonColor)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Button)
+                {
+                    ((Button)control).BackColor = buttonColor;
+                }
+                else if (control.HasChildren)
+                {
+                    SetButtonColors(control.Controls, buttonColor);
+                }
+            }
+        }
+
+        private void SetTextColor(Control.ControlCollection controls, Color textColor)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Label)
+                {
+                    ((Label)control).ForeColor = textColor;
+                }
+                else if (control.HasChildren)
+                {
+                    SetTextColor(control.Controls, textColor);
+                }
+            }
         }
 
         //Helper function that sorts creature list by initiative
@@ -1003,6 +1053,8 @@ namespace GroupProject
             round24.BackColor = Color.FromArgb(r, g, b);
             round25.BackColor = Color.FromArgb(r, g, b);
             Text_color_button.BackColor = Color.FromArgb(r, g, b);
+
+            buttonColor = Color.FromArgb(r, g, b);
         }
 
         private void setTextColor()
@@ -1033,6 +1085,8 @@ namespace GroupProject
             intelligenceLabel.ForeColor = Color.FromArgb(r, g, b);
             wisdomLabel.ForeColor = Color.FromArgb(r, g, b);
             charismaLabel.ForeColor = Color.FromArgb(r, g, b);
+
+            textColor = Color.FromArgb(r, g, b);
         }
 
 
@@ -1086,6 +1140,7 @@ namespace GroupProject
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     this.BackgroundImage = Image.FromFile(dialog.FileName);
+                    backgroundImageString = dialog.FileName; ;
                 }
             }
             catch (Exception)
@@ -1721,6 +1776,7 @@ namespace GroupProject
             // Save the background image path
             Properties.Settings.Default.BackgroundImage = backgroundImageString;
             Properties.Settings.Default.ButtonColor = buttonColor;
+            Properties.Settings.Default.TextColor = textColor;
 
             // Save the settings
             Properties.Settings.Default.Save();

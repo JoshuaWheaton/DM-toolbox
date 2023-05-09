@@ -8,5 +8,8 @@
     <Setting Name="ButtonColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Firebrick</Value>
     </Setting>
+    <Setting Name="TextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Sienna</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

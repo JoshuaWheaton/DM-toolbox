@@ -46,5 +46,17 @@ namespace GroupProject.Properties {
                 this["ButtonColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sienna")]
+        public global::System.Drawing.Color TextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["TextColor"]));
+            }
+            set {
+                this["TextColor"] = value;
+            }
+        }
     }
 }
