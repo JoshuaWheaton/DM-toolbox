@@ -17,6 +17,8 @@ namespace GroupProject
         private HPForm addHealth;
         private int text_flag = 0;
         private int button_flag = 0;
+        private string backgroundImageString;
+        private Color buttonColor;
 
         // 25 Variables that store the round history, each is a list of creature objects
         private List<Creature> round1List = new List<Creature>();
@@ -972,6 +974,8 @@ namespace GroupProject
             subtractTempHpButton.BackColor = Color.FromArgb(r, g, b);
             RemoveStatus.BackColor = Color.FromArgb(r, g, b);
             rollButton.BackColor = Color.FromArgb(r, g, b);
+            saveSettingsButton.BackColor = Color.FromArgb(r, g, b);
+            defaultSettingsButton.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
@@ -1029,8 +1033,6 @@ namespace GroupProject
             intelligenceLabel.ForeColor = Color.FromArgb(r, g, b);
             wisdomLabel.ForeColor = Color.FromArgb(r, g, b);
             charismaLabel.ForeColor = Color.FromArgb(r, g, b);
-
-
         }
 
 
@@ -1712,6 +1714,31 @@ namespace GroupProject
                 Color_choices.Visible = true;
                 Color_choices.BringToFront();
             }
+        }
+
+        private void saveSettingsButton_Click(object sender, EventArgs e)
+        {
+            // Save the background image path
+            Properties.Settings.Default.BackgroundImage = backgroundImageString;
+            Properties.Settings.Default.ButtonColor = buttonColor;
+
+            // Save the settings
+            Properties.Settings.Default.Save();
+
+            // Give feedback that the settings saved properly
+            MessageBox.Show("Settings Successfully Saved.");
+        }
+
+        private void defaultSettingsButton_Click(object sender, EventArgs e)
+        {
+            // Reset the settings to their default values
+            Properties.Settings.Default.Reset();
+
+            // Save the settings
+            Properties.Settings.Default.Save();
+
+            // Inform the user they need to restart the program for the settings to take effect
+            MessageBox.Show("You must restart for the settings to be returned to default.");
         }
 
         private string findSoTSaves(List<StatusEffect> effects)
