@@ -15,6 +15,10 @@ namespace GroupProject
         private Rectangle OriginalRectangleEntity;
         private Rectangle OriginalFormSize;
         private HPForm addHealth;
+        private int text_flag = 0;
+        private int button_flag = 0;
+        private string backgroundImageString;
+        private Color buttonColor;
 
         // 25 Variables that store the round history, each is a list of creature objects
         private List<Creature> round1List = new List<Creature>();
@@ -875,10 +879,23 @@ namespace GroupProject
             // Make GroupBox with RGB scrollbars visible.
             if (Color_choices.Visible == true)
             {
-                Color_choices.Visible = false;
+                if (text_flag == 1)
+                {
+                    text_flag = 0;
+                    button_flag = 1;
+                }
+                else
+                {
+                    button_flag = 0;
+                    Color_choices.Visible = false;
+                }
             }
             else
+            {
+                button_flag = 1;
                 Color_choices.Visible = true;
+                Color_choices.BringToFront();
+            }
         }
 
         //Creates pop up form for creating a new entity
@@ -957,6 +974,8 @@ namespace GroupProject
             subtractTempHpButton.BackColor = Color.FromArgb(r, g, b);
             RemoveStatus.BackColor = Color.FromArgb(r, g, b);
             rollButton.BackColor = Color.FromArgb(r, g, b);
+            saveSettingsButton.BackColor = Color.FromArgb(r, g, b);
+            defaultSettingsButton.BackColor = Color.FromArgb(r, g, b);
             // Round Colors
             round1.BackColor = Color.FromArgb(r, g, b);
             round2.BackColor = Color.FromArgb(r, g, b);
@@ -983,27 +1002,74 @@ namespace GroupProject
             round23.BackColor = Color.FromArgb(r, g, b);
             round24.BackColor = Color.FromArgb(r, g, b);
             round25.BackColor = Color.FromArgb(r, g, b);
+            Text_color_button.BackColor = Color.FromArgb(r, g, b);
         }
+
+        private void setTextColor()
+        {
+            name.ForeColor = Color.FromArgb(r, g, b);
+            nameLabel.ForeColor = Color.FromArgb(r, g, b);
+            label10.ForeColor = Color.FromArgb(r, g, b);
+            label17.ForeColor = Color.FromArgb(r, g, b);
+            label15.ForeColor = Color.FromArgb(r, g, b);
+            label13.ForeColor = Color.FromArgb(r, g, b);
+            label7.ForeColor = Color.FromArgb(r, g, b);
+            label5.ForeColor = Color.FromArgb(r, g, b);
+            label6.ForeColor = Color.FromArgb(r, g, b);
+            label4.ForeColor = Color.FromArgb(r, g, b);
+            label3.ForeColor = Color.FromArgb(r, g, b);
+            label2.ForeColor = Color.FromArgb(r, g, b);
+            label8.ForeColor = Color.FromArgb(r, g, b);
+            label12.ForeColor = Color.FromArgb(r, g, b);
+            label14.ForeColor = Color.FromArgb(r, g, b);
+            label16.ForeColor = Color.FromArgb(r, g, b);
+            ACLabel.ForeColor = Color.FromArgb(r, g, b);
+            HPLabel.ForeColor = Color.FromArgb(r, g, b);
+            tempHPLabel.ForeColor = Color.FromArgb(r, g, b);
+            initLabel.ForeColor = Color.FromArgb(r, g, b);
+            strengthLabel.ForeColor = Color.FromArgb(r, g, b);
+            dexterityLabel.ForeColor = Color.FromArgb(r, g, b);
+            constitutionLabel.ForeColor = Color.FromArgb(r, g, b);
+            intelligenceLabel.ForeColor = Color.FromArgb(r, g, b);
+            wisdomLabel.ForeColor = Color.FromArgb(r, g, b);
+            charismaLabel.ForeColor = Color.FromArgb(r, g, b);
+        }
+
 
         //Gets red color from scrool bar
         private void ScrollRed_Scroll(object sender, ScrollEventArgs e)
         {
             r = ScrollRed.Value;
-            setColor();
+            if (text_flag == 1)
+            {
+                setTextColor();
+            }
+            else
+                setColor();
         }
 
         //Gets green color from scrool bar
         private void ScrollGreen_Scroll(object sender, ScrollEventArgs e)
         {
             g = ScrollGreen.Value;
-            setColor();
+            if (text_flag == 1)
+            {
+                setTextColor();
+            }
+            else
+                setColor();
         }
 
         //Gets blue color from scrool bar
         private void ScrollBlue_Scroll(object sender, ScrollEventArgs e)
         {
             b = ScrollBlue.Value;
-            setColor();
+            if (text_flag == 1)
+            {
+                setTextColor();
+            }
+            else
+                setColor();
         }
 
         //Allows user to change background color
@@ -1624,6 +1690,55 @@ namespace GroupProject
         private void negCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             MessageBox.Show("The modifier value is now a negative.");
+        }
+
+        private void Text_color_Click(object sender, EventArgs e)
+        {
+            // Make GroupBox with RGB scrollbars visible.
+            if (Color_choices.Visible == true)
+            {
+                if (button_flag == 1)
+                {
+                    text_flag = 1;
+                    button_flag = 0;
+                }
+                else
+                {
+                    text_flag = 0;
+                    Color_choices.Visible = false;
+                }
+            }
+            else
+            {
+                text_flag = 1;
+                Color_choices.Visible = true;
+                Color_choices.BringToFront();
+            }
+        }
+
+        private void saveSettingsButton_Click(object sender, EventArgs e)
+        {
+            // Save the background image path
+            Properties.Settings.Default.BackgroundImage = backgroundImageString;
+            Properties.Settings.Default.ButtonColor = buttonColor;
+
+            // Save the settings
+            Properties.Settings.Default.Save();
+
+            // Give feedback that the settings saved properly
+            MessageBox.Show("Settings Successfully Saved.");
+        }
+
+        private void defaultSettingsButton_Click(object sender, EventArgs e)
+        {
+            // Reset the settings to their default values
+            Properties.Settings.Default.Reset();
+
+            // Save the settings
+            Properties.Settings.Default.Save();
+
+            // Inform the user they need to restart the program for the settings to take effect
+            MessageBox.Show("You must restart for the settings to be returned to default.");
         }
 
         private string findSoTSaves(List<StatusEffect> effects)
