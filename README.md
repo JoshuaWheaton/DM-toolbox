@@ -1,4 +1,5 @@
 # DM-toolbox
+<strong> <a href="https://github.com/JoshuaWheaton/DM-toolbox/releases">Download the latest release here</a></strong></br>
 <strong>About:</strong>
 The DM-Toolbox is an all-in-one tool designed specifically for dungeon masters to manage and run tabletop role-playing game (RPG) encounters. With its intuitive and user-friendly interface, the DM-Toolbox offers a wide range of features to help streamline the DM's work.
 
